@@ -271,6 +271,13 @@
 #define VAR_TEST                                         0x40FB // Test VAR
 #define VAR_TEST_DARK                                    0x40FC
 #define VAR_WONDERTRADE                                  0x40FD // 0 and 1 -> First time message when entering Wondertrade. 2 -> No message.
+#define VAR_DEXNAV_SPECIES                               0x40F7 // Registered dexnav species
+#define VAR_DEXNAV_STEP_COUNTER                          0x40F8 // steps for finding hidden pokemon
+#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
+#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
+#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
+#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 

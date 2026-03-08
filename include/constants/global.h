@@ -156,5 +156,6 @@
 
 #define SLOW_MOVEMENT_ON_STAIRS         TRUE
 #define FOLLOW_ME_IMPLEMENTED           FALSE    //for stairs movement. see ObjectMovingOnRockStairs in src/field_player_avatar.c
+#define USE_DEXNAV_SEARCH_LEVELS      TRUE  /* WARNING: EXCEEDS SAVEBLOCK SPACE! YOU WILL NEED TO FREE UP SPACE */
 
 #endif // GUARD_CONSTANTS_GLOBAL_H

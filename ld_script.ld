@@ -54,6 +54,9 @@ SECTIONS {
         gflib/*.o(.text*);
         src/*.o(.text*);
         asm/*.o(.text*);
+
+        src/dexnav.o(.text);
+		
     } > ROM =0
 
     script_data :
@@ -89,6 +92,8 @@ SECTIONS {
         src/*.o(.rodata*);
         gflib/*.o(.rodata*);
         data/*.o(.rodata*);
+
+        src/dexnav.o(.rodata);
     } > ROM =0
 
     song_data :

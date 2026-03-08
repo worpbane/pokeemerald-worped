@@ -147,6 +147,9 @@ static u8 Fishing_EndNoMon(struct Task *);
 static void AlignFishingAnimationFrames(void);
 
 static u8 TrySpinPlayerForWarp(struct ObjectEvent *, s16 *);
+static void PlayerGoSlow(u8 direction);
+
+// .rodata
 
 static bool8 (*const sForcedMovementTestFuncs[NUM_FORCED_MOVEMENTS])(u8) =
 {
@@ -709,6 +712,20 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
                 PlayerWalkFaster(direction);
         }
 
+    gPlayerAvatar.creeping = FALSE;
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
+    {
+        if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) && (heldKeys & A_BUTTON))
+        {
+            gPlayerAvatar.creeping = TRUE;
+            PlayerGoSlow(direction);
+        }
+        else
+        {
+            // speed 2 is fast, same speed as running
+            PlayerWalkFast(direction);
+        }
+        return;
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && IsPlayerTryingToRun(heldKeys) && FlagGet(FLAG_SYS_B_DASH)
@@ -748,6 +765,10 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             else
                 PlayerWalkFast(direction);
         }
+    else if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) && (heldKeys & A_BUTTON))
+    {
+        gPlayerAvatar.creeping = TRUE;
+        PlayerGoSlow(direction);
     }
     else
     {
@@ -1092,6 +1113,11 @@ static void PlayerRunSlow(u8 direction)
 }
 
 // normal speed (1 speed)
+static void PlayerGoSlow(u8 direction)
+{
+    PlayerSetAnimId(GetWalkSlowMovementAction(direction), 2);
+}
+
 void PlayerWalkNormal(u8 direction)
 {
     PlayerSetAnimId(GetWalkNormalMovementAction(direction), COPY_MOVE_WALK);
@@ -2281,7 +2307,7 @@ static void Task_DoPlayerSpinExit(u8 taskId)
             tSpeed = 1;
             tCurY = (u16)(sprite->y + sprite->y2) << 4;
             sprite->y2 = 0;
-            CameraObjectReset2();
+            CameraObjectFreeze();
             object->fixedPriority = TRUE;
             sprite->oam.priority = 0;
             sprite->subpriority = 0;
@@ -2350,7 +2376,7 @@ static void Task_DoPlayerSpinEntrance(u8 taskId)
             tSubpriority = sprite->subpriority;
             tCurY = -((u16)sprite->y2 + 32) * 16;
             sprite->y2 = 0;
-            CameraObjectReset2();
+            CameraObjectFreeze();
             object->fixedPriority = TRUE;
             sprite->oam.priority = 1;
             sprite->subpriority = 0;
@@ -2385,7 +2411,7 @@ static void Task_DoPlayerSpinEntrance(u8 taskId)
                 object->fixedPriority = 0;
                 sprite->oam.priority = tPriority;
                 sprite->subpriority = tSubpriority;
-                CameraObjectReset1();
+                CameraObjectReset();
                 DestroyTask(taskId);
             }
             break;
