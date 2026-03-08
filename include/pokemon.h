@@ -347,7 +347,6 @@ struct SpeciesInfo
             u8 abilities_old[2];
             u8 types_new[2];
             u8 catchRate_hard;
-};
             #ifndef BATTLE_ENGINE
  /* 0x1A */ u8 abilityHidden;
             #endif

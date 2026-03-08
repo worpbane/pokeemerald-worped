@@ -700,6 +700,12 @@ static const u8 sFrontierBrainObjEventGfx[NUM_FRONTIER_FACILITIES][2] =
     [FRONTIER_FACILITY_PYRAMID] = {OBJ_EVENT_GFX_BRANDON, FALSE},
 };
 
+const u16 gFrontierBannedSpecies[] =
+{
+    SPECIES_MEW, SPECIES_MEWTWO, SPECIES_HO_OH, SPECIES_LUGIA, SPECIES_CELEBI,
+    SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_JIRACHI, SPECIES_DEOXYS, 0xFFFF
+};
+
 const u16 gFrontierBannedSpeciesNormal[] =
 {
         SPECIES_MEWTWO, SPECIES_HO_OH, SPECIES_LUGIA,
@@ -2026,20 +2032,7 @@ static u8 AppendCaughtBannedMonSpeciesName(u16 species, u8 count, s32 numBannedM
 static void AppendIfValid(u16 species, u16 heldItem, u16 hp, u8 lvlMode, u8 monLevel, u16 *speciesArray, u16 *itemsArray, u8 *count)
 {
     s32 i = 0;
-    u16* gFrontierBannedSpecies;
-
-    if (gSaveBlock1Ptr->tx_Features_FrontierBans == 0)
-    {
-        if (gSaveBlock2Ptr->optionsDifficulty == 1)
-            gFrontierBannedSpecies = gFrontierBannedSpeciesNormal;
-        else if (gSaveBlock2Ptr->optionsDifficulty == 0)
-            gFrontierBannedSpecies = gFrontierBannedSpeciesEasy;
-        else if (gSaveBlock2Ptr->optionsDifficulty == 2)
-            gFrontierBannedSpecies = gFrontierBannedSpeciesHard;
-    }
-    else if (gSaveBlock1Ptr->tx_Features_FrontierBans == 1)
-        gFrontierBannedSpecies = gFrontierBannedSpeciesEasy;
-
+ 
     if (species == SPECIES_EGG || species == SPECIES_NONE)
         return;
 
@@ -2134,20 +2127,7 @@ static void CheckPartyIneligibility(void)
     {
         s32 i;
         s32 caughtBannedMons = 0;
-        u16* gFrontierBannedSpecies;
 
-        if (gSaveBlock1Ptr->tx_Features_FrontierBans == 0)
-        {
-            if (gSaveBlock2Ptr->optionsDifficulty == 1)
-                gFrontierBannedSpecies = gFrontierBannedSpeciesNormal;
-            else if (gSaveBlock2Ptr->optionsDifficulty == 0)
-                gFrontierBannedSpecies = gFrontierBannedSpeciesEasy;
-            else if (gSaveBlock2Ptr->optionsDifficulty == 2)
-                gFrontierBannedSpecies = gFrontierBannedSpeciesHard;
-        }
-        else if (gSaveBlock1Ptr->tx_Features_FrontierBans == 1)
-            gFrontierBannedSpecies = gFrontierBannedSpeciesEasy;
-        
         s32 species = gFrontierBannedSpecies[0];
         for (i = 0; species != 0xFFFF; i++, species = gFrontierBannedSpecies[i])
         {

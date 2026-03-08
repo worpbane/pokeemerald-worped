@@ -3003,7 +3003,7 @@ static void SetBerryTreeGraphics(struct ObjectEvent *objectEvent, u8 berryId, u8
     sprite->x += 8;
     sprite->y += 16 + sprite->centerToCornerVecY;
     if (objectEvent->trackedByCamera)
-        CameraObjectReset1();
+        CameraObjectReset();
 }
 
 static void get_berry_tree_graphics(struct ObjectEvent *objectEvent, struct Sprite *sprite)

@@ -5054,24 +5054,6 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     }
     else // Player is the OT
     {
-        u32 rolls = 0;
-        u32 shinyRolls = 0;
-
-        value = gSaveBlock2Ptr->playerTrainerId[0]
-              | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
-              | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
-              | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
-
-        if (FlagGet(FLAG_FORCE_SHINY))
-        {
-            u8 nature = personality % NUM_NATURES;  // keep current nature
-            do {
-                personality = Random32();
-                personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
-            } while (nature != GetNatureFromPersonality(personality));
-        }
-    }
-
         #ifdef ITEM_SHINY_CHARM
         u32 shinyRolls = (CheckBagHasItem(ITEM_SHINY_CHARM, 1)) ? 5 : 1;
         #else
@@ -5102,6 +5084,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
             FlagClear(FLAG_SHINY_CREATION);
         }
     }
+	
     SetBoxMonData(boxMon, MON_DATA_PERSONALITY, &personality);
     SetBoxMonData(boxMon, MON_DATA_OT_ID, &value);
 
