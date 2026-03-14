@@ -92,6 +92,9 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_DadDexnav, MSGBOX_DEFAULT
+	setflag FLAG_SYS_DEXNAV_GET
+	message PetalburgCity_Gym_Text_ReceivedDexnav
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	releaseall
 	end
@@ -174,6 +177,8 @@ PetalburgCity_Gym_EventScript_WallyPresentation::
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL
 	special InitBirchState
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
+	msgbox PetalburgCity_Gym_Text_DadDexnav, MSGBOX_DEFAULT
+	setflag FLAG_SYS_DEXNAV_GET
 	releaseall
 	end
 
@@ -1343,6 +1348,23 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 	.string "We'll battle one day, {PLAYER}.\p"
 	.string "But that's only after you become\n"
 	.string "stronger.$"
+	
+PetalburgCity_Gym_Text_DadDexnav:
+	.string "Dad: Before you set off...\n"
+	.string "This might help you on your journey.\p"
+	.string "It's called the DexNav.\p"
+	.string "It lets you search for Pokémon\n"
+	.string "in the area and learn more about\n"
+	.string "the ones you've already seen.\p"
+	.string "A skilled Trainer knows their\n"
+	.string "Pokémon and where to find them.\p"
+	.string "I'm sure you'll put it to good\n"
+	.string "use out there.\p"
+	.string "Now go explore, {PLAYER}.\n"
+	.string "I'll be cheering you on!$"
+	
+PetalburgCity_Gym_Text_ReceivedDexnav:
+	.string "{PLAYER} received the DexNav!$"
 
 PetalburgCity_Gym_Text_NormanGoToRustboro:
 	.string "Dad: Hm? Aren't you going to the\n"

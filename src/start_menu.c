@@ -14,6 +14,7 @@
 #include "field_specials.h"
 #include "field_weather.h"
 #include "field_screen_effect.h"
+#include "field_message_box.h"
 #include "frontier_pass.h"
 #include "frontier_util.h"
 #include "gpu_regs.h"
@@ -651,10 +652,15 @@ static bool8 HandleStartMenuInput(void)
             if (GetNationalPokedexCount(FLAG_GET_SEEN) == 0)
                 return FALSE;
         }
-        if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV
-          && MapHasNoEncounterData())
-            return FALSE;
-        
+        if (sCurrentStartMenuActions[sStartMenuCursorPos] == MENU_ACTION_DEXNAV && MapHasNoEncounterData())
+		{
+			RemoveExtraStartMenuWindows();
+			HideStartMenu();
+			PlaySE(SE_PC_OFF);
+			//ShowFieldMessage(gText_NoDexNavHere); //I wanted a message to appear when you can't use dex nav. But the field message doesn't take away control or even get cleared properly.
+			//HideFieldMessageBox();
+            return TRUE;
+        }
         gMenuCallback = sStartMenuItems[sCurrentStartMenuActions[sStartMenuCursorPos]].func.u8_void;
 
         if (gMenuCallback != StartMenuSaveCallback
