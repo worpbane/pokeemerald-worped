@@ -546,6 +546,7 @@ struct SaveBlock2
              u16 optionsSkipIntro:1;
              u16 optionsLRtoRun:1;
              u16 optionsBallPrompt:1;
+             u16 optionsCatchMode:1;
              u16 optionsUnitSystem:1;
              u16 optionsMusicOnOff:1;
     /*0x18*/ struct Pokedex pokedex;

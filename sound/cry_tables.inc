@@ -433,6 +433,8 @@ gCryTable::
 	cry Cry_Ursaluna_BloodMoon
 	cry Cry_Kleavor
 	cry Cry_Test
+	cry Cry_Lechonk
+	cry Cry_Stufful
 
 	.align 2
 gCryTable_Reverse::
@@ -869,4 +871,6 @@ gCryTable_Reverse::
 	cry_reverse Cry_Ursaluna_BloodMoon
 	cry_reverse Cry_Kleavor
 	cry_reverse Cry_Test
+	cry_reverse Cry_Lechonk
+	cry_reverse Cry_Stufful
 

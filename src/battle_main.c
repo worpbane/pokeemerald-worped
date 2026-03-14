@@ -3695,6 +3695,7 @@ static void BattleStartClearSetData(void)
     gBattleStruct->runTries = 0;
     gBattleStruct->safariGoNearCounter = 0;
     gBattleStruct->safariPkblThrowCounter = 0;
+	gBattleStruct->catchModeEnabled = FALSE;
     *(&gBattleStruct->safariCatchFactor) = gSpeciesInfo[GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)].catchRate * 100 / 1275;
     gBattleStruct->safariEscapeFactor = 3;
     gBattleStruct->wildVictorySong = 0;

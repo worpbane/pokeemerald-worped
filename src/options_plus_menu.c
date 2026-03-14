@@ -61,6 +61,7 @@ enum
     MENUITEM_BATTLE_FAST_BATTLES,
     MENUITEM_BATTLE_NEW_BACKGROUNDS,
     MENUITEM_BATTLE_BALL_PROMPT,
+	MENUITEM_BATTLE_CATCH_MODE,
     MENUITEM_BATTLE_TYPE_EFFECTIVE,
     MENUITEM_BATTLE_RUN_TYPE,
     MENUITEM_BATTLE_LR_RUN,
@@ -228,6 +229,8 @@ static void DrawChoices_SurfOverworld(int selection, int y);
 static void DrawChoices_Font(int selection, int y);
 static void DrawBgWindowFrames(void);
 
+static void DrawChoices_Catch_Mode(int selection, int y);
+
 // EWRAM vars
 EWRAM_DATA static struct OptionMenu *sOptions = NULL;
 
@@ -291,6 +294,7 @@ struct // MENU_CUSTOM
     [MENUITEM_BATTLE_RUN_TYPE]         = {DrawChoices_Run_Type,           ProcessInput_Options_Four},
     [MENUITEM_BATTLE_LR_RUN]           = {DrawChoices_LR_Run,             ProcessInput_Options_Two},
     [MENUITEM_BATTLE_BALL_PROMPT]      = {DrawChoices_Ball_Prompt,        ProcessInput_Options_Two},
+    [MENUITEM_BATTLE_CATCH_MODE]   	   = {DrawChoices_Catch_Mode,     	  ProcessInput_Options_Two},
     [MENUITEM_BATTLE_NEW_BACKGROUNDS]  = {DrawChoices_New_Backgrounds,    ProcessInput_Options_Two},
 };
 
@@ -320,6 +324,7 @@ static const u8 sText_OptionEvenFasterJoy[]       = _("EVEN FASTER JOY");
 static const u8 sText_OptionSkipIntro[]           = _("SKIP INTRO");
 static const u8 sText_OptionLR_Run[]              = _("RUN PROMPT");
 static const u8 sText_OptionBallPrompt[]          = _("BALL PROMPT");
+static const u8 sText_OptionCatchMode[]           = _("CATCH MODE");
 static const u8 sText_OptionUnitType[]            = _("UNIT SYSTEM");
 static const u8 sText_OptionNewBackgrounds[]      = _("BATTLE TERRAIN");
 static const u8 sText_OptionRunType[]             = _("QUICK RUN");
@@ -358,6 +363,7 @@ static const u8 *const sOptionMenuItemsNamesCustom[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_RUN_TYPE]         = sText_OptionRunType,
     [MENUITEM_BATTLE_LR_RUN]           = sText_OptionLR_Run,
     [MENUITEM_BATTLE_BALL_PROMPT]      = sText_OptionBallPrompt,
+    [MENUITEM_BATTLE_CATCH_MODE]       = sText_OptionCatchMode,
     [MENUITEM_BATTLE_NEW_BACKGROUNDS]  = sText_OptionNewBackgrounds,
 };
 
@@ -521,8 +527,10 @@ static const u8 sText_Desc_Run_Type_B[]            = _("Press {B_BUTTON} to move
 static const u8 sText_Desc_Run_Type_B_2[]          = _("Hold {B_BUTTON} to run from battles before\nthey start.");
 static const u8 sText_Desc_LR_Run_On[]             = _("Enables a prompt to show that you\ncan run away from battles.");
 static const u8 sText_Desc_LR_Run_Off[]            = _("Disables said prompt to flee.\nButton combo still works.");
-static const u8 sText_Desc_Ball_Prompt_On[]        = _("Press {R_BUTTON} in battle to use Pokeballs.\nHold {L_BUTTON}/{R_BUTTON} to swap Pokéballs.");
+static const u8 sText_Desc_Ball_Prompt_On[]        = _("Press {R_BUTTON} in battle to use Pokeballs.\nHold {R_BUTTON} to swap Pokéballs.");
 static const u8 sText_Desc_Ball_Prompt_Off[]       = _("Disables the prompt to use\nPokéballs quickly.");
+static const u8 sText_Desc_Catch_Mode_On[]         = _("Press {R_BUTTON} in move menu to enable\nCatch Mode prompt.");
+static const u8 sText_Desc_Catch_Mode_Off[]        = _("Disables the prompt to use\nCatch Mode.");
 static const u8 sText_Desc_NewBackgrounds_Old[]    = _("Original battle terrain backgrounds.");
 static const u8 sText_Desc_NewBackgrounds_New[]    = _("Modernized battle terrain\nbackgrounds, similar to Gen IV.");
 static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_BATTLE_COUNT][4] =
@@ -535,6 +543,7 @@ static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_BATTLE_COUNT][
     [MENUITEM_BATTLE_TYPE_EFFECTIVE]      = {sText_Desc_TypeEffectiveOn,          sText_Desc_TypeEffectiveOff},
     [MENUITEM_BATTLE_LR_RUN]              = {sText_Desc_LR_Run_On,                sText_Desc_LR_Run_Off},
     [MENUITEM_BATTLE_BALL_PROMPT]         = {sText_Desc_Ball_Prompt_On,           sText_Desc_Ball_Prompt_Off},
+    [MENUITEM_BATTLE_CATCH_MODE]          = {sText_Desc_Catch_Mode_On,           sText_Desc_Catch_Mode_Off},
     [MENUITEM_BATTLE_NEW_BACKGROUNDS]     = {sText_Desc_NewBackgrounds_Old,       sText_Desc_NewBackgrounds_New},
     [MENUITEM_BATTLE_RUN_TYPE]            = {sText_Desc_Run_Type_Off,             sText_Desc_Run_Type_LR,             sText_Desc_Run_Type_B,         sText_Desc_Run_Type_B_2},
 };
@@ -879,6 +888,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_battle[MENUITEM_BATTLE_TYPE_EFFECTIVE]    = gSaveBlock2Ptr->optionTypeEffective;
         sOptions->sel_battle[MENUITEM_BATTLE_LR_RUN]            = gSaveBlock2Ptr->optionsLRtoRun;
         sOptions->sel_battle[MENUITEM_BATTLE_BALL_PROMPT]       = gSaveBlock2Ptr->optionsBallPrompt;
+        sOptions->sel_battle[MENUITEM_BATTLE_CATCH_MODE]       = gSaveBlock2Ptr->optionsCatchMode;
         sOptions->sel_battle[MENUITEM_BATTLE_NEW_BACKGROUNDS]   = gSaveBlock2Ptr->optionsNewBackgrounds;
         sOptions->sel_battle[MENUITEM_BATTLE_RUN_TYPE]          = gSaveBlock2Ptr->optionsRunType;
 
@@ -1117,6 +1127,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionTypeEffective     = sOptions->sel_battle[MENUITEM_BATTLE_TYPE_EFFECTIVE];
     gSaveBlock2Ptr->optionsLRtoRun          = sOptions->sel_battle[MENUITEM_BATTLE_LR_RUN];
     gSaveBlock2Ptr->optionsBallPrompt       = sOptions->sel_battle[MENUITEM_BATTLE_BALL_PROMPT];
+    gSaveBlock2Ptr->optionsCatchMode        = sOptions->sel_battle[MENUITEM_BATTLE_CATCH_MODE];
     gSaveBlock2Ptr->optionsNewBackgrounds   = sOptions->sel_battle[MENUITEM_BATTLE_NEW_BACKGROUNDS];
     gSaveBlock2Ptr->optionsRunType          = sOptions->sel_battle[MENUITEM_BATTLE_RUN_TYPE];
 
@@ -1915,6 +1926,24 @@ static void DrawChoices_Ball_Prompt(int selection, int y)
     else
     {
         gSaveBlock2Ptr->optionsBallPrompt = 1; //Doesn't show PKBALL prompt
+    }
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
+    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Catch_Mode(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_BATTLE_CATCH_MODE);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    if (selection == 0)
+    {
+        gSaveBlock2Ptr->optionsCatchMode = 0; //Enables Catch Mode
+    }
+    else
+    {
+        gSaveBlock2Ptr->optionsCatchMode = 1; //Disables Catch Mode
     }
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);

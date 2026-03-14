@@ -456,6 +456,8 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_URSALUNA] = sUrsalunaLevelUpLearnset, 
     [SPECIES_URSALUNA_BLOODMOON] = sUrsaluna_BloodMoonLevelUpLearnset, 
     [SPECIES_KLEAVOR] = sKleavorLevelUpLearnset, 
+    [SPECIES_LECHONK] = sLechonkLevelUpLearnset, 
+    [SPECIES_STUFFUL] = sStuffulLevelUpLearnset, 
     [SPECIES_UNUSED_SPACE5] = sUnusedSpace5LevelUpLearnset, 
     [SPECIES_UNUSED_SPACE6] = sUnusedSpace6LevelUpLearnset, 
     [SPECIES_TEST]          = sTestLearnset, 
@@ -929,5 +931,18 @@ const u16 *const gLevelUpLearnsets_Original[NUM_SPECIES] =
     [SPECIES_UNUSED_SPACE8] = sUnusedSpace8LevelUpLearnset_Original, 
     [SPECIES_UNUSED_SPACE9] = sUnusedSpace9LevelUpLearnset_Original, 
     [SPECIES_UNUSED_SPACE10] = sUnusedSpace10LevelUpLearnset_Original, 
+	
+	//Worpadditions
+    [SPECIES_LECHONK] = sLechonkLevelUpLearnset_Original, 
+    //[SPECIES_OINKLOGNEM] = sOinkologneLevelUpLearnset_Original, 
+    //[SPECIES_OINKLOGNEF] = sOinkologneLevelUpLearnset_Original, 
+    [SPECIES_STUFFUL] = sStuffulLevelUpLearnset_Original, 
+    //[SPECIES_BEWEAR] = sBewearLevelUpLearnset_Original,
+    //[SPECIES_BUNEARY] = sBunearyLevelUpLearnset_Original,
+    //[SPECIES_LOPUNNY] = sLopunnyLevelUpLearnset_Original,
+    //[SPECIES_MIMIKYU] = sMimikyuLevelUpLearnset_Original,
+    //[SPECIES_HATENNA] = sHatennaLevelUpLearnset_Original,
+    //[SPECIES_HATTREM] = sHattremaLevelUpLearnset_Original,
+    //[SPECIES_HATTERENE] = sHattereneLevelUpLearnset_Original,
 
 };

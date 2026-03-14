@@ -85,7 +85,7 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_WURMPLE"
+                "species": "SPECIES_LECHONK"
               },
               {
                 "min_level": 2,
@@ -140,7 +140,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_LECHONK"
               }
             ]
           }
@@ -199,12 +199,12 @@
               {
                 "min_level": 2,
                 "max_level": 2,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_LECHONK"
               },
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_LECHONK"
               },
               {
                 "min_level": 3,
@@ -263,7 +263,7 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_LECHONK"
               },
               {
                 "min_level": 4,
@@ -407,7 +407,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_ZIGZAGOON"
+                "species": "SPECIES_LECHONK"
               },
               {
                 "min_level": 3,
@@ -546,7 +546,7 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_POOCHYENA"
+                "species": "SPECIES_LECHONK"
               },
               {
                 "min_level": 2,
@@ -874,12 +874,12 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_TAILLOW"
+                "species": "SPECIES_STUFFUL"
               },
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_WINGULL"
+                "species": "SPECIES_STUFFUL"
               },
               {
                 "min_level": 4,

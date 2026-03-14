@@ -507,6 +507,8 @@ const u8 *const gMonIconTable[] =
     [SPECIES_URSALUNA] = gMonIcon_Ursaluna, 
     [SPECIES_URSALUNA_BLOODMOON] = gMonIcon_Ursaluna_BloodMoon,
     [SPECIES_KLEAVOR] = gMonIcon_Kleavor, 
+    [SPECIES_LECHONK] = gMonIcon_Lechonk, 
+    [SPECIES_STUFFUL] = gMonIcon_Stufful, 
     //[SPECIES_UNUSED_SPACE5] = gMonIcon_Unused_Space5, 
     //[SPECIES_UNUSED_SPACE6] = gMonIcon_Unused_Space6, 
     [SPECIES_TEST] = gMonIcon_Test, 
@@ -1001,12 +1003,9 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_URSALUNA] = 2,
     [SPECIES_URSALUNA_BLOODMOON] = 2,
     [SPECIES_KLEAVOR] = 2,
-    //[SPECIES_UNUSED_SPACE5] = 0,
-    //[SPECIES_UNUSED_SPACE6] = 0,
+    [SPECIES_LECHONK] = 1,
+    [SPECIES_STUFFUL] = 0,
     [SPECIES_TEST] = 1,
-    //[SPECIES_UNUSED_SPACE8] = 0,
-    //[SPECIES_UNUSED_SPACE9] = 0,
-    //[SPECIES_UNUSED_SPACE10] = 0,
 };
 
 const struct SpritePalette gMonIconPaletteTable[] =

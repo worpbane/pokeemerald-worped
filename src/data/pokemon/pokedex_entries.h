@@ -5164,6 +5164,28 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 286,
         .trainerOffset = 1,
     },
+	[NATIONAL_DEX_LECHONK] =
+    {
+        .categoryName = _("Hog"),
+        .height = 5,
+        .weight = 102,
+        .description = gLechonkPokedexText,
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
+	[NATIONAL_DEX_STUFFUL] =
+    {
+        .categoryName = _("Flailing"),
+        .height = 5,
+        .weight = 60,
+        .description = gStuffulPokedexText,
+        .pokemonScale = 432,
+        .pokemonOffset = 13,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+    },
     [NATIONAL_DEX_UNUSED_SPACE5] =
     {
         .categoryName = _("Alpha"),

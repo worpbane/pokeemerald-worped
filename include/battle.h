@@ -57,7 +57,7 @@
 
 // Special indicator value for shellBellDmg in SpecialStatus
 #define IGNORE_SHELL_BELL 0xFFFF
-
+   
 struct ResourceFlags
 {
     u32 flags[MAX_BATTLERS_COUNT];
@@ -445,6 +445,8 @@ struct BattleStruct
     u8 alreadyStatusedMoveAttempt; // As bits for battlers; For example when using Thunder Wave on an already paralyzed Pokémon.
     bool8 throwingPokeBall;
     u8 ballSpriteIds[2];
+    u8 catchModeHintSpriteId; // catch mode hint window gfx
+	bool8 catchModeEnabled; // WORPNOTE : Maybe remove
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,

@@ -8331,6 +8331,30 @@ static const u8 sKleavorTutorLearnset[] =
     0xFF,
 };
 
+static const u8 sLechonkTutorLearnset[] =
+{
+    TUTOR(MOVE_BODY_SLAM),
+	TUTOR(MOVE_DOUBLE_EDGE),
+	TUTOR(MOVE_ENDURE),
+	TUTOR(MOVE_MUD_SLAP),
+	TUTOR(MOVE_SUBSTITUTE),
+    0xFF,
+};
+
+static const u8 sStuffulTutorLearnset[] =
+{
+	TUTOR(MOVE_SWORDS_DANCE),
+    TUTOR(MOVE_THUNDER_PUNCH),
+	TUTOR(MOVE_DEFENSE_CURL),
+    TUTOR(MOVE_DOUBLE_EDGE),
+	TUTOR(MOVE_SUBSTITUTE),
+	TUTOR(MOVE_SLEEP_TALK),
+	TUTOR(MOVE_ROLLOUT),
+    TUTOR(MOVE_SWAGGER),
+	TUTOR(MOVE_SNORE),
+    0xFF,
+};
+
 static const u8 sTestTutorLearnset[] =
 {
     TUTOR(MOVE_BODY_SLAM),

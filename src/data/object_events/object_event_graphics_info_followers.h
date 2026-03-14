@@ -461,6 +461,17 @@ const struct ObjectEventGraphicsInfo gPokemonObjectGraphics[] = {
   [SPECIES_URSALUNA] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Ursaluna, gDummySpriteAffineAnimTable},
   [SPECIES_URSALUNA_BLOODMOON] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Ursaluna_BloodMoon, gDummySpriteAffineAnimTable},
   [SPECIES_KLEAVOR] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Kleavor, gDummySpriteAffineAnimTable},
+  
+  //Worpadditions
+  [SPECIES_LECHONK] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Lechonk, gDummySpriteAffineAnimTable},
+  //[SPECIES_OINKOLOGNEM] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_OinkologneM, gDummySpriteAffineAnimTable},
+  //[SPECIES_OINKOLOGNEF] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_OinkologneF, gDummySpriteAffineAnimTable},
+  [SPECIES_STUFFUL] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Stufful, gDummySpriteAffineAnimTable},
+  //[SPECIES_BEWEAR] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Bewear, gDummySpriteAffineAnimTable},
+  //[SPECIES_MIMIKYU] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Mimikyu, gDummySpriteAffineAnimTable},
+  //[SPECIES_HATENNA] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Hatenna, gDummySpriteAffineAnimTable},
+  //[SPECIES_HATTREM] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Hattrem, gDummySpriteAffineAnimTable},
+  //[SPECIES_HATTERENE] = {0xFFFF, OBJ_EVENT_PAL_TAG_DYNAMIC, OBJ_EVENT_PAL_TAG_NONE, 512, 32, 32, 2, SHADOW_SIZE_M, FALSE, COMP, TRACKS_FOOT, &gObjectEventBaseOam_32x32, sOamTables_32x32, sAnimTable_Following, sPicTable_Hatterene, gDummySpriteAffineAnimTable},
 
 };
 

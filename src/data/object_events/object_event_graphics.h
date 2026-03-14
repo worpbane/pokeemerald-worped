@@ -818,6 +818,19 @@ const u32 gObjectEventPic_Ursaluna[] = INCBIN_COMP("graphics/object_events/pics/
 const u32 gObjectEventPic_Ursaluna_BloodMoon[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/ursaluna_bloodmoon.4bpp");
 const u32 gObjectEventPic_Kleavor[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/kleavor.4bpp");
 
+//Worpadditions
+const u32 gObjectEventPic_Lechonk[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/lechonk.4bpp"); //915
+//const u32 gObjectEventPic_OinkologneM[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/oinklogneM.4bpp"); //916
+//const u32 gObjectEventPic_OinkologneF[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/oinklogneF.4bpp"); //916
+const u32 gObjectEventPic_Stufful[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/stufful.4bpp"); //759
+//const u32 gObjectEventPic_Bewear[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/bewear.4bpp"); //760
+//const u32 gObjectEventPic_Buneary[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/buneary.4bpp");//427
+//const u32 gObjectEventPic_Lopunny[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/lopunny.4bpp"); //428
+//const u32 gObjectEventPic_Mimikyu[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/mimikyu.4bpp"); //778
+//const u32 gObjectEventPic_Hatenna[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/hatenna.4bpp"); //856
+//const u32 gObjectEventPic_Hattrem[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/hattrem.4bpp"); //857
+//const u32 gObjectEventPic_Hatterene[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/hatterene.4bpp"); //858
+
 const u16 gObjectEventPal_Rayquaza[] = INCBIN_U16("graphics/object_events/pics/pokemon/rayquaza.gbapal");
 
 const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon/deoxys_old.4bpp");

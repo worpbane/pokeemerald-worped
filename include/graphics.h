@@ -3227,6 +3227,39 @@ extern const u32 gMonShinyPalette_DoubleQuestionMark[];
 extern const u32 gMonStillFrontPic_DoubleQuestionMark[];
 extern const u16 gMonIconPalettes[][16];
 
+//WorpAdditions
+extern const u32 gMonFrontPic_Lechonk[];
+extern const u32 gMonPalette_Lechonk[];
+extern const u32 gMonBackPic_Lechonk[];
+extern const u32 gMonShinyPalette_Lechonk[];
+extern const u32 gMonStillFrontPic_Lechonk[];
+extern const u8 gMonIcon_Lechonk[];
+extern const u8 gMonFootprint_Lechonk[];
+
+extern const u32 gMonFrontPic_Stufful[];
+extern const u32 gMonPalette_Stufful[];
+extern const u32 gMonBackPic_Stufful[];
+extern const u32 gMonShinyPalette_Stufful[];
+extern const u32 gMonStillFrontPic_Stufful[];
+extern const u8 gMonIcon_Stufful[];
+extern const u8 gMonFootprint_Stufful[];
+
+extern const u32 gMonFrontPic_Buneary[];
+extern const u32 gMonPalette_Buneary[];
+extern const u32 gMonBackPic_Buneary[];
+extern const u32 gMonShinyPalette_Buneary[];
+extern const u32 gMonStillFrontPic_Buneary[];
+extern const u8 gMonIcon_Buneary[];
+extern const u8 gMonFootprint_Buneary[];
+
+extern const u32 gMonFrontPic_Lopunny[];
+extern const u32 gMonPalette_Lopunny[];
+extern const u32 gMonBackPic_Lopunny[];
+extern const u32 gMonShinyPalette_Lopunny[];
+extern const u32 gMonStillFrontPic_Lopunny[];
+extern const u8 gMonIcon_Lopunny[];
+extern const u8 gMonFootprint_Lopunny[];
+
 //Modern Shinies
 extern const u32 gMonShinyPalette_Modern_Pikachu[];
 extern const u32 gMonShinyPalette_Modern_Pichu[];

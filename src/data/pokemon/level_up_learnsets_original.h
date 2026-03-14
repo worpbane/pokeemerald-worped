@@ -6423,6 +6423,39 @@ static const u16 sKleavorLevelUpLearnset_Original[] = {
     LEVEL_UP_END
 };
 
+static const u16 sLechonkLevelUpLearnset_Original[] = {
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE( 5, MOVE_MUD_SLAP), //Disarming Voice
+    LEVEL_UP_MOVE(12, MOVE_MUD_SHOT), //Echoed Voice
+    LEVEL_UP_MOVE(15, MOVE_COVET),
+    LEVEL_UP_MOVE(17, MOVE_DIG),
+    LEVEL_UP_MOVE(21, MOVE_HEADBUTT),
+    LEVEL_UP_MOVE(24, MOVE_YAWN),
+    LEVEL_UP_MOVE(27, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(30, MOVE_BULK_UP), //Work Up
+    LEVEL_UP_MOVE(32, MOVE_UPROAR),
+    LEVEL_UP_MOVE(35, MOVE_DOUBLE_EDGE),
+    LEVEL_UP_END
+};
+
+static const u16 sStuffulLevelUpLearnset_Original[] = {
+    LEVEL_UP_MOVE( 1, MOVE_TACKLE),
+    LEVEL_UP_MOVE( 1, MOVE_LEER),
+    LEVEL_UP_MOVE( 5, MOVE_BIDE),
+    LEVEL_UP_MOVE(10, MOVE_CHARM),
+    LEVEL_UP_MOVE(14, MOVE_EARTHQUAKE), //Brutal Swing
+    LEVEL_UP_MOVE(19, MOVE_FLAIL),
+    LEVEL_UP_MOVE(23, MOVE_ROLLOUT), //Payback
+    LEVEL_UP_MOVE(28, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(32, MOVE_KARATE_CHOP), //Hammer Arm
+    LEVEL_UP_MOVE(37, MOVE_THRASH),
+    LEVEL_UP_MOVE(41, MOVE_PAIN_SPLIT),
+    LEVEL_UP_MOVE(46, MOVE_DOUBLE_EDGE),
+    LEVEL_UP_MOVE(50, MOVE_SUPERPOWER),
+    LEVEL_UP_END
+};
+
 static const u16 sUnusedSpace5LevelUpLearnset_Original[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_END

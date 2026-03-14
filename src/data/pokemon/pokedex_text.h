@@ -2564,3 +2564,16 @@ const u8 gKleavorPokedexText[] = _(
             "its crude axes and shields itself with hard\n"
             "stone. Should one encounter this Pokémon\n"
             "in the wild, one's only recourse is to flee.");
+			
+const u8 gLechonkPokedexText[] = _(
+            "It searches for food all day. It\n"
+            "possesses a keen sense of smell but\n"
+            "doesn't use it for anything other\n"
+            "than foraging.");
+			
+const u8 gStuffulPokedexText[] = _(
+            "Despite its adorable appearance, when it\n"
+            "gets angry and flails about, its arms and\n"
+            "legs could knock a pro wrestler sprawling.\n"
+            "It's an incredibly dangerous Pokémon.");
+

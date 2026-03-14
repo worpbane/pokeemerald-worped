@@ -390,8 +390,6 @@ $(OBJEVENTGFXDIR)/people/woman_5.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/youngster.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-
-
 $(OBJEVENTGFXDIR)/pokemon/azumarill_old.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
@@ -2057,6 +2055,12 @@ $(OBJEVENTGFXDIR)/pokemon/followers/kleavor.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/pokemon/followers/test.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
+$(OBJEVENTGFXDIR)/pokemon/followers/lechonk.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+	
+$(OBJEVENTGFXDIR)/pokemon/followers/stufful.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(MISCGFXDIR)/emotes.4bpp: %.4bpp: %.png

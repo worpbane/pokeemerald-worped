@@ -200,6 +200,8 @@ static void Debug_TestHealthBar_Helper(struct TestingBar *, s32 *, u16 *);
 static void SpriteCB_LastUsedBall(struct Sprite *);
 static void SpriteCB_LastUsedBallWin(struct Sprite *);
 
+static void SpriteCB_CatchModeWindow(struct Sprite *sprite);
+
 static const struct OamData sOamData_64x32 =
 {
     .y = 0,
@@ -966,6 +968,8 @@ u8 CreateBattlerHealthboxSprites(u8 battlerId)
 
     gBattleStruct->ballSpriteIds[0] = MAX_SPRITES;
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
+	
+	gBattleStruct->catchModeHintSpriteId = MAX_SPRITES;
     
     return healthboxLeftSpriteId;
 }
@@ -2645,8 +2649,9 @@ static const struct SpritePalette sSpritePalette_AbilityPopUp =
     sAbilityPopUpPalette, ABILITY_POP_UP_TAG
 };
 
-// last used ball
+// last used ball + catch mode
 #define LAST_BALL_WINDOW_TAG 0xD721
+#define CATCH_MODE_PANEL_TAG 0xE723
 
 static const struct OamData sOamData_LastUsedBall =
 {
@@ -2665,6 +2670,23 @@ static const struct OamData sOamData_LastUsedBall =
     .affineParam = 0,
 };
 
+static const struct OamData sOamData_CatchModePanel =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = SPRITE_SHAPE(32x32),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(32x32),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
 static const struct SpriteTemplate sSpriteTemplate_LastUsedBallWindow =
 {
     .tileTag = LAST_BALL_WINDOW_TAG,
@@ -2676,11 +2698,30 @@ static const struct SpriteTemplate sSpriteTemplate_LastUsedBallWindow =
     .callback = SpriteCB_LastUsedBallWin
 };
 
+static const struct SpriteTemplate sSpriteTemplate_CatchModePanel =
+{
+    .tileTag = CATCH_MODE_PANEL_TAG,
+    .paletteTag = ABILITY_POP_UP_TAG,
+    .oam = &sOamData_CatchModePanel,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_CatchModeWindow
+};
+
 static const u8 ALIGNED(4) sLastUsedBallWindowGfx[] = INCBIN_U8("graphics/battle_interface/last_used_ball_r_cycle.4bpp");
+
+static const u8 ALIGNED(4) sCatchModeWindowOffGfx[] = INCBIN_U8("graphics/battle_interface/catch_mode_off_r.4bpp");
+static const u8 ALIGNED(4) sCatchModeWindowOnGfx[] = INCBIN_U8("graphics/battle_interface/catch_mode_on_r.4bpp");
 
 static const struct SpriteSheet sSpriteSheet_LastUsedBallWindow =
 {
     sLastUsedBallWindowGfx, sizeof(sLastUsedBallWindowGfx), LAST_BALL_WINDOW_TAG
+};
+
+static const struct SpriteSheet sSpriteSheet_CatchModePanel =
+{
+    sCatchModeWindowOffGfx, sizeof(sCatchModeWindowOffGfx), CATCH_MODE_PANEL_TAG
 };
 
 #define LAST_USED_BALL_X_F    14
@@ -2691,6 +2732,10 @@ static const struct SpriteSheet sSpriteSheet_LastUsedBallWindow =
 #define LAST_BALL_WIN_X_F       (LAST_USED_BALL_X_F - 0)
 #define LAST_BALL_WIN_X_0       (LAST_USED_BALL_X_0 - 0)
 #define LAST_USED_WIN_Y         (LAST_USED_BALL_Y - 8)
+
+#define CATCH_MODE_WIN_X_F      (LAST_USED_BALL_Y - 6)
+#define CATCH_MODE_WIN_X_0      (LAST_USED_BALL_Y - 6)
+#define CATCH_MODE_WIN_Y        (LAST_USED_BALL_Y - 6)
 
 #define sHide  data[0]
 #define sTimer  data[1]
@@ -2705,6 +2750,23 @@ bool32 CanThrowLastUsedBall(void)
     if (FlagGet(FLAG_SYS_NO_CATCHING) == 1)
         return FALSE;
     if (gSaveBlock2Ptr->optionsBallPrompt == 1)
+        return FALSE;
+    if (NuzlockeIsSpeciesClauseActive || OneTypeChallengeCaptureBlocked || NuzlockeIsCaptureBlocked)
+        return FALSE;
+    if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FRONTIER))
+        return FALSE;
+    if (!CheckBagHasItem(gBallToDisplay, 1))
+        return FALSE;
+
+    return TRUE;
+}
+
+//Catch Mode Bool
+bool32 CanUseCatchMode(void)
+{
+	if (gSaveBlock2Ptr->optionsCatchMode == 1)
+        return FALSE;
+    if (FlagGet(FLAG_SYS_NO_CATCHING) == 1)
         return FALSE;
     if (NuzlockeIsSpeciesClauseActive || OneTypeChallengeCaptureBlocked || NuzlockeIsCaptureBlocked)
         return FALSE;
@@ -2769,7 +2831,8 @@ void TryAddLastUsedBallItemSprites(void)
 static void DestroyLastUsedBallWinGfx(struct Sprite *sprite)
 {
     FreeSpriteTilesByTag(LAST_BALL_WINDOW_TAG);
-    FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
+	if (GetSpriteTileStartByTag(CATCH_MODE_PANEL_TAG) == 0xFFFF)
+        FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
     DestroySprite(sprite);
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
 }
@@ -2782,6 +2845,49 @@ static void DestroyLastUsedBallGfx(struct Sprite *sprite)
     gBattleStruct->ballSpriteIds[0] = MAX_SPRITES;
 }
 
+static void DestroyCatchModeWinGfx(struct Sprite *sprite)
+{
+    FreeSpriteTilesByTag(CATCH_MODE_PANEL_TAG);
+    if (GetSpriteTileStartByTag(LAST_BALL_WINDOW_TAG) == 0xFFFF)
+        FreeSpritePaletteByTag(ABILITY_POP_UP_TAG);
+    DestroySprite(sprite);
+    gBattleStruct->catchModeHintSpriteId = MAX_SPRITES;
+}
+
+static const u8 *GetCatchModeWindowGfx(bool32 enabled)
+{
+    if (enabled)
+        return sCatchModeWindowOnGfx;
+    return sCatchModeWindowOffGfx;
+}
+
+static void UpdateCatchModeWindowGfx(struct Sprite *sprite)
+{
+    const u8 *gfx = GetCatchModeWindowGfx(gBattleStruct->catchModeEnabled);
+    CpuCopy32(gfx, (void *)(OBJ_VRAM0 + sprite->oam.tileNum * TILE_SIZE_4BPP), sizeof(sCatchModeWindowOffGfx));
+}
+
+static void TryAddCatchModePanel(void)
+{
+    if (gSaveBlock2Ptr->optionsCatchMode == 1)
+    {
+        return;
+    }
+    if (!CanUseCatchMode())
+        return;
+
+    LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+    if (GetSpriteTileStartByTag(CATCH_MODE_PANEL_TAG) == 0xFFFF)
+        LoadSpriteSheet(&sSpriteSheet_CatchModePanel);
+
+    if (gBattleStruct->catchModeHintSpriteId == MAX_SPRITES)
+    {
+        gBattleStruct->catchModeHintSpriteId = CreateSprite(&sSpriteTemplate_CatchModePanel, LAST_BALL_WIN_X_0, CATCH_MODE_WIN_Y, 6);
+        gSprites[gBattleStruct->catchModeHintSpriteId].sHide = FALSE;
+    }
+    UpdateCatchModeWindowGfx(&gSprites[gBattleStruct->catchModeHintSpriteId]);
+}
+
 static void SpriteCB_LastUsedBallWin(struct Sprite *sprite)
 {
     if (sprite->sHide)
@@ -2791,6 +2897,23 @@ static void SpriteCB_LastUsedBallWin(struct Sprite *sprite)
 
         if (sprite->x == LAST_BALL_WIN_X_0)
             DestroyLastUsedBallWinGfx(sprite);
+    }
+    else
+    {
+        if (sprite->x != LAST_BALL_WIN_X_F)
+            sprite->x++;
+    }
+}
+
+static void SpriteCB_CatchModeWindow(struct Sprite *sprite)
+{
+    if (sprite->sHide)
+    {
+        if (sprite->x != LAST_BALL_WIN_X_0)
+            sprite->x--;
+
+        if (sprite->x == LAST_BALL_WIN_X_0)
+            DestroyCatchModeWinGfx(sprite);
     }
     else
     {
@@ -2817,6 +2940,13 @@ static void SpriteCB_LastUsedBall(struct Sprite *sprite)
         if (sprite->x != LAST_USED_BALL_X_F)
             sprite->x++;
     }
+}
+
+void TryUpdateCatchModeWindow(void) //WORPNOTE : Might be able to remove
+{
+    if (gBattleStruct->catchModeHintSpriteId == MAX_SPRITES)
+        return;
+    UpdateCatchModeWindowGfx(&gSprites[gBattleStruct->catchModeHintSpriteId]);
 }
 
 static void TryHideOrRestoreLastUsedBall(u8 caseId)
@@ -2846,6 +2976,26 @@ static void TryHideOrRestoreLastUsedBall(u8 caseId)
     ArrowsChangeColorLastBallCycle(0); //Default the arrows to be invisible
 }
 
+static void TryHideOrRestoreCatchModePanel(u8 caseId)
+{
+    if (gSaveBlock2Ptr->optionsCatchMode == 1)
+        return;
+    if (gBattleStruct->catchModeHintSpriteId == MAX_SPRITES)
+        return;
+
+    switch (caseId)
+    {
+    case 0: // hide
+        if (gBattleStruct->catchModeHintSpriteId != MAX_SPRITES)
+            gSprites[gBattleStruct->catchModeHintSpriteId].sHide = TRUE;   // hide
+        break;
+    case 1: // restore
+        if (gBattleStruct->catchModeHintSpriteId != MAX_SPRITES)
+            gSprites[gBattleStruct->catchModeHintSpriteId].sHide = FALSE;   // restore
+        break;
+    }
+}
+
 void TryHideLastUsedBall(void)
 {
     if (gSaveBlock2Ptr->optionsBallPrompt == 0)
@@ -2860,6 +3010,22 @@ void TryRestoreLastUsedBall(void)
         TryHideOrRestoreLastUsedBall(1);
     else
         TryAddLastUsedBallItemSprites();
+}
+
+void TryHideCatchModeWindow(void)
+{
+    if (gSaveBlock2Ptr->optionsCatchMode == 0)
+    {
+        TryHideOrRestoreCatchModePanel(0);
+    }
+}
+
+void TryRestoreCatchModeWindow(void)
+{
+    if (gBattleStruct->catchModeHintSpriteId != MAX_SPRITES)
+        TryHideOrRestoreCatchModePanel(1);
+    else
+        TryAddCatchModePanel();
 }
 
 static void SpriteCB_LastUsedBallBounce(struct Sprite *sprite)

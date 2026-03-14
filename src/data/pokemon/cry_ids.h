@@ -181,4 +181,6 @@ const u16 gSpeciesIdToCryId[] =
     [SPECIES_URSALUNA_BLOODMOON - 277] = 430,
     [SPECIES_KLEAVOR - 277] = 431,
     [SPECIES_TEST - 277] = 432,
+    [SPECIES_LECHONK - 277] = 433,
+    [SPECIES_STUFFUL - 277] = 434,
 };

@@ -488,6 +488,8 @@ const struct MonCoords gMonFrontPicCoords[] =
     [SPECIES_URSALUNA]                     = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  3 },
     [SPECIES_URSALUNA_BLOODMOON]           = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  3 },
     [SPECIES_KLEAVOR]                      = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  0 },
+    [SPECIES_LECHONK]                      = { .size = MON_COORDS_SIZE(64, 64), .y_offset =  12 },
+    [SPECIES_STUFFUL]                      = { .size = MON_COORDS_SIZE(48, 48), .y_offset =  10 },
     //[SPECIES_UNUSED_SPACE5]                = { .size = MON_COORDS_SIZE(64, 56), .y_offset =  5 },
     //[SPECIES_UNUSED_SPACE6]                = { .size = MON_COORDS_SIZE(64, 56), .y_offset =  5 },
     [SPECIES_TEST]                         = { .size = MON_COORDS_SIZE(24, 40), .y_offset = 15 },

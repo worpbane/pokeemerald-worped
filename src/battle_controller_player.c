@@ -366,6 +366,7 @@ static void HandleInputChooseAction(void)
         {
         case 0: // Top left
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_USE_MOVE, 0);
+			TryRestoreCatchModeWindow();
             break;
         case 1: // Top right
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_USE_ITEM, 0);
@@ -623,6 +624,7 @@ static void HandleInputChooseMove(void)
         u8 moveTarget;
 
         PlaySE(SE_SELECT);
+		TryHideCatchModeWindow();
         if (moveInfo->moves[gMoveSelectionCursor[gActiveBattler]] == MOVE_CURSE)
         {
             if (moveInfo->monType1 != TYPE_GHOST && moveInfo->monType2 != TYPE_GHOST)
@@ -779,6 +781,15 @@ static void HandleInputChooseMove(void)
     {
         sDescriptionSubmenu = TRUE;
         MoveSelectionDisplayMoveDescription();
+    }
+	if (JOY_NEW(R_BUTTON)  && !sDescriptionSubmenu) //Catch Mode
+    {
+		if(CanUseCatchMode())
+		{
+			gBattleStruct->catchModeEnabled ^= 1;
+			TryUpdateCatchModeWindow();
+			PlaySE(SE_CLICK);
+		}
     }
 }
 
@@ -2945,6 +2956,7 @@ static void PlayerHandleChooseAction(void)
         ActionSelectionDestroyCursorAt(i);
 
     TryRestoreLastUsedBall();
+    TryHideCatchModeWindow();
     ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
