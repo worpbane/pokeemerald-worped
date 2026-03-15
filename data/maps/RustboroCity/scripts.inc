@@ -70,6 +70,8 @@ RustboroCity_EventScript_ScientistAddMatchCall::
 	applymovement LOCALID_SCIENTIST, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox RustboroCity_Text_AddedMatchCallPleaseCallMrStone, MSGBOX_DEFAULT
+	setflag FLAG_SYS_DEXNAV_GET
+	msgbox RustboroCity_Text_PokeNavPlusUpgrade, MSGBOX_DEFAULT
 	closemessage
 	delay 20
 	goto RustboroCity_EventScript_MatchCallTutorial
@@ -1263,9 +1265,9 @@ RustboroCity_Text_CuttersHouse:
 	.string "Cutter's House$"
 
 RustboroCity_Text_DevelopedNewPokenavFeature:
-	.string "I've been developing an added feature\n"
+	.string "I've been developing added features\n"
 	.string "for the Pokénav…\p"
-	.string "And it turned out great!\p"
+	.string "And they turned out great!\p"
 	.string "{PLAYER}, may I see that Pokénav?\n"
 	.string "The one our President gave you?$"
 
@@ -1273,6 +1275,14 @@ RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
 	.string "There you go, {PLAYER}!\p"
 	.string "I added a new feature named\n"
 	.string "Match Call to your Pokénav.\p"
+	.string "Oh! And while I was working on\n"
+	.string "it, I made a few upgrades.\p"
+	.string "Your device is now the\n"
+	.string "PokéNav Plus!\p"
+	.string "It includes a feature called\n"
+	.string "DexNav.\p"
+	.string "The DexNav can help you search\n"
+	.string "for Pokémon hiding nearby!\p"
 	.string "Using the Match Call feature,\n"
 	.string "you can chat with people who have\l"
 	.string "been registered in your Pokénav.\p"
@@ -1280,6 +1290,11 @@ RustboroCity_Text_AddedMatchCallPleaseCallMrStone:
 	.string "be registered in your Pokénav.\p"
 	.string "Test it out.\n"
 	.string "Please give our President a call.$"
+
+RustboroCity_Text_PokeNavPlusUpgrade:
+	.string "{PLAYER}'s PokéNav was upgraded\l"
+	.string "to the PokéNav Plus!\p"
+	.string "The DexNav feature was added!$"
 
 RustboroCity_Text_PleaseSelectPokenav:
 	.string "Please select the Pokénav.$"
