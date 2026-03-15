@@ -15,7 +15,9 @@ Planned:
 	- Mimikyu
 	- Hatenna + Hattrem + Hatterene
 	- Buneary + Lopunny
+	- Paldean Wooper + Clodsire
 * Type Icons next to Pokemon during battles
+
 
 My code is really messey in some areas, this is my first time messing with this kind of thing. Just putt up in case anyone is interested.
 
