@@ -7,6 +7,7 @@
 #include "battle_tent.h"
 #include "battle_factory.h"
 #include "bg.h"
+#include "bw_summary_screen.h"
 #include "contest.h"
 #include "contest_effect.h"
 #include "data.h"
@@ -50,14 +51,6 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "tx_randomizer_and_challenges.h"
-
-enum {
-    PSS_PAGE_INFO,
-    PSS_PAGE_SKILLS,
-    PSS_PAGE_BATTLE_MOVES,
-    PSS_PAGE_CONTEST_MOVES,
-    PSS_PAGE_COUNT,
-};
 
 // Screen titles (upper left)
 #define PSS_LABEL_WINDOW_POKEMON_INFO_TITLE 0
@@ -300,6 +293,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
 EWRAM_DATA u8 gLastViewedMonIndex = 0;
 static EWRAM_DATA u8 sMoveSlotToReplace = 0;
 ALIGNED(4) static EWRAM_DATA u8 sAnimDelayTaskId = 0;
+EWRAM_DATA MainCallback gInitialSummaryScreenCallback = NULL; // stores callback from the first time the screen is opened from the party or PC menu
 
 // Temporary storage for returning from Pokedex
 static u8 sSavedSummaryMode = 0;
@@ -435,8 +429,10 @@ static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n);
 static void BufferIvOrEvStats(u8 mode);
 
 // const rom data
+#if BW_SUMMARY_SCREEN == FALSE
 #include "data/text/move_descriptions.h"
 #include "data/text/nature_names.h"
+#endif
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -870,7 +866,6 @@ static const struct OamData sOamData_SplitIcons =
     .priority = 0,
 };
 
-
 static const struct CompressedSpriteSheet sSpriteSheet_FriendshipIcon =
 {
     .data = sFriendshipIcon_Gfx,
@@ -1073,23 +1068,6 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     sSpriteAnim_CategoryTough,
 };
 
-const struct CompressedSpriteSheet sSpriteSheet_MoveTypes =
-{
-    .data = gMoveTypes_Gfx,
-    .size = (NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT) * 0x100,
-    .tag = TAG_MOVE_TYPES
-};
-
-const struct SpriteTemplate sSpriteTemplate_MoveTypes =
-{
-    .tileTag = TAG_MOVE_TYPES,
-    .paletteTag = TAG_MOVE_TYPES,
-    .oam = &sOamData_MoveTypes,
-    .anims = sSpriteAnimTable_MoveTypes,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
-};
 static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT] =
 {
     [TYPE_NORMAL] = 13,
@@ -1117,6 +1095,7 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIE
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_SMART] = 15,
     [NUMBER_OF_MON_TYPES + CONTEST_CATEGORY_TOUGH] = 13,
 };
+
 static const struct OamData sOamData_MoveSelector =
 {
     .y = 0,
@@ -1308,6 +1287,8 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
     sMonSummaryScreen->curMonIndex = monIndex;
     sMonSummaryScreen->maxMonIndex = maxMonIndex;
     sMonSummaryScreen->callback = callback;
+	if (gInitialSummaryScreenCallback == NULL)
+        gInitialSummaryScreenCallback = callback;
 
     if (mode == SUMMARY_MODE_BOX)
         sMonSummaryScreen->isBoxMon = TRUE;
@@ -1912,6 +1893,8 @@ static void CloseSummaryScreen(u8 taskId)
 {
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE && !gPaletteFade.active)
     {
+		if (sMonSummaryScreen->callback == gInitialSummaryScreenCallback)
+            gInitialSummaryScreenCallback = NULL;
         SetMainCallback2(sMonSummaryScreen->callback);
         gLastViewedMonIndex = sMonSummaryScreen->curMonIndex;
         SummaryScreen_DestroyAnimDelayTask();
@@ -2770,7 +2753,10 @@ static void Task_HandleInputCantForgetHMsMoves(u8 taskId)
 
 u8 GetMoveSlotToReplace(void)
 {
-    return sMoveSlotToReplace;
+     if (BW_SUMMARY_SCREEN)
+        return GetMoveSlotToReplace_BW();
+    else
+        return sMoveSlotToReplace;
 }
 
 static void DrawPagination(void) // Updates the pagination dots at the top of the summary screen
@@ -4605,7 +4591,10 @@ static void SpriteCB_Pokemon(struct Sprite *sprite)
 // Normally destroys itself but it can be interrupted before the animation starts
 void SummaryScreen_SetAnimDelayTaskId(u8 taskId)
 {
-    sAnimDelayTaskId = taskId;
+    if (BW_SUMMARY_SCREEN)
+        SummaryScreen_SetAnimDelayTaskId_BW(taskId);
+    else
+        sAnimDelayTaskId = taskId;
 }
 
 static void SummaryScreen_DestroyAnimDelayTask(void)

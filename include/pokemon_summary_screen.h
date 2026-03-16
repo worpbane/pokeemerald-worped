@@ -10,6 +10,7 @@ extern const u8 *const gNatureNamePointers[];
 
 extern const struct SpriteTemplate sSpriteTemplate_MoveTypes;
 extern const struct CompressedSpriteSheet sSpriteSheet_MoveTypes;
+extern MainCallback gInitialSummaryScreenCallback;
 
 void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, void (*callback)(void));
 void ShowSelectMovePokemonSummaryScreen(struct Pokemon *mons, u8 monIndex, u8 maxMonIndex, void (*callback)(void), u16 newMove);
@@ -25,6 +26,15 @@ enum PokemonSummaryScreenMode
     SUMMARY_MODE_LOCK_MOVES,
     SUMMARY_MODE_BOX,
     SUMMARY_MODE_SELECT_MOVE,
+};
+
+enum PokemonSummaryScreenPage
+{
+    PSS_PAGE_INFO,
+    PSS_PAGE_SKILLS,
+    PSS_PAGE_BATTLE_MOVES,
+    PSS_PAGE_CONTEST_MOVES,
+    PSS_PAGE_COUNT,
 };
 
 #endif // GUARD_POKEMON_SUMMARY_SCREEN_H

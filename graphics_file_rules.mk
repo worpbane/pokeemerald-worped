@@ -10,6 +10,7 @@ MASKSGFXDIR := graphics/battle_anims/masks
 BATTRANSGFXDIR := graphics/battle_transitions
 TYPESGFXDIR := graphics/types
 RAYQUAZAGFXDIR := graphics/rayquaza_scene
+TYPESBWGFXDIR := graphics/types_bw
 ROULETTEGFXDIR := graphics/roulette
 SLOTMACHINEGFXDIR := graphics/slot_machine
 PKNAVGFXDIR := graphics/pokenav
@@ -405,6 +406,9 @@ graphics/party_menu/bg.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 62 -Wnum_tiles
 
 $(TYPESGFXDIR)/move_types.4bpp: $(types:%=$(TYPESGFXDIR)/%.4bpp) $(contest_types:%=$(TYPESGFXDIR)/contest_%.4bpp)
+	@cat $^ >$@
+
+$(TYPESBWGFXDIR)/move_types_bw.4bpp: $(types:%=$(TYPESBWGFXDIR)/%.4bpp) $(contest_types:%=$(TYPESBWGFXDIR)/contest_%.4bpp)
 	@cat $^ >$@
 
 $(TYPESGFXDIR)/move_types.gbapal: $(TYPESGFXDIR)/move_types_1.gbapal \

@@ -1903,6 +1903,9 @@ const u8 gText_NuzlockeCantThrowPokeBallAlreadyCaught[]     = _("You have alread
 const u8 gText_OneTypeChallengeCantThrowPokeBall[]          = _("One Type Challenge active, capture\nblocked!{PAUSE_UNTIL_PRESS}");
 const u8 gText_BattleRules_NoItems_Player[]                 = _("Competitive rules!\nNo items in battle!{PAUSE_UNTIL_PRESS}");
 
+//BWSS Rename
+const u8 gText_Rename[] = _("Rename");
+
 
 //HGSS_Ui PokedexPlus
 const u8 gText_Stats_Buttons[]  = _("{A_BUTTON}Toggle   {DPAD_UPDOWN}Moves");

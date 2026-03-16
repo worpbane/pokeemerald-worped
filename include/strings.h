@@ -3219,4 +3219,7 @@ extern const u8 gText_UnitSystemMetric[];   //tx_optionsPlus
 extern const u8 gText_UnitSystemImperial[]; //tx_optionsPlus
 extern const u8 gText_Var1DotVar2_Metric[];
 
+//BWSS Summary Screen Rename
+extern const u8 gText_Rename[];
+
 #endif // GUARD_STRINGS_H
