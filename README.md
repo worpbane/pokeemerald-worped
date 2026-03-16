@@ -4,7 +4,7 @@ This is a simple edit of Resetes12's Modern Emerald ROM-hack to include a few fe
 
 Includes:
 * DexNav
-* Added some Pokemon from later gens that I like (WIPs)
+* Added some Pokemon from later gens that I like (WIPs and I have no idea how to add moves so they're goign to use GenIII moves)
 	- Lechonk
 	- Stufful
 * Move Info changed to L instead of Start
