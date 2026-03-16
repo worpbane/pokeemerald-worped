@@ -1,31 +1,47 @@
-# Pokemon Modern Emerald - Worped
+# Pokémon Modern Emerald – Worped
 
-This is a simple edit of Resetes12's Modern Emerald ROM-hack to include a few features I wanted. 
+This is a personal fork of Resetes12's Modern Emerald ROM hack.
 
-Includes:
-* DexNav
-* Added some Pokemon from later gens that I like (WIPs and I have no idea how to add moves so they're goign to use GenIII moves)
+The goal isn't to create a huge overhaul, but to tweak Emerald into a version I personally enjoy playing. Most of the changes are quality-of-life improvements, UI tweaks, and adding Pokémon from later generations that I like.
+
+I still have my original GBA copies of Sapphire and Emerald, and Hoenn has always been my favorite region. This project is mostly me experimenting with the pokeemerald codebase while building the version of Emerald I’d want to replay.
+
+## Features
+* Added some Pokémon from later generations (work in progress)
 	- Lechonk
 	- Stufful
-* Move Info changed to L instead of Start
+ 	- *(Currently using Gen III movesets until I figure out how to add proper ones.)*
+* Move Info changed from **Start → L**
 * Catch Mode Toggle
-* Gen5ish Party Menu - [Team Aqua's Hideout](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)
-* BW Summary Screen - [RavePossum - Vanilla](https://github.com/ravepossum/pokeemerald/blob/bw_summary_scree)/[RavePossum - Expansion](https://github.com/ravepossum/pokeemerald-expansion/blob/bw_summary_screen_expansion)
-	- Backported a bunch of stuff from the Expansion branch
+* **DexNav**
+  Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/dexnav)
+* **Gen 5–style Party Menu**  
+  Based on: [Team Aqua's Repo](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)
+* **Black/White Summary Screen**  
+  Based on:
+  * [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen)
+  * [RavePossum's Pokeemerald Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)
+    Some features were manually backported from the Expansion version.
 
+## Planned Features
 
+Additional Pokémon (space permitting):
 
-Planned:
-* Pokemon from later gens that I like if space permits
-	- Mimikyu
-	- Hatenna + Hattrem + Hatterene
-	- Buneary + Lopunny
-	- Paldean Wooper + Clodsire
-* Type Icons next to Pokemon during battles
+* Mimikyu
+* Hatenna → Hattrem → Hatterene
+* Buneary → Lopunny
+* Paldean Wooper → Clodsire
 
+UI Improvements:
 
-My code is really messey in some areas, this is my first time messing with this kind of thing. Just putt up in case anyone is interested.
+* Type icons next to Pokémon during battle
 
-# Pokémon Modern Emerald
+## Notes
 
-You can get more information about Modern Emerald at [Resetes12's repo](https://github.com/resetes12/pokeemerald).
+Some parts of the code are still messy — this is my first time working on a project like this.  
+I'm mainly uploading it in case anyone finds it useful or interesting.
+
+## Compiling Pokémon Modern Emerald - Worped
+
+For full build instructions, see [Pret's guide on building the rom]([https://github.com/resetes12/pokeemerald](https://github.com/pret/pokeemerald/blob/master/INSTALL.md)).
+Like Modern Emerald, use "make modern".
