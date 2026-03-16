@@ -13,6 +13,8 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
  	- *(Currently using Gen III movesets until I figure out how to add proper ones.)*
 * Move Info changed from **Start → L**
 * Catch Mode Toggle
+  Based on: [FlashLucky's Repo](https://github.com/Flash1Lucky/pokeemerald-expansion/tree/catch-mode-toggle)  
+  *(Backported from pokeemerald-expansion and modified to work with this project.)*
 * **DexNav**
   Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/dexnav)
 * **Gen 5–style Party Menu**  
@@ -20,8 +22,8 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
 * **Black/White Summary Screen**  
   Based on:
   * [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen)
-  * [RavePossum's Pokeemerald Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)
-    Some features were manually backported from the Expansion version.
+  * [RavePossum's Pokeemerald Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
+  *(Some features were manually backported from the pokeemerald-expansion version.)*
 
 ## Planned Features
 
