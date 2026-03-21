@@ -23,6 +23,9 @@ extern u8 NuzlockeIsCaptureBlocked;
 extern u8 NuzlockeIsSpeciesClauseActive;
 extern u8 OneTypeChallengeCaptureBlocked;
 
+//for integration with birch battle new ui case
+void CB2_GiveStarter(void);
+void CB2_GiveStarter_NewBirchUI(void);
 void BattleSetup_StartWildBattle(void);
 void BattleSetup_StartBattlePikeWildBattle(void);
 void BattleSetup_StartRoamerBattle(void);

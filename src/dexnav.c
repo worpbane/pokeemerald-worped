@@ -125,7 +125,7 @@ struct DexNavGUI
 
 EWRAM_DATA static struct DexNavSearch *sDexNavSearchDataPtr = NULL;
 EWRAM_DATA static struct DexNavGUI *sDexNavUiDataPtr = NULL;
-EWRAM_DATA static u8 *sBg1TilemapBuffer = NULL;
+EWRAM_DATA u8 *sBg1TilemapBuffer = NULL;
 EWRAM_DATA bool8 gDexnavBattle = FALSE;
 
 //// Function Declarations

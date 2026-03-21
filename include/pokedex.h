@@ -43,4 +43,6 @@ void ResetPokedexScrollPositions(void);
 bool16 HasAllMons(void);
 void CB2_OpenPokedex(void);
 
+const u8 *GetPokedexCategoryName(u16 dexNum);
+
 #endif // GUARD_POKEDEX_H

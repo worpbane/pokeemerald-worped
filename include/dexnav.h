@@ -132,5 +132,6 @@ void IncrementDexNavChain(void);
 //ewram
 extern u8 gCurrentDexNavChain;
 extern bool8 gDexnavBattle;
+extern u8 *sBg1TilemapBuffer;
 
 #endif //GUARD_DEXNAV_H

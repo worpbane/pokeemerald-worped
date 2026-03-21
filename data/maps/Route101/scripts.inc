@@ -229,7 +229,8 @@ Route101_EventScript_BirchsBag::
 	setobjectxy OBJ_EVENT_ID_PLAYER, 6, 13
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
-	special ChooseStarter
+	@special ChooseStarter @default starter logic
+	callnative StartNewPokeballCaseUIForBirchBattle
 	waitstate
 	setflag FLAG_SYS_POKEMON_GET
 	applymovement LOCALID_BIRCH, Route101_Movement_BirchApproachPlayer
