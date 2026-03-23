@@ -2,10 +2,13 @@
 #define GUARD_tilesets_H
 
 extern const u32 gTilesetTiles_General[];
+extern const u32 gTilesetTiles_GeneralSummer[];
+extern const u32 gTilesetTiles_GeneralAutumn[];
+extern const u32 gTilesetTiles_GeneralWinter[];
 extern const u16 gTilesetPalettes_General[][16];
-extern const u16 gTilesetPalettes_General_Summer[][16];
-extern const u16 gTilesetPalettes_General_Autumn[][16];
-extern const u16 gTilesetPalettes_General_Winter[][16];
+extern const u16 gTilesetPalettes_GeneralSummer[][16];
+extern const u16 gTilesetPalettes_GeneralAutumn[][16];
+extern const u16 gTilesetPalettes_GeneralWinter[][16];
 
 extern const struct Tileset * const gTilesetPointer_SecretBase;
 extern const struct Tileset * const gTilesetPointer_SecretBaseRedCave;

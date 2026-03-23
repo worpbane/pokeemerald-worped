@@ -17,6 +17,7 @@
 #include "constants/rgb.h"
 #include "constants/metatile_behaviors.h"
 #include "wild_encounter.h"
+#include "constants/layouts.h"
 #include "event_data.h"
 
 struct ConnectionFlags
@@ -876,66 +877,35 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
 {
     u32 low = 0;
     u32 high = 0;
-	u8 season = getCurrentSeason();
-	
-	const u16 (*palettes)[16] = NULL;
 
     if (tileset)
     {
-		//Select Palette based on Season
-		switch (season)
-        {
-            case SEASON_SUMMER:
-                if (tileset->palettes_summer)
-                    palettes = tileset->palettes_summer;
-				else
-					palettes = tileset->palettes;
-                break;
-            case SEASON_AUTUMN:
-                if (tileset->palettes_autumn)
-                    palettes = tileset->palettes_autumn;
-				else
-					palettes = tileset->palettes;
-                break;
-            case SEASON_WINTER:
-                if (tileset->palettes_winter)
-                    palettes = tileset->palettes_winter;
-				else
-					palettes = tileset->palettes;
-                break;
-            case SEASON_SPRING:
-            default:
-                palettes = tileset->palettes;
-                break;
-        }
-		//Primary Tileset
         if (tileset->isSecondary == FALSE)
         {
             // LoadPalette(&black, destOffset, 2);
             if (skipFaded)
-                CpuFastCopy(palettes, &gPlttBufferUnfaded[destOffset], size);
+                CpuFastCopy(tileset->palettes, &gPlttBufferUnfaded[destOffset], size);
             else
-                LoadPaletteFast(palettes, destOffset, size);
+                LoadPaletteFast(tileset->palettes, destOffset, size);
             gPlttBufferFaded[destOffset] = gPlttBufferUnfaded[destOffset] = RGB_BLACK; // why does it have to be black?
             ApplyGlobalTintToPaletteEntries(destOffset + 1, (size - 2) >> 1);
             low = 0;
             high = NUM_PALS_IN_PRIMARY;
         }
-		//Secondary Tileset
         else if (tileset->isSecondary == TRUE)
         {
             // (void*) is to silence 'source potentially unaligned' error
             // All 'gTilesetPalettes_' arrays should have ALIGNED(4) in them
             if (skipFaded)
-                CpuFastCopy((void*)palettes[NUM_PALS_IN_PRIMARY], &gPlttBufferUnfaded[destOffset], size);
+                CpuFastCopy((void*)tileset->palettes[NUM_PALS_IN_PRIMARY], &gPlttBufferUnfaded[destOffset], size);
             else
-                LoadPaletteFast(palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+                LoadPaletteFast(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
             low = NUM_PALS_IN_PRIMARY;
             high = NUM_PALS_TOTAL;
         }
         else
         {
-            LoadCompressedPalette((const u32 *)palettes, destOffset, size);
+            LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
         }
         // convert legacy light palette system to current
@@ -980,20 +950,86 @@ void LoadSecondaryTilesetPalette(struct MapLayout const *mapLayout, bool8 skipFa
     LoadTilesetPalette(mapLayout->secondaryTileset, NUM_PALS_IN_PRIMARY * 16, (NUM_PALS_TOTAL - NUM_PALS_IN_PRIMARY) * PLTT_SIZE_4BPP, skipFaded);
 }
 
+extern struct Tileset const gTileset_General;
+extern struct Tileset const gTileset_GeneralSummer;
+extern struct Tileset const gTileset_GeneralAutumn;
+extern struct Tileset const gTileset_GeneralWinter;
 void CopyMapTilesetsToVram(struct MapLayout const *mapLayout)
 {
-    if (mapLayout)
+     u8 season;
+
+    // Determine current season
+    if (!gSaveBlock2Ptr->optionsSeasons)
+        season = getCurrentSeason(); // returns SEASON_SPRING..SEASON_WINTER
+    else
+        season = SEASON_SPRING; // fallback
+
+    // If the map uses the general tileset, swap to seasonal
+    if (mapLayout->primaryTileset == &gTileset_General)
     {
+        switch (season)
+        {
+            case SEASON_SPRING:
+                CopyTilesetToVramUsingHeap(&gTileset_General, NUM_TILES_IN_PRIMARY, 0);
+                break;
+            case SEASON_SUMMER:
+                CopyTilesetToVramUsingHeap(&gTileset_GeneralSummer, NUM_TILES_IN_PRIMARY, 0);
+                break;
+            case SEASON_AUTUMN:
+                CopyTilesetToVramUsingHeap(&gTileset_GeneralAutumn, NUM_TILES_IN_PRIMARY, 0);
+                break;
+            case SEASON_WINTER:
+                CopyTilesetToVramUsingHeap(&gTileset_GeneralWinter, NUM_TILES_IN_PRIMARY, 0);
+                break;
+        }
+
+        // Copy secondary tileset normally
+        CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - NUM_TILES_IN_PRIMARY, NUM_TILES_IN_PRIMARY);
+    }
+    else
+    {
+        // Non-general tileset, copy normally
         CopyTilesetToVramUsingHeap(mapLayout->primaryTileset, NUM_TILES_IN_PRIMARY, 0);
         CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - NUM_TILES_IN_PRIMARY, NUM_TILES_IN_PRIMARY);
     }
 }
 
+extern const struct MapLayout *const gMapLayouts[];
+
 void LoadMapTilesetPalettes(struct MapLayout const *mapLayout)
 {
+    u8 season;
+
+    if (!gSaveBlock2Ptr->optionsSeasons)
+        season = getCurrentSeason();
+    else
+        season = SEASON_SPRING;
+
     if (mapLayout)
     {
-        LoadPrimaryTilesetPalette(mapLayout);
+        if (mapLayout->primaryTileset == &gTileset_General)
+        {
+            switch(season)
+            {
+                case SEASON_SPRING:
+                    LoadPrimaryTilesetPalette(gMapLayouts[LAYOUT_DUMMY_SPRING_LAYOUT - 1]);
+                    break;
+                case SEASON_SUMMER:
+                    LoadPrimaryTilesetPalette(gMapLayouts[LAYOUT_DUMMY_SUMMER_LAYOUT - 1]);
+                    break;
+                case SEASON_AUTUMN:
+                    LoadPrimaryTilesetPalette(gMapLayouts[LAYOUT_DUMMY_AUTUMN_LAYOUT - 1]);
+                    break;
+                case SEASON_WINTER:
+                    LoadPrimaryTilesetPalette(gMapLayouts[LAYOUT_DUMMY_WINTER_LAYOUT - 1]);
+                    break;
+            }
+        }
+        else
+        {
+            LoadPrimaryTilesetPalette(mapLayout);
+        }
+
         LoadSecondaryTilesetPalette(mapLayout, FALSE);
     }
 }

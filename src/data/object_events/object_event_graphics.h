@@ -346,11 +346,6 @@ const u32 gObjectEventPic_Lucy[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Brandon[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/brandon.4bpp");
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
 
-//WORP: Seasons Palettes
-const u16 gFieldEffectObjectPaletteSummer[] = INCBIN_U16("data/tilesets/primary/general/palettes/summer/02.gbapal");
-const u16 gFieldEffectObjectPaletteAutumn[] = INCBIN_U16("data/tilesets/primary/general/palettes/autumn/02.gbapal");
-const u16 gFieldEffectObjectPaletteWinter[] = INCBIN_U16("data/tilesets/primary/general/palettes/winter/02.gbapal");
-
 // Normally, INCBIN_COMP acts like INCBIN_U32, but appends `.lz` to the file, compressing it;
 // If not compressing follower gfx, make this an alias to INCBIN_32, so gfx will *not* be compressed
 #if !(OW_GFX_COMPRESS)
