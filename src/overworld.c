@@ -1545,7 +1545,8 @@ const struct BlendSettings gTimeOfDayBlend[] =
     [TIME_OF_DAY_DAY] = {.coeff = 0, .blendColor = 0},
 };
 
-u8 UpdateTimeOfDay(void) {
+u8 UpdateTimeOfDay(void)
+{
     s32 hours, minutes;
     RtcCalcLocalTime();
     hours = gLocalTime.hours;
@@ -1587,6 +1588,35 @@ u8 UpdateTimeOfDay(void) {
         gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
     }
     return gTimeOfDay;
+}
+
+u8 UpdateSeason(void)
+{
+	u32 hours = gSaveBlock2Ptr->playTimeHours;
+    u32 weeks = hours / (24 * 7); //Use playtime to determine Season based on week.
+	u8 offset = VarGet(VAR_SEASON_OFFSET);
+	
+	u8 newSeason;
+
+    switch ((weeks + offset) % 4)
+    {
+        case 0: newSeason = SEASON_SPRING; break;
+        case 1: newSeason = SEASON_SUMMER; break;
+        case 2: newSeason = SEASON_AUTUMN; break;
+        case 3: newSeason = SEASON_WINTER; break;
+        default: newSeason = SEASON_SPRING; break;
+    }
+
+    VarSet(VAR_SEASON_STATE, newSeason);
+    return newSeason;
+}
+
+void AdvanceSeason(void)
+{
+    u8 offset = VarGet(VAR_SEASON_OFFSET);
+    VarSet(VAR_SEASON_OFFSET, (offset + 1) % 4);
+	
+	UpdateSeason();
 }
 
 bool8 MapHasNaturalLight(u8 mapType) { // Whether a map type is naturally lit/outside
@@ -1682,6 +1712,8 @@ static void OverworldBasic(void)
         };
         gTimeUpdateCounter = 0;
         UpdateTimeOfDay();
+		if (!gSaveBlock2Ptr->optionsSeasons)
+        UpdateSeason();
         if (cachedBlend.time0 != currentTimeBlend.time0
             || cachedBlend.time1 != currentTimeBlend.time1
             || cachedBlend.weight != currentTimeBlend.weight)

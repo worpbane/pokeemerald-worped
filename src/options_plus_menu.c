@@ -35,6 +35,7 @@ enum
     MENUITEM_MAIN_TEXTSPEED,
     MENUITEM_MAIN_FONT,
     MENUITEM_MAIN_DIFFICULTY,
+	MENUITEM_MAIN_SEASONS,
     MENUITEM_MAIN_BUTTONMODE,
     MENUITEM_MAIN_FOLLOWER,
     MENUITEM_MAIN_LARGE_FOLLOWER,
@@ -44,7 +45,6 @@ enum
     MENUITEM_MAIN_AUTORUN_SURF,
     MENUITEM_MAIN_AUTORUN_DIVE,
     MENUITEM_MAIN_FISHING,
-    MENUITEM_MAIN_EVEN_FASTER_JOY,
     MENUITEM_MAIN_UNIT_TYPE,
     MENUITEM_MAIN_SKIP_INTRO,
     MENUITEM_MAIN_FRAMETYPE,
@@ -210,7 +210,6 @@ static void DrawChoices_Fishing(int selection, int y);
 static void DrawChoices_FastIntro(int selection, int y);
 static void DrawChoices_FastBattles(int selection, int y);
 static void DrawChoices_BikeMusic(int selection, int y);
-static void DrawChoices_EvenFasterJoy(int selection, int y);
 static void DrawChoices_SurfMusic(int selection, int y);
 static void DrawChoices_Wild_Battle_Music(int selection, int y);
 static void DrawChoices_Trainer_Battle_Music(int selection, int y);
@@ -226,6 +225,7 @@ static void DrawChoices_Run_Type(int selection, int y);
 static void DrawChoices_Autorun_Surf(int selection, int y);
 static void DrawChoices_Autorun_Dive(int selection, int y);
 static void DrawChoices_SurfOverworld(int selection, int y);
+static void DrawChoices_Seasons(int selection, int y);
 static void DrawChoices_Font(int selection, int y);
 static void DrawBgWindowFrames(void);
 
@@ -272,11 +272,11 @@ struct // MENU_MAIN
     [MENUITEM_MAIN_AUTORUN_DIVE]            = {DrawChoices_Autorun_Dive,     ProcessInput_Options_Two},
     [MENUITEM_MAIN_MATCHCALL]               = {DrawChoices_MatchCall,        ProcessInput_Options_Two},
     [MENUITEM_MAIN_FISHING]                 = {DrawChoices_Fishing,          ProcessInput_Options_Two},
-    [MENUITEM_MAIN_EVEN_FASTER_JOY]         = {DrawChoices_EvenFasterJoy,    ProcessInput_Options_Two},
     [MENUITEM_MAIN_SKIP_INTRO]              = {DrawChoices_Skip_Intro,       ProcessInput_Options_Two},
     [MENUITEM_MAIN_UNIT_TYPE]               = {DrawChoices_Unit_Type,        ProcessInput_Options_Two},
     [MENUITEM_MAIN_FRAMETYPE]               = {DrawChoices_FrameType,        ProcessInput_FrameType},
     [MENUITEM_MAIN_SURFOVERWORLD]           = {DrawChoices_SurfOverworld,    ProcessInput_Options_Two},
+	[MENUITEM_MAIN_SEASONS]                 = {DrawChoices_Seasons,          ProcessInput_Options_Two},
 };
 
 struct // MENU_CUSTOM
@@ -320,7 +320,6 @@ static const u8 sText_OptionFishing[]             = _("EASIER FISHING");
 static const u8 sText_OptionFastIntro[]           = _("FAST INTRO");
 static const u8 sText_OptionLargeFollower[]       = _("BIG FOLLOWERS");
 static const u8 sText_OptionFastBattles[]         = _("FAST BATTLES");
-static const u8 sText_OptionEvenFasterJoy[]       = _("EVEN FASTER JOY");
 static const u8 sText_OptionSkipIntro[]           = _("SKIP INTRO");
 static const u8 sText_OptionLR_Run[]              = _("RUN PROMPT");
 static const u8 sText_OptionBallPrompt[]          = _("BALL PROMPT");
@@ -332,6 +331,7 @@ static const u8 sText_AutorunEnable_Surf[]        = _("AUTORUN (SURF)");
 static const u8 sText_AutorunEnable_Dive[]        = _("AUTORUN (DIVE)");
 static const u8 sText_SurfSprites[]               = _("SURF SPRITES");
 static const u8 sText_FontType[]                  = _("FONT TYPE");
+static const u8 sText_OptionsSeasons[]            = _("SEASONS");
 static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
 {
     [MENUITEM_MAIN_TEXTSPEED]           = gText_TextSpeed,
@@ -345,11 +345,11 @@ static const u8 *const sOptionMenuItemsNamesMain[MENUITEM_MAIN_COUNT] =
     [MENUITEM_MAIN_AUTORUN_DIVE]        = sText_AutorunEnable_Dive,
     [MENUITEM_MAIN_MATCHCALL]           = gText_OptionMatchCalls,
     [MENUITEM_MAIN_FISHING]             = sText_OptionFishing,
-    [MENUITEM_MAIN_EVEN_FASTER_JOY]     = sText_OptionEvenFasterJoy,
     [MENUITEM_MAIN_SKIP_INTRO]          = sText_OptionSkipIntro,
     [MENUITEM_MAIN_UNIT_TYPE]           = sText_OptionUnitType,
     [MENUITEM_MAIN_FRAMETYPE]           = gText_Frame,
     [MENUITEM_MAIN_SURFOVERWORLD]       = sText_SurfSprites,
+	[MENUITEM_MAIN_SEASONS]             = sText_OptionsSeasons,
 };
 
 static const u8 *const sOptionMenuItemsNamesCustom[MENUITEM_BATTLE_COUNT] =
@@ -418,10 +418,10 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_MAIN_COUNT:             return TRUE;
         case MENUITEM_MAIN_MATCHCALL:         return TRUE;
         case MENUITEM_MAIN_FISHING:           return TRUE;
-        case MENUITEM_MAIN_EVEN_FASTER_JOY:   return TRUE;
         case MENUITEM_MAIN_SKIP_INTRO:        return TRUE;
         case MENUITEM_MAIN_UNIT_TYPE:         return TRUE;
         case MENUITEM_MAIN_SURFOVERWORLD:     return TRUE;
+		case MENUITEM_MAIN_SEASONS:           return TRUE;
         }
     case MENU_CUSTOM:
         switch(selection)
@@ -435,6 +435,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_BATTLE_RUN_TYPE:        return TRUE;
         case MENUITEM_BATTLE_LR_RUN:          return sOptions->sel_battle[MENUITEM_BATTLE_RUN_TYPE] == 1 || sOptions->sel_battle[MENUITEM_BATTLE_RUN_TYPE] == 3;
         case MENUITEM_BATTLE_BALL_PROMPT:     return TRUE;
+        case MENUITEM_BATTLE_CATCH_MODE:      return TRUE;
         case MENUITEM_BATTLE_COUNT:           return TRUE;
         case MENUITEM_BATTLE_NEW_BACKGROUNDS: return TRUE;
         }
@@ -482,8 +483,6 @@ static const u8 sText_Desc_AutorunDiveOn[]         = _("Surf underwater faster\n
 static const u8 sText_Desc_AutorunDiveOff[]        = _("Press and hold B to surf\nunderwater faster.");
 static const u8 sText_Desc_FishingOn[]             = _("Automatically reel while fishing.");
 static const u8 sText_Desc_FishingOff[]            = _("Manually reel while fishing.\nFish like you always fished!");
-static const u8 sText_Desc_EvenFasterJoyOn[]       = _("Nurse Joy heals you extremely fast.\nFor those who cannot wait.");
-static const u8 sText_Desc_EvenFasterJoyOff[]      = _("Nurse Joy heals you fast, but\nwith the usual animation.");
 static const u8 sText_Desc_SkipIntroOn[]           = _("Skips the Copyright screen and\nintro. Applies to soft-resets.");
 static const u8 sText_Desc_SkipIntroOff[]          = _("Shows the Copyright screen and\nthe game's introduction.");
 static const u8 sText_Desc_OverworldCallsOn[]      = _("Trainers will be able to call you,\noffering rematches and info.");
@@ -492,6 +491,8 @@ static const u8 sText_Desc_Units_Imperial[]        = _("Display Berry and Pokém
 static const u8 sText_Desc_Units_Metric[]          = _("Display Berry and Pokémon weight\nand size in kilograms and meters.");
 static const u8 sText_Desc_SurfOverworldDynamic[]       = _("Use the Pokémon's sprite when\nsurfing.");
 static const u8 sText_Desc_SurfOverworldOriginal[]      = _("Use the original generic sprite when\nsurfing.");
+static const u8 sText_Desc_SeasonsOn[]   			    = _("{COLOR 5}{COLOR 6}Seasons{COLOR 2} change as time passes,\naltering the overworld’s appearance.");
+static const u8 sText_Desc_SeasonsOff[]   			    = _("The overworld remains unchanged,\nwithout {COLOR 5}{COLOR 6}seasonal variation.{COLOR 2}");
 static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
 {
     [MENUITEM_MAIN_TEXTSPEED]         = {sText_Desc_TextSpeed,            sText_Empty,                     sText_Empty},
@@ -506,10 +507,10 @@ static const u8 *const sOptionMenuItemDescriptionsMain[MENUITEM_MAIN_COUNT][3] =
     [MENUITEM_MAIN_AUTORUN_DIVE]      = {sText_Desc_AutorunDiveOn,        sText_Desc_AutorunDiveOff},
     [MENUITEM_MAIN_MATCHCALL]         = {sText_Desc_OverworldCallsOn,     sText_Desc_OverworldCallsOff},
     [MENUITEM_MAIN_FISHING]           = {sText_Desc_FishingOn,            sText_Desc_FishingOff},
-    [MENUITEM_MAIN_EVEN_FASTER_JOY]   = {sText_Desc_EvenFasterJoyOn,      sText_Desc_EvenFasterJoyOff},
     [MENUITEM_MAIN_SKIP_INTRO]        = {sText_Desc_SkipIntroOn,          sText_Desc_SkipIntroOff},
     [MENUITEM_MAIN_UNIT_TYPE]         = {sText_Desc_Units_Metric,         sText_Desc_Units_Imperial},
     [MENUITEM_MAIN_SURFOVERWORLD]     = {sText_Desc_SurfOverworldDynamic, sText_Desc_SurfOverworldOriginal},
+	[MENUITEM_MAIN_SEASONS]           = {sText_Desc_SeasonsOn,            sText_Desc_SeasonsOff},
 };
 
 // Custom {PKMN}
@@ -595,9 +596,9 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledMain[MENUITEM_MAIN_COU
     [MENUITEM_MAIN_AUTORUN_DIVE]      = sText_Empty,
     [MENUITEM_MAIN_MATCHCALL]         = sText_Empty,
     [MENUITEM_MAIN_FISHING]           = sText_Empty,
-    [MENUITEM_MAIN_EVEN_FASTER_JOY]   = sText_Empty,
     [MENUITEM_MAIN_SKIP_INTRO]        = sText_Empty,
     [MENUITEM_MAIN_SURFOVERWORLD]     = sText_Empty,
+    [MENUITEM_MAIN_SEASONS]           = sText_Empty,
 };
 
 // Disabled Custom
@@ -875,10 +876,10 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel[MENUITEM_MAIN_FRAMETYPE]           = gSaveBlock2Ptr->optionsWindowFrameType;
         sOptions->sel[MENUITEM_MAIN_MATCHCALL]           = gSaveBlock2Ptr->optionsDisableMatchCall;
         sOptions->sel[MENUITEM_MAIN_FISHING]             = gSaveBlock2Ptr->optionsFishing;
-        sOptions->sel[MENUITEM_MAIN_EVEN_FASTER_JOY]     = gSaveBlock2Ptr->optionsEvenFasterJoy;
         sOptions->sel[MENUITEM_MAIN_SKIP_INTRO]          = gSaveBlock2Ptr->optionsSkipIntro;
         sOptions->sel[MENUITEM_MAIN_UNIT_TYPE]           = gSaveBlock2Ptr->optionsUnitSystem;
         sOptions->sel[MENUITEM_MAIN_SURFOVERWORLD]       = gSaveBlock2Ptr->optionsSurfOverworld;
+        sOptions->sel[MENUITEM_MAIN_SEASONS]             = gSaveBlock2Ptr->optionsSeasons;
 
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]       = gSaveBlock2Ptr->optionsBattleStyle;
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]       = gSaveBlock2Ptr->optionsBattleSceneOff;
@@ -888,7 +889,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_battle[MENUITEM_BATTLE_TYPE_EFFECTIVE]    = gSaveBlock2Ptr->optionTypeEffective;
         sOptions->sel_battle[MENUITEM_BATTLE_LR_RUN]            = gSaveBlock2Ptr->optionsLRtoRun;
         sOptions->sel_battle[MENUITEM_BATTLE_BALL_PROMPT]       = gSaveBlock2Ptr->optionsBallPrompt;
-        sOptions->sel_battle[MENUITEM_BATTLE_CATCH_MODE]       = gSaveBlock2Ptr->optionsCatchMode;
+        sOptions->sel_battle[MENUITEM_BATTLE_CATCH_MODE]        = gSaveBlock2Ptr->optionsCatchMode;
         sOptions->sel_battle[MENUITEM_BATTLE_NEW_BACKGROUNDS]   = gSaveBlock2Ptr->optionsNewBackgrounds;
         sOptions->sel_battle[MENUITEM_BATTLE_RUN_TYPE]          = gSaveBlock2Ptr->optionsRunType;
 
@@ -1114,10 +1115,10 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsDisableMatchCall      = sOptions->sel[MENUITEM_MAIN_MATCHCALL];
     gSaveBlock2Ptr->optionsWindowFrameType       = sOptions->sel[MENUITEM_MAIN_FRAMETYPE];
     gSaveBlock2Ptr->optionsFishing               = sOptions->sel[MENUITEM_MAIN_FISHING];
-    gSaveBlock2Ptr->optionsEvenFasterJoy         = sOptions->sel[MENUITEM_MAIN_EVEN_FASTER_JOY];
     gSaveBlock2Ptr->optionsSkipIntro             = sOptions->sel[MENUITEM_MAIN_SKIP_INTRO];
     gSaveBlock2Ptr->optionsUnitSystem            = sOptions->sel[MENUITEM_MAIN_UNIT_TYPE];
     gSaveBlock2Ptr->optionsSurfOverworld         = sOptions->sel[MENUITEM_MAIN_SURFOVERWORLD];
+    gSaveBlock2Ptr->optionsSeasons     		     = sOptions->sel[MENUITEM_MAIN_SEASONS];
 
     gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE];
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE];
@@ -1837,27 +1838,6 @@ static void DrawChoices_BikeMusic(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-static void DrawChoices_EvenFasterJoy(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_MAIN_EVEN_FASTER_JOY);
-    u8 styles[2] = {0};
-    styles[selection] = 1;
-
-    if (selection == 0)
-    {
-        gSaveBlock2Ptr->optionsEvenFasterJoy = 0; //extremely fast joy
-        FlagSet(FLAG_EVEN_FASTER_JOY);
-    }
-    else
-    {
-        gSaveBlock2Ptr->optionsEvenFasterJoy = 1; //normal joy
-        FlagClear(FLAG_EVEN_FASTER_JOY);
-    }
-
-    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
-    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
-}
-
 static void DrawChoices_SurfMusic(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_SOUND_SURF_MUSIC);
@@ -2113,6 +2093,24 @@ static void DrawChoices_Font(int selection, int y)
 
     DrawOptionMenuChoice(sText_Em, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_FRLG, GetStringRightAlignXOffset(1, sText_FRLG, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Seasons(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_MAIN_SEASONS);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    if (selection == 0)
+    {
+        gSaveBlock2Ptr->optionsSeasons = 0; //Enables Seasons
+    }
+    else
+    {
+        gSaveBlock2Ptr->optionsSeasons = 1; //Disables Seasons
+    }
+    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
+    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
 

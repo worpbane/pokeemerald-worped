@@ -17,6 +17,7 @@
 #include "constants/rgb.h"
 #include "constants/metatile_behaviors.h"
 #include "wild_encounter.h"
+#include "event_data.h"
 
 struct ConnectionFlags
 {
@@ -875,35 +876,66 @@ static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u1
 {
     u32 low = 0;
     u32 high = 0;
+	u8 season = getCurrentSeason();
+	
+	const u16 (*palettes)[16] = NULL;
 
     if (tileset)
     {
+		//Select Palette based on Season
+		switch (season)
+        {
+            case SEASON_SUMMER:
+                if (tileset->palettes_summer)
+                    palettes = tileset->palettes_summer;
+				else
+					palettes = tileset->palettes;
+                break;
+            case SEASON_AUTUMN:
+                if (tileset->palettes_autumn)
+                    palettes = tileset->palettes_autumn;
+				else
+					palettes = tileset->palettes;
+                break;
+            case SEASON_WINTER:
+                if (tileset->palettes_winter)
+                    palettes = tileset->palettes_winter;
+				else
+					palettes = tileset->palettes;
+                break;
+            case SEASON_SPRING:
+            default:
+                palettes = tileset->palettes;
+                break;
+        }
+		//Primary Tileset
         if (tileset->isSecondary == FALSE)
         {
             // LoadPalette(&black, destOffset, 2);
             if (skipFaded)
-                CpuFastCopy(tileset->palettes, &gPlttBufferUnfaded[destOffset], size);
+                CpuFastCopy(palettes, &gPlttBufferUnfaded[destOffset], size);
             else
-                LoadPaletteFast(tileset->palettes, destOffset, size);
+                LoadPaletteFast(palettes, destOffset, size);
             gPlttBufferFaded[destOffset] = gPlttBufferUnfaded[destOffset] = RGB_BLACK; // why does it have to be black?
             ApplyGlobalTintToPaletteEntries(destOffset + 1, (size - 2) >> 1);
             low = 0;
             high = NUM_PALS_IN_PRIMARY;
         }
+		//Secondary Tileset
         else if (tileset->isSecondary == TRUE)
         {
             // (void*) is to silence 'source potentially unaligned' error
             // All 'gTilesetPalettes_' arrays should have ALIGNED(4) in them
             if (skipFaded)
-                CpuFastCopy((void*)tileset->palettes[NUM_PALS_IN_PRIMARY], &gPlttBufferUnfaded[destOffset], size);
+                CpuFastCopy((void*)palettes[NUM_PALS_IN_PRIMARY], &gPlttBufferUnfaded[destOffset], size);
             else
-                LoadPaletteFast(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
+                LoadPaletteFast(palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
             low = NUM_PALS_IN_PRIMARY;
             high = NUM_PALS_TOTAL;
         }
         else
         {
-            LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
+            LoadCompressedPalette((const u32 *)palettes, destOffset, size);
             ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
         }
         // convert legacy light palette system to current

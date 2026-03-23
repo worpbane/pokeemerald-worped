@@ -2764,7 +2764,7 @@ bool32 CanThrowLastUsedBall(void)
 //Catch Mode Bool
 bool32 CanUseCatchMode(void)
 {
-	if (gSaveBlock2Ptr->optionsCatchMode == 1)
+	if (gSaveBlock2Ptr->optionsCatchMode)
         return FALSE;
     if (FlagGet(FLAG_SYS_NO_CATCHING) == 1)
         return FALSE;
@@ -2869,7 +2869,7 @@ static void UpdateCatchModeWindowGfx(struct Sprite *sprite)
 
 static void TryAddCatchModePanel(void)
 {
-    if (gSaveBlock2Ptr->optionsCatchMode == 1)
+    if (gSaveBlock2Ptr->optionsCatchMode)
     {
         return;
     }
@@ -2978,7 +2978,7 @@ static void TryHideOrRestoreLastUsedBall(u8 caseId)
 
 static void TryHideOrRestoreCatchModePanel(u8 caseId)
 {
-    if (gSaveBlock2Ptr->optionsCatchMode == 1)
+    if (gSaveBlock2Ptr->optionsCatchMode)
         return;
     if (gBattleStruct->catchModeHintSpriteId == MAX_SPRITES)
         return;
@@ -3014,7 +3014,7 @@ void TryRestoreLastUsedBall(void)
 
 void TryHideCatchModeWindow(void)
 {
-    if (gSaveBlock2Ptr->optionsCatchMode == 0)
+    if (!gSaveBlock2Ptr->optionsCatchMode)
     {
         TryHideOrRestoreCatchModePanel(0);
     }
