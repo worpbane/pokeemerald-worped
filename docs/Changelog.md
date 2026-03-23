@@ -30,8 +30,10 @@
 - Starter selection expanded to include 9 Pokémon, featuring all starters from **Gen I–III**
 - Catch Mode toggle implemented in **Wild Battles**  
 - DexNav implemented in areas with **Wild Pokémon**  
-- **Season System implemented**
-  - Season can be manually advanced by interacting with the **GameCube in the player's room**
+- **Season System**
+  - Seasons change weekly and affect **overworld visuals only** (no gameplay impact)  
+  - Can be toggled in the **Start Menu**  
+  - Manually advance seasons by interacting with the **GameCube in the player's room**
 
 ---
 

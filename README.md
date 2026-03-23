@@ -33,7 +33,7 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
   
 * **Seasons**
   Based on: [BelialClover's Commit](https://github.com/pret/pokeemerald/commit/1cdd1d0a877fc2e0929f84a33b6d9e4045102825)  
-  *(Seasons change weekly, affect overworld visuals only (no gameplay impact), and can be advanced via the GameCube. Toggle available in the Start Menu.)*
+  *(Seasons change weekly, affect overworld visuals only (no gameplay impact), can be advanced via the GameCube, and toggleable in the Start Menu. Implementation also incorporates methods from Emerald Enhanced for overworld tileset updates.)*
 
 ---
 
