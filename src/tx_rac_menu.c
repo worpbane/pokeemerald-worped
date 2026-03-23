@@ -71,6 +71,7 @@ enum
     MENUITEM_FEATURES_UNLIMITED_WT,
     MENUITEM_FEATURES_EASY_FEEBAS,
     MENUITEM_FEATURES_FRONTIER_BANS,
+    MENUITEM_FEATURES_SEASONS,
     MENUITEM_FEATURES_NEXT,
     MENUITEM_FEATURES_COUNT,
 };
@@ -327,6 +328,7 @@ static void DrawChoices_Mode_Modern_Moves(int selection, int y);
 static void DrawChoices_Mode_Legendary_Abilities(int selection, int y);
 static void DrawChoices_Mode_New_Legendaries(int selection, int y);
 static void DrawChoices_Features_FrontierBans(int selection, int y);
+static void DrawChoices_Features_Seasons(int selection, int y);
 static void DrawChoices_Difficulty_HardExp(int selection, int y);
 static void DrawChoices_Difficulty_CatchRate(int selection, int y);
 static void DrawChoices_Mode_New_Effectiveness(int selection, int y);
@@ -395,6 +397,7 @@ struct // MENU_FEATURES
     [MENUITEM_FEATURES_EASY_FEEBAS]           = {DrawChoices_Features_EasyFeebas,           ProcessInput_Options_Two},
     [MENUITEM_FEATURES_UNLIMITED_WT]          = {DrawChoices_Features_Unlimited_WT,         ProcessInput_Options_Two},
     [MENUITEM_FEATURES_FRONTIER_BANS]         = {DrawChoices_Features_FrontierBans,         ProcessInput_Options_Two},
+    [MENUITEM_FEATURES_SEASONS]      	      = {DrawChoices_Features_Seasons,       	    ProcessInput_Options_Two},
     [MENUITEM_FEATURES_SHINY_COLOR]           = {DrawChoices_Features_Shiny_Colors,          ProcessInput_Options_Two},
     [MENUITEM_FEATURES_NEXT]                  = {NULL, NULL},
 };
@@ -522,6 +525,7 @@ static const u8 sText_ItemDrop[]            = _("ITEM DROP");
 static const u8 sText_EasyFeebas[]          = _("EASIER FEEBAS");
 static const u8 sText_Unlimited_WT[]        = _("UNLIMITED WT");
 static const u8 sText_FrontierBans[]        = _("FRONTIER BANS");
+static const u8 sText_Seasons[]  	        = _("SEASONS");
 static const u8 sText_Shiny_Colors[]        = _("SHINY COLORS");
 // Menu left side option names text
 static const u8 *const sOptionMenuItemsNamesFeatures[MENUITEM_FEATURES_COUNT] =
@@ -532,6 +536,7 @@ static const u8 *const sOptionMenuItemsNamesFeatures[MENUITEM_FEATURES_COUNT] =
     [MENUITEM_FEATURES_EASY_FEEBAS]               = sText_EasyFeebas,
     [MENUITEM_FEATURES_UNLIMITED_WT]              = sText_Unlimited_WT,
     [MENUITEM_FEATURES_FRONTIER_BANS]             = sText_FrontierBans,
+    [MENUITEM_FEATURES_SEASONS]        		      = sText_Seasons,
     [MENUITEM_FEATURES_SHINY_COLOR]               = sText_Shiny_Colors,
     [MENUITEM_FEATURES_NEXT]                      = sText_Next,
 };
@@ -841,6 +846,8 @@ static const u8 sText_Description_Features_FrontierBans_Unban[]       = _("All l
 static const u8 sText_Description_Features_FrontierBans_Ban[]         = _("According to the chosen difficulty,\nsome legendaries are banned in BF.");
 static const u8 sText_Description_Features_Shiny_Colors_Original[]    = _("Original shiny color palette for all\nPokémon. Default.");
 static const u8 sText_Description_Features_Shiny_Colors_Modern[]      = _("Some shiny Pokémon have brand new\ncolor palettes. Check docs.");
+static const u8 sText_Description_Features_Seasons_Off[]   			  = _("Disables {COLOR 5}{COLOR 6}Seasons{COLOR 2}, overworld\nappearance remains unchanged.");
+static const u8 sText_Description_Features_Seasons_On[]    		      = _("{COLOR 5}{COLOR 6}Seasons{COLOR 2} shift over time,\nchanging overworld visuals only.");
 
 static const u8 sText_Description_Features_Next[]                     = _("Continue to Randomizer options.");
 
@@ -852,6 +859,7 @@ static const u8 *const sOptionMenuItemDescriptionsFeatures[MENUITEM_FEATURES_COU
     [MENUITEM_FEATURES_EASY_FEEBAS]           = {sText_Description_Features_EasyFeebas_Off,         sText_Description_Features_EasyFeebas_On,         sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_FEATURES_UNLIMITED_WT]          = {sText_Description_Features_Unlimited_WT_On,        sText_Description_Features_Unlimited_WT_Off,      sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_FEATURES_FRONTIER_BANS]         = {sText_Description_Features_FrontierBans_Ban,       sText_Description_Features_FrontierBans_Unban,    sText_Empty,                                        sText_Empty,                                        sText_Empty},
+    [MENUITEM_FEATURES_SEASONS]     	      = {sText_Description_Features_Seasons_On,     	    sText_Description_Features_Seasons_Off, 		      sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_FEATURES_SHINY_COLOR]           = {sText_Description_Features_Shiny_Colors_Original,  sText_Description_Features_Shiny_Colors_Modern,    sText_Empty,                                        sText_Empty,                                        sText_Empty},
     [MENUITEM_FEATURES_NEXT]                  = {sText_Description_Features_Next,                   sText_Empty,                                      sText_Empty,                                        sText_Empty,                                        sText_Empty},
 };
@@ -1536,6 +1544,7 @@ void CB2_InitTxRandomizerChallengesMenu(void)
         sOptions->sel_features[MENUITEM_FEATURES_EASY_FEEBAS]            = gSaveBlock1Ptr->tx_Features_EasierFeebas;
         sOptions->sel_features[MENUITEM_FEATURES_UNLIMITED_WT]           = gSaveBlock1Ptr->tx_Features_Unlimited_WT;
         sOptions->sel_features[MENUITEM_FEATURES_FRONTIER_BANS]          = gSaveBlock1Ptr->tx_Features_FrontierBans;
+        sOptions->sel_features[MENUITEM_FEATURES_SEASONS]     		     = gSaveBlock2Ptr->optionsSeasons;
         sOptions->sel_features[MENUITEM_FEATURES_SHINY_COLOR]            = gSaveBlock1Ptr->tx_Features_ShinyColors;
 
         //MENU RANDOMIZER
@@ -1891,6 +1900,7 @@ void SaveData_TxRandomizerAndChallenges(void)
     gSaveBlock1Ptr->tx_Features_EasierFeebas                = sOptions->sel_features[MENUITEM_FEATURES_EASY_FEEBAS];
     gSaveBlock1Ptr->tx_Features_Unlimited_WT                = sOptions->sel_features[MENUITEM_FEATURES_UNLIMITED_WT];
     gSaveBlock1Ptr->tx_Features_FrontierBans                = sOptions->sel_features[MENUITEM_FEATURES_FRONTIER_BANS];
+    gSaveBlock2Ptr->optionsSeasons               		    = sOptions->sel_features[MENUITEM_FEATURES_SEASONS];
     gSaveBlock1Ptr->tx_Features_ShinyColors                 = sOptions->sel_features[MENUITEM_FEATURES_SHINY_COLOR];
     // MENU_RANDOMIZER
     if (sOptions->sel_randomizer[MENUITEM_RANDOM_OFF_ON] == TRUE)
@@ -3285,6 +3295,25 @@ static void DrawChoices_Features_Shiny_Colors(int selection, int y)
 
     DrawOptionMenuChoice(sText_Off, 104, y, styles[0], active);
     DrawOptionMenuChoice(sText_On, GetStringRightAlignXOffset(1, sText_On, 198), y, styles[1], active);
+}
+
+static void DrawChoices_Features_Seasons(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_FEATURES_SEASONS);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    if (selection == 0)
+    {
+        gSaveBlock2Ptr->optionsSeasons = 0;
+    }
+    else
+    {
+        gSaveBlock2Ptr->optionsSeasons = 1;
+    }
+
+    DrawOptionMenuChoice(sText_On, 104, y, styles[0], active);
+    DrawOptionMenuChoice(sText_Off, GetStringRightAlignXOffset(1, sText_Off, 198), y, styles[1], active);
 }
 
 // Background tilemap

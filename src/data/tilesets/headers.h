@@ -25,6 +25,39 @@ const struct Tileset gTileset_General =
     .callback = InitTilesetAnim_General,
 };
 
+const struct Tileset gTileset_GeneralSummer =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_GeneralSummer,
+    .palettes = gTilesetPalettes_GeneralSummer,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_GeneralAutumn =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_GeneralAutumn,
+    .palettes = gTilesetPalettes_GeneralAutumn,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
+const struct Tileset gTileset_GeneralWinter =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_GeneralWinter,
+    .palettes = gTilesetPalettes_GeneralWinter,
+    .metatiles = gMetatiles_General,
+    .metatileAttributes = gMetatileAttributes_General,
+    .callback = InitTilesetAnim_General,
+};
+
 const struct Tileset gTileset_Petalburg =
 {
     .isCompressed = TRUE,

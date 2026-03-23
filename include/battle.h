@@ -446,7 +446,7 @@ struct BattleStruct
     bool8 throwingPokeBall;
     u8 ballSpriteIds[2];
     u8 catchModeHintSpriteId; // catch mode hint window gfx
-	bool8 catchModeEnabled; // WORPNOTE : Maybe remove
+	bool8 catchModeEnabled;
 };
 
 // The palaceFlags member of struct BattleStruct contains 1 flag per move to indicate which moves the AI should consider,

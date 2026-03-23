@@ -17,6 +17,8 @@
 #include "constants/rgb.h"
 #include "constants/metatile_behaviors.h"
 #include "wild_encounter.h"
+#include "constants/layouts.h"
+#include "event_data.h"
 
 struct ConnectionFlags
 {
@@ -948,20 +950,86 @@ void LoadSecondaryTilesetPalette(struct MapLayout const *mapLayout, bool8 skipFa
     LoadTilesetPalette(mapLayout->secondaryTileset, NUM_PALS_IN_PRIMARY * 16, (NUM_PALS_TOTAL - NUM_PALS_IN_PRIMARY) * PLTT_SIZE_4BPP, skipFaded);
 }
 
+extern struct Tileset const gTileset_General;
+extern struct Tileset const gTileset_GeneralSummer;
+extern struct Tileset const gTileset_GeneralAutumn;
+extern struct Tileset const gTileset_GeneralWinter;
 void CopyMapTilesetsToVram(struct MapLayout const *mapLayout)
 {
-    if (mapLayout)
+     u8 season;
+
+    // Determine current season
+    if (!gSaveBlock2Ptr->optionsSeasons)
+        season = getCurrentSeason(); // returns SEASON_SPRING..SEASON_WINTER
+    else
+        season = SEASON_SPRING; // fallback
+
+    // If the map uses the general tileset, swap to seasonal
+    if (mapLayout->primaryTileset == &gTileset_General)
     {
+        switch (season)
+        {
+            case SEASON_SPRING:
+                CopyTilesetToVramUsingHeap(&gTileset_General, NUM_TILES_IN_PRIMARY, 0);
+                break;
+            case SEASON_SUMMER:
+                CopyTilesetToVramUsingHeap(&gTileset_GeneralSummer, NUM_TILES_IN_PRIMARY, 0);
+                break;
+            case SEASON_AUTUMN:
+                CopyTilesetToVramUsingHeap(&gTileset_GeneralAutumn, NUM_TILES_IN_PRIMARY, 0);
+                break;
+            case SEASON_WINTER:
+                CopyTilesetToVramUsingHeap(&gTileset_GeneralWinter, NUM_TILES_IN_PRIMARY, 0);
+                break;
+        }
+
+        // Copy secondary tileset normally
+        CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - NUM_TILES_IN_PRIMARY, NUM_TILES_IN_PRIMARY);
+    }
+    else
+    {
+        // Non-general tileset, copy normally
         CopyTilesetToVramUsingHeap(mapLayout->primaryTileset, NUM_TILES_IN_PRIMARY, 0);
         CopyTilesetToVramUsingHeap(mapLayout->secondaryTileset, NUM_TILES_TOTAL - NUM_TILES_IN_PRIMARY, NUM_TILES_IN_PRIMARY);
     }
 }
 
+extern const struct MapLayout *const gMapLayouts[];
+
 void LoadMapTilesetPalettes(struct MapLayout const *mapLayout)
 {
+    u8 season;
+
+    if (!gSaveBlock2Ptr->optionsSeasons)
+        season = getCurrentSeason();
+    else
+        season = SEASON_SPRING;
+
     if (mapLayout)
     {
-        LoadPrimaryTilesetPalette(mapLayout);
+        if (mapLayout->primaryTileset == &gTileset_General)
+        {
+            switch(season)
+            {
+                case SEASON_SPRING:
+                    LoadPrimaryTilesetPalette(gMapLayouts[LAYOUT_DUMMY_SPRING_LAYOUT - 1]);
+                    break;
+                case SEASON_SUMMER:
+                    LoadPrimaryTilesetPalette(gMapLayouts[LAYOUT_DUMMY_SUMMER_LAYOUT - 1]);
+                    break;
+                case SEASON_AUTUMN:
+                    LoadPrimaryTilesetPalette(gMapLayouts[LAYOUT_DUMMY_AUTUMN_LAYOUT - 1]);
+                    break;
+                case SEASON_WINTER:
+                    LoadPrimaryTilesetPalette(gMapLayouts[LAYOUT_DUMMY_WINTER_LAYOUT - 1]);
+                    break;
+            }
+        }
+        else
+        {
+            LoadPrimaryTilesetPalette(mapLayout);
+        }
+
         LoadSecondaryTilesetPalette(mapLayout, FALSE);
     }
 }

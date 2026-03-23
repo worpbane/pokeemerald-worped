@@ -1484,7 +1484,71 @@ const u16 ALIGNED(4) gTilesetPalettes_General[][16] =
     INCBIN_U16("data/tilesets/primary/general/palettes/15.gbapal"),
 };
 
+const u16 gTilesetPalettes_GeneralSummer[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalSummer/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalSummer/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalSummer/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalSummer/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/15.gbapal"),
+};
+
+const u16 gTilesetPalettes_GeneralAutumn[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalAutumn/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalAutumn/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalAutumn/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalAutumn/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/15.gbapal"),
+};
+
+const u16 gTilesetPalettes_GeneralWinter[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/general/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalWinter/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalWinter/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalWinter/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/generalWinter/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/general/palettes/15.gbapal"),
+};
+
+
 const u32 gTilesetTiles_General[] = INCBIN_U32("data/tilesets/primary/general/tiles.4bpp.lz");
+const u32 gTilesetTiles_GeneralSummer[] = INCBIN_U32("data/tilesets/primary/general/tiles.4bpp.lz");
+const u32 gTilesetTiles_GeneralAutumn[] = INCBIN_U32("data/tilesets/primary/general/tiles.4bpp.lz");
+const u32 gTilesetTiles_GeneralWinter[] = INCBIN_U32("data/tilesets/primary/general/tiles.4bpp.lz");
 
 // trade/egg hatch
 

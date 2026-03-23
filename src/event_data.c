@@ -248,3 +248,12 @@ bool8 FlagGet(u16 id)
 
     return TRUE;
 }
+
+#define VAR_CURRENT_SEASON VAR_SEASON_STATE
+u8 getCurrentSeason(void)
+{
+	if (gSaveBlock2Ptr->optionsSeasons)
+		return SEASON_SPRING;
+	
+    return VarGet(VAR_CURRENT_SEASON);
+}

@@ -126,6 +126,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsNewBackgrounds = 0;
     gSaveBlock2Ptr->optionsRunType = 1;
     gSaveBlock2Ptr->optionsSurfOverworld = 0;
+    gSaveBlock2Ptr->optionsSeasons = 1;
 }
 
 static void ClearPokedexFlags(void)

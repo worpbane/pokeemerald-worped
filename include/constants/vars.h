@@ -156,7 +156,7 @@
 #define VAR_CONTEST_TYPE                                 0x4088
 #define VAR_SECRET_BASE_INITIALIZED                      0x4089
 #define VAR_CONTEST_PRIZE_PICKUP                         0x408A
-#define VAR_UNUSED_0x408B                                0x408B // Unused Var
+#define VAR_UNUSED_0x408B                         		 0x408B // Unused Var
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN              0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE                       0x408D
 #define VAR_BOARD_BRINEY_BOAT_STATE                      0x408E
@@ -273,8 +273,8 @@
 #define VAR_WONDERTRADE                                  0x40FD // 0 and 1 -> First time message when entering Wondertrade. 2 -> No message.
 #define VAR_DEXNAV_SPECIES                               0x40F7 // Registered dexnav species
 #define VAR_DEXNAV_STEP_COUNTER                          0x40F8 // steps for finding hidden pokemon
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
+#define VAR_SEASON_STATE                                 0x40F9 // Season - Current Season
+#define VAR_SEASON_OFFSET                                0x40FA // Season - Offset
 #define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var

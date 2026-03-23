@@ -30,6 +30,10 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
 
 * **DexNav**  
   Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/dexnav)
+  
+* **Seasons**
+  Based on: [BelialClover's Commit](https://github.com/pret/pokeemerald/commit/1cdd1d0a877fc2e0929f84a33b6d9e4045102825)  
+  *(Seasons change weekly, affect overworld visuals only (no gameplay impact), can be advanced via the GameCube, and toggleable in the Start Menu. Implementation also incorporates methods from Emerald Enhanced for overworld tileset updates.)*
 
 ---
 
@@ -60,7 +64,6 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
 ### Other Improvements
 * Type icons next to Pokémon during battle  
   *(Attempting to backport the feature from pokeemerald-expansion, but the implementation differs significantly and may not be feasible with my current skill level...)*
-* Seasons  
 
 ---
 

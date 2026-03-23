@@ -285,7 +285,28 @@ PlayersHouse_2F_EventScript_Notebook::
 	end
 
 PlayersHouse_2F_EventScript_GameCube::
-	msgbox PlayersHouse_2F_Text_ItsAGameCube, MSGBOX_SIGN
+	special AdvanceSeason
+	goto_if_eq VAR_SEASON_STATE, SEASON_SPRING, LittlerootTown_BrendansHouse_2F_EventScript_SeasonSpring
+	goto_if_eq VAR_SEASON_STATE, SEASON_SUMMER, LittlerootTown_BrendansHouse_2F_EventScript_SeasonSummer
+	goto_if_eq VAR_SEASON_STATE, SEASON_AUTUMN, LittlerootTown_BrendansHouse_2F_EventScript_SeasonAutumn
+	goto_if_eq VAR_SEASON_STATE, SEASON_WINTER, LittlerootTown_BrendansHouse_2F_EventScript_SeasonWinter
+	end
+	
+LittlerootTown_BrendansHouse_2F_EventScript_SeasonSpring::
+	msgbox PlayersHouse_2F_Text_AdvanceSeason_Spring, MSGBOX_SIGN
+	playse SE_EXP_MAX
+	end
+LittlerootTown_BrendansHouse_2F_EventScript_SeasonSummer::
+	msgbox PlayersHouse_2F_Text_AdvanceSeason_Summer, MSGBOX_SIGN
+	playse SE_EXP_MAX
+	end
+LittlerootTown_BrendansHouse_2F_EventScript_SeasonAutumn::
+	msgbox PlayersHouse_2F_Text_AdvanceSeason_Autumn, MSGBOX_SIGN
+	playse SE_EXP_MAX
+	end
+LittlerootTown_BrendansHouse_2F_EventScript_SeasonWinter::
+	msgbox PlayersHouse_2F_Text_AdvanceSeason_Winter, MSGBOX_SIGN
+	playse SE_EXP_MAX
 	end
 
 PlayersHouse_2F_Text_ClockIsStopped:
@@ -318,3 +339,19 @@ PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
 	.string "A Game Boy Advance is connected to\n"
 	.string "serve as the Controller.$"
+	
+PlayersHouse_2F_Text_AdvanceSeason_Spring:
+	.string "A gentle breeze passes by...\n"
+	.string "Spring has arrived!$"
+	
+PlayersHouse_2F_Text_AdvanceSeason_Summer:
+	.string "The air turns warm and bright!\n"
+	.string "Summer has arrived!$"
+	
+PlayersHouse_2F_Text_AdvanceSeason_Autumn:
+	.string "Leaves drift softly to the ground...\n"
+	.string "Autumn has arrived!$"
+
+PlayersHouse_2F_Text_AdvanceSeason_Winter:
+	.string "A chill fills the air...\n"
+	.string "Winter has arrived!$"
