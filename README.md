@@ -31,8 +31,8 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
 * **DexNav**  
   Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/dexnav)
   
-* **Seasons**
-  Based on: [BelialClover's Commit](https://github.com/pret/pokeemerald/commit/1cdd1d0a877fc2e0929f84a33b6d9e4045102825)  
+* **Seasons**  
+  Based on: [BelialClover's Commit](https://github.com/pret/pokeemerald/commit/1cdd1d0a877fc2e0929f84a33b6d9e4045102825) & [Emerald Enhanced](https://github.com/Enhanced-Projects/Emerald-Enhanced)  
   *(Seasons change weekly, affect overworld visuals only (no gameplay impact), can be advanced via the GameCube, and toggleable in the Start Menu. Implementation also incorporates methods from Emerald Enhanced for overworld tileset updates.)*
 
 ---
@@ -44,9 +44,7 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
   Based on: [Team Aqua's Repo](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)
 
 * **Black/White Summary Screen**  
-  Based on:  
-  - [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen)
-  - [RavePossum's Pokeemerald Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)   
+  Based on: [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & [RavePossum's Pokeemerald Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
   *(Some features were manually backported from the pokeemerald-expansion version.)*  
 
 ---
