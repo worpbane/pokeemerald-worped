@@ -2699,7 +2699,15 @@ bool8 DexNavTryMakeShinyMon(void)
     charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
     #endif
     
-    chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
+    //chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
+	//Trying to make chains more rewarding since Search Levels are disabled
+	chainBonus = chain / 15;
+	if (chain >= 50)
+		chainBonus += 5;
+
+	if (chain >= 100)
+		chainBonus += 10;
+	
     rndBonus = (Random() % 100 < 4 ? 4 : 0);
     shinyRolls = 1 + charmBonus + chainBonus + rndBonus;
 

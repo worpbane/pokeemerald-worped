@@ -132,7 +132,7 @@
 #define ITEM_074 116
 #define ITEM_075 117
 #define ITEM_076 118
-#define ITEM_077 119
+#define ITEM_SHINY_CHARM 119
 #define ITEM_078 120
 
 // Mails

@@ -5673,4 +5673,7 @@ extern const u16 gMonMarkingsMenu_Pal[];
 extern const u32 gItemIcon_HealingHeart[];
 extern const u32 gItemIconPalette_HealingHeart[];
 
+extern const u32 gItemIcon_ShinyCharm[];
+extern const u32 gItemIconPalette_ShinyCharm[];
+
 #endif //GUARD_GRAPHICS_H

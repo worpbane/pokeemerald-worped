@@ -1,6 +1,45 @@
 # Pokémon Modern Emerald – Worped
 
-## [0.1] - In Development
+## [0.2] - In Development
+
+**🧪 Testing On:** New Nintendo 3DS w/ open_agb_firm
+
+---
+
+### ✨ Pokémon Additions
+- None yet
+
+---
+
+### 🧩 Features
+- Added Shiny Charm to aid in finding rare Pokémon.
+- DexNav updated: Search Levels disabled (to save space). Chain effects have been increased to make repeated encounters more rewarding. Combined with the Shiny Charm, this should make shiny hunting fun and more accessible!
+
+---
+
+### 🎮 UI Changes
+- Start Menu reordered for improved usability.
+- DexNav removed from Start Menu, now accessible by pressing L when the cursor is over the PokéNav.
+
+---
+
+### 🎨 Visual Updates
+- None yet
+
+---
+
+### 📦 Asset Sources
+- Shiny Charm implemented using the RHH Pokémon Emerald Expansion repository.
+
+---
+
+### 🐞 Bug Fixes
+- None yet  
+
+### ⚠️ Known Issues
+- Seasonal palette changes currently do not affect tall grass.
+
+## [0.1] - Released 03/23/26
 
 ---
 
@@ -45,15 +84,15 @@
 ---
 
 ### 🎨 Visual Updates
-- Updated type indicators using community repositories  
-- Replaced several trainer sprites using assets from community repositories  
-- Overworld tileset palettes now change based on the current season  
+- Updated type indicators using community repositories.  
+- Replaced several trainer sprites using assets from community repositories.  
+- Overworld tileset palettes now change based on the current season.
 
 ---
 
 ### 📦 Asset Sources
-- Pokémon content implemented using the RHH Pokémon Emerald Expansion repo  
-- Various UI elements and trainer sprites sourced from the Team Aqua repository  
+- Pokémon content implemented using the RHH Pokémon Emerald Expansion repository.  
+- Various UI elements and trainer sprites sourced from the Team Aqua repository.
 
 ---
 
@@ -61,4 +100,4 @@
 - None yet  
 
 ### ⚠️ Known Issues
-- Seasonal palette changes currently do not affect tall grass
+- Seasonal palette changes currently do not affect tall grass.

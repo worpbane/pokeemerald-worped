@@ -82,7 +82,6 @@ static const u16 sIsInvalidItem[] = {
     [ITEM_074]            = TRUE,
     [ITEM_075]            = TRUE,
     [ITEM_076]            = TRUE,
-    [ITEM_077]            = TRUE,
     [ITEM_078]            = TRUE,
     [ITEM_UNUSED_BERRY_1] = TRUE,
     [ITEM_UNUSED_BERRY_2] = TRUE,

@@ -1694,3 +1694,8 @@ static const u8 sHealingHeart[] = _(
     "This soft heart\n"
     "fully heals your\n"
     "Pokémon party.");
+
+static const u8 sShinyCharmDesc[] = _(
+    "A charm that will\n"
+    "raise the chance\n"
+    "of Shiny Pokémon.");

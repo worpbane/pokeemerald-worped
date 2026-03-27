@@ -293,7 +293,23 @@ Route104_EventScript_ReceivedWhiteHerb::
 	end
 
 Route104_EventScript_Girl1::
+	lock
+	faceplayer
+	goto_if_set FLAG_SHINY_CHARM_GIVEN, Route104_EventScript_Girl1_Normal
+	goto_if_set FLAG_BADGE01_GET, Route104_EventScript_Girl1_GiveShinyCharm
+	goto Route104_EventScript_Girl1_Normal
+	end
+	
+Route104_EventScript_Girl1_Normal::
 	msgbox Route104_Text_BrineyLivesInSeasideCottage, MSGBOX_NPC
+	release
+	end
+	
+	Route104_EventScript_Girl1_GiveShinyCharm::
+	msgbox Route104_Text_HereTakeShinyCharm, MSGBOX_NPC
+	giveitem ITEM_SHINY_CHARM
+	setflag FLAG_SHINY_CHARM_GIVEN
+	release
 	end
 
 Route104_EventScript_BugCatcher::
@@ -1011,6 +1027,13 @@ Route104_Text_BrineyLivesInSeasideCottage:
 	.string "Mr. Briney lives.\p"
 	.string "He was once a mighty sailor who never\n"
 	.string "feared the sea, however stormy.$"
+	
+Route104_Text_HereTakeShinyCharm:
+    .string "Wow! You look like a strong Trainer!\n"
+    .string "I was being chased by a Pokémon\n"
+    .string "with strange colors!\p"
+    .string "Since you look strong, you can have\n"
+    .string "this charm I found.$"
 
 Route104_Text_WhatsItLikeAtBottomOfSea:
 	.string "The sea, huh?\p"

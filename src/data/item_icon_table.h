@@ -133,7 +133,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_074] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_075] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_076] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
-    [ITEM_077] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_SHINY_CHARM] = {gItemIcon_ShinyCharm, gItemIconPalette_ShinyCharm},
     [ITEM_078] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     // Mail
     [ITEM_ORANGE_MAIL] = {gItemIcon_OrangeMail, gItemIconPalette_OrangeMail},

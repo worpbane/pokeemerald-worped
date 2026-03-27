@@ -1471,13 +1471,15 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_077] =
+    [ITEM_SHINY_CHARM] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Shiny Charm"),
+        .itemId = ITEM_SHINY_CHARM,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+		.importance = 1,
+        .registrability = TRUE,
+        .description = sShinyCharmDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
@@ -6327,13 +6329,15 @@ const struct Item gItems2[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-    [ITEM_077] =
+    [ITEM_SHINY_CHARM] =
     {
-        .name = _("????????"),
-        .itemId = ITEM_NONE,
+        .name = _("Shiny Charm"),
+        .itemId = ITEM_SHINY_CHARM,
         .price = 0,
-        .description = sDummyDesc,
-        .pocket = POCKET_ITEMS,
+		.importance = 1,
+        .registrability = TRUE,
+        .description = sShinyCharmDesc,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
