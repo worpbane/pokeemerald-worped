@@ -22,14 +22,14 @@
 
 ### 🎮 UI Changes
 - Start Menu reordered for improved usability.
-- DexNav removed from Start Menu, now accessible by pressing **L** when the cursor is over the PokéNav.
-- Implmented Item Descirtion Headers from ghoulslash.
-- Implmented Plural Give Item Fix from ghoulslash.
+- DexNav removed from Start Menu; now accessible by pressing **L** when the cursor is over the PokéNav.
+- Implemented Item Description Headers from ghoulslash.
+- Implemented Plural Give Item Fix from ghoulslash.
 
 ---
 
 ### 🎨 Visual Updates
-- None yet
+- DexNav screen completely redone to reflect chain-based shiny mechanics.
 
 ---
 

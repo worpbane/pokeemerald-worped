@@ -65,11 +65,11 @@
 #define ROW_HIDDEN      3
 #define ROWS_COUNT      4
 
-#define ROW_WATER_ICON_X        30
-#define ROW_WATER_ICON_Y        35
+#define ROW_WATER_ICON_X        18
+#define ROW_WATER_ICON_Y        43
 
-#define ROW_LAND_ICON_X         20
-#define ROW_LAND_TOP_ICON_Y     72
+#define ROW_LAND_ICON_X         18
+#define ROW_LAND_TOP_ICON_Y     91
 #define ROW_LAND_BOT_ICON_Y     (ROW_LAND_TOP_ICON_Y + 28)
 
 #define ROW_HIDDEN_ICON_X       52
@@ -93,11 +93,8 @@
 #define SCANSIZE_X              12
 #define SCANSIZE_Y              12
 
-#define SPECIES_INFO_Y          5
-#define TYPE_ICONS_Y            (SPECIES_INFO_Y + 24)
-#define SEARCH_LEVEL_Y          (TYPE_ICONS_Y + 24)
-#define HA_INFO_Y               (SEARCH_LEVEL_Y + 24)
-#define CHAIN_BONUS_Y           (HA_INFO_Y + 24)
+#define SPECIES_INFO_Y          0
+#define CHAIN_BONUS_Y           (SPECIES_INFO_Y + 39 + 24)
 
 #define MON_LEVEL_NONEXISTENT   255 //if mon not in area GetEncounterLevel returns this to exit the search
 

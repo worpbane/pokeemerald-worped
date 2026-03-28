@@ -35,7 +35,8 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
 
 - **DexNav**  
   Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/dexnav)  
-  *(Search Levels disabled to save memory; Chain Bonuses increased to assist Shiny Hunting)*
+  *(Search Levels disabled to save memory; Chain Bonuses increased to assist Shiny Hunting)*  
+  *DexNav screen completely redone to reflect chain-based shiny mechanics.*
 
 - **Shiny Charm**  
   Added a Shiny Charm to aid with shiny hunting; not based on any repo, sprite is sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)  

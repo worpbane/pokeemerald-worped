@@ -133,6 +133,7 @@ EWRAM_DATA bool8 gDexnavBattle = FALSE;
 static void Task_DexNavWaitFadeIn(u8 taskId);
 static void Task_DexNavMain(u8 taskId);
 static void PrintCurrentSpeciesInfo(void);
+static const u8 *DexNavGetShinyChanceString(void);
 // SEARCH
 static bool8 TryStartHiddenMonFieldEffect(u8 environment, u8 xSize, u8 ySize, bool8 smallScan);
 static void DexNavGenerateMoveset(u16 species, u8 searchLevel, u8 encounterLevel, u16* moveDst);
@@ -168,7 +169,6 @@ static const u32 sNoDataGfx[] = INCBIN_U32("graphics/dexnav/no_data.4bpp.lz");
 
 // searching image data
 static const u32 sPotentialStarGfx[] = INCBIN_U32("graphics/dexnav/star.4bpp.lz");
-//static const u32 sEyeGfx[] = INCBIN_U32("graphics/dexnav/vision.4bpp.lz");
 static const u32 sHiddenSearchIconGfx[] = INCBIN_U32("graphics/dexnav/hidden_search.4bpp.lz");
 static const u32 sOwnedIconGfx[] = INCBIN_U32("graphics/dexnav/owned_icon.4bpp.lz");
 static const u32 sHiddenMonIconGfx[] = INCBIN_U32("graphics/dexnav/hidden.4bpp.lz");
@@ -187,6 +187,10 @@ static const u8 sText_HeldItem[] = _("{STR_VAR_1}");
 static const u8 sText_StartExit[] = _("{START_BUTTON} EXIT");
 static const u8 sText_DexNavChain[] = _("{NO} {STR_VAR_1}");
 static const u8 sText_DexNavChainLong[] = _("{NO}{STR_VAR_1}");
+static const u8 sText_DexNavChainText[] = _("Chain: ");
+static const u8 sText_DexNavChainChance[] = _("Chance: ");
+static const u8 sText_DexNavChainChancPercent[] = _("%");
+static const u8 sText_DexNavShinyHeader[] = _("Shiny Hunting");
 
 static const u8 sText_ArrowLeft[] = _("{LEFT_ARROW}");
 static const u8 sText_ArrowRight[] = _("{RIGHT_ARROW}");
@@ -381,17 +385,6 @@ static const struct SpriteTemplate sPotentialStarTemplate =
     .callback = SpriteCallbackDummy,
 };
 
-/*static const struct SpriteTemplate sSightTemplate =
-{
-    .tileTag = SIGHT_TAG,
-    .paletteTag = 0xFFFF,   //held item pal
-    .oam = &sSightOam,
-    .anims = sAnimCmdTable_Sight,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
-};*/
-
 static const struct SpriteTemplate sSearchIconSpriteTemplate =
 {
     .tileTag = HIDDEN_SEARCH_TAG,
@@ -430,7 +423,6 @@ static const struct CompressedSpriteSheet sNoDataIconSpriteSheet = {sNoDataGfx, 
 static const struct CompressedSpriteSheet sCapturedAllPokemonSpriteSheet = {sCapturedAllMonsTiles, (8 * 8) / 2, CAPTURED_ALL_TAG};
 // search sprite sheets
 static const struct CompressedSpriteSheet sPotentialStarSpriteSheet = {sPotentialStarGfx, (8 * 8) / 2, LIT_STAR_TILE_TAG};
-//static const struct CompressedSpriteSheet sSightSpriteSheet = {sEyeGfx, (16 * 8 * 3) / 2, SIGHT_TAG};
 static const struct CompressedSpriteSheet sOwnedIconSpriteSheet = {sOwnedIconGfx, (8 * 8) / 2, OWNED_ICON_TAG};
 static const struct CompressedSpriteSheet sHiddenMonIconSpriteSheet = {sHiddenMonIconGfx, (8 * 8) / 2, HIDDEN_MON_ICON_TAG};
 
@@ -1711,11 +1703,6 @@ static void UpdateCursorPosition(void)
         y = ROW_LAND_BOT_ICON_Y;
         sDexNavUiDataPtr->environment = ENCOUNTER_TYPE_LAND;
         break;
-    case ROW_HIDDEN:
-        x = ROW_HIDDEN_ICON_X + (24 * sDexNavUiDataPtr->cursorCol);
-        y = ROW_HIDDEN_ICON_Y;
-        sDexNavUiDataPtr->environment = ENCOUNTER_TYPE_HIDDEN;
-        break;
     default:
         return;
     }
@@ -1851,13 +1838,10 @@ static void DexNavLoadCapturedAllSymbols(void)
     LoadCompressedSpriteSheetUsingHeap(&sCapturedAllPokemonSpriteSheet);
 
     if (CapturedAllLandMons(headerId))
-        CreateSprite(&sCaptureAllMonsSpriteTemplate, 152, 58, 0);
+        CreateSprite(&sCaptureAllMonsSpriteTemplate, 148, 75, 0);
 
     if (CapturedAllWaterMons(headerId))
-        CreateSprite(&sCaptureAllMonsSpriteTemplate, 139, 17, 0);
-    
-    if (CapturedAllHiddenMons(headerId))
-        CreateSprite(&sCaptureAllMonsSpriteTemplate, 114, 123, 0);
+        CreateSprite(&sCaptureAllMonsSpriteTemplate, 124, 27, 0);
 }
 
 //#define WIN_DETAILS_TILE        0x3a3
@@ -1940,13 +1924,6 @@ static bool8 SpeciesInArray(u16 species, u8 section)
                 return TRUE;
         }
         break;
-    case 2: //hidden
-        for (i = 0; i < HIDDEN_WILD_COUNT; i++)
-        {
-            if (SpeciesToNationalPokedexNum(sDexNavUiDataPtr->hiddenSpecies[i]) == dexNum)
-                return TRUE;
-        }
-        break;
     default:
         break;
     }
@@ -1993,17 +1970,6 @@ static void DexNavLoadEncounterData(void)
                 sDexNavUiDataPtr->waterSpecies[waterIndex++] = waterMonsInfo->wildPokemon[i].species;
         }
     }
-    
-    // hidden mons
-    if (hiddenMonsInfo != NULL) // no encounter rate check since 0 means land, 1 means water encounters
-    {
-        for (i = 0; i < HIDDEN_WILD_COUNT; i++)
-        {
-            species = hiddenMonsInfo->wildPokemon[i].species;
-            if (species != SPECIES_NONE && !SpeciesInArray(species, 2))
-                sDexNavUiDataPtr->hiddenSpecies[hiddenIndex++] = hiddenMonsInfo->wildPokemon[i].species;
-        }
-    }
 }
 
 static void TryDrawIconInSlot(u16 species, s16 x, s16 y)
@@ -2026,7 +1992,7 @@ static void DrawSpeciesIcons(void)
     for (i = 0; i < LAND_WILD_COUNT; i++)
     {
         species = sDexNavUiDataPtr->landSpecies[i];
-        x = 20 + (24 * (i % 6));
+        x = ROW_LAND_ICON_X + (24 * (i % 6));
         y = ROW_LAND_TOP_ICON_Y + (i > 5 ? 28 : 0);
         TryDrawIconInSlot(species, x, y);
     }
@@ -2034,22 +2000,9 @@ static void DrawSpeciesIcons(void)
     for (i = 0; i < WATER_WILD_COUNT; i++)
     {
         species = sDexNavUiDataPtr->waterSpecies[i];
-        x = 30 + 24 * i;
+        x = ROW_WATER_ICON_X + 24 * i;
         y = ROW_WATER_ICON_Y;
         TryDrawIconInSlot(species, x, y);
-    }
-    
-    for (i = 0; i < HIDDEN_WILD_COUNT; i++)
-    {
-        species = sDexNavUiDataPtr->hiddenSpecies[i];
-        x = ROW_HIDDEN_ICON_X + 24 * i;
-        y = ROW_HIDDEN_ICON_Y;
-        if (FlagGet(FLAG_SYS_DETECTOR_MODE))
-            TryDrawIconInSlot(species, x, y);
-       else if (species == SPECIES_NONE || species > NUM_SPECIES)
-            CreateNoDataIcon(x, y);
-        else
-            CreateMonIcon(SPECIES_NONE, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF, 0); //question mark if detector mode inactive
     }
 }
 
@@ -2067,12 +2020,6 @@ static u16 DexNavGetSpecies(void)
         break;
     case ROW_LAND_BOT:
         species = sDexNavUiDataPtr->landSpecies[sDexNavUiDataPtr->cursorCol + COL_LAND_COUNT];
-        break;
-    case ROW_HIDDEN:
-        if (!FlagGet(FLAG_SYS_DETECTOR_MODE))
-            species = SPECIES_NONE;
-        else
-            species = sDexNavUiDataPtr->hiddenSpecies[sDexNavUiDataPtr->cursorCol];
         break;
     default:
         return SPECIES_NONE;
@@ -2109,7 +2056,7 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES] =
     [TYPE_WATER] = TYPE_ICON_PAL_NUM_1,
     [TYPE_GRASS] = TYPE_ICON_PAL_NUM_2,
     [TYPE_ELECTRIC] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_PSYCHIC] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_PSYCHIC] = TYPE_ICON_PAL_NUM_2,
     [TYPE_ICE] = TYPE_ICON_PAL_NUM_1,
     [TYPE_DRAGON] = TYPE_ICON_PAL_NUM_2,
     [TYPE_DARK] = TYPE_ICON_PAL_NUM_0,
@@ -2145,9 +2092,9 @@ static void PrintCurrentSpeciesInfo(void)
     
     //species name
     if (species == SPECIES_NONE)
-        AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, SPECIES_INFO_Y, sFontColor_Black, 0, sText_DexNav_NoInfo);
+        AddTextPrinterParameterized3(WINDOW_INFO, 0, 6, 16, sFontColor_White, 0, sText_DexNav_NoInfo);
     else
-        AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, SPECIES_INFO_Y, sFontColor_Black, 0, gSpeciesNames[species]);
+        AddTextPrinterParameterized3(WINDOW_INFO, 0, 6, 16, sFontColor_White, 0, gSpeciesNames[species]);
     
     //type icon(s)
     type1 = gSpeciesInfo[species].types[0];
@@ -2157,52 +2104,25 @@ static void PrintCurrentSpeciesInfo(void)
     
     if (type1 == type2)
     {
-        SetTypeIconPosAndPal(type1, 186, 69, 0);
+        SetTypeIconPosAndPal(type1, 165, 71, 0);
         SetSpriteInvisibility(1, TRUE);
     }
     else
     {
-        SetTypeIconPosAndPal(type1, 168, 69, 0);
-        SetTypeIconPosAndPal(type2, 168 + 33, 69, 1);
-    }
-    
-    //search level
-    if (species == SPECIES_NONE)
-    {
-        AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, SEARCH_LEVEL_Y, sFontColor_Black, 0, sText_DexNav_NoInfo);
-    }
-    else
-    {
-        ConvertIntToDecimalStringN(gStringVar4, GetSearchLevel(dexNum), 0, 4);
-        AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, SEARCH_LEVEL_Y, sFontColor_Black, 0, gStringVar4);
-    }
-    
-    //hidden ability
-    if (species == SPECIES_NONE)
-    {
-        AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, sText_DexNav_NoInfo);
-    }
-    else if (GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT))
-    {
-        #ifdef BATTLE_ENGINE
-        if (gSpeciesInfo[species].abilities[2] != ABILITY_NONE)
-            AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[gSpeciesInfo[species].abilities[2]]);
-        #else
-        if (gSpeciesInfo[species].abilityHidden != ABILITY_NONE)           
-            AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilityNames[gSpeciesInfo[species].abilityHidden]);
-        #endif
-        else
-            AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, gText_None);
-    }
-    else
-    {
-        AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, HA_INFO_Y, sFontColor_Black, 0, sText_DexNav_CaptureToSee);
+        SetTypeIconPosAndPal(type1, 165, 71, 0);
+        SetTypeIconPosAndPal(type2, 164 + 39, 71, 1);
     }
     
     //current chain
+	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y - 10, sFontColor_White, 0, sText_DexNavShinyHeader);
+	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y, sFontColor_White, 0, sText_DexNavChainText);
     ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
-    AddTextPrinterParameterized3(WINDOW_INFO, 0, 0, CHAIN_BONUS_Y, sFontColor_Black, 0, gStringVar1);
-    
+    AddTextPrinterParameterized3(WINDOW_INFO, 0, 45, CHAIN_BONUS_Y, sFontColor_White, 0, gStringVar1);
+	
+	//Shiny chance with chain
+	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y + 10, sFontColor_White, 0, sText_DexNavChainChance);
+	AddTextPrinterParameterized3(WINDOW_INFO, 0, 45, CHAIN_BONUS_Y + 10, sFontColor_White, 0, DexNavGetShinyChanceString());
+	
     CopyWindowToVram(WINDOW_INFO, 3);
     PutWindowTilemap(WINDOW_INFO);
 }
@@ -2389,9 +2309,7 @@ static void Task_DexNavMain(u8 taskId)
     {
         if (sDexNavUiDataPtr->cursorRow == ROW_WATER)
         {
-            sDexNavUiDataPtr->cursorRow = ROW_HIDDEN;
-            if (sDexNavUiDataPtr->cursorCol >= COL_HIDDEN_COUNT)
-                sDexNavUiDataPtr->cursorCol = COL_HIDDEN_MAX;
+            sDexNavUiDataPtr->cursorRow = ROW_LAND_BOT;
         }
         else
         {
@@ -2406,16 +2324,12 @@ static void Task_DexNavMain(u8 taskId)
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
-        if (sDexNavUiDataPtr->cursorRow == ROW_HIDDEN)
+        if (sDexNavUiDataPtr->cursorRow == ROW_LAND_BOT)
         {
+			if (sDexNavUiDataPtr->cursorRow == ROW_LAND_BOT && sDexNavUiDataPtr->cursorCol == COL_LAND_MAX)
+                sDexNavUiDataPtr->cursorCol = COL_WATER_MAX;
+			
             sDexNavUiDataPtr->cursorRow = ROW_WATER;
-        }
-        else if (sDexNavUiDataPtr->cursorRow == ROW_LAND_BOT)
-        {
-            if (sDexNavUiDataPtr->cursorCol >= COL_HIDDEN_COUNT)
-                sDexNavUiDataPtr->cursorCol = COL_HIDDEN_MAX;
-            
-            sDexNavUiDataPtr->cursorRow++;
         }
         else
         {
@@ -2433,9 +2347,6 @@ static void Task_DexNavMain(u8 taskId)
             {
             case ROW_WATER:
                 sDexNavUiDataPtr->cursorCol = COL_WATER_MAX;
-                break;
-            case ROW_HIDDEN:
-                sDexNavUiDataPtr->cursorCol = COL_HIDDEN_MAX;
                 break;
             default:
                 sDexNavUiDataPtr->cursorCol = COL_LAND_MAX;
@@ -2456,12 +2367,6 @@ static void Task_DexNavMain(u8 taskId)
         {
         case ROW_WATER:
             if (sDexNavUiDataPtr->cursorCol == COL_WATER_MAX)
-                sDexNavUiDataPtr->cursorCol = 0;
-            else
-                sDexNavUiDataPtr->cursorCol++;
-            break;
-        case ROW_HIDDEN:
-            if (sDexNavUiDataPtr->cursorCol == COL_HIDDEN_MAX)
                 sDexNavUiDataPtr->cursorCol = 0;
             else
                 sDexNavUiDataPtr->cursorCol++;
@@ -2507,7 +2412,6 @@ static void Task_DexNavMain(u8 taskId)
         {
             gSpecialVar_0x8000 = species;
             gSpecialVar_0x8001 = sDexNavUiDataPtr->environment;
-            gSpecialVar_0x8002 = (sDexNavUiDataPtr->cursorRow == ROW_HIDDEN) ? TRUE : FALSE;
             PlaySE(SE_DEX_SEARCH);
             BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
             task->func = Task_DexNavExitAndSearch;
@@ -2687,69 +2591,6 @@ static void DexNavDrawHiddenIcons(void)
 /////////////////////////
 //// GENERAL UTILITY ////
 /////////////////////////
-/*
-bool8 DexNavTryMakeShinyMon(void)
-{
-    u32 i, shinyRolls, chainBonus, rndBonus;
-    u32 shinyRate = 0;
-    u32 charmBonus = 0;
-    u8 searchLevel = sDexNavSearchDataPtr->searchLevel;
-    u8 chain = gSaveBlock1Ptr->dexNavChain;
-	u32 baseRate;
-	
-	switch (gSaveBlock1Ptr->tx_Features_ShinyChance)
-{
-    case 0: baseRate = 8192; break; //Emerald Default
-    case 1: baseRate = 4096; break; //Gen VI+
-    case 2: baseRate = 2048; break;
-    case 3: baseRate = 1024; break;
-    case 4: baseRate = 512;  break;
-    default: baseRate = 8192; break;
-}
-    
-    #ifdef ITEM_SHINY_CHARM
-    charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
-    #endif
-    
-    //chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
-	//Trying to make chains more rewarding since Search Levels are disabled
-	chainBonus = chain / 15;
-	if (chain >= 25) chainBonus += 2;
-	if (chain >= 50) chainBonus += 5;
-	if (chain >= 75) chainBonus += 7;
-	if (chain >= 100) chainBonus += 10;
-	
-    rndBonus = (Random() % 100 < 4 ? 4 : 0);
-    shinyRolls = 1 + charmBonus + chainBonus + rndBonus;
-
-    if (searchLevel > 200)
-    {
-        shinyRate += searchLevel - 200;
-        searchLevel = 200;
-    }
-    if (searchLevel > 100)
-    {
-        shinyRate += (searchLevel * 2) - 200;
-        searchLevel = 100;
-    }
-    if (searchLevel > 0)
-    {
-        shinyRate += searchLevel * 6;
-    }
-    
-    //shinyRate /= 100;
-	// Scale shinyRate from /10000 → /baseRate
-	shinyRate = (shinyRate * baseRate) / 10000;
-    for (i = 0; i < shinyRolls; i++)
-    {
-        //if (Random() % 10000 < shinyRate)
-		if (Random() % baseRate < shinyRate)
-            return TRUE;
-    }
-    
-    return FALSE;
-}
-*/
 //Testing a new system based on chains since search level is disabled.
 bool8 DexNavTryMakeShinyMon(void)
 {
@@ -2759,15 +2600,16 @@ bool8 DexNavTryMakeShinyMon(void)
     u8 chain = gSaveBlock1Ptr->dexNavChain;
 	u32 baseRate;
 	
-	switch (gSaveBlock1Ptr->tx_Features_ShinyChance)
-{
-    case 0: baseRate = 8192; break; //Emerald Default
-    case 1: baseRate = 4096; break; //Gen VI+
-    case 2: baseRate = 2048; break;
-    case 3: baseRate = 1024; break;
-    case 4: baseRate = 512;  break;
-    default: baseRate = 8192; break;
-}
+	/// Determine base shiny rate from settings
+    switch (gSaveBlock1Ptr->tx_Features_ShinyChance)
+    {
+        case 0: baseRate = 8192; break; // Emerald default
+        case 1: baseRate = 4096; break; // Gen VI+
+        case 2: baseRate = 2048; break;
+        case 3: baseRate = 1024; break;
+        case 4: baseRate = 512;  break; // ultra generous
+        default: baseRate = 8192; break;
+    }
     
     #ifdef ITEM_SHINY_CHARM
     if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
@@ -2795,7 +2637,7 @@ bool8 DexNavTryMakeShinyMon(void)
 	
 	//Cap things to not get TOO wild
 	if (shinyRate > baseRate / 2)
-    shinyRate = baseRate / 2;
+		shinyRate = baseRate / 2;
 	
     for (i = 0; i < shinyRolls; i++)
     {
@@ -2804,6 +2646,66 @@ bool8 DexNavTryMakeShinyMon(void)
     }
     
     return FALSE;
+}
+
+//Helper for printing shiny chance
+static const u8 *DexNavGetShinyChanceString(void)
+{
+    static u8 buffer[32];
+	u32 i, shinyRolls, chainBonus;
+    u32 shinyRate = 1;
+	u32 charmBonus = 0;
+    u32 chain = gSaveBlock1Ptr->dexNavChain;
+	u32 baseRate;
+
+    // Determine base shiny rate from settings
+    switch (gSaveBlock1Ptr->tx_Features_ShinyChance)
+    {
+        case 0: baseRate = 8192; break; // Emerald default
+        case 1: baseRate = 4096; break; // Gen VI+
+        case 2: baseRate = 2048; break;
+        case 3: baseRate = 1024; break;
+        case 4: baseRate = 512;  break; // ultra generous
+        default: baseRate = 8192; break;
+    }
+	
+    #ifdef ITEM_SHINY_CHARM
+    if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
+    {
+        charmBonus = 3;        // more rolls
+        shinyRate += 150;      // better odds
+    }
+    #endif
+	
+	//Chain Scallig (rolls)
+    chainBonus = chain / 15;
+    if (chain >= 25) chainBonus += 2;
+    if (chain >= 50) chainBonus += 5;
+    if (chain >= 75) chainBonus += 7;
+    if (chain >= 100) chainBonus += 10;
+    // Chain scaling (rate)
+    shinyRate += chain * 3;
+	
+	shinyRolls = 1 + charmBonus + chainBonus;
+
+    //Cap things to not get TOO wild
+	if (shinyRate > baseRate / 2)
+		shinyRate = baseRate / 2;
+	
+	// Compute probability over multiple rolls
+    u32 fail = 10000;
+    for (i = 0; i < shinyRolls; i++)
+    {
+        fail = (fail * (baseRate - shinyRate)) / baseRate;
+    }
+
+    u32 percent = (10000 - fail) / 100; // convert to 0-100%
+
+    // Build string
+    ConvertIntToDecimalStringN(buffer, percent, STR_CONV_MODE_LEFT_ALIGN, 3);
+	StringAppend(buffer, sText_DexNavChainChancPercent);
+
+    return buffer;
 }
 
 void TryIncrementSpeciesSearchLevel(u16 dexNum)
