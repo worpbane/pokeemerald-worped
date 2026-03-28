@@ -12,14 +12,19 @@
 ---
 
 ### 🧩 Features
-- Added Shiny Charm to aid in finding rare Pokémon.
-- DexNav updated: Search Levels disabled (to save space). Chain effects have been increased to make repeated encounters more rewarding. Combined with the Shiny Charm, this should make shiny hunting fun and more accessible!
+- Added **Shiny Charm** to aid in finding rare Pokémon.  
+
+- **DexNav updated**:
+	- Search Level disabled (saves save block space).  
+	- **Chains are everything now**: chaining skyrockets your shiny odds! The system scales dynamically based on your **chosen shiny rate**, so if you pick a wild low rate like 512, you’ll be practically **swimming** in shinies as you near a 50-chain streak. ⚡✨  
 
 ---
 
 ### 🎮 UI Changes
 - Start Menu reordered for improved usability.
-- DexNav removed from Start Menu, now accessible by pressing L when the cursor is over the PokéNav.
+- DexNav removed from Start Menu, now accessible by pressing **L** when the cursor is over the PokéNav.
+- Implmented Item Descirtion Headers from ghoulslash.
+- Implmented Plural Give Item Fix from ghoulslash.
 
 ---
 
@@ -37,7 +42,9 @@
 - None yet  
 
 ### ⚠️ Known Issues
-- Seasonal palette changes currently do not affect tall grass.
+- Seasonal palette changes currently do not affect tall grass.  
+- Catch Mode sometimes doesn't work.  
+- Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
 
 ## [0.1] - Released 03/23/26
 

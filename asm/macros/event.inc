@@ -1808,6 +1808,26 @@
 	.byte 0xec
 	.2byte \number
 	.endm
+	
+	@ Ghoul's item_desc_header 
+	.macro showdescription
+	.byte 0xed
+	.endm
+
+	.macro showitemdesc
+	setvar VAR_0x8009, 0
+	showdescription
+	.endm
+
+	.macro showberrydesc
+	setvar VAR_0x8009, 1
+	showdescription
+	.endm
+
+	.macro hideitemdesc
+	.byte 0xee
+	.endm
+
 
 
 @ Supplementary

@@ -2,6 +2,7 @@
 .set AMOUNT, VAR_0x8001
 
 Std_ObtainItem::
+	copyvar VAR_0x8006, ITEMID
 	specialvar VAR_RESULT, IsRandomItemsActivated
 	call_if_eq VAR_RESULT, TRUE, Std_RandomItem
 	copyvar VAR_0x8004, ITEMID
@@ -67,11 +68,23 @@ EventScript_BufferBerriesPocket::
 	call_if_ne VAR_0x8007, FALSE, EventScript_PlayFanfareObtainedItem
 	return
 
-EventScript_ObtainedItem::
+EventScript_ObtainedItem:: @ 8271B95
+	compare VAR_0x8001, 1
+	goto_if_eq EventScript_ObtainedItemMessage
+	buffernumberstring 0, VAR_0x8001
+	message gText_ObtainedTheItems
+	delay 10
+	showitemdesc
+	goto EventScript_ContinueObtainedItem
+EventScript_ObtainedItemMessage:
 	message gText_ObtainedTheItem
+	delay 10
+	showitemdesc
+EventScript_ContinueObtainedItem:
 	waitfanfare
-	call EventScript_PutItemMsg
-	setvar VAR_RESULT, TRUE
+	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
+	hideitemdesc
+	setvar VAR_RESULT, 1
 	return
 
 EventScript_NoRoomForItem::
@@ -114,6 +127,7 @@ Std_FindItem::
 	lock
 	faceplayer
 	waitse
+	copyvar VAR_0x8006, ITEMID
 	specialvar VAR_RESULT, IsRandomItemsActivated
 	call_if_eq VAR_RESULT, TRUE, Std_RandomItem
 	copyvar VAR_0x8004, ITEMID
@@ -145,6 +159,7 @@ EventScript_PickUpItem::
 	removeobject VAR_LAST_TALKED
 	goto_if_eq VAR_0x8007, 2, EventScript_PickUpItemPCAdd
 	additem VAR_0x8004, VAR_0x8005
+	copyvar VAR_0x8006 VAR_0x8004
 	goto EventScript_PickUpItemContinueAdd
 EventScript_PickUpItemPCAdd:
 	addpcitem VAR_0x8004, VAR_0x8005
@@ -153,12 +168,15 @@ EventScript_PickUpItemContinueAdd:
 	copyvar VAR_0x8008, VAR_RESULT
 	call_if_eq VAR_0x8008, TRUE, EventScript_FoundTMHM
 	call_if_eq VAR_0x8008, FALSE, EventScript_FoundItem
+	delay 10
+	showitemdesc
 	waitfanfare
 	waitmessage
 	bufferitemnameplural STR_VAR_2, VAR_0x8004, VAR_0x8005
 	pyramid_inchallenge
 	goto_if_eq VAR_RESULT, TRUE, EventScript_PutBattlePyramidItemInBag
 	call EventScript_PutItemMsg
+	hideitemdesc
 	return
 
 EventScript_PutBattlePyramidItemInBag::
@@ -183,6 +201,7 @@ EventScript_NoRoomToPickUpItem::
 EventScript_HiddenItemScript::
 	lockall
 	waitse
+	copyvar VAR_0x8006, VAR_0x8005
 	specialvar VAR_RESULT, IsRandomItemsActivated
 	call_if_eq VAR_RESULT, TRUE, Std_RandomItemHidden
 	additem VAR_0x8005
@@ -228,11 +247,14 @@ EventScript_FoundHiddenItem::
 	end
 
 EventScript_PutHiddenItemInPocket::
+	delay 10
+	showitemdesc
 	waitmessage
 	waitfanfare
 	bufferitemnameplural STR_VAR_2, VAR_0x8004, 1
 	copyvar VAR_0x8004, VAR_0x8008
 	call EventScript_PutItemMsg
+	hideitemdesc
 	special TryPutTreasureInvestigatorsOnAir
 	special SetHiddenItemFlag
 	releaseall

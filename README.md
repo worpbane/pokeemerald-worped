@@ -38,7 +38,7 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
   *(Search Levels disabled to save memory; Chain Bonuses increased to assist Shiny Hunting)*
 
 - **Shiny Charm**  
-  Added a Shiny Charm to aid with shiny hunting; not based on any repo, sprite is sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion).  
+  Added a Shiny Charm to aid with shiny hunting; not based on any repo, sprite is sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)  
   *(Received from the girl next to Mr. Briney's Cottage after earning your first Gym Badge in Rustboro.)*
 
 - **Seasons**  
@@ -55,7 +55,13 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
   
 - **Black/White-style Summary Screen**  
   Based on: [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & [RavePossum's Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
-  *(Some features manually backported from the expansion version)*
+  *(Some features manually backported from the expansion version)*  
+  
+- **Item Description Headers**  
+  Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/item_desc_header)
+  
+- **Plural Give Item Fix**  
+  Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/plural-giveitem)
 
 ---
 

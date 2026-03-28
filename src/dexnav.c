@@ -2687,6 +2687,7 @@ static void DexNavDrawHiddenIcons(void)
 /////////////////////////
 //// GENERAL UTILITY ////
 /////////////////////////
+/*
 bool8 DexNavTryMakeShinyMon(void)
 {
     u32 i, shinyRolls, chainBonus, rndBonus;
@@ -2694,6 +2695,17 @@ bool8 DexNavTryMakeShinyMon(void)
     u32 charmBonus = 0;
     u8 searchLevel = sDexNavSearchDataPtr->searchLevel;
     u8 chain = gSaveBlock1Ptr->dexNavChain;
+	u32 baseRate;
+	
+	switch (gSaveBlock1Ptr->tx_Features_ShinyChance)
+{
+    case 0: baseRate = 8192; break; //Emerald Default
+    case 1: baseRate = 4096; break; //Gen VI+
+    case 2: baseRate = 2048; break;
+    case 3: baseRate = 1024; break;
+    case 4: baseRate = 512;  break;
+    default: baseRate = 8192; break;
+}
     
     #ifdef ITEM_SHINY_CHARM
     charmBonus = (CheckBagHasItem(ITEM_SHINY_CHARM, 1) > 0) ? 2 : 0;
@@ -2702,11 +2714,10 @@ bool8 DexNavTryMakeShinyMon(void)
     //chainBonus = (chain == 50) ? 5 : (chain == 100) ? 10 : 0;
 	//Trying to make chains more rewarding since Search Levels are disabled
 	chainBonus = chain / 15;
-	if (chain >= 50)
-		chainBonus += 5;
-
-	if (chain >= 100)
-		chainBonus += 10;
+	if (chain >= 25) chainBonus += 2;
+	if (chain >= 50) chainBonus += 5;
+	if (chain >= 75) chainBonus += 7;
+	if (chain >= 100) chainBonus += 10;
 	
     rndBonus = (Random() % 100 < 4 ? 4 : 0);
     shinyRolls = 1 + charmBonus + chainBonus + rndBonus;
@@ -2726,10 +2737,69 @@ bool8 DexNavTryMakeShinyMon(void)
         shinyRate += searchLevel * 6;
     }
     
-    shinyRate /= 100;
+    //shinyRate /= 100;
+	// Scale shinyRate from /10000 → /baseRate
+	shinyRate = (shinyRate * baseRate) / 10000;
     for (i = 0; i < shinyRolls; i++)
     {
-        if (Random() % 10000 < shinyRate)
+        //if (Random() % 10000 < shinyRate)
+		if (Random() % baseRate < shinyRate)
+            return TRUE;
+    }
+    
+    return FALSE;
+}
+*/
+//Testing a new system based on chains since search level is disabled.
+bool8 DexNavTryMakeShinyMon(void)
+{
+    u32 i, shinyRolls, chainBonus, rndBonus;
+    u32 shinyRate = 1;
+    u32 charmBonus = 0;
+    u8 chain = gSaveBlock1Ptr->dexNavChain;
+	u32 baseRate;
+	
+	switch (gSaveBlock1Ptr->tx_Features_ShinyChance)
+{
+    case 0: baseRate = 8192; break; //Emerald Default
+    case 1: baseRate = 4096; break; //Gen VI+
+    case 2: baseRate = 2048; break;
+    case 3: baseRate = 1024; break;
+    case 4: baseRate = 512;  break;
+    default: baseRate = 8192; break;
+}
+    
+    #ifdef ITEM_SHINY_CHARM
+    if (CheckBagHasItem(ITEM_SHINY_CHARM, 1))
+    {
+        charmBonus = 3;        // more rolls
+        shinyRate += 150;      // better odds
+    }
+    #endif
+    
+	//Chain Scallig (rolls)
+	chainBonus = chain / 20;
+	if (chain >= 25) chainBonus += 2;
+	if (chain >= 50) chainBonus += 5;
+	if (chain >= 75) chainBonus += 7;
+	if (chain >= 100) chainBonus += 10;
+	
+	// Chain scaling (rate)
+    shinyRate += chain * 3;
+	
+	//Random Bonus
+    rndBonus = (Random() % 100 < 4 ? 4 : 0);
+	
+	//Amount of Rolls
+    shinyRolls = 1 + charmBonus + chainBonus + rndBonus;
+	
+	//Cap things to not get TOO wild
+	if (shinyRate > baseRate / 2)
+    shinyRate = baseRate / 2;
+	
+    for (i = 0; i < shinyRolls; i++)
+    {
+        if (Random() % baseRate < shinyRate)
             return TRUE;
     }
     

@@ -83,6 +83,14 @@ void ItemId_GetHoldEffectParam_Script();
 u16 RandomItemId(u16 itemId);
 u16 RandomItem(void);
 u16 RandomItemHidden(void);
+void DrawHeaderBox(void);
+void HideHeaderBox(void);
+
+enum ItemObtainFlags
+{
+    FLAG_GET_OBTAINED,
+    FLAG_SET_OBTAINED,
+};
 
 /* Expands to:
  * enum

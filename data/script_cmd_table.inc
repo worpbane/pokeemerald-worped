@@ -237,6 +237,9 @@ gScriptCmdTable::
 	.4byte ScrCmd_checkrandomizer                   @ 0xea
 	.4byte ScrCmd_checknuzlocke                     @ 0xeb
 	.4byte ScrCmd_givebp							@ 0xec
+	.4byte ScrCmd_showitemdesc            			@ 0xed
+	.4byte ScrCmd_hideitemdesc           			@ 0xee
+
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

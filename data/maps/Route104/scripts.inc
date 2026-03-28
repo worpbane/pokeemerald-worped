@@ -1029,7 +1029,7 @@ Route104_Text_BrineyLivesInSeasideCottage:
 	.string "feared the sea, however stormy.$"
 	
 Route104_Text_HereTakeShinyCharm:
-    .string "Wow! You look like a strong Trainer!\n"
+    .string "Wow! You look like a strong Trainer!\p"
     .string "I was being chased by a Pokémon\n"
     .string "with strange colors!\p"
     .string "Since you look strong, you can have\n"
