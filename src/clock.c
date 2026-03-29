@@ -11,9 +11,12 @@
 #include "main.h"
 #include "overworld.h"
 #include "wallclock.h"
+#include "random.h"
+#include "constants/weather.h"
 
 static void UpdatePerDay(struct Time *localTime);
 static void UpdatePerMinute(struct Time *localTime);
+static void setWeatherSeason(void);
 
 static void InitTimeBasedEvents(void)
 {
@@ -37,9 +40,14 @@ static void UpdatePerDay(struct Time *localTime)
 {
     u16 *days = GetVarPointer(VAR_DAYS);
     u16 daysSince;
+	u16 rndWthr = Random() % 100;
 
     if (*days != localTime->days && *days <= localTime->days)
     {
+		if (rndWthr > 25)
+                VarSet(VAR_SEASON_WEATHER, WEATHER_NONE);
+            else
+                setWeatherSeason();
         daysSince = localTime->days - *days;
         ClearDailyFlags();
         UpdateDewfordTrendPerDay(daysSince);
@@ -103,4 +111,63 @@ void FastForwardTime(s16 daysToUpdateDay, s16 hoursToGrowBerries){
         localTimeOffset.days += daysBerry;
         localTimeOffset.hours += hoursBerry;
         UpdatePerMinute(&localTimeOffset);
+}
+
+static void setWeatherSeason(void)
+{
+    int temp = 0;
+    u8 currentSeason = VarGet(VAR_SEASON_STATE);
+    u16 rngval = (Random() % 100);
+
+    switch (currentSeason)
+    {
+        case SEASON_SPRING:
+            if (rngval < 1)              // 1%
+                temp = WEATHER_SHADE;
+            else if (rngval < 11)        // 10%
+                temp = WEATHER_RAIN_THUNDERSTORM;
+            else if (rngval < 41)        // 30%
+                temp = WEATHER_NONE;
+            else                         // 59%
+                temp = WEATHER_RAIN;
+            break;
+
+        case SEASON_SUMMER:
+            if (rngval < 1)              // 1%
+                temp = WEATHER_SHADE;
+            else if (rngval < 4)         // 3%
+                temp = WEATHER_RAIN_THUNDERSTORM;
+            else if (rngval < 10)        // 6%
+                temp = WEATHER_RAIN;
+            else if (rngval < 25)        // 15%
+                temp = WEATHER_DROUGHT;
+            else                         // 75%
+                temp = WEATHER_NONE;
+            break;
+
+        case SEASON_AUTUMN:
+            if (rngval < 2)              // 2%
+                temp = WEATHER_SHADE;
+            else if (rngval < 42)        // 40%
+                temp = WEATHER_RAIN;
+            else if (rngval < 82)        // 40%
+                temp = WEATHER_NONE;
+            else                         // 18%
+                temp = WEATHER_RAIN_THUNDERSTORM;
+            break;
+
+        case SEASON_WINTER:
+            if (rngval < 4)              // 4%
+                temp = WEATHER_SHADE;
+            else if (rngval < 14)        // 10%
+                temp = WEATHER_RAIN_THUNDERSTORM;
+            else if (rngval < 29)        // 15%
+                temp = WEATHER_NONE;
+            else if (rngval < 55)        // 26%
+                temp = WEATHER_RAIN;
+            else                         // 45%
+                temp = WEATHER_SNOW;
+            break;
+    }
+    VarSet(VAR_SEASON_WEATHER, temp);
 }

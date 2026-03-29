@@ -18,6 +18,9 @@
 	- Search Level disabled (saves save block space).  
 	- **Chains are everything now**: chaining skyrockets your shiny odds! The system scales dynamically based on your **chosen shiny rate**, so if you pick a wild low rate like 512, you’ll be practically **swimming** in shinies as you near a 50-chain streak. ⚡✨  
 
+- **Seasonal Weather**:
+	- WIP, currently non-functional. Was going to go with Emerald Enhanced's implementation, but I'm not completely happy with that.
+
 ---
 
 ### 🎮 UI Changes

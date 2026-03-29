@@ -2117,11 +2117,11 @@ static void PrintCurrentSpeciesInfo(void)
 	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y - 10, sFontColor_White, 0, sText_DexNavShinyHeader);
 	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y, sFontColor_White, 0, sText_DexNavChainText);
     ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
-    AddTextPrinterParameterized3(WINDOW_INFO, 0, 45, CHAIN_BONUS_Y, sFontColor_White, 0, gStringVar1);
+    AddTextPrinterParameterized3(WINDOW_INFO, 0, 47, CHAIN_BONUS_Y, sFontColor_White, 0, gStringVar1);
 	
 	//Shiny chance with chain
 	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y + 10, sFontColor_White, 0, sText_DexNavChainChance);
-	AddTextPrinterParameterized3(WINDOW_INFO, 0, 45, CHAIN_BONUS_Y + 10, sFontColor_White, 0, DexNavGetShinyChanceString());
+	AddTextPrinterParameterized3(WINDOW_INFO, 0, 47, CHAIN_BONUS_Y + 10, sFontColor_White, 0, DexNavGetShinyChanceString());
 	
     CopyWindowToVram(WINDOW_INFO, 3);
     PutWindowTilemap(WINDOW_INFO);
