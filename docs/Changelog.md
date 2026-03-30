@@ -42,11 +42,12 @@
 ---
 
 ### 🐞 Bug Fixes
-- None yet  
+- Shiny Pokemon now display properly in the Summary Screen.
+- Catch Mode should work more reliably. Moved it into the Adjust Damage step instead of Damage Calc. 
+- DexNav no longer crashes in caves.
 
 ### ⚠️ Known Issues
-- Seasonal palette changes currently do not affect tall grass.  
-- Catch Mode sometimes doesn't work.  
+- Seasonal palette changes currently do not affect tall grass.   
 - Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
 
 ## [0.1] - Released 03/23/26

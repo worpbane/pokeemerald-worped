@@ -80,7 +80,7 @@ static void DrawLevelUpWindow2(void);
 static void PutMonIconOnLvlUpBanner(void);
 static void DrawLevelUpBannerText(void);
 static void SpriteCB_MonIconOnLvlUpBanner(struct Sprite *sprite);
-static void TryApplyCatchModeDamageClamp(u8 attacker, u8 target, s32 *damage);
+static void TryApplyCatchModeDamageClamp(s32 *damage);
 
 static void Cmd_attackcanceler(void);
 static void Cmd_accuracycheck(void);
@@ -1335,8 +1335,6 @@ static void Cmd_damagecalc(void)
         gBattleMoveDamage *= 2;
     if (gProtectStructs[gBattlerAttacker].helpingHand)
         gBattleMoveDamage = gBattleMoveDamage * 15 / 10;
-	
-	TryApplyCatchModeDamageClamp(gBattlerAttacker, gBattlerTarget, &gBattleMoveDamage);
 
     gBattlescriptCurrInstr++;
 }
@@ -2105,7 +2103,7 @@ static void UNUSED Unused_ApplyRandomDmgMultiplier(void)
 }
 
 //Catch Mode
-static void TryApplyCatchModeDamageClamp(u8 attacker, u8 target, s32 *damage)
+static void TryApplyCatchModeDamageClamp(s32 *damage)
 {
     s32 clampedDamage;
 
@@ -2113,7 +2111,7 @@ static void TryApplyCatchModeDamageClamp(u8 attacker, u8 target, s32 *damage)
         return;
     if (*damage <= 0)
         return;
-	if (!gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FRONTIER))
+	if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FRONTIER))
 		return;
 
     clampedDamage = *damage;
@@ -2178,6 +2176,9 @@ static void Cmd_adjustnormaldamage(void)
             gLastUsedItem = gBattleMons[gBattlerTarget].item;
         }
     }
+	
+	TryApplyCatchModeDamageClamp(&gBattleMoveDamage);
+	
     gBattlescriptCurrInstr++;
 }
 
