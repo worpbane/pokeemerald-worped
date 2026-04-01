@@ -973,6 +973,13 @@ bool8 TryStartDexnavSearch(void)
     
     if (FlagGet(FLAG_SYS_DEXNAV_SEARCH) || (val & MASK_SPECIES) == SPECIES_NONE)
         return FALSE;
+	
+	if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
+		return FALSE;
+	
+	if (MapHasNoEncounterData())
+        return FALSE;
+	
     
     HideMapNamePopUpWindow();
     ChangeBgY_ScreenOff(0, 0, 0);

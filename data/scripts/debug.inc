@@ -213,7 +213,21 @@ Debug_Script_3_Text_TypeEffectiveness::
 	.string "NO will set it to MODERN TYPE CHART.$"
 
 Debug_Script_4::
+	msgbox Debug_Script_4_NameRival, MSGBOX_DEFAULT
+	closemessage
+	special NameRival
+	waitstate
+	msgbox Debug_Script_4_NameRival2, MSGBOX_DEFAULT
+	closemessage
 	end
+	
+Debug_Script_4_NameRival::
+	.string "Opening interface to rename\n"
+	.string "the player's rival.$"
+	
+Debug_Script_4_NameRival2::
+	.string "Rival renamed to:\n"
+	.string "{RIVAL}.$"
 
 Debug_Script_5::
 	end

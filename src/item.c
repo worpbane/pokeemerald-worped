@@ -1265,6 +1265,8 @@ u16 RandomItemHidden(void) //same as normal hidden item, but differen special va
     return itemId;
 }
 
+#define FIRST_BERRY_INDEX 133  // ITEM_CHERI_BERRY
+#define LAST_BERRY_INDEX  175  // ITEM_ENIGMA_BERRY
 static bool8 GetSetItemObtained(u16 item, u8 caseId)
 {
     u8 index;
@@ -1274,6 +1276,10 @@ static bool8 GetSetItemObtained(u16 item, u8 caseId)
     index = item / 8;
     bit = item % 8;
     mask = 1 << bit;
+	
+	if (item >= FIRST_BERRY_INDEX && item <= LAST_BERRY_INDEX && caseId == FLAG_GET_OBTAINED)
+        return FALSE;
+	
     switch (caseId)
     {
     case FLAG_GET_OBTAINED:

@@ -16,10 +16,16 @@
 
 - **DexNav updated**:
 	- Search Level disabled (saves save block space).  
-	- **Chains are everything now**: chaining skyrockets your shiny odds! The system scales dynamically based on your **chosen shiny rate**, so if you pick a wild low rate like 512, you’ll be practically **swimming** in shinies as you near a 50-chain streak. ⚡✨  
+	- **Chains are everything now**: chaining skyrockets your shiny odds! The system scales dynamically based on your **chosen shiny rate**, so if you pick a wild low rate like 512, you’ll be practically **swimming** in shinies as you near a 50-chain streak. ⚡✨ 
+    - DexNav will no longer even attempt to search for Pokémon if you are on a bike or in an area with no Pokémon.
 
 - **Seasonal Weather**:
-	- WIP, currently non-functional. Was going to go with Emerald Enhanced's implementation, but I'm not completely happy with that.
+	- WIP, currently non-functional. Was going to go with Emerald Enhanced's implementation, but I'm not completely happy with that.  
+	
+- Removed **Hold Select** to register second item from the Bag.
+	- The secondary (hold) register was unreliable in testing and would always trigger alongside the tap input.
+	- Sometimes the tap input wouldn't even trigger for me.
+	- Reverted Select button to standard behavior.
 
 ---
 
@@ -49,6 +55,8 @@
 ### ⚠️ Known Issues
 - Seasonal palette changes currently do not affect tall grass.   
 - Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
+- Item Description Headers don't display correctly for berries, temporary fix is the headers ALWAYS display for berries.  
+- Bike Switch button is same as the DexNav search... Need to figure out a way to disable dexnav search when on bike.
 
 ## [0.1] - Released 03/23/26
 
