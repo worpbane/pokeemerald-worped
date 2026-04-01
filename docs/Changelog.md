@@ -55,8 +55,6 @@
 ### ⚠️ Known Issues
 - Seasonal palette changes currently do not affect tall grass.   
 - Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
-- Item Description Headers don't display correctly for berries, temporary fix is the headers ALWAYS display for berries.  
-- Bike Switch button is same as the DexNav search... Need to figure out a way to disable dexnav search when on bike.
 
 ## [0.1] - Released 03/23/26
 
