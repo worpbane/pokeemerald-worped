@@ -368,4 +368,8 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_MOONBLAST] = _("Moonblast"),
     [MOVE_PLAY_ROUGH] = _("Play Rough"),
     [MOVE_POISON_JAB] = _("Poison Jab"),
+    [MOVE_DAZZLING_GLEAM] = _("Dazzling Gleam"),
+    [MOVE_DRAINING_KISS] = _("Draining Kiss"),
+    [MOVE_TAIL_SLAP] = _("Tail Slap"),
+    [MOVE_DISARMING_VOICE] = _("Disarming Voice"),
 };

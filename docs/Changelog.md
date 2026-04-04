@@ -26,6 +26,16 @@
 	- The secondary (hold) register was unreliable in testing and would always trigger alongside the tap input.
 	- Sometimes the tap input wouldn't even trigger for me.
 	- Reverted Select button to standard behavior.
+	
+- Added new moves to the game:
+  - **Dazzling Gleam**  
+  - **Draining Kiss**  
+  - **Disarming Voice**  
+  - **Tail Whip**
+	- Added **TMs** for the 3 new **Fairy-type** moves:  
+	*(Can be purchased at TMs Shops across Hoenn)*   
+	- Prepared contest/battle backend for these moves.  
+	- Moves added to some Pokémon in the level_up_learnsets and tmhm_learnsets.
 
 ---
 
@@ -47,7 +57,7 @@
 ---
 
 ### 🐞 Bug Fixes
-- Shiny Pokemon now display properly in the Summary Screen.
+- Shiny Pokémon now display properly in the Summary Screen.
 - Catch Mode should work more reliably. Moved it into the Adjust Damage step instead of Damage Calc. 
 - DexNav no longer crashes in caves.
 

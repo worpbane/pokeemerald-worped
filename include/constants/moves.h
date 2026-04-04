@@ -369,8 +369,12 @@
 #define MOVE_PLAY_ROUGH 365
 #define MOVE_MOONBLAST 366
 #define MOVE_POISON_JAB 367
+#define MOVE_DAZZLING_GLEAM 368
+#define MOVE_DRAINING_KISS 369
+#define MOVE_TAIL_SLAP 370
+#define MOVE_DISARMING_VOICE 371
 
-#define MOVES_COUNT 368
+#define MOVES_COUNT 372
 
 // Used for checks for moves affected by Disable, Mimic, etc.
 #define MOVE_UNAVAILABLE 0xFFFF

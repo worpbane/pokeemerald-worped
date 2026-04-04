@@ -286,6 +286,10 @@ static const s8 sMindRatings[MOVES_COUNT] =
     [MOVE_PLAY_ROUGH] = 1,
     [MOVE_MOONBLAST] = 1,
     [MOVE_POISON_JAB] = 1,
+    [MOVE_DAZZLING_GLEAM] = 1,
+    [MOVE_DRAINING_KISS] = 1,
+    [MOVE_TAIL_SLAP] = 1,
+    [MOVE_DISARMING_VOICE] = 1,
 };
 
 static const struct OamData sOam_JudgmentIcon =

@@ -1391,6 +1391,21 @@ static const u8 sTM50Desc[] = _(
     "Enables full-power\n"
     "attack, but sharply\n"
     "lowers Sp. Atk.");
+	
+static const u8 sTM51Desc[] = _(
+    "Strikes all foes with\n"
+    "a brilliant flash\n"
+    "of Fairy energy.");
+	
+static const u8 sTM52Desc[] = _(
+    "Kisses the foe to\n"
+    "drain HP and heal\n"
+    "the user slightly.");
+	
+static const u8 sTM53Desc[] = _(
+    "A sweet, singing\n"
+    "voice that never\n"
+    "misses the target.");
 
 
 static const u8 sHM01Desc[] = _(

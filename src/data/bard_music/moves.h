@@ -2950,6 +2950,38 @@ const struct BardSound gBardSounds_Moves[MOVES_COUNT][6] = {
         NULL_BARD_SOUND,
         NULL_BARD_SOUND,
     },
+	[MOVE_DISARMING_VOICE] = {
+		{ .songLengthId = 42 },
+		{ .songLengthId = 22 },
+		{ .songLengthId =  2 },
+		NULL_BARD_SOUND,
+		NULL_BARD_SOUND,
+		NULL_BARD_SOUND,
+	},
+	[MOVE_DRAINING_KISS] = {
+		{ .songLengthId = 33 },
+		{ .songLengthId =  5 },
+		{ .songLengthId =  4 },
+		NULL_BARD_SOUND,
+		NULL_BARD_SOUND,
+		NULL_BARD_SOUND,
+	},
+	[MOVE_DAZZLING_GLEAM] = {
+		{ .songLengthId = 42 },
+		{ .songLengthId = 22 },
+		{ .songLengthId =  2 },
+		NULL_BARD_SOUND,
+		NULL_BARD_SOUND,
+		NULL_BARD_SOUND,
+	},
+	[MOVE_TAIL_SLAP] = {
+		{ .songLengthId = 12 },
+		{ .songLengthId =  3 },
+		{ .songLengthId = 22 },
+		NULL_BARD_SOUND,
+		NULL_BARD_SOUND,
+		NULL_BARD_SOUND,
+	},
 };
 
 #endif //GUARD_DATA_BARD_MUSIC_MOVES_H

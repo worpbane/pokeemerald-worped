@@ -4146,6 +4146,42 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
+	
+	[ITEM_TM_DAZZLING_GLEAM] =
+    {
+        .name = _("TM51"),
+        .itemId = ITEM_TM51,
+        .price = 10000,
+        .description = sTM51Desc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+	
+	[ITEM_TM_DRAINING_KISS] =
+    {
+        .name = _("TM52"),
+        .itemId = ITEM_TM52,
+        .price = 10000,
+        .description = sTM52Desc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+	
+	[ITEM_TM_DISARMING_VOICE] =
+    {
+        .name = _("TM52"),
+        .itemId = ITEM_TM52,
+        .price = 10000,
+        .description = sTM52Desc,
+        .importance = 1,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
 
     [ITEM_HM_CUT] =
     {
@@ -8948,6 +8984,39 @@ const struct Item gItems2[] =
         .itemId = ITEM_TM50,
         .price = 7500,
         .description = sTM50Desc,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+	
+	[ITEM_TM_DAZZLING_GLEAM] =
+    {
+        .name = _("TM51"),
+        .itemId = ITEM_TM51,
+        .price = 6000,
+        .description = sTM51Desc,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+	
+	[ITEM_TM_DRAINING_KISS] =
+    {
+        .name = _("TM52"),
+        .itemId = ITEM_TM52,
+        .price = 3000,
+        .description = sTM52Desc,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+	
+	[ITEM_TM_DISARMING_VOICE] =
+    {
+        .name = _("TM52"),
+        .itemId = ITEM_TM52,
+        .price = 3000,
+        .description = sTM52Desc,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,

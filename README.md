@@ -18,8 +18,15 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
 * Added Pokémon from later generations *(work in progress)*  
   - Lechonk (Gen IX)  
   - Stufful (Gen VII)  
-    - *(Currently using Gen III movesets until proper ones are implemented.)*  
+    - *(I haven't added ALL the new moves that these Pokémon use, but I did add at least 1 for each of them.)*  
     - Sprites sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)
+	
+* Added new moves to Emerald: 
+  - **Dazzling Gleam** – TM available  
+  - **Draining Kiss** – TM available  
+  - **Disarming Voice** – TM available  
+  *(All compatible Pokémon that could learn the above moves in later gens should now be able to learn them via TM. Some did get them added to levelsets, but not all. First tiem adding moves so might have missed some stuff.)*
+  - **Tail Whip** - Exclusive for Minccino
 
 ---
 

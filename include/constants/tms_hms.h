@@ -51,7 +51,10 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(DAZZLING_GLEAM) \
+    F(DRAINING_KISS) \
+    F(DISARMING_VOICE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

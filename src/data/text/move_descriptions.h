@@ -1468,6 +1468,22 @@ static const u8 sMoonblastDescription[] = _(
 static const u8 sPoisonJabDescription[] = _(
     "A stabbing attack that\n"
     "may poison the foe.");
+	
+static const u8 sDazzlingGleamDescription[] = _(
+    "Damages foes by emitting\n"
+    "a bright flash.");
+	
+static const u8 sDrainingKissDescription[] = _(
+    "An attack that absorbs over\n"
+    "half the damage inflicted.");
+	
+static const u8 sTailSlapDescription[] = _(
+    "Strikes the foe with its\n"
+	"tail 2 to 5 times.");
+	
+static const u8 sDisarmingVoiceDescription[] = _(
+    "Lets out a charming cry\n"
+	"that cannot be evaded.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -1839,4 +1855,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PLAY_ROUGH - 1] = sPlayRoughDescription,
     [MOVE_MOONBLAST - 1] = sMoonblastDescription,
     [MOVE_POISON_JAB - 1] = sPoisonJabDescription,
+    [MOVE_DAZZLING_GLEAM - 1] = sDazzlingGleamDescription,
+    [MOVE_DRAINING_KISS - 1] = sDrainingKissDescription,
+    [MOVE_TAIL_SLAP - 1] = sTailSlapDescription,
+    [MOVE_DISARMING_VOICE - 1] = sDisarmingVoiceDescription,
 };
