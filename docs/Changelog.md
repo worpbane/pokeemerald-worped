@@ -38,9 +38,8 @@
 ---
 
 ### 🎨 Visual Updates
-- DexNav screen completely redone to reflect chain-based shiny mechanics.
-
----
+- DexNav screen completely redone to reflect chain-based shiny mechanics.  
+- Added HexManiac sprite from the Team Aqua Hideout Repo.
 
 ### 📦 Asset Sources
 - Shiny Charm implemented using the RHH Pokémon Emerald Expansion repository.

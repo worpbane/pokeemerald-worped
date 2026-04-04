@@ -498,6 +498,7 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
 #define OBJ_EVENT_PAL_TAG_CASTFORM_RAINY          0x1126
 #define OBJ_EVENT_PAL_TAG_CASTFORM_SNOWY          0x1127
 #define OBJ_EVENT_PAL_TAG_RAYQUAZA                0x1128
+#define OBJ_EVENT_PAL_TAG_HEX		              0x1129
 #if OW_MON_POKEBALLS
 // Vanilla
 #define OBJ_EVENT_PAL_TAG_BALL_MASTER             0x1150
@@ -578,6 +579,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Vigoroth,              OBJ_EVENT_PAL_TAG_VIGOROTH},
     {gObjectEventPal_EnemyZigzagoon,        OBJ_EVENT_PAL_TAG_ZIGZAGOON},
     {gObjectEventPal_May,                   OBJ_EVENT_PAL_TAG_MAY},
+    {gObjectEventPal_Hex,		            OBJ_EVENT_PAL_TAG_HEX},
     {gObjectEventPal_MayReflection,         OBJ_EVENT_PAL_TAG_MAY_REFLECTION},
     {gObjectEventPal_MovingBox,             OBJ_EVENT_PAL_TAG_MOVING_BOX},
     {gObjectEventPal_CableCar,              OBJ_EVENT_PAL_TAG_CABLE_CAR},

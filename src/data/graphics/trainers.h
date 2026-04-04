@@ -41,7 +41,7 @@ const u32 gTrainerFrontPic_AquaLeaderArchie[] = INCBIN_U32("graphics/trainers/fr
 const u32 gTrainerPalette_AquaLeaderArchie[] = INCBIN_U32("graphics/trainers/front_pics/aqua_leader_archie.gbapal.lz");
 
 const u32 gTrainerFrontPic_HexManiac[] = INCBIN_U32("graphics/trainers/front_pics/hex_maniac.4bpp.lz");
-const u32 gTrainerPalette_HexManiac[] = INCBIN_U32("graphics/trainers/front_pics/hex_maniac.gbapal.lz");
+const u32 gTrainerPalette_HexManiac[] = INCBIN_U32("graphics/trainers/front_pics/hex_maniac_fr.gbapal.lz");
 
 const u32 gTrainerFrontPic_AromaLady[] = INCBIN_U32("graphics/trainers/front_pics/aroma_lady.4bpp.lz");
 const u32 gTrainerPalette_AromaLady[] = INCBIN_U32("graphics/trainers/front_pics/aroma_lady.gbapal.lz");
