@@ -434,7 +434,21 @@ gCryTable::
 	cry Cry_Kleavor
 	cry Cry_Test
 	cry Cry_Lechonk
-	cry Cry_Stufful
+    cry Cry_OinkologneM
+    cry Cry_OinkologneF
+    cry Cry_Stufful
+    cry Cry_Bewear
+    cry Cry_Buneary
+    cry Cry_Lopunny
+    cry Cry_Mimikyu
+    cry Cry_Hatenna
+    cry Cry_Hattrem
+    cry Cry_Hatterene
+    cry Cry_Minccino
+    cry Cry_Cinccino
+    cry Cry_Emolga
+    cry Cry_Wooper_Paldean
+    cry Cry_Clodsire
 
 	.align 2
 gCryTable_Reverse::
@@ -871,6 +885,20 @@ gCryTable_Reverse::
 	cry_reverse Cry_Ursaluna_BloodMoon
 	cry_reverse Cry_Kleavor
 	cry_reverse Cry_Test
-	cry_reverse Cry_Lechonk
-	cry_reverse Cry_Stufful
+    cry_reverse Cry_Lechonk
+    cry_reverse Cry_OinkologneM
+    cry_reverse Cry_OinkologneF
+    cry_reverse Cry_Stufful
+    cry_reverse Cry_Bewear
+    cry_reverse Cry_Buneary
+    cry_reverse Cry_Lopunny
+    cry_reverse Cry_Mimikyu
+    cry_reverse Cry_Hatenna
+    cry_reverse Cry_Hattrem
+    cry_reverse Cry_Hatterene
+    cry_reverse Cry_Minccino
+    cry_reverse Cry_Cinccino
+    cry_reverse Cry_Emolga
+    cry_reverse Cry_Wooper_Paldean
+    cry_reverse Cry_Clodsire
 

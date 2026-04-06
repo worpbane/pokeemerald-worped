@@ -7,7 +7,36 @@
 ---
 
 ### ✨ Pokémon Additions
-- None yet
+
+#### Gen IV
+- [x] Buneary  
+- [x] Lopunny  
+
+#### Gen V
+- [x] Emolga  
+- [x] Minccino  
+- [x] Cinccino  
+
+#### Gen VII
+- [x] Bewear  
+- [x] Mimikyu  
+
+#### Gen VIII
+- [x] Hatenna  
+- [x] Hattrem  
+- [x] Hatterene  
+
+#### Gen IX
+- [x] Clodsire 
+- [x] Oinkologne M 
+- [x] Oinkologne F 
+- [x] Wooper (Paldean)  
+
+#### Wild Encounters
+- Pokemon added to enviroments I thought fit them.
+
+#### TODO
+- Add TMHM learnsets and Tutor learnsets
 
 ---
 
@@ -65,29 +94,19 @@
 - Seasonal palette changes currently do not affect tall grass.   
 - Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
 
+---
+
 ## [0.1] - Released 03/23/26
 
 ---
 
 ### ✨ Pokémon Additions
 
-#### Gen IV
-- [ ] Buneary  
-- [ ] Lopunny  
-
 #### Gen VII
 - [x] Stufful  
-- [ ] Mimikyu  
-
-#### Gen VIII
-- [ ] Hatenna  
-- [ ] Hattrem  
-- [ ] Hatterene  
 
 #### Gen IX
 - [x] Lechonk  
-- [ ] Wooper (Paldean)  
-- [ ] Clodsire  
 
 ---
 

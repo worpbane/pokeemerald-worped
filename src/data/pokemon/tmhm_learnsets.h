@@ -11631,34 +11631,93 @@ const union {
     } }, 
 	
 	[SPECIES_LECHONK] = { .learnset = {
-        .CALM_MIND = TRUE,
-        .TOXIC = TRUE,
-        .HIDDEN_POWER = TRUE,
-        .SUNNY_DAY = TRUE,
-        .TAUNT = TRUE,
-        .LIGHT_SCREEN = TRUE,
-        .PROTECT = TRUE,
-        .RAIN_DANCE = TRUE,
-        .FRUSTRATION = TRUE,
-        .IRON_TAIL = TRUE,
-        .RETURN = TRUE,
-        .PSYCHIC = TRUE,
-        .SHADOW_BALL = TRUE,
-        .DOUBLE_TEAM = TRUE,
-        .REFLECT = TRUE,
-        .SHOCK_WAVE = TRUE,
-        .TORMENT = TRUE,
-        .FACADE = TRUE,
-        .SECRET_POWER = TRUE,
-        .REST = TRUE,
-        .ATTRACT = TRUE,
-        .THIEF = TRUE,
-        .SKILL_SWAP = TRUE,
-        .SNATCH = TRUE,
-        .FLASH = TRUE,
-		.BULLET_SEED = TRUE,
+		//.BODY_SLAM = TRUE, //TODO:Tutor
+        .BULLET_SEED = TRUE,
+		//.COVET = TRUE,
+		//.CURSE = TRUE,
 		.DIG = TRUE,
-        .DISARMING_VOICE = TRUE,
+		.DISARMING_VOICE = TRUE,
+		//.DOUBLE_EDGE = TRUE, //TODO:Tutor
+		//.ENDEAVOR = TRUE,
+		//.ENDURE = TRUE, //TODO:Tutor
+		.FACADE = TRUE,
+		//.HEADBUTT = TRUE,
+		//.HELPING_HAND = TRUE,
+		//.HYPER_VOICE = TRUE,
+		//.MUD_SHOT = TRUE,
+		//.MUD_SLAP = TRUE, //TODO:Tutor
+		//.PLAY_ROUGH = TRUE,
+		.PROTECT = TRUE,
+		.RAIN_DANCE = TRUE,
+		.REST = TRUE,
+		//.STOCKPILE = TRUE,
+		//.SUBSTITUTE = TRUE, //TODO:Tutor
+		.SUNNY_DAY = TRUE,
+		//.SUPER_FANG = TRUE,
+		//.TACKLE = TRUE,
+		.THIEF = TRUE,
+		//.UPROAR = TRUE,
+		//.YAWN = TRUE,
+    } },
+	
+	[SPECIES_OINKOLOGNEM] = { .learnset = {
+		//.BODY_SLAM = TRUE, //TODO:Tutor
+        .BULLET_SEED = TRUE,
+		//.COVET = TRUE,
+		//.CURSE = TRUE,
+		.DIG = TRUE,
+		.DISARMING_VOICE = TRUE,
+		//.DOUBLE_EDGE = TRUE, //TODO:Tutor
+		//.ENDEAVOR = TRUE,
+		//.ENDURE = TRUE, //TODO:Tutor
+		.FACADE = TRUE,
+		//.HEADBUTT = TRUE,
+		//.HELPING_HAND = TRUE,
+		//.HYPER_VOICE = TRUE,
+		//.MUD_SHOT = TRUE,
+		//.MUD_SLAP = TRUE, //TODO:Tutor
+		//.PLAY_ROUGH = TRUE,
+		.PROTECT = TRUE,
+		.RAIN_DANCE = TRUE,
+		.REST = TRUE,
+		//.STOCKPILE = TRUE,
+		//.SUBSTITUTE = TRUE, //TODO:Tutor
+		.SUNNY_DAY = TRUE,
+		//.SUPER_FANG = TRUE,
+		//.TACKLE = TRUE,
+		.THIEF = TRUE,
+		//.UPROAR = TRUE,
+		//.YAWN = TRUE,
+    } },
+	
+	[SPECIES_OINKOLOGNEF] = { .learnset = {
+		//.BODY_SLAM = TRUE, //TODO:Tutor
+        .BULLET_SEED = TRUE,
+		//.COVET = TRUE,
+		//.CURSE = TRUE,
+		.DIG = TRUE,
+		.DISARMING_VOICE = TRUE,
+		//.DOUBLE_EDGE = TRUE, //TODO:Tutor
+		//.ENDEAVOR = TRUE,
+		//.ENDURE = TRUE, //TODO:Tutor
+		.FACADE = TRUE,
+		//.HEADBUTT = TRUE,
+		//.HELPING_HAND = TRUE,
+		//.HYPER_VOICE = TRUE,
+		//.MUD_SHOT = TRUE,
+		//.MUD_SLAP = TRUE, //TODO:Tutor
+		//.PLAY_ROUGH = TRUE,
+		.PROTECT = TRUE,
+		.RAIN_DANCE = TRUE,
+		.REST = TRUE,
+		//.STOCKPILE = TRUE,
+		//.SUBSTITUTE = TRUE, //TODO:Tutor
+		.SUNNY_DAY = TRUE,
+		//.SUPER_FANG = TRUE,
+		//.TACKLE = TRUE,
+		.THIEF = TRUE,
+		//.UPROAR = TRUE,
+		//.YAWN = TRUE,
     } },
 	
 	[SPECIES_STUFFUL] = { .learnset = {

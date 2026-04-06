@@ -14,43 +14,58 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
 
 ## Features
 
-### 🧬 Pokémon Content
-* Added Pokémon from later generations *(work in progress)*  
-  - Lechonk (Gen IX)  
-  - Stufful (Gen VII)  
-    - *(I haven't added ALL the new moves that these Pokémon use, but I did add at least 1 for each of them.)*  
-    - Sprites sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)
-	
-* Added new moves to Emerald: 
+### 🧬 Pokémon Additions
+  - Buneary → Lopunny (Gen IV)  
+  - Emolga (Gen V)  
+  - Minccino → Cinccino (Gen V)  
+  - Stufful → Bewear (Gen VII)  
+  - Mimikyu (Gen VII) (*Disguised form only*)  
+  - Hatenna → Hattrem → Hatterene (Gen VIII)  
+  - Lechonk → Oinkologne M/F (Gen IX)  
+  - Paldean Wooper → Clodsire (Gen IX)  
+    - *(Pokémon use a mix of the 4 new moves you added, the moves added by Modern Emerald, and vanilla Gen I–III moves.)*  
+    - Sprites sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)  
+
+### 🌿 Wild Encounter Additions
+  - Buneary – Routes 104 & 117  
+  - Emolga – Routes 110 & 116  
+  - Minccino – Petalburg Woods & Route 110  
+  - Stufful – Route 123  
+  - Mimikyu – Mt. Pyre *(night encounter planned, currently rare on Exterior & Summit)*  
+  - Hatenna – Routes 114 & 117  
+  - Lechonk – Routes 101 & 102  
+  - Paldean Wooper – Route 113  
+
+### ⚡ Move Additions
   - **Dazzling Gleam** – TM available  
   - **Draining Kiss** – TM available  
   - **Disarming Voice** – TM available  
-  *(All compatible Pokémon that could learn the above moves in later gens should now be able to learn them via TM. Some did get them added to levelsets, but not all. First tiem adding moves so might have missed some stuff.)*
-  - **Tail Whip** - Exclusive for Minccino
-
+  *(All compatible Pokémon that could learn the above moves in later gens should now be able to learn them via TM. Some did get them added to levelsets, but not all. First time adding moves so might have missed some stuff.)*
+  - **Tail Whip** - Exclusive for Minccino  
+  
 ---
 
 ### 🧩 Gameplay & Systems
 - **Expanded Starter Selection**  
-  Based on: [TeamAqua Commit](https://github.com/pret/pokeemerald/commit/6d85a975dc561a24a5837d2992a03ef908870e6f)  
+  Based on [TeamAqua Commit](https://github.com/pret/pokeemerald/commit/6d85a975dc561a24a5837d2992a03ef908870e6f)  
   Guide by [Archie and Mudskip](https://github.com/pret/pokeemerald/wiki/New-Birch's-Briefcase-With-Fully-Custom-Starters-by-Archie-and-Mudskip)  
   *(Birch now offers starters from Generations I–III)*
 
 - **Catch Mode Toggle**  
-  Based on: [FlashLucky's repo](https://github.com/Flash1Lucky/pokeemerald-expansion/tree/catch-mode-toggle)  
+  Based on [FlashLucky's repo](https://github.com/Flash1Lucky/pokeemerald-expansion/tree/catch-mode-toggle)  
   *(Backported and modified for this project)*
 
 - **DexNav**  
-  Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/dexnav)  
+  Based on [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/dexnav)  
   *(Search Levels disabled to save memory; Chain Bonuses increased to assist Shiny Hunting)*  
   *DexNav screen completely redone to reflect chain-based shiny mechanics.*
 
 - **Shiny Charm**  
-  Added a Shiny Charm to aid with shiny hunting; not based on any repo, sprite is sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)  
+  Added a Shiny Charm to aid with shiny hunting; sprite sourced from [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)  
   *(Received from the girl next to Mr. Briney's Cottage after earning your first Gym Badge in Rustboro.)*
 
 - **Seasons**  
-  Based on: [BelialClover's Commit](https://github.com/pret/pokeemerald/commit/1cdd1d0a877fc2e0929f84a33b6d9e4045102825) & [Emerald Enhanced](https://github.com/Enhanced-Projects/Emerald-Enhanced)  
+  Based on [BelialClover's Commit](https://github.com/pret/pokeemerald/commit/1cdd1d0a877fc2e0929f84a33b6d9e4045102825) & [Emerald Enhanced](https://github.com/Enhanced-Projects/Emerald-Enhanced)  
   *(Seasons change weekly, affect overworld visuals only, can be advanced via the GameCube, and are toggleable in the Start Menu)*
 
 ---
@@ -59,32 +74,27 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
 - Move Info changed from **Start → L**  
 
 - **Gen 5–style Party Menu**  
-  Based on: [Team Aqua's Repo](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)  
+  Based on [Team Aqua's Repo](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)  
   
 - **Black/White-style Summary Screen**  
-  Based on: [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & [RavePossum's Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
+  Based on [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
   *(Some features manually backported from the expansion version)*  
-  
+
 - **Item Description Headers**  
-  Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/item_desc_header)
-  
+  Based on [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/item_desc_header)  
+
 - **Plural Give Item Fix**  
-  Based on: [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/plural-giveitem)
+  Based on [ghoulslash's repo](https://github.com/ghoulslash/pokeemerald/tree/plural-giveitem)
 
 ---
 
 ## Planned Features
 
 ### 🧬 Pokémon Content
-- Emolga  
-- Mimikyu  
-- Minccino  
-- Hatenna → Hattrem → Hatterene  
-- Buneary → Lopunny  
-- Paldean Wooper → Clodsire
+- None, maybe that robot Gallade I've seen.
 
 ### Other Improvements
-- Nothing currently
+- Add night encounters so Mimikyu only appears at night
 
 ---
 

@@ -2571,9 +2571,89 @@ const u8 gLechonkPokedexText[] = _(
             "doesn't use it for anything other\n"
             "than foraging.");
 			
+const u8 gOinkologneMPokedexText[] = _(
+            "Oinkologne is proud of its fine,\n"
+            "glossy skin. It emits a concentrated\n"
+            "scent from the tip of its tail.");
+			
+const u8 gOinkologneFPokedexText[] = _(
+            "This is a meticulous Pokémon that\n"
+            "likes to keep things tidy. It\n"
+            "shrouds itself in a floral aroma that\n"
+            "soothes the Pokémon around it.");
+			
 const u8 gStuffulPokedexText[] = _(
             "Despite its adorable appearance, when it\n"
             "gets angry and flails about, its arms and\n"
             "legs could knock a pro wrestler sprawling.\n"
             "It's an incredibly dangerous Pokémon.");
+			
+const u8 gBewearPokedexText[] = _(
+            "This Pokémon has the habit of hugging its\n"
+            "companions. Many Trainers have left this\n"
+            "world after their spines were squashed\n"
+            "by its hug.");
+			
+const u8 gBunearyPokedexText[] = _(
+            "You can tell how it feels by the way\n"
+            "it rolls its ears. When it's scared,\n"
+            "both ears are rolled up. When it senses\n"
+            "danger, it perks them up.");
+			
+const u8 gLopunnyPokedexText[] = _(
+            "An extremely cautious Pokémon.\n"
+            "It is very conscious of its looks and\n"
+            "never fails to groom its ears.\n"
+            "It runs with sprightly jumps.");
 
+const u8 gMimikyuPokedexText[] = _(
+            "A lonely Pokémon, it hides its terrifying\n"
+			"appearance beneath an old rag so it can\n"
+			"get closer to people and other Pokémon.\n"
+			"Its actual appearance is unknown.");
+			
+const u8 gHatennaPokedexText[] = _(
+            "Via the protrusion on its head, it senses\n"
+            "other creatures' emotions. If you don't\n"
+            "have a calm disposition, it will never\n"
+            "warm up to you.");
+			
+const u8 gHattremPokedexText[] = _(
+            "No matter who you are, if you bring strong\n"
+            "emotions near this Pokémon, it will silence\n"
+            "you violently.");
+			
+const u8 gHatterenePokedexText[] = _(
+            "It emits psychic power strong enough to\n"
+            "cause headaches as a deterrent to the\n"
+            "approach of others.");
+			
+const u8 gEmolgaPokedexText[] = _(
+            "It glides using its cape-like membrane.\n"
+            "It grills berries and bug Pokémon with\n"
+            "electric shocks from the pouches on its\n"
+            "cheeks and makes a meal of them.");
+			
+const u8 gMinccinoPokedexText[] = _(
+            "These Pokémon prefer a tidy habitat.\n"
+            "They greet one another by rubbing each\n"
+            "other with their tails, which are always\n"
+            "kept well groomed and clean.");
+			
+const u8 gCinccinoPokedexText[] = _(
+            "Their white fur feels amazing to touch.\n"
+            "Cinccino's body is coated in a special\n"
+            "oil that repels dust and helps it deflect\n"
+            "attacks, such as punches.");
+			
+const u8 gWooperPaldeanPokedexText[] = _(
+            "It dwells in ash-covered areas near\n"
+            "Mt. Chimney. Over time, volcanic ash\n"
+            "caused its body to develop a toxic\n"
+            "film for protection.");
+			
+const u8 gClodsirePokedexText[] = _(
+            "When attacked, this Pokémon will\n"
+            "retaliate by sticking thick spines out\n"
+            "from its body. It's a risky move\n"
+            "that puts everything on the line.");

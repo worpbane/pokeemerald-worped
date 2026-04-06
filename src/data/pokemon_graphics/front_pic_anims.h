@@ -5284,15 +5284,139 @@ static const union AnimCmd sAnim_Kleavor_1[] =
 
 static const union AnimCmd sAnim_Lechonk_1[] =
 {
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_OinkologneM_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+}
+;static const union AnimCmd sAnim_OinkologneF_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
 static const union AnimCmd sAnim_Stufful_1[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 30),
-    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_FRAME(0, 10),
+	ANIMCMD_FRAME(1, 44),
+	ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Bewear_1[] =
+{
+    ANIMCMD_FRAME(0, 20),
+	ANIMCMD_FRAME(1, 60),
+	ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Buneary_1[] =
+{
+    ANIMCMD_FRAME(1, 35),
+	ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Lopunny_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+	ANIMCMD_FRAME(1, 20),
+	ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Mimikyu_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Hatenna_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Hattrem_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Hatterene_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Minccino_1[] =
+{
+    ANIMCMD_FRAME(0, 20),
+	ANIMCMD_FRAME(1, 10),
+	ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Cinccino_1[] =
+{
+    ANIMCMD_FRAME(0, 15),
+	ANIMCMD_FRAME(1, 15),
+	ANIMCMD_FRAME(0, 15),
+	ANIMCMD_FRAME(1, 15),
+	ANIMCMD_FRAME(0, 15),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Emolga_1[] =
+{
+    ANIMCMD_FRAME(0, 21),
+	ANIMCMD_FRAME(1, 45),
+	ANIMCMD_FRAME(1, 10),
+	ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_WooperPaldean_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Clodsire_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
     ANIMCMD_END,
 };
 
@@ -5785,7 +5909,21 @@ SINGLE_ANIMATION(Ursaluna);
 SINGLE_ANIMATION(Ursaluna_BloodMoon);
 SINGLE_ANIMATION(Kleavor);
 SINGLE_ANIMATION(Lechonk);
+SINGLE_ANIMATION(OinkologneM);
+SINGLE_ANIMATION(OinkologneF);
 SINGLE_ANIMATION(Stufful);
+SINGLE_ANIMATION(Bewear);
+SINGLE_ANIMATION(Buneary);
+SINGLE_ANIMATION(Lopunny);
+SINGLE_ANIMATION(Mimikyu);
+SINGLE_ANIMATION(Hatenna);
+SINGLE_ANIMATION(Hattrem);
+SINGLE_ANIMATION(Hatterene);
+SINGLE_ANIMATION(Emolga);
+SINGLE_ANIMATION(Minccino);
+SINGLE_ANIMATION(Cinccino);
+SINGLE_ANIMATION(WooperPaldean);
+SINGLE_ANIMATION(Clodsire);
 
 const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
 {
@@ -6273,8 +6411,21 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_URSALUNA] = sAnims_Ursaluna,
     [SPECIES_URSALUNA_BLOODMOON] = sAnims_Ursaluna_BloodMoon,
     [SPECIES_KLEAVOR] = sAnims_Kleavor,
-    [SPECIES_LECHONK] = sAnims_Lechonk,
-    [SPECIES_STUFFUL] = sAnims_Stufful,
     [SPECIES_TEST] = sAnims_Unown,
-
+	[SPECIES_LECHONK] = sAnims_Lechonk,
+	[SPECIES_OINKOLOGNEM] = sAnims_OinkologneM,
+	[SPECIES_OINKOLOGNEF] = sAnims_OinkologneF,
+	[SPECIES_STUFFUL] = sAnims_Stufful,
+	[SPECIES_BEWEAR] = sAnims_Bewear,
+	[SPECIES_BUNEARY] = sAnims_Buneary,
+	[SPECIES_LOPUNNY] = sAnims_Lopunny,
+	[SPECIES_MIMIKYU] = sAnims_Mimikyu,
+	[SPECIES_HATENNA] = sAnims_Hatenna,
+	[SPECIES_HATTREM] = sAnims_Hattrem,
+	[SPECIES_HATTERENE] = sAnims_Hatterene,
+	[SPECIES_MINCCINO] = sAnims_Minccino,
+	[SPECIES_CINCCINO] = sAnims_Cinccino,
+	[SPECIES_WOOPER_PALDEAN] = sAnims_WooperPaldean,
+	[SPECIES_CLODSIRE] = sAnims_Clodsire,
+	[SPECIES_EMOLGA] = sAnims_Emolga,
 };

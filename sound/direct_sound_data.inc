@@ -2113,18 +2113,74 @@ Cry_Ursaluna_BloodMoon::
 	.align 2
 Cry_Kleavor::
 	.incbin "sound/direct_sound_samples/cries/kleavor.bin"
-	
+
 	.align 2
+Cry_Test::
+	.incbin "sound/direct_sound_samples/cries/unown.bin"
+	
+.align 2
 Cry_Lechonk::
 	.incbin "sound/direct_sound_samples/cries/lechonk.bin"
+
+	.align 2
+Cry_OinkologneM::
+	.incbin "sound/direct_sound_samples/cries/oinkolognem.bin"
 	
+	.align 2
+Cry_OinkologneF::
+	.incbin "sound/direct_sound_samples/cries/oinkolognef.bin"
+
 	.align 2
 Cry_Stufful::
 	.incbin "sound/direct_sound_samples/cries/stufful.bin"
 
 	.align 2
-Cry_Test::
-	.incbin "sound/direct_sound_samples/cries/unown.bin"
+Cry_Bewear::
+	.incbin "sound/direct_sound_samples/cries/bewear.bin"
+
+	.align 2
+Cry_Buneary::
+	.incbin "sound/direct_sound_samples/cries/buneary.bin"
+
+	.align 2
+Cry_Lopunny::
+	.incbin "sound/direct_sound_samples/cries/lopunny.bin"
+
+	.align 2
+Cry_Mimikyu::
+	.incbin "sound/direct_sound_samples/cries/mimikyu.bin"
+
+	.align 2
+Cry_Hatenna::
+	.incbin "sound/direct_sound_samples/cries/hatenna.bin"
+
+	.align 2
+Cry_Hattrem::
+	.incbin "sound/direct_sound_samples/cries/hattrem.bin"
+
+	.align 2
+Cry_Hatterene::
+	.incbin "sound/direct_sound_samples/cries/hatterene.bin"
+
+	.align 2
+Cry_Minccino::
+	.incbin "sound/direct_sound_samples/cries/minccino.bin"
+
+	.align 2
+Cry_Cinccino::
+	.incbin "sound/direct_sound_samples/cries/cinccino.bin"
+
+	.align 2
+Cry_Emolga::
+	.incbin "sound/direct_sound_samples/cries/emolga.bin"
+	
+	.align 2
+Cry_Wooper_Paldean::
+	.incbin "sound/direct_sound_samples/cries/wooper.bin"
+
+	.align 2
+Cry_Clodsire::
+	.incbin "sound/direct_sound_samples/cries/clodsire.bin"
 
 	.align 2
 DirectSoundWaveData_register_noise::
