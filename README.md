@@ -23,7 +23,7 @@ I still have my original GBA copies of Sapphire and Emerald, and Hoenn has alway
   - Hatenna → Hattrem → Hatterene (Gen VIII)  
   - Lechonk → Oinkologne M/F (Gen IX)  
   - Paldean Wooper → Clodsire (Gen IX)  
-    - *(Pokémon use a mix of the 4 new moves you added, the moves added by Modern Emerald, and vanilla Gen I–III moves.)*  
+    - *(Pokémon use a mix of the 4 new moves I added, the moves added by Modern Emerald, and vanilla Gen I–III moves.)*  
     - Sprites sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)  
 
 ### 🌿 Wild Encounter Additions
