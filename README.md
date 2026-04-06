@@ -10,13 +10,13 @@ The goal isn’t to create a massive overhaul, but to tweak Emerald in ways I pe
 
 One feature I’ve really focused on is shiny hunting, since I love Shinies. This modification actually began because I wanted to add DexNav to make finding them easier, and it just kind of grew from there.  
 
-I still have my original GBA carts of Sapphire and Emerald, and Hoenn has always been my favorite region. This project is mostly me experimenting with the `pokeemerald` codebase while building the version of Emerald I’d actually want to replay.
+I still have my original GBA carts of Sapphire and Emerald, and Hoenn has always been my favorite region. This project is mostly me experimenting with the `pokeemerald` codebase while building the version of Emerald I’d like to replay.
 
 ---
 
 ## 🧬 Pokémon & Encounters
 
-I didn't want to add 500 new things, just Pokémon I actually like. Most of these are here because I wanted to see them in Hoenn. **Note:** Only the base stages (the first Pokémon listed) are found in the wild. You'll have to evolve them yourself to get the others!
+I didn't want to add 500 new mon, just Pokémon I actually like. Most of these are here because I think they're cute and wanted to see them in Hoenn.
 
 | Pokémon | Origin | Where to find (Base Form) |
 | :--- | :--- | :--- |
@@ -34,11 +34,10 @@ I didn't want to add 500 new things, just Pokémon I actually like. Most of thes
 * **Sprites:** Sourced from the [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion).  
 
 ### ⚡ Move Additions
-I mostly added these because I wanted the **Hatenna line** to actually have some STAB moves, and because I thought **Minccino** deserved Tail Whip.
+I mostly added these because I wanted the **Hatenna line** to actually have some STAB moves, and because **Minccino** deserves Tail Whip.
 
 * **New TMs:** Dazzling Gleam, Draining Kiss, and Disarming Voice.
 * **Exclusive:** Tail Whip for Minccino.
-* *(Movesets are a mix of classic Gen I–III, Modern Emerald, and these four backported moves. Most compatible Pokémon should be able to use the TMs, but I likely missed a few.)*
 
 ---
 
@@ -87,6 +86,9 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 
 - **Move Info Shortcut:**  
 	Changed from **Start → L**. This was just a bit more comfortable to use during battle on a handheld.
+	
+- **Second Select Item Removed:**  
+	The ability to map a Bag item to holding/tapping Select didn't work at all for me on the 3DS or Steam Deck(mGBA), so I removed it as it was more of an annoyance. So far this has not had any negative impact on gameplay for me.
 
 - **Item Description Headers**  
 	I saw these in a few romhacks and liked the utility of seeing what an item does, mainly for berries since I can't keep track of them all. Ran into some issues with the berries not displaying right, so currently berries ALWAYS show their header, not just for the first time. But I kind of like how it looks and might just have it ALWAYS show headers.  
@@ -131,7 +133,9 @@ This project wouldn't exist without these community repositories and guides:
 - **pokeemerald-expansion** (rh-hideout)  
 - **Team Aqua’s** repository  
 - **RavePossum’s** repositories  
-- **Archie and Mudskip’s** starter selection guide 
+- **Archie and Mudskip’s** starter selection guide  
+- **ghoulslash’s** repositories  
 
 ### 🤖 A Small Note on AI
-I wrote this README myself, but I used an AI (Gemini) to help me clean up the formatting, fix grammar, and make the table look nice. All the coding has been me. Sadly. Adding Pokémon sucks, but worth it to have my cute pig mon in my favorite game.
+I wrote this README myself, but I used an AI (Gemini) to help me clean up the formatting, fix grammar, and make the table look nice.  
+All the coding has been me.... Sadly. Adding Pokémon is painful for regular `pokeemerald`, `pokeemerald-expansion` has a really nice looking JSON file! But this was worth it to have my cute pig mon in my favorite game.
