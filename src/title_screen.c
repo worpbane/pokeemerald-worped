@@ -785,7 +785,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
     if (JOY_NEW(A_BUTTON) || JOY_NEW(START_BUTTON))
     {
         FadeOutBGM(4);
-        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         SetMainCallback2(CB2_GoToMainMenu);
         if ((FlagGet(FLAG_UNOWN_CHAMBER_OPEN)) && (FlagGet(FLAG_COLLECTED_ALL_GOLD_SYMBOLS)) && (VarGet(VAR_TEST) > 0))
             PlayCry_Normal(SPECIES_UNOWN, 0);

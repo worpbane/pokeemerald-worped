@@ -1984,7 +1984,7 @@ static void TryDrawIconInSlot(u16 species, s16 x, s16 y)
     if (species == SPECIES_NONE || species > NUM_SPECIES)
         CreateNoDataIcon(x, y);   //'X' in slot
     else if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
-        CreateMonIcon(SPECIES_NONE, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF, 0); //question mark
+        CreateMonIconGreyedOut(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF, 0); //question mark
     else
         CreateMonIcon(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF, 0);
 }
@@ -2052,17 +2052,17 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES] =
     [TYPE_NORMAL] = TYPE_ICON_PAL_NUM_0,
     [TYPE_FIGHTING] = TYPE_ICON_PAL_NUM_0,
     [TYPE_FLYING] = TYPE_ICON_PAL_NUM_1,
-    [TYPE_POISON] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_POISON] = TYPE_ICON_PAL_NUM_2,
     [TYPE_GROUND] = TYPE_ICON_PAL_NUM_0,
     [TYPE_ROCK] = TYPE_ICON_PAL_NUM_0,
     [TYPE_BUG] = TYPE_ICON_PAL_NUM_2,
     [TYPE_GHOST] = TYPE_ICON_PAL_NUM_1,
     [TYPE_STEEL] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_MYSTERY] = TYPE_ICON_PAL_NUM_2,
+    [TYPE_MYSTERY] = TYPE_ICON_PAL_NUM_1,
     [TYPE_FIRE] = TYPE_ICON_PAL_NUM_0,
-    [TYPE_WATER] = TYPE_ICON_PAL_NUM_1,
+    [TYPE_WATER] = TYPE_ICON_PAL_NUM_2,
     [TYPE_GRASS] = TYPE_ICON_PAL_NUM_2,
-    [TYPE_ELECTRIC] = TYPE_ICON_PAL_NUM_0,
+    [TYPE_ELECTRIC] = TYPE_ICON_PAL_NUM_1,
     [TYPE_PSYCHIC] = TYPE_ICON_PAL_NUM_2,
     [TYPE_ICE] = TYPE_ICON_PAL_NUM_1,
     [TYPE_DRAGON] = TYPE_ICON_PAL_NUM_2,
@@ -2128,7 +2128,8 @@ static void PrintCurrentSpeciesInfo(void)
 	
 	//Shiny chance with chain
 	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y + 10, sFontColor_White, 0, sText_DexNavChainChance);
-	AddTextPrinterParameterized3(WINDOW_INFO, 0, 47, CHAIN_BONUS_Y + 10, sFontColor_White, 0, DexNavGetShinyChanceString());
+	if (!species == SPECIES_NONE)
+		AddTextPrinterParameterized3(WINDOW_INFO, 0, 47, CHAIN_BONUS_Y + 10, sFontColor_White, 0, DexNavGetShinyChanceString());
 	
     CopyWindowToVram(WINDOW_INFO, 3);
     PutWindowTilemap(WINDOW_INFO);

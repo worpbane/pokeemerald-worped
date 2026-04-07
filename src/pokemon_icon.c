@@ -1175,6 +1175,45 @@ u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u
     return spriteId;
 }
 
+//DexNav Greyed Out Pokemon - Kinda like Pokemon GO
+#define TAG_MON_UNSEEN 30010
+static const u16 sMonUnseenPalette[] = INCBIN_U16("graphics/dexnav/unseen.gbapal");
+
+static const struct SpritePalette sSpritePal_MonUnseen =
+{
+    sMonUnseenPalette, TAG_MON_UNSEEN
+};
+
+u8 CreateMonIconGreyedOut(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u32 personality, bool32 handleDeoxys)
+{
+    u8 spriteId;
+	u8 unseenPalette = 0;
+	
+    struct MonIconSpriteTemplate iconTemplate =
+    {
+        .oam = &sMonIconOamData,
+        .image = GetMonIconPtr(species, personality, handleDeoxys),
+        .anims = sMonIconAnims,
+        .affineAnims = sMonIconAffineAnims,
+        .callback = callback,
+        .paletteTag = TAG_MON_UNSEEN,
+    };
+	
+    if (species > NUM_SPECIES)
+        iconTemplate.paletteTag = TAG_MON_UNSEEN;
+
+    spriteId = CreateMonIconSprite(&iconTemplate, x, y, subpriority);
+	
+	FreeSpritePaletteByTag(TAG_MON_UNSEEN);
+	unseenPalette = LoadSpritePalette(&sSpritePal_MonUnseen);
+	gSprites[spriteId].oam.paletteNum = unseenPalette;
+
+    UpdateMonIconFrame(&gSprites[spriteId]);
+
+    return spriteId;
+}
+//End
+
 u8 CreateMonIconNoPersonality(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, bool32 handleDeoxys)
 {
     u8 spriteId;
