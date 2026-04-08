@@ -1220,7 +1220,7 @@ static const u8 sMoveTypeToOamPaletteNum[NUMBER_OF_MON_TYPES + CONTEST_CATEGORIE
     [TYPE_NORMAL] = 13,
     [TYPE_FIGHTING] = 13,
     [TYPE_FLYING] = 14,
-    [TYPE_POISON] = 14,
+    [TYPE_POISON] = 15,
     [TYPE_GROUND] = 13,
     [TYPE_ROCK] = 13,
     [TYPE_BUG] = 15,

@@ -74,16 +74,16 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 ### ✨ Menu Changes
 
 - **Black/White-style Summary Screen**  
-	Though I've never played GenV, I saw this and thought it looked awesome. The Gen III Summary Screen is just a lil dated.
+	Though I've never played GenV, I saw this and thought it looked awesome. The Gen III Summary Screen is just a lil dated.  
 	Based on [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
 	*(Some features were backported from the expansion version.)*  
 
 - **Gen 5–style Party Menu**  
-	I thought this matched the BW Summary Screen and wanted to throw it in.
+	I thought this matched the BW Summary Screen and wanted to throw it in.  
 	Based on [Team Aqua's Repo](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)  
 	
 - **New Main Menu UI**  
-	Archie and Mudskip did a really nice job with this, I love that it shows your party and where you are. 10/10.
+	Archie and Mudskip did a really nice job with this, I love that it shows your party and where you are. 10/10.  
 	Based on [Mudskip's guide](https://github.com/pret/pokeemerald/wiki/New-Main-Menu-UI-With-Mugshot-by-Archie-and-Mudskip)  
 	*(Changed color to purple, and I had to disable the function that hides the Mystery Gift boxes, as it was messing with the options menu. I DO NOT have the technical know how to fix. I know it has to do with rendering.)*  
     
@@ -108,7 +108,8 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 ## 🚀 Planned Features
 
 ### 🧬 Pokémon Content
-- None right now, maybe that robot Gallade (Iron Valiant) if I feel brave enough.
+- Snom
+- Iron Valient
 
 ### Other Improvements
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.
