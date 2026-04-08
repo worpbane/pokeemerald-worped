@@ -6425,7 +6425,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
 	[SPECIES_HATTERENE] = sAnims_Hatterene,
 	[SPECIES_MINCCINO] = sAnims_Minccino,
 	[SPECIES_CINCCINO] = sAnims_Cinccino,
-	[SPECIES_WOOPER_PALDEAN] = sAnims_WooperPaldean,
+	[SPECIES_WOOPERPALDEAN] = sAnims_WooperPaldean,
 	[SPECIES_CLODSIRE] = sAnims_Clodsire,
 	[SPECIES_EMOLGA] = sAnims_Emolga,
 };

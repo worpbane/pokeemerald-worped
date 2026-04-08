@@ -481,6 +481,6 @@ const u32 gMonFrontPic_Hatterene[] = INCBIN_U32("graphics/pokemon/hatterene/anim
 const u32 gMonFrontPic_Emolga[] = INCBIN_U32("graphics/pokemon/emolga/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Minccino[] = INCBIN_U32("graphics/pokemon/minccino/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Cinccino[] = INCBIN_U32("graphics/pokemon/cinccino/anim_front.4bpp.lz");
-const u32 gMonFrontPic_WooperPaldean[] = INCBIN_U32("graphics/pokemon/wooper/pal/anim_front.4bpp.lz");
+const u32 gMonFrontPic_WooperPaldean[] = INCBIN_U32("graphics/pokemon/wooper_paldean/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Clodsire[] = INCBIN_U32("graphics/pokemon/clodsire/anim_front.4bpp.lz");
 

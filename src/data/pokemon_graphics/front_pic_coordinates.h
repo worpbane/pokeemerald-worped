@@ -509,6 +509,6 @@ const struct MonCoords gMonFrontPicCoords[] =
 	[SPECIES_MINCCINO]       			   = { .size = MON_COORDS_SIZE(56, 48), .y_offset = 11 },
 	[SPECIES_CINCCINO]       			   = { .size = MON_COORDS_SIZE(56, 56), .y_offset = 7 },
 	[SPECIES_EMOLGA]       			   	   = { .size = MON_COORDS_SIZE(64, 48), .y_offset = 17 },
-	[SPECIES_WOOPER_PALDEAN]       		   = { .size = MON_COORDS_SIZE(40, 32), .y_offset = 16 },
+	[SPECIES_WOOPERPALDEAN]       		   = { .size = MON_COORDS_SIZE(40, 32), .y_offset = 16 },
 	[SPECIES_CLODSIRE]       			   = { .size = MON_COORDS_SIZE(64, 64), .y_offset = 8 },
 };

@@ -477,7 +477,7 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
 	[SPECIES_EMOLGA] = sEmolgaLevelUpLearnset,
 	[SPECIES_MINCCINO] = sMinccinoLevelUpLearnset,
 	[SPECIES_CINCCINO] = sCinccinoLevelUpLearnset,
-	[SPECIES_WOOPER_PALDEAN] = sWooperPaldeanLevelUpLearnset,
+	[SPECIES_WOOPERPALDEAN] = sWooperPaldeanLevelUpLearnset,
 	[SPECIES_CLODSIRE] = sClodsireLevelUpLearnset,
 
 };
@@ -961,7 +961,7 @@ const u16 *const gLevelUpLearnsets_Original[NUM_SPECIES] =
 	[SPECIES_EMOLGA] = sEmolgaLevelUpLearnset_Original,
 	[SPECIES_MINCCINO] = sMinccinoLevelUpLearnset_Original,
 	[SPECIES_CINCCINO] = sCinccinoLevelUpLearnset_Original,
-	[SPECIES_WOOPER_PALDEAN] = sWooperPaldeanLevelUpLearnset_Original,
+	[SPECIES_WOOPERPALDEAN] = sWooperPaldeanLevelUpLearnset_Original,
 	[SPECIES_CLODSIRE] = sClodsireLevelUpLearnset_Original,
 
 };

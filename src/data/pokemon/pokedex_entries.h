@@ -5384,7 +5384,7 @@ const struct PokedexEntry gPokedexEntries[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 	},
-	[NATIONAL_DEX_WOOPER_PALDEAN] =
+	[NATIONAL_DEX_WOOPERPALDEAN] =
 	{
 		.categoryName = _("Poison Fish"),
 		.height = 4,

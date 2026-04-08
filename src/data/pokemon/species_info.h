@@ -13599,7 +13599,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
     },
-	[SPECIES_WOOPER_PALDEAN] =
+	[SPECIES_WOOPERPALDEAN] =
     {
         .baseHP        = 55,
         .baseAttack    = 45,

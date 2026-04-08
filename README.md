@@ -65,7 +65,7 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 - **Seasons**  
 	Pretty colors. I really liked the fall recolors of Hoenn, but didn't want it all the time. There aren't seasonal encounters of any sort, just the colors change every week.  
 	Based on [BelialClover's Commit](https://github.com/pret/pokeemerald/commit/1cdd1d0a877fc2e0929f84a33b6d9e4045102825) & [Emerald Enhanced](https://github.com/Enhanced-Projects/Emerald-Enhanced)  
-	*(Seasons change weekly, affect overworld visuals only, can be advanced via the GameCube, and are toggleable in the Start Menu)*  
+	*(Seasons change weekly, affect overworld visuals only, can be advanced via the GameCube, and are toggleable in the Start Menu.)*  
 
 ---
 
@@ -81,6 +81,11 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 - **Gen 5–style Party Menu**  
 	I thought this matched the BW Summary Screen and wanted to throw it in.
 	Based on [Team Aqua's Repo](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)  
+	
+- **New Main Menu UI**  
+	Archie and Mudskip did a really nice job with this, I love that it shows your party and where you are. 10/10.
+	Based on [Mudskip's guide](https://github.com/pret/pokeemerald/wiki/New-Main-Menu-UI-With-Mugshot-by-Archie-and-Mudskip)  
+	*(Changed color to purple, and I had to disable the function that hides the Mystery Gift boxes, as it was messing with the options menu. I DO NOT have the technical know how to fix. I know it has to do with rendering.)*  
     
 ### 🛠️ Small Tweaks & Fixes  
 

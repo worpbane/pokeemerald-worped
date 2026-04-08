@@ -32,7 +32,7 @@
 - [x] Wooper (Paldean)  
 
 #### Wild Encounters
-- Pokemon added to enviroments I thought fit them.
+- Pokémon added to enviroments I thought fit them.
 
 #### TODO
 - Add TMHM learnsets and Tutor learnsets
@@ -68,6 +68,7 @@
 ---
 
 ### 🎮 UI Changes
+- New Main Menu UI
 - Start Menu reordered for improved usability.
 - DexNav removed from Start Menu; now accessible by pressing **L** when the cursor is over the PokéNav.
 - Implemented Item Description Headers from ghoulslash.
@@ -77,7 +78,8 @@
 
 ### 🎨 Visual Updates
 - DexNav screen completely redone to reflect chain-based shiny mechanics.  
-- Added HexManiac sprite from the Team Aqua Hideout Repo.
+- Added HexManiac sprite from the Team Aqua Hideout Repo.  
+- Overworld follower sprites added for new Pokémon
 
 ### 📦 Asset Sources
 - Shiny Charm implemented using the RHH Pokémon Emerald Expansion repository.

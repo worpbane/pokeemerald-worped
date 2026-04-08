@@ -476,6 +476,6 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
 	[SPECIES_EMOLGA] = _("Emolga"),
 	[SPECIES_MINCCINO] = _("Minccino"),
 	[SPECIES_CINCCINO] = _("Cinccino"),
-	[SPECIES_WOOPER_PALDEAN] = _("Wooper"),
+	[SPECIES_WOOPERPALDEAN] = _("Wooper"),
 	[SPECIES_CLODSIRE] = _("Clodsire"),
 };
