@@ -6166,6 +6166,22 @@ static const struct SpriteFrameImage sPicTable_Clodsire[] = {
     overworld_frame(gObjectEventPic_Clodsire, 4, 4, 4),
     overworld_frame(gObjectEventPic_Clodsire, 4, 4, 5),
 };
+static const struct SpriteFrameImage sPicTable_Snom[] = {
+    overworld_frame(gObjectEventPic_Snom, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Snom, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Snom, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Snom, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Snom, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Snom, 4, 4, 5),
+};
+static const struct SpriteFrameImage sPicTable_Frosmoth[] = {
+    overworld_frame(gObjectEventPic_Frosmoth, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Frosmoth, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Frosmoth, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Frosmoth, 4, 4, 3),
+    overworld_frame(gObjectEventPic_Frosmoth, 4, 4, 4),
+    overworld_frame(gObjectEventPic_Frosmoth, 4, 4, 5),
+};
 
 //RS Outfit, Brendan
 static const struct SpriteFrameImage sPicTable_BrendanNormal_RS[] = {

@@ -901,4 +901,6 @@ gCryTable_Reverse::
     cry_reverse Cry_Emolga
     cry_reverse Cry_Wooper_Paldean
     cry_reverse Cry_Clodsire
+    cry_reverse Cry_Snom
+    cry_reverse Cry_Frosmoth
 

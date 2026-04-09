@@ -476,4 +476,6 @@ const u8 *const gMonFootprintTable[] =
 	[SPECIES_CINCCINO] = gMonFootprint_Cinccino,
 	[SPECIES_WOOPERPALDEAN] = gMonFootprint_Wooper,
 	[SPECIES_CLODSIRE] = gMonFootprint_Clodsire,
+	[SPECIES_SNOM] = gMonFootprint_Snom,
+	[SPECIES_FROSMOTH] = gMonFootprint_Frosmoth,
 };

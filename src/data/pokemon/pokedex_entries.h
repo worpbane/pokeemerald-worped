@@ -5406,4 +5406,26 @@ const struct PokedexEntry gPokedexEntries[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 	},
+	[NATIONAL_DEX_SNOM] =
+	{
+		.categoryName = _("Worm"),
+		.height = 3,
+		.weight = 38,
+		.description = gSnomPokedexText,
+		.pokemonScale = 530,
+		.pokemonOffset = 13,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+	},
+	[NATIONAL_DEX_FROSMOTH] =
+	{
+		.categoryName = _("Frost Moth"),
+		.height = 13,
+		.weight = 420,
+		.description = gFrosmothPokedexText,
+		.pokemonScale = 272,
+		.pokemonOffset = 3,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+	},
 };

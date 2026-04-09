@@ -2657,3 +2657,15 @@ const u8 gClodsirePokedexText[] = _(
             "retaliate by sticking thick spines out\n"
             "from its body. It's a risky move\n"
             "that puts everything on the line.");
+			
+const u8 gSnomPokedexText[] = _(
+            "It spits out thread imbued with a frigid\n"
+            "sort of energy and uses it to tie its body\n"
+            "to branches, disguising itself as an\n"
+            "icicle while it sleeps.");
+			
+const u8 gFrosmothPokedexText[] = _(
+           "Icy scales fall from its wings like snow\n"
+            "as it flies over fields and mountains.\n"
+            "The temperature of its wings is less than\n"
+            "-290 degrees Fahrenheit.");

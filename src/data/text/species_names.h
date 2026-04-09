@@ -478,4 +478,6 @@ const u8 gSpeciesNames[][POKEMON_NAME_LENGTH + 1] = {
 	[SPECIES_CINCCINO] = _("Cinccino"),
 	[SPECIES_WOOPERPALDEAN] = _("Wooper"),
 	[SPECIES_CLODSIRE] = _("Clodsire"),
+	[SPECIES_SNOM] = _("Snom"),
+	[SPECIES_FROSMOTH] = _("Frosmoth"),
 };

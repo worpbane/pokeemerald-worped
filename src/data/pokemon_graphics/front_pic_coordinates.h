@@ -511,4 +511,6 @@ const struct MonCoords gMonFrontPicCoords[] =
 	[SPECIES_EMOLGA]       			   	   = { .size = MON_COORDS_SIZE(64, 48), .y_offset = 17 },
 	[SPECIES_WOOPERPALDEAN]       		   = { .size = MON_COORDS_SIZE(40, 32), .y_offset = 16 },
 	[SPECIES_CLODSIRE]       			   = { .size = MON_COORDS_SIZE(64, 64), .y_offset = 8 },
+	[SPECIES_SNOM]       			   	   = { .size = MON_COORDS_SIZE(40, 32), .y_offset = 20 },
+	[SPECIES_FROSMOTH]       			   = { .size = MON_COORDS_SIZE(64, 56), .y_offset = 5 },
 };

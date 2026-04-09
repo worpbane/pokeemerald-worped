@@ -24,6 +24,8 @@
 - [x] Hatenna  
 - [x] Hattrem  
 - [x] Hatterene  
+- [x] Snom  
+- [x] Frosmoth  
 
 #### Gen IX
 - [x] Clodsire 
@@ -94,6 +96,7 @@
 ### ⚠️ Known Issues
 - Seasonal palette changes currently do not affect tall grass.   
 - Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
+- Pokémon whose overworld sprites use the TRACKS_SLITHER value crash the game when making paths. This seems to be a Modern Emerald issue I inherited. TRACKS_BIKE_TIRE works fine though, and I'm going to compare the two and see where things aren't matching.
 
 ---
 

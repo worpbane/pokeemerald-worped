@@ -479,6 +479,8 @@ const u16 *const gLevelUpLearnsets[NUM_SPECIES] =
 	[SPECIES_CINCCINO] = sCinccinoLevelUpLearnset,
 	[SPECIES_WOOPERPALDEAN] = sWooperPaldeanLevelUpLearnset,
 	[SPECIES_CLODSIRE] = sClodsireLevelUpLearnset,
+	[SPECIES_SNOM] = sSnomLevelUpLearnset,
+	[SPECIES_FROSMOTH] = sFrosmothLevelUpLearnset,
 
 };
 
@@ -963,5 +965,7 @@ const u16 *const gLevelUpLearnsets_Original[NUM_SPECIES] =
 	[SPECIES_CINCCINO] = sCinccinoLevelUpLearnset_Original,
 	[SPECIES_WOOPERPALDEAN] = sWooperPaldeanLevelUpLearnset_Original,
 	[SPECIES_CLODSIRE] = sClodsireLevelUpLearnset_Original,
+	[SPECIES_SNOM] = sSnomLevelUpLearnset,
+	[SPECIES_FROSMOTH] = sFrosmothLevelUpLearnset,
 
 };

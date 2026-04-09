@@ -483,4 +483,6 @@ const u32 gMonFrontPic_Minccino[] = INCBIN_U32("graphics/pokemon/minccino/anim_f
 const u32 gMonFrontPic_Cinccino[] = INCBIN_U32("graphics/pokemon/cinccino/anim_front.4bpp.lz");
 const u32 gMonFrontPic_WooperPaldean[] = INCBIN_U32("graphics/pokemon/wooper_paldean/anim_front.4bpp.lz");
 const u32 gMonFrontPic_Clodsire[] = INCBIN_U32("graphics/pokemon/clodsire/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Snom[] = INCBIN_U32("graphics/pokemon/snom/anim_front.4bpp.lz");
+const u32 gMonFrontPic_Frosmoth[] = INCBIN_U32("graphics/pokemon/frosmoth/anim_front.4bpp.lz");
 

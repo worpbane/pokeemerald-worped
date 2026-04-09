@@ -5420,6 +5420,23 @@ static const union AnimCmd sAnim_Clodsire_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_Snom_1[] =
+{
+    ANIMCMD_FRAME(0, 20),
+	ANIMCMD_FRAME(1, 10),
+	ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Frosmoth_1[] =
+{
+    ANIMCMD_FRAME(1, 10),
+    ANIMCMD_FRAME(0, 15),
+    ANIMCMD_FRAME(1, 15),
+    ANIMCMD_FRAME(0, 10),
+    ANIMCMD_END,
+};
+
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
 {                                                   \
@@ -5924,6 +5941,8 @@ SINGLE_ANIMATION(Minccino);
 SINGLE_ANIMATION(Cinccino);
 SINGLE_ANIMATION(WooperPaldean);
 SINGLE_ANIMATION(Clodsire);
+SINGLE_ANIMATION(Snom);
+SINGLE_ANIMATION(Frosmoth);
 
 const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
 {
@@ -6428,4 +6447,6 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
 	[SPECIES_WOOPERPALDEAN] = sAnims_WooperPaldean,
 	[SPECIES_CLODSIRE] = sAnims_Clodsire,
 	[SPECIES_EMOLGA] = sAnims_Emolga,
+	[SPECIES_SNOM] = sAnims_Snom,
+	[SPECIES_FROSMOTH] = sAnims_Frosmoth,
 };

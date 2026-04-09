@@ -523,6 +523,8 @@ const u8 *const gMonIconTable[] =
 	[SPECIES_CINCCINO] = gMonIcon_Cinccino,
 	[SPECIES_WOOPERPALDEAN] = gMonIcon_WooperPaldean,
 	[SPECIES_CLODSIRE] = gMonIcon_Clodsire,
+	[SPECIES_SNOM] = gMonIcon_Snom,
+	[SPECIES_FROSMOTH] = gMonIcon_Frosmoth,
     //[SPECIES_UNUSED_SPACE5] = gMonIcon_Unused_Space5, 
     //[SPECIES_UNUSED_SPACE6] = gMonIcon_Unused_Space6, 
     [SPECIES_TEST] = gMonIcon_Test, 
@@ -1033,6 +1035,8 @@ const u8 gMonIconPaletteIndices[] =
 	[SPECIES_CINCCINO] = 0,
 	[SPECIES_WOOPERPALDEAN] = 2,
 	[SPECIES_CLODSIRE] = 0,
+	[SPECIES_SNOM] = 0,
+	[SPECIES_FROSMOTH] = 0,
     [SPECIES_TEST] = 1,
 };
 

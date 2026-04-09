@@ -2181,6 +2181,14 @@ Cry_Wooper_Paldean::
 	.align 2
 Cry_Clodsire::
 	.incbin "sound/direct_sound_samples/cries/clodsire.bin"
+	
+	.align 2
+Cry_Snom::
+	.incbin "sound/direct_sound_samples/cries/snom.bin"
+	
+	.align 2
+Cry_Frosmoth::
+	.incbin "sound/direct_sound_samples/cries/frosmoth.bin"
 
 	.align 2
 DirectSoundWaveData_register_noise::

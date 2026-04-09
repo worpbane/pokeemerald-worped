@@ -836,6 +836,8 @@ const u32 gObjectEventPic_Minccino[] = INCBIN_COMP("graphics/object_events/pics/
 const u32 gObjectEventPic_Cinccino[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/cinccino.4bpp");
 const u32 gObjectEventPic_WooperPaldean[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/wooper_paldean.4bpp"); //WORPTODO: Add Surf graphics for Paldean Wooper and Clodsire if possible
 const u32 gObjectEventPic_Clodsire[] = INCBIN_COMP("graphics/object_events/pics/pokemon/followers/clodsire.4bpp");
+const u32 gObjectEventPic_Snom[] = INCBIN_COMP("graphics/pokemon/snom/overworld.4bpp");
+const u32 gObjectEventPic_Frosmoth[] = INCBIN_COMP("graphics/pokemon/frosmoth/overworld.4bpp");
 
 const u16 gObjectEventPal_Rayquaza[] = INCBIN_U16("graphics/object_events/pics/pokemon/rayquaza.gbapal");
 

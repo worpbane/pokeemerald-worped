@@ -3355,6 +3355,22 @@ extern const u32 gMonStillFrontPic_Clodsire[];
 extern const u8 gMonIcon_Clodsire[];
 extern const u8 gMonFootprint_Clodsire[];
 
+extern const u32 gMonFrontPic_Snom[];
+extern const u32 gMonPalette_Snom[];
+extern const u32 gMonBackPic_Snom[];
+extern const u32 gMonShinyPalette_Snom[];
+extern const u32 gMonStillFrontPic_Snom[];
+extern const u8 gMonIcon_Snom[];
+extern const u8 gMonFootprint_Snom[];
+
+extern const u32 gMonFrontPic_Frosmoth[];
+extern const u32 gMonPalette_Frosmoth[];
+extern const u32 gMonBackPic_Frosmoth[];
+extern const u32 gMonShinyPalette_Frosmoth[];
+extern const u32 gMonStillFrontPic_Frosmoth[];
+extern const u8 gMonIcon_Frosmoth[];
+extern const u8 gMonFootprint_Frosmoth[];
+
 //Modern Shinies
 extern const u32 gMonShinyPalette_Modern_Pikachu[];
 extern const u32 gMonShinyPalette_Modern_Pichu[];

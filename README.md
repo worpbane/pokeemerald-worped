@@ -26,6 +26,7 @@ I didn't want to add 500 new mon, just Pokémon I actually like. Most of these a
 | **Stufful** → Bewear | Gen VII | Route 123 |
 | **Mimikyu** | Gen VII | Mt. Pyre (Exterior & Summit) |
 | **Hatenna** → Hattrem → Hatterene | Gen VIII | Routes 114 & 117 |
+| **Snom** → Frosmoth | Gen VIII | Shoal Cave - Ice Room |
 | **Lechonk** → Oinkologne(M/F) | Gen IX | Routes 101 & 102 |
 | **Paldean Wooper** → Clodsire | Gen IX | Route 113 |
   
@@ -108,7 +109,6 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 ## 🚀 Planned Features
 
 ### 🧬 Pokémon Content
-- Snom
 - Iron Valient
 
 ### Other Improvements

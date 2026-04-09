@@ -3249,6 +3249,20 @@ const u32 gMonShinyPalette_Clodsire[] = INCBIN_U32("graphics/pokemon/clodsire/sh
 const u8 gMonIcon_Clodsire[] = INCBIN_U8("graphics/pokemon/clodsire/icon.4bpp");
 const u8 gMonFootprint_Clodsire[] = INCBIN_U8("graphics/pokemon/clodsire/footprint.1bpp");
 
+const u32 gMonStillFrontPic_Snom[] = INCBIN_U32("graphics/pokemon/snom/anim_front.4bpp.lz");
+const u32 gMonPalette_Snom[] = INCBIN_U32("graphics/pokemon/snom/normal.gbapal.lz");
+const u32 gMonBackPic_Snom[] = INCBIN_U32("graphics/pokemon/snom/back.4bpp.lz");
+const u32 gMonShinyPalette_Snom[] = INCBIN_U32("graphics/pokemon/snom/shiny.gbapal.lz");
+const u8 gMonIcon_Snom[] = INCBIN_U8("graphics/pokemon/snom/icon.4bpp");
+const u8 gMonFootprint_Snom[] = INCBIN_U8("graphics/pokemon/snom/footprint.1bpp");
+
+const u32 gMonStillFrontPic_Frosmoth[] = INCBIN_U32("graphics/pokemon/frosmoth/anim_front.4bpp.lz");
+const u32 gMonPalette_Frosmoth[] = INCBIN_U32("graphics/pokemon/frosmoth/normal.gbapal.lz");
+const u32 gMonBackPic_Frosmoth[] = INCBIN_U32("graphics/pokemon/frosmoth/back.4bpp.lz");
+const u32 gMonShinyPalette_Frosmoth[] = INCBIN_U32("graphics/pokemon/frosmoth/shiny.gbapal.lz");
+const u8 gMonIcon_Frosmoth[] = INCBIN_U8("graphics/pokemon/frosmoth/icon.4bpp");
+const u8 gMonFootprint_Frosmoth[] = INCBIN_U8("graphics/pokemon/frosmoth/footprint.1bpp");
+
 //Modern shinies
 const u32 gMonShinyPalette_Modern_Pikachu[] = INCBIN_U32("graphics/pokemon/pikachu/shiny_modern.gbapal.lz");
 const u32 gMonShinyPalette_Modern_Raichu[] = INCBIN_U32("graphics/pokemon/raichu/shiny_modern.gbapal.lz");

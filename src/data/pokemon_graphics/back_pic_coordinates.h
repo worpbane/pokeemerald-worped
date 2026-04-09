@@ -510,6 +510,8 @@ const struct MonCoords gMonBackPicCoords[] =
 	[SPECIES_CINCCINO]                     = { .size = MON_COORDS_SIZE(64, 56), .y_offset = 7 },
 	[SPECIES_WOOPERPALDEAN]                = { .size = MON_COORDS_SIZE(64, 40), .y_offset = 12 },
 	[SPECIES_CLODSIRE]                     = { .size = MON_COORDS_SIZE(64, 64), .y_offset = 15 },
+	[SPECIES_SNOM]                  	   = { .size = MON_COORDS_SIZE(48, 32), .y_offset = 17 },
+	[SPECIES_FROSMOTH]                     = { .size = MON_COORDS_SIZE(64, 64), .y_offset = 3 },
 
 };
 
