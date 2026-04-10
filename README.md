@@ -110,6 +110,8 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 
 ### 🧬 Pokémon Content
 - Iron Valient
+- Goomy > Sliggo > Goodra
+- Tinkatink > Tinkastuff > Tinkaton
 
 ### Other Improvements
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.
