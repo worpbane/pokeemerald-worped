@@ -1571,15 +1571,15 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .bgColor = 14,
         .shadowColor = 15,
     },
-    [B_WIN_PP] = {
+    [B_WIN_MOVE_TYPE_ICON] = {
         .fillValue = PIXEL_FILL(0xE),
-        .fontId = FONT_NARROW,
+        .fontId = FONT_NORMAL,
         .x = 0,
         .y = 1,
         .speed = 0,
-        .fgColor = 12,
+        .fgColor = 13,
         .bgColor = 14,
-        .shadowColor = 11,
+        .shadowColor = 15,
     },
     [B_WIN_PSS_ICON] = {
         .fillValue = PIXEL_FILL(0xE),
@@ -1601,7 +1601,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .bgColor = 14,
         .shadowColor = 11,
     },
-    [B_WIN_MOVE_TYPE] = {
+    [B_WIN_STAB] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_NARROW,
         .x = 0,
@@ -1737,7 +1737,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .fgColor = 1,
         .shadowColor = 6,
     },
-    [24] = { // 24 "type" super-effective
+    [B_WIN_EFFECTIVE_SUPER] = { // 24 "type" super-effective
         .fillValue = PIXEL_FILL(0xE),
         .fontId = 7,
         .x = 0,
@@ -1749,7 +1749,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .bgColor = 14,
         .shadowColor = 5,
     },
-    [25] = { // 25 "type" not very effective
+    [B_WIN_EFFECTIVE_NOT_VERY] = { // 25 "type" not very effective
         .fillValue = PIXEL_FILL(0xE),
         .fontId = 7,
         .x = 0,
@@ -1761,7 +1761,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .bgColor = 14,
         .shadowColor = 3,
     },
-    [26] = { // 26 "type" no effect
+    [B_WIN_EFFECTIVE_NONE] = { // 26 "type" no effect
         .fillValue = PIXEL_FILL(0xE),
         .fontId = 7,
         .x = 0,
@@ -1859,9 +1859,9 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
         .bgColor = 14,
         .shadowColor = 15,
     },
-    [B_WIN_PP] = {
+    [B_WIN_MOVE_TYPE_ICON] = {
         .fillValue = PIXEL_FILL(0xE),
-        .fontId = FONT_NARROW,
+        .fontId = FONT_NORMAL,
         .x = 0,
         .y = 1,
         .speed = 0,
@@ -1889,7 +1889,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
         .bgColor = 14,
         .shadowColor = 11,
     },
-    [B_WIN_MOVE_TYPE] = {
+    [B_WIN_STAB] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_NARROW,
         .x = 0,
@@ -2027,7 +2027,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
         .fgColor = 1,
         .shadowColor = 6,
     },
-    [24] = { // 24 "type" super-effective
+    [B_WIN_EFFECTIVE_SUPER] = { // 24 "type" super-effective
         .fillValue = PIXEL_FILL(0xE),
         .fontId = 7,
         .x = 0,
@@ -2039,7 +2039,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
         .bgColor = 14,
         .shadowColor = 5,
     },
-    [25] = { // 25 "type" not very effective
+    [B_WIN_EFFECTIVE_NOT_VERY] = { // 25 "type" not very effective
         .fillValue = PIXEL_FILL(0xE),
         .fontId = 7,
         .x = 0,
@@ -2051,7 +2051,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
         .bgColor = 14,
         .shadowColor = 3,
     },
-    [26] = { // 26 "type" no effect
+    [B_WIN_EFFECTIVE_NONE] = { // 26 "type" no effect
         .fillValue = PIXEL_FILL(0xE),
         .fontId = 7,
         .x = 0,
@@ -2149,15 +2149,15 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal_FRLGFont[] =
         .bgColor = 14,
         .shadowColor = 15,
     },
-    [B_WIN_PP] = {
+    [B_WIN_MOVE_TYPE_ICON] = {
         .fillValue = PIXEL_FILL(0xE),
-        .fontId = FONT_SMALL,
+        .fontId = FONT_NORMAL,
         .x = 0,
         .y = 1,
         .speed = 0,
         .fgColor = 12,
         .bgColor = 14,
-        .shadowColor = 11,
+        .shadowColor = 15,
     },
     [B_WIN_PSS_ICON] = {
         .fillValue = PIXEL_FILL(0xE),
@@ -2179,7 +2179,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal_FRLGFont[] =
         .bgColor = 14,
         .shadowColor = 11,
     },
-    [B_WIN_MOVE_TYPE] = {
+    [B_WIN_STAB] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_SMALL,
         .x = 0,
@@ -2315,7 +2315,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal_FRLGFont[] =
         .fgColor = 1,
         .shadowColor = 6,
     },
-    [24] = { // 24 "type" super-effective
+    [B_WIN_EFFECTIVE_SUPER] = { // 24 "type" super-effective
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_SMALL,
         .x = 0,
@@ -2327,7 +2327,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal_FRLGFont[] =
         .bgColor = 14,
         .shadowColor = 5,
     },
-    [25] = { // 25 "type" not very effective
+    [B_WIN_EFFECTIVE_NOT_VERY] = { // 25 "type" not very effective
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_SMALL,
         .x = 0,
@@ -2339,7 +2339,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal_FRLGFont[] =
         .bgColor = 14,
         .shadowColor = 3,
     },
-    [26] = { // 26 "type" no effect
+    [B_WIN_EFFECTIVE_NONE] = { // 26 "type" no effect
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_SMALL,
         .x = 0,
@@ -2437,9 +2437,9 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena_FRLGFont[] =
         .bgColor = 14,
         .shadowColor = 15,
     },
-    [B_WIN_PP] = {
+    [B_WIN_MOVE_TYPE_ICON] = {
         .fillValue = PIXEL_FILL(0xE),
-        .fontId = FONT_SMALL,
+        .fontId = FONT_NORMAL,
         .x = 0,
         .y = 1,
         .speed = 0,
@@ -2467,7 +2467,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena_FRLGFont[] =
         .bgColor = 14,
         .shadowColor = 11,
     },
-    [B_WIN_MOVE_TYPE] = {
+    [B_WIN_STAB] = {
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_SMALL,
         .x = 0,
@@ -2605,7 +2605,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena_FRLGFont[] =
         .fgColor = 1,
         .shadowColor = 6,
     },
-    [24] = { // 24 "type" super-effective
+    [B_WIN_EFFECTIVE_SUPER] = { // 24 "type" super-effective
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_SMALL,
         .x = 0,
@@ -2617,7 +2617,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena_FRLGFont[] =
         .bgColor = 14,
         .shadowColor = 5,
     },
-    [25] = { // 25 "type" not very effective
+    [B_WIN_EFFECTIVE_NOT_VERY] = { // 25 "type" not very effective
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_SMALL,
         .x = 0,
@@ -2629,7 +2629,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena_FRLGFont[] =
         .bgColor = 14,
         .shadowColor = 3,
     },
-    [26] = { // 26 "type" no effect
+    [B_WIN_EFFECTIVE_NONE] = { // 26 "type" no effect
         .fillValue = PIXEL_FILL(0xE),
         .fontId = FONT_SMALL,
         .x = 0,
