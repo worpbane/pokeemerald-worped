@@ -72,6 +72,19 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 
 ## 🎮 UI & Visuals 
 
+#### ⚔️ Improved Battle Interface Move Info Pane
+The move details pane now provides **comprehensive data at a glance**, inspired by modern standards seen in FireRed hacks like *Radical Red* and *Unbound*. 
+
+I'm not going to lie, the implementation is horrid, I made it by studying the logic within `battle_controller_player.c` and just went from there. Somehow I cobbled together functional, dynamic system that modernizes the Emerald battle flow. This project started with me just wanting to add some Pokémon and other features I could just merge into Modern Emerald, and now I’ve made a little custom interface from scratch! 
+
+* **Move Info Pane Layout**: Displays Move Type Icon, PSS Category, Remaining PP, Effectiveness, and STAB status.  
+* **Effectiveness Icons**: Dynamic indicators for *Super Effective* (Up Arrow), *Not Very Effective* (Down Arrow), and *No Effect* (X).  
+* **STAB Icon**: A contextual blue **S** appears if the selected move provides a Same-Type Attack Bonus.  
+* **Unified Type Icons (WIP)**: 
+    * Completely redrew all 18 Type Icons specifically for this interface (Summary Screen update pending for uniformity).  
+    * **Hybrid Design**: Merges classic high-visibility color blocks with modern stylized iconography.  
+    * **Optimization**: All 18 icons use a single palette!
+
 ### ✨ Menu Changes
 
 - **Black/White-style Summary Screen**  
@@ -147,4 +160,4 @@ This project wouldn't exist without these community repositories and guides:
 
 ### 🤖 A Small Note on AI
 I wrote this README myself, but I used an AI (Gemini) to help me clean up the formatting, fix grammar, and make the table look nice.  
-All the coding has been me.... Sadly. Adding Pokémon is painful for regular `pokeemerald`, `pokeemerald-expansion` has a really nice looking JSON file! But this was worth it to have my cute pig mon in my favorite game.
+All the coding and art modifications have been me.... Sadly. Adding Pokémon is painful for regular `pokeemerald`(`pokeemerald-expansion` has a really nice looking JSON file...). But this was worth it to have my cute little Lechonk in my favorite game.

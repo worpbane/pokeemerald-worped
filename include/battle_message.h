@@ -245,6 +245,7 @@ extern const u8 gText_MoveInterfaceType[]; //WORPTODO Delte me :)
 extern const u8 gText_MoveInterface_Effective_Up[];
 extern const u8 gText_MoveInterface_Effective_Down[];
 extern const u8 gText_MoveInterface_Effective_X[];
+extern const u8 gText_MoveInterface_Effective_Null[];
 extern const u8 gText_MoveInterface_STAB_Icon[];
 extern const u8 gText_MoveInterfacePpType[];
 extern const u8 gText_MoveInterfaceDynamicColors[];

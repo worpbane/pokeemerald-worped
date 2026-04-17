@@ -69,8 +69,16 @@
 
 ---
 
-### 🎮 UI Changes
-- New Main Menu UI
+### 🎮 UI Changes & Battle Experience
+- **Improved Battle Interface Move Info Pane**:
+	- The move details pane now provides comprehensive data at a glance, inspired by FireRed hacks like Unbound, including a **Move Type Icon**, **PSS Icon**, **Remaining PP**, an **Effectiveness Icon**, and a **STAB Icon**.  
+	- **Effectiveness Icons**: Dynamic indicators for Super Effective (Up Arrow), Not Very Effective (Down Arrow), and No Effect (X).  
+	- **STAB Icon**: A contextual blue "S" appears if the selected move provides a Same-Type Attack Bonus.  
+- **Unified Type Syetem** (WIP):  
+	- Redrew all 18 Type Icons specifically for the new Battle Interface (Summary Screen update pending). 
+	- I'm calling them a Hybrid design, classic high-vis colors with the modern stylzed icons where I could fit them.  
+	- Optimized for a single palette! I'm quite proud of this.  
+- New **Main Menu UI**
 - Start Menu reordered for improved usability.
 - DexNav removed from Start Menu; now accessible by pressing **L** when the cursor is over the PokéNav.
 - Implemented Item Description Headers from ghoulslash.
@@ -80,7 +88,7 @@
 
 ### 🎨 Visual Updates
 - DexNav screen completely redone to reflect chain-based shiny mechanics.  
-- Added HexManiac sprite from the Team Aqua Hideout Repo.  
+- Added **HexManiac** sprite (Team Aqua Hideout Repo).  
 - Overworld follower sprites added for new Pokémon
 
 ### 📦 Asset Sources
