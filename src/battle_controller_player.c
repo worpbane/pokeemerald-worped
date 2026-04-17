@@ -200,10 +200,8 @@ static const u16 sSplitIcons_Pal[] = INCBIN_U16("graphics/battle_interface/split
 static const u8 sSplitIcons_Gfx[] = INCBIN_U8("graphics/battle_interface/split_icons_battle.4bpp");
 static const u16 sSplitIconsEmpty_Pal[] = INCBIN_U16("graphics/battle_interface/split_icons_battle_empty.gbapal");
 static const u8 sSplitIconsEmpty_Gfx[] = INCBIN_U8("graphics/battle_interface/split_icons_battle_empty.4bpp");
-static const u16 sMoveType_Pal1[] = INCBIN_U16("graphics/types/move_types_1.gbapal");
-static const u16 sMoveType_Pal2[] = INCBIN_U16("graphics/types/move_types_2.gbapal");
-static const u16 sMoveType_Pal3[] = INCBIN_U16("graphics/types/move_types_3.gbapal");
-static const u32 sMoveTypeIcons_Gfx[] = INCBIN_U32("graphics/types/move_types.4bpp");
+static const u16 sMoveTypeIcons_Pal[] = INCBIN_U16("graphics/battle_interface/type_icons_battle.gbapal");
+static const u32 sMoveTypeIcons_Gfx[] = INCBIN_U32("graphics/battle_interface/type_icons_battle.4bpp");
 
 void BattleControllerDummy(void)
 {
@@ -1824,37 +1822,12 @@ static void MoveSelectionDisplayMoveTypeDoubles(u8 targetId)
         BattlePutTextOnWindow(gDisplayedStringBattle, TypeEffectiveness(targetId));
 }
 
-static const u8 sMoveTypeToPalGroup[NUMBER_OF_MON_TYPES] = //Helper array copied from BW Summary Screen
-{
-    [TYPE_NORMAL] = 13,
-    [TYPE_FIGHTING] = 13,
-    [TYPE_FLYING] = 14,
-    [TYPE_POISON] = 15,
-    [TYPE_GROUND] = 13,
-    [TYPE_ROCK] = 13,
-    [TYPE_BUG] = 15,
-    [TYPE_GHOST] = 14,
-    [TYPE_STEEL] = 13,
-    [TYPE_MYSTERY] = 15,
-    [TYPE_FIRE] = 13,
-    [TYPE_WATER] = 15,
-    [TYPE_GRASS] = 15,
-    [TYPE_ELECTRIC] = 13,
-    [TYPE_PSYCHIC] = 15,
-    [TYPE_ICE] = 14,
-    [TYPE_DRAGON] = 15,
-    [TYPE_DARK] = 13,
-    [TYPE_FAIRY] = 14,
-};
-
 static void MoveSelectionDisplayMoveType(void) //Made this display a Move Type Icon AND Category Icon
 {
     u8 type; //Move Type
-    u8 typePal; //Move Type Palette
     u32 moveCategory; //Physical Special Status
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct *)(&gBattleBufferA[gActiveBattler][4]);
     u16 move = moveInfo->moves[gMoveSelectionCursor[gActiveBattler]];
-	if (move == MOVE_NONE || move > MOVES_COUNT) return;
 
     moveCategory = gBattleMoves[move].category;
     type = gBattleMoves[move].type;
@@ -1873,34 +1846,39 @@ static void MoveSelectionDisplayMoveType(void) //Made this display a Move Type I
             type = TYPE_FAIRY;
     }
 	
-	typePal = sMoveTypeToPalGroup[type];
-	if (typePal == 14) //The BW Summary Screen uses 13 -15 to refer to the palettes, I'm not sure if that's important so I'm going to keep it here...
-        LoadPalette(sMoveType_Pal2, 14 * 16, 32);
-    else if (typePal == 15)
-        LoadPalette(sMoveType_Pal3, 15 * 16, 32);
+	LoadPalette(sMoveTypeIcons_Pal, 13 * 16, 32);
+    if (gSaveBlock2Ptr->optionStyle == 0)
+        LoadPalette(sSplitIcons_Pal, 10 * 16, 32);
     else
-        LoadPalette(sMoveType_Pal1, 13 * 16, 32);
-	
-	FillWindowPixelBuffer(B_WIN_MOVE_TYPE_ICON, PIXEL_FILL(15)); 
-    BlitBitmapToWindow(B_WIN_MOVE_TYPE_ICON, (const u8 *)&sMoveTypeIcons_Gfx[(type * 0x100) / 4], 0, 0, 32, 16); //WORP Figure out how tf to display the BW Summary Screen Type Icons here...
-	PutWindowTilemap(B_WIN_MOVE_TYPE_ICON);
-    CopyWindowToVram(B_WIN_MOVE_TYPE_ICON, 3);
-	
-	//Moved MoveSelectionDisplaysplitIcon here
-	FillWindowPixelBuffer(B_WIN_PSS_ICON, PIXEL_FILL(14));
-	if (gSaveBlock2Ptr->optionStyle == 0)
-        {
-        LoadPalette(sSplitIcons_Pal, 10 * 0x10, 0x20);
-        BlitBitmapToWindow(B_WIN_PSS_ICON, sSplitIcons_Gfx + 0x80 * moveCategory, 0, 0, 16, 16);
-        }
-    else if (gSaveBlock2Ptr->optionStyle == 1)
-        {
-        LoadPalette(sSplitIconsEmpty_Pal, 10 * 0x10, 0x20);
-        BlitBitmapToWindow(B_WIN_PSS_ICON, sSplitIconsEmpty_Gfx + 0x80 * moveCategory, 0, 0, 16, 16);
-        }
+        LoadPalette(sSplitIconsEmpty_Pal, 10 * 0x10, 0x20); // This is stil 16x16 cause I don't know if it affects anything...
 
+    FillWindowPixelBuffer(B_WIN_MOVE_TYPE_ICON, PIXEL_FILL(0));
+    BlitBitmapToWindow(B_WIN_MOVE_TYPE_ICON, (const u8 *)&sMoveTypeIcons_Gfx[(type * 0x100) / 4], 0, 0, 32, 16);
+
+    FillWindowPixelBuffer(B_WIN_PSS_ICON, PIXEL_FILL(0));
+    if (gSaveBlock2Ptr->optionStyle == 0)
+        BlitBitmapToWindow(B_WIN_PSS_ICON, sSplitIcons_Gfx + 0x100 * moveCategory, 0, 0, 32, 16);
+    else
+        BlitBitmapToWindow(B_WIN_PSS_ICON, sSplitIconsEmpty_Gfx + 0x100 * moveCategory, 0, 0, 32, 16);
+	
+    PutWindowTilemap(B_WIN_MOVE_TYPE_ICON);
     PutWindowTilemap(B_WIN_PSS_ICON);
-	CopyWindowToVram(B_WIN_PSS_ICON, 3);
+    
+    CopyWindowToVram(B_WIN_MOVE_TYPE_ICON, 2);
+    CopyWindowToVram(B_WIN_PSS_ICON, 2);
+}
+
+static void MoveSelectionDisplayEffectiveness(void)
+{
+	u8 targetId = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
+    u8 effect = TypeEffectiveness(targetId);
+    const u8 *str = NULL;
+	
+	if (effect == 24)      str = gText_MoveInterface_Effective_Up;
+    else if (effect == 25) str = gText_MoveInterface_Effective_Down;
+    else if (effect == 26) str = gText_MoveInterface_Effective_X;
+	
+	BattlePutTextOnWindow(str, B_WIN_EFFECTIVENESS); //so 24 used to be 24-26 for the old effectiveness, need to figure this one out.
 }
 
 static void MoveSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)

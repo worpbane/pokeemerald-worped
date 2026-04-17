@@ -238,12 +238,12 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
     },
     [B_WIN_PSS_ICON] = {
         .bg = 0,
-        .tilemapLeft = 27, //should display hugging the right sude
+        .tilemapLeft = 25,
         .tilemapTop = 55,
-        .width = 2,
+        .width = 4,
         .height = 2,
         .paletteNum = 10,
-        .baseBlock = 0x0298,
+        .baseBlock = 0x02B0,
     },
     [B_WIN_PP_REMAINING] = {
         .bg = 0,
@@ -252,7 +252,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .width = 4,
         .height = 2,
         .paletteNum = 5,
-        .baseBlock = 0x029C,
+        .baseBlock = 0x02F0,
     },
 	[B_WIN_STAB] = {
         .bg = 0,
@@ -380,29 +380,11 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .paletteNum = 0,
         .baseBlock = 0x00b0,
     },
-    [B_WIN_EFFECTIVE_SUPER] = { // super effective
+    [B_WIN_EFFECTIVENESS] = { // Effectiveness Icon
         .bg = 0,
-        .tilemapLeft = 26, // Moved from 21 to 26 (PP ends at 25)
+        .tilemapLeft = 25,
         .tilemapTop = 57,
         .width = 4, // Shrunk from 8 to 4 since it'll just be an icon
-        .height = 2,
-        .paletteNum = 5,
-        .baseBlock = 0x02a0,
-    },
-    [B_WIN_EFFECTIVE_NOT_VERY] = { // not very effective
-        .bg = 0,
-        .tilemapLeft = 26,
-        .tilemapTop = 57,
-        .width = 4,
-        .height = 2,
-        .paletteNum = 5,
-        .baseBlock = 0x02a0,
-    },
-    [B_WIN_EFFECTIVE_NONE] = { // no effect
-        .bg = 0,
-        .tilemapLeft = 26,
-        .tilemapTop = 57,
-        .width = 4,
         .height = 2,
         .paletteNum = 5,
         .baseBlock = 0x02a0,
@@ -637,29 +619,11 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .paletteNum = 0,
         .baseBlock = 0x00b0,
     },
-    [B_WIN_EFFECTIVE_SUPER] = { // super effective
+    [B_WIN_EFFECTIVENESS] = { // super effective
         .bg = 0,
-        .tilemapLeft = 26, // Moved from 21 to 26 (PP ends at 25)
+        .tilemapLeft = 25,
         .tilemapTop = 57,
         .width = 4, // Shrunk from 8 to 4 since it'll just be an icon
-        .height = 2,
-        .paletteNum = 5,
-        .baseBlock = 0x02a0,
-    },
-    [B_WIN_EFFECTIVE_NOT_VERY] = { // not very effective
-        .bg = 0,
-        .tilemapLeft = 26,
-        .tilemapTop = 57,
-        .width = 4,
-        .height = 2,
-        .paletteNum = 5,
-        .baseBlock = 0x02a0,
-    },
-    [B_WIN_EFFECTIVE_NONE] = { // no effect
-        .bg = 0,
-        .tilemapLeft = 26,
-        .tilemapTop = 57,
-        .width = 4,
         .height = 2,
         .paletteNum = 5,
         .baseBlock = 0x02a0,

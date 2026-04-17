@@ -112,6 +112,7 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 - Iron Valient
 - Goomy > Sliggo > Goodra
 - Tinkatink > Tinkastuff > Tinkaton
+- Morpeko
 
 ### Other Improvements
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.
