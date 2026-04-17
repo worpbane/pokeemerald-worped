@@ -4146,7 +4146,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
-	
+	/*
 	[ITEM_TM_DAZZLING_GLEAM] =
     {
         .name = _("TM51"),
@@ -4182,7 +4182,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
-
+	*/
     [ITEM_HM_CUT] =
     {
         .name = _("HM01"),
@@ -8988,7 +8988,7 @@ const struct Item gItems2[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
-	
+	/*
 	[ITEM_TM_DAZZLING_GLEAM] =
     {
         .name = _("TM51"),
@@ -9021,7 +9021,7 @@ const struct Item gItems2[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
-
+	*/
     [ITEM_HM_CUT] =
     {
         .name = _("HM01"),

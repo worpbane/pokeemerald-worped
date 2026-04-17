@@ -285,7 +285,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_WEEDLE] = { .learnset = {
@@ -543,8 +543,8 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_RAICHU] = { .learnset = {
@@ -572,9 +572,9 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_SANDSHREW] = { .learnset = {
@@ -862,8 +862,8 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_CLEFABLE] = { .learnset = {
@@ -902,8 +902,8 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_VULPIX] = { .learnset = {
@@ -983,7 +983,7 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .FLASH = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_WIGGLYTUFF] = { .learnset = {
@@ -1020,7 +1020,7 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .FLASH = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_ZUBAT] = { .learnset = {
@@ -1090,7 +1090,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GLOOM] = { .learnset = {
@@ -1111,7 +1111,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_VILEPLUME] = { .learnset = {
@@ -1133,7 +1133,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_PARAS] = { .learnset = {
@@ -1619,7 +1619,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_KADABRA] = { .learnset = {
@@ -1650,7 +1650,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_ALAKAZAM] = { .learnset = {
@@ -1682,7 +1682,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MACHOP] = { .learnset = {
@@ -1851,7 +1851,7 @@ const union {
         .SURF = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_TENTACRUEL] = { .learnset = {
@@ -1878,7 +1878,7 @@ const union {
         .SURF = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GEODUDE] = { .learnset = {
@@ -2335,7 +2335,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_HAUNTER] = { .learnset = {
@@ -2361,7 +2361,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GENGAR] = { .learnset = {
@@ -2393,7 +2393,7 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_ONIX] = { .learnset = {
@@ -2447,8 +2447,8 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_HYPNO] = { .learnset = {
@@ -2479,8 +2479,8 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_KRABBY] = { .learnset = {
@@ -2935,8 +2935,8 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_TANGELA] = { .learnset = {
@@ -3113,7 +3113,7 @@ const union {
         .FLASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_STARMIE] = { .learnset = {
@@ -3142,7 +3142,7 @@ const union {
         .FLASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MR_MIME] = { .learnset = {
@@ -3177,7 +3177,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_SCYTHER] = { .learnset = {
@@ -3230,7 +3230,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_ELECTABUZZ] = { .learnset = {
@@ -3406,8 +3406,8 @@ const union {
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
-        .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE
+        .DIVE = TRUE
+        //.DISARMING_VOICE = TRUE
     } },
 
     [SPECIES_DITTO] = { .learnset = {
@@ -3990,9 +3990,9 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_CHIKORITA] = { .learnset = {
@@ -4487,7 +4487,7 @@ const union {
         .FLASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_LANTURN] = { .learnset = {
@@ -4514,7 +4514,7 @@ const union {
         .FLASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_PICHU] = { .learnset = {
@@ -4535,7 +4535,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_CLEFFA] = { .learnset = {
@@ -4564,9 +4564,9 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_IGGLYBUFF] = { .learnset = {
@@ -4594,9 +4594,9 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_TOGEPI] = { .learnset = {
@@ -4624,8 +4624,8 @@ const union {
         .ATTRACT = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_TOGETIC] = { .learnset = {
@@ -4659,8 +4659,8 @@ const union {
         .FLY = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_NATU] = { .learnset = {
@@ -4688,7 +4688,7 @@ const union {
         .STEEL_WING = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_XATU] = { .learnset = {
@@ -4718,7 +4718,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .FLY = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MAREEP] = { .learnset = {
@@ -4739,7 +4739,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_FLAAFFY] = { .learnset = {
@@ -4764,7 +4764,7 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_AMPHAROS] = { .learnset = {
@@ -4790,7 +4790,7 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_BELLOSSOM] = { .learnset = {
@@ -4813,7 +4813,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MARILL] = { .learnset = {
@@ -4841,8 +4841,8 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_AZUMARILL] = { .learnset = {
@@ -4871,8 +4871,8 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_SUDOWOODO] = { .learnset = {
@@ -4947,7 +4947,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_SKIPLOOM] = { .learnset = {
@@ -4967,7 +4967,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_JUMPLUFF] = { .learnset = {
@@ -4988,7 +4988,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_AIPOM] = { .learnset = {
@@ -5175,8 +5175,8 @@ const union {
         .SKILL_SWAP = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_UMBREON] = { .learnset = {
@@ -5496,7 +5496,7 @@ const union {
         .OVERHEAT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GRANBULL] = { .learnset = {
@@ -5536,7 +5536,7 @@ const union {
         .OVERHEAT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_QWILFISH] = { .learnset = {
@@ -6228,7 +6228,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_ELEKID] = { .learnset = {
@@ -6350,8 +6350,8 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_RAIKOU] = { .learnset = {
@@ -7151,7 +7151,7 @@ const union {
         .THIEF = TRUE,
         .SURF = TRUE,
         .FLASH = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_LOMBRE] = { .learnset = {
@@ -7182,7 +7182,7 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_LUDICOLO] = { .learnset = {
@@ -7215,7 +7215,7 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_SEEDOT] = { .learnset = {
@@ -7810,7 +7810,7 @@ const union {
         .ATTRACT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_TORKOAL] = { .learnset = {
@@ -7864,7 +7864,7 @@ const union {
         .CUT = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_BARBOACH] = { .learnset = {
@@ -8567,7 +8567,7 @@ const union {
         .ATTRACT = TRUE,
         .SURF = TRUE,
         .WATERFALL = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_SPOINK] = { .learnset = {
@@ -8596,7 +8596,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GRUMPIG] = { .learnset = {
@@ -8628,7 +8628,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_PLUSLE] = { .learnset = {
@@ -8698,7 +8698,7 @@ const union {
         .ATTRACT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_MEDITITE] = { .learnset = {
@@ -8776,8 +8776,8 @@ const union {
         .THIEF = TRUE,
         .STEEL_WING = TRUE,
         .FLY = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_ALTARIA] = { .learnset = {
@@ -8808,8 +8808,8 @@ const union {
         .STEEL_WING = TRUE,
         .FLY = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_WYNAUT] = { .learnset = {
@@ -8892,7 +8892,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_SLAKOTH] = { .learnset = {
@@ -9299,7 +9299,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_BANETTE] = { .learnset = {
@@ -9328,7 +9328,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_SEVIPER] = { .learnset = {
@@ -9571,7 +9571,7 @@ const union {
         .ATTRACT = TRUE,
         .THIEF = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_ILLUMISE] = { .learnset = {
@@ -9600,9 +9600,9 @@ const union {
         .ATTRACT = TRUE,
         .THIEF = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_LILEEP] = { .learnset = {
@@ -9723,9 +9723,9 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE= TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_KIRLIA] = { .learnset = {
@@ -9755,9 +9755,9 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-		.DISARMING_VOICE= TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+		//.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_GARDEVOIR] = { .learnset = {
@@ -9788,9 +9788,9 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-		.DISARMING_VOICE= TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+		//.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_BAGON] = { .learnset = {
@@ -10226,7 +10226,7 @@ const union {
         .REST = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_DEOXYS] = { .learnset = {
@@ -10293,8 +10293,8 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },    
 
     [SPECIES_AMBIPOM] = { .learnset = {
@@ -10386,7 +10386,7 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DAZZLING_GLEAM = TRUE
+        //.DAZZLING_GLEAM = TRUE
     } }, 
 
     [SPECIES_BONSLY] = { .learnset = {
@@ -10431,7 +10431,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .CUT = TRUE,
-		.DAZZLING_GLEAM = TRUE
+		//.DAZZLING_GLEAM = TRUE
     } }, 
 
     [SPECIES_CHINGLING] = { .learnset = {
@@ -10710,8 +10710,8 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } }, 
         
     [SPECIES_GLACEON] = { .learnset = {
@@ -11268,7 +11268,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE
+        //.DAZZLING_GLEAM = TRUE
     } }, 
         
     [SPECIES_SYLVEON] = { .learnset = {
@@ -11294,9 +11294,9 @@ const union {
         .THIEF = TRUE,
         .CUT = TRUE,
         .STRENGTH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } }, 
         
     [SPECIES_TANGROWTH] = { .learnset = {
@@ -11360,7 +11360,7 @@ const union {
         .FLY = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE
+        //.DAZZLING_GLEAM = TRUE
     } }, 
         
     [SPECIES_WEAVILE] = { .learnset = {
@@ -11452,7 +11452,7 @@ const union {
         .OVERHEAT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },                                  
 
     [SPECIES_FARIGIRAF] = { .learnset = {
@@ -11636,7 +11636,7 @@ const union {
 		//.COVET = TRUE,
 		//.CURSE = TRUE,
 		.DIG = TRUE,
-		.DISARMING_VOICE = TRUE,
+		//.DISARMING_VOICE = TRUE,
 		//.DOUBLE_EDGE = TRUE, //TODO:Tutor
 		//.ENDEAVOR = TRUE,
 		//.ENDURE = TRUE, //TODO:Tutor
@@ -11666,7 +11666,7 @@ const union {
 		//.COVET = TRUE,
 		//.CURSE = TRUE,
 		.DIG = TRUE,
-		.DISARMING_VOICE = TRUE,
+		//.DISARMING_VOICE = TRUE,
 		//.DOUBLE_EDGE = TRUE, //TODO:Tutor
 		//.ENDEAVOR = TRUE,
 		//.ENDURE = TRUE, //TODO:Tutor
@@ -11696,7 +11696,7 @@ const union {
 		//.COVET = TRUE,
 		//.CURSE = TRUE,
 		.DIG = TRUE,
-		.DISARMING_VOICE = TRUE,
+		//.DISARMING_VOICE = TRUE,
 		//.DOUBLE_EDGE = TRUE, //TODO:Tutor
 		//.ENDEAVOR = TRUE,
 		//.ENDURE = TRUE, //TODO:Tutor
@@ -12104,7 +12104,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_WEEDLE] = { .learnset = {
@@ -12362,8 +12362,8 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_RAICHU] = { .learnset = {
@@ -12391,9 +12391,9 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_SANDSHREW] = { .learnset = {
@@ -12681,9 +12681,9 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_CLEFABLE] = { .learnset = {
@@ -12722,9 +12722,9 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_VULPIX] = { .learnset = {
@@ -12803,8 +12803,8 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_WIGGLYTUFF] = { .learnset = {
@@ -12841,8 +12841,8 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_ZUBAT] = { .learnset = {
@@ -12912,7 +12912,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GLOOM] = { .learnset = {
@@ -12933,7 +12933,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_VILEPLUME] = { .learnset = {
@@ -12955,7 +12955,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_PARAS] = { .learnset = {
@@ -13440,7 +13440,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_KADABRA] = { .learnset = {
@@ -13471,7 +13471,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_ALAKAZAM] = { .learnset = {
@@ -13503,7 +13503,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MACHOP] = { .learnset = {
@@ -13672,7 +13672,7 @@ const union {
         .SURF = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_TENTACRUEL] = { .learnset = {
@@ -13699,7 +13699,7 @@ const union {
         .SURF = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GEODUDE] = { .learnset = {
@@ -14156,7 +14156,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_HAUNTER] = { .learnset = {
@@ -14182,7 +14182,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GENGAR] = { .learnset = {
@@ -14214,7 +14214,7 @@ const union {
         .SNATCH = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_ONIX] = { .learnset = {
@@ -14268,8 +14268,8 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_HYPNO] = { .learnset = {
@@ -14300,8 +14300,8 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_KRABBY] = { .learnset = {
@@ -14754,8 +14754,8 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_TANGELA] = { .learnset = {
@@ -14932,7 +14932,7 @@ const union {
         .FLASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_STARMIE] = { .learnset = {
@@ -14961,7 +14961,7 @@ const union {
         .FLASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MR_MIME] = { .learnset = {
@@ -14996,7 +14996,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_SCYTHER] = { .learnset = {
@@ -15049,7 +15049,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_ELECTABUZZ] = { .learnset = {
@@ -15226,7 +15226,7 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_DITTO] = { .learnset = {
@@ -15809,9 +15809,9 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_CHIKORITA] = { .learnset = {
@@ -15835,7 +15835,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_BAYLEEF] = { .learnset = {
@@ -15861,7 +15861,7 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MEGANIUM] = { .learnset = {
@@ -15889,7 +15889,7 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_CYNDAQUIL] = { .learnset = {
@@ -16307,7 +16307,7 @@ const union {
         .FLASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_LANTURN] = { .learnset = {
@@ -16334,7 +16334,7 @@ const union {
         .FLASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_PICHU] = { .learnset = {
@@ -16355,7 +16355,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_CLEFFA] = { .learnset = {
@@ -16384,9 +16384,9 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_IGGLYBUFF] = { .learnset = {
@@ -16414,9 +16414,9 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_TOGEPI] = { .learnset = {
@@ -16444,8 +16444,8 @@ const union {
         .ATTRACT = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_TOGETIC] = { .learnset = {
@@ -16479,8 +16479,8 @@ const union {
         .FLY = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_NATU] = { .learnset = {
@@ -16508,7 +16508,7 @@ const union {
         .STEEL_WING = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_XATU] = { .learnset = {
@@ -16538,7 +16538,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .FLY = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MAREEP] = { .learnset = {
@@ -16559,7 +16559,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_FLAAFFY] = { .learnset = {
@@ -16584,7 +16584,7 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_AMPHAROS] = { .learnset = {
@@ -16610,7 +16610,7 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_BELLOSSOM] = { .learnset = {
@@ -16633,7 +16633,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_MARILL] = { .learnset = {
@@ -16661,8 +16661,8 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_AZUMARILL] = { .learnset = {
@@ -16691,8 +16691,8 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_SUDOWOODO] = { .learnset = {
@@ -16767,7 +16767,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_SKIPLOOM] = { .learnset = {
@@ -16787,7 +16787,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_JUMPLUFF] = { .learnset = {
@@ -16808,7 +16808,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_AIPOM] = { .learnset = {
@@ -16886,7 +16886,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_YANMA] = { .learnset = {
@@ -16996,8 +16996,8 @@ const union {
         .SKILL_SWAP = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DRAINING_KISS = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_UMBREON] = { .learnset = {
@@ -17112,7 +17112,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_UNOWN] = { .learnset = {
@@ -17149,7 +17149,7 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_PINECO] = { .learnset = {
@@ -17319,7 +17319,7 @@ const union {
         .OVERHEAT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GRANBULL] = { .learnset = {
@@ -17359,7 +17359,7 @@ const union {
         .OVERHEAT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_QWILFISH] = { .learnset = {
@@ -18051,7 +18051,7 @@ const union {
         .THIEF = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_ELEKID] = { .learnset = {
@@ -18173,8 +18173,8 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_RAIKOU] = { .learnset = {
@@ -18457,7 +18457,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_OLD_UNOWN_B] = { .learnset = {
@@ -18973,7 +18973,7 @@ const union {
         .THIEF = TRUE,
         .SURF = TRUE,
         .FLASH = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_LOMBRE] = { .learnset = {
@@ -19004,7 +19004,7 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_LUDICOLO] = { .learnset = {
@@ -19037,7 +19037,7 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_SEEDOT] = { .learnset = {
@@ -19629,7 +19629,7 @@ const union {
         .ATTRACT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_TORKOAL] = { .learnset = {
@@ -19683,7 +19683,7 @@ const union {
         .CUT = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_BARBOACH] = { .learnset = {
@@ -20384,7 +20384,7 @@ const union {
         .ATTRACT = TRUE,
         .SURF = TRUE,
         .WATERFALL = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_SPOINK] = { .learnset = {
@@ -20413,7 +20413,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_GRUMPIG] = { .learnset = {
@@ -20444,7 +20444,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_PLUSLE] = { .learnset = {
@@ -20514,7 +20514,7 @@ const union {
         .ATTRACT = TRUE,
         .STRENGTH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_MEDITITE] = { .learnset = {
@@ -20592,8 +20592,8 @@ const union {
         .THIEF = TRUE,
         .STEEL_WING = TRUE,
         .FLY = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_ALTARIA] = { .learnset = {
@@ -20624,8 +20624,8 @@ const union {
         .STEEL_WING = TRUE,
         .FLY = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } },
 
     [SPECIES_WYNAUT] = { .learnset = {
@@ -20708,7 +20708,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_SLAKOTH] = { .learnset = {
@@ -21115,7 +21115,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_BANETTE] = { .learnset = {
@@ -21144,7 +21144,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_SEVIPER] = { .learnset = {
@@ -21386,7 +21386,7 @@ const union {
         .ATTRACT = TRUE,
         .THIEF = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_ILLUMISE] = { .learnset = {
@@ -21415,9 +21415,9 @@ const union {
         .ATTRACT = TRUE,
         .THIEF = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_LILEEP] = { .learnset = {
@@ -21538,9 +21538,9 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_KIRLIA] = { .learnset = {
@@ -21570,9 +21570,9 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_GARDEVOIR] = { .learnset = {
@@ -21603,9 +21603,9 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } },
 
     [SPECIES_BAGON] = { .learnset = {
@@ -22041,7 +22041,7 @@ const union {
         .REST = TRUE,
         .SKILL_SWAP = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_DEOXYS] = { .learnset = {
@@ -22108,7 +22108,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-		.DAZZLING_GLEAM = TRUE,
+		//.DAZZLING_GLEAM = TRUE,
     } },
 
     [SPECIES_AMBIPOM] = { .learnset = {
@@ -22200,7 +22200,7 @@ const union {
         .ROCK_SMASH = TRUE,
         .WATERFALL = TRUE,
         .DIVE = TRUE,
-		.DAZZLING_GLEAM = TRUE
+		//.DAZZLING_GLEAM = TRUE
     } }, 
 
     [SPECIES_BONSLY] = { .learnset = {
@@ -22245,7 +22245,7 @@ const union {
         .REST = TRUE,
         .ATTRACT = TRUE,
         .CUT = TRUE,
-        .DAZZLING_GLEAM = TRUE
+        //.DAZZLING_GLEAM = TRUE
     } }, 
 
     [SPECIES_CHINGLING] = { .learnset = {
@@ -22524,8 +22524,8 @@ const union {
         .STRENGTH = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
     } }, 
         
     [SPECIES_GLACEON] = { .learnset = {
@@ -22860,7 +22860,7 @@ const union {
         .SKILL_SWAP = TRUE,
         .SNATCH = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE
+        //.DAZZLING_GLEAM = TRUE
     } }, 
         
     [SPECIES_MUNCHLAX] = { .learnset = {
@@ -23083,7 +23083,7 @@ const union {
         .ATTRACT = TRUE,
         .CUT = TRUE,
         .FLASH = TRUE,
-        .DAZZLING_GLEAM = TRUE
+        //.DAZZLING_GLEAM = TRUE
     } }, 
         
     [SPECIES_SYLVEON] = { .learnset = {
@@ -23109,9 +23109,9 @@ const union {
         .THIEF = TRUE,
         .CUT = TRUE,
         .STRENGTH = TRUE,
-        .DAZZLING_GLEAM = TRUE,
-        .DISARMING_VOICE = TRUE,
-        .DRAINING_KISS = TRUE,
+        //.DAZZLING_GLEAM = TRUE,
+        //.DISARMING_VOICE = TRUE,
+        //.DRAINING_KISS = TRUE,
     } }, 
         
     [SPECIES_TANGROWTH] = { .learnset = {
@@ -23175,7 +23175,7 @@ const union {
         .FLY = TRUE,
         .FLASH = TRUE,
         .ROCK_SMASH = TRUE,
-        .DAZZLING_GLEAM = TRUE
+        //.DAZZLING_GLEAM = TRUE
     } }, 
         
     [SPECIES_WEAVILE] = { .learnset = {

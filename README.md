@@ -37,7 +37,7 @@ I didn't want to add 500 new mon, just Pokémon I actually like. Most of these a
 ### ⚡ Move Additions
 I mostly added these because I wanted the **Hatenna line** to actually have some STAB moves, and because **Minccino** deserves Tail Whip.
 
-* **New TMs:** Dazzling Gleam, Draining Kiss, and Disarming Voice.
+* **Sprinkled through Pokémon who can learn it in later games** Dazzling Gleam, Draining Kiss, and Disarming Voice. I was having issues adding the TMs so they're disabled for now.
 * **Exclusive:** Tail Whip for Minccino.
 
 ---
@@ -128,7 +128,9 @@ I'm not going to lie, the implementation is horrid, I made it by studying the lo
 - Morpeko
 
 ### Other Improvements
-- **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.
+- **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.  
+- **Type Icons in Battle:** I'm going to try and backport this feature from `pokeemerald-expansion`...  
+- **Ability Popups in Battle:** I'm going to try and backport this feature from `pokeemerald-expansion`...  
 
 ---
 

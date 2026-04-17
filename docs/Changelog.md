@@ -37,7 +37,8 @@
 - Pokémon added to enviroments I thought fit them.
 
 #### TODO
-- Add TMHM learnsets and Tutor learnsets
+- Add TMHM learnsets and Tutor learnsets for new Pokémon.
+- Add the three new moves to Tutor.
 
 ---
 
@@ -61,11 +62,9 @@
   - **Dazzling Gleam**  
   - **Draining Kiss**  
   - **Disarming Voice**  
-  - **Tail Whip**
-	- Added **TMs** for the 3 new **Fairy-type** moves:  
-	*(Can be purchased at TMs Shops across Hoenn)*   
+  - **Tail Whip**  
 	- Prepared contest/battle backend for these moves.  
-	- Moves added to some Pokémon in the level_up_learnsets and tmhm_learnsets.
+	- Moves added to some Pokémon in the level_up_learnsets.
 
 ---
 
@@ -105,7 +104,6 @@
 - Seasonal palette changes currently do not affect tall grass.   
 - Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
 - Pokémon whose overworld sprites use the TRACKS_SLITHER value crash the game when making paths. This seems to be a Modern Emerald issue I inherited. TRACKS_BIKE_TIRE works fine though, and I'm going to compare the two and see where things aren't matching.
-- Summary Screen isn't showing Status on moves, only Phsyical and Special.
 
 ---
 

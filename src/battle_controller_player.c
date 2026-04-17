@@ -200,8 +200,8 @@ static const u16 sSplitIcons_Pal[] = INCBIN_U16("graphics/battle_interface/split
 static const u8 sSplitIcons_Gfx[] = INCBIN_U8("graphics/battle_interface/split_icons_battle.4bpp");
 static const u16 sSplitIconsEmpty_Pal[] = INCBIN_U16("graphics/battle_interface/split_icons_battle_empty.gbapal");
 static const u8 sSplitIconsEmpty_Gfx[] = INCBIN_U8("graphics/battle_interface/split_icons_battle_empty.4bpp");
-static const u16 sMoveTypeIcons_Pal[] = INCBIN_U16("graphics/battle_interface/type_icons_battle.gbapal");
-static const u32 sMoveTypeIcons_Gfx[] = INCBIN_U32("graphics/battle_interface/type_icons_battle.4bpp");
+static const u16 sMoveTypeIcons_Pal[] = INCBIN_U16("graphics/battle_interface/move_type_icons_battle.gbapal");
+static const u32 sMoveTypeIcons_Gfx[] = INCBIN_U32("graphics/battle_interface/move_type_icons_battle.4bpp");
 
 void BattleControllerDummy(void)
 {
