@@ -46,3 +46,4 @@ agbcc/
 /*.zip
 .oldc
 .oldh
+*:Zone.Identifier
