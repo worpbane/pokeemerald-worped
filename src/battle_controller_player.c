@@ -40,6 +40,7 @@
 #include "tx_randomizer_and_challenges.h"
 #include "menu.h"
 #include "pokemon_summary_screen.h"
+#include "graphics.h"
 
 static void PlayerHandleGetMonData(void);
 static void PlayerHandleSetMonData(void);
@@ -200,8 +201,7 @@ static const u16 sSplitIcons_Pal[] = INCBIN_U16("graphics/battle_interface/split
 static const u8 sSplitIcons_Gfx[] = INCBIN_U8("graphics/battle_interface/split_icons_battle.4bpp");
 static const u16 sSplitIconsEmpty_Pal[] = INCBIN_U16("graphics/battle_interface/split_icons_battle_empty.gbapal");
 static const u8 sSplitIconsEmpty_Gfx[] = INCBIN_U8("graphics/battle_interface/split_icons_battle_empty.4bpp");
-static const u16 sMoveTypeIcons_Pal[] = INCBIN_U16("graphics/battle_interface/move_type_icons_battle.gbapal");
-static const u32 sMoveTypeIcons_Gfx[] = INCBIN_U32("graphics/battle_interface/move_type_icons_battle.4bpp");
+static const u16 sMoveTypeIcons_Pal[] = INCBIN_U16("graphics/interface/typeIconsPal.gbapal");
 
 void BattleControllerDummy(void)
 {
@@ -366,6 +366,7 @@ static void HandleInputChooseAction(void)
         case 0: // Top left
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_USE_MOVE, 0);
 			TryRestoreCatchModeWindow();
+			TryAddRefreshTypeIcons();
             break;
         case 1: // Top right
             BtlController_EmitTwoReturnValues(BUFFER_B, B_ACTION_USE_ITEM, 0);
@@ -505,6 +506,7 @@ static void HandleInputChooseTarget(void)
         BtlController_EmitTwoReturnValues(BUFFER_B, 10, gMoveSelectionCursor[gActiveBattler] | (gMultiUsePlayerCursor << 8));
         EndBounceEffect(gMultiUsePlayerCursor, BOUNCE_HEALTHBOX);
         TryHideLastUsedBall();
+		TryHideRestoreTypeIcons(TRUE);
         PlayerBufferExecCompleted();
     }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
@@ -643,6 +645,7 @@ static void HandleInputChooseMove(void)
 
         if (!gBattleBufferA[gActiveBattler][1]) // not a double battle
         {
+			TryHideRestoreTypeIcons(TRUE);
             if (moveTarget & MOVE_TARGET_USER_OR_SELECTED && !gBattleBufferA[gActiveBattler][2])
                 canSelectTarget++;
         }
@@ -1860,7 +1863,7 @@ static void MoveSelectionDisplayMoveTypeDoubles(u8 targetId)
         LoadPalette(sSplitIconsEmpty_Pal, 10 * 0x10, 0x20); // This is stil 16x16 cause I don't know if it affects anything...
 
     FillWindowPixelBuffer(B_WIN_MOVE_TYPE_ICON, PIXEL_FILL(15));
-    BlitBitmapToWindow(B_WIN_MOVE_TYPE_ICON, (const u8 *)&sMoveTypeIcons_Gfx[(type * 0x100) / 4], 0, 0, 32, 16);
+    BlitBitmapToWindow(B_WIN_MOVE_TYPE_ICON, (const u8 *)&gInterfaceTypeIconsBattle_Gfx[(type * 0x100) / 4], 0, 0, 32, 16);
 
     FillWindowPixelBuffer(B_WIN_PSS_ICON, PIXEL_FILL(0));
     if (gSaveBlock2Ptr->optionStyle == 0)
@@ -1910,7 +1913,7 @@ static void MoveSelectionDisplayMoveType(void) //Made this display a Move Type I
         LoadPalette(sSplitIconsEmpty_Pal, 10 * 0x10, 0x20); // This is stil 16x16 cause I don't know if it affects anything...
 
     FillWindowPixelBuffer(B_WIN_MOVE_TYPE_ICON, PIXEL_FILL(15));
-    BlitBitmapToWindow(B_WIN_MOVE_TYPE_ICON, (const u8 *)&sMoveTypeIcons_Gfx[(type * 0x100) / 4], 0, 0, 32, 16);
+    BlitBitmapToWindow(B_WIN_MOVE_TYPE_ICON, (const u8 *)&gInterfaceTypeIconsBattle_Gfx[(type * 0x100) / 4], 0, 0, 32, 16);
 
     FillWindowPixelBuffer(B_WIN_PSS_ICON, PIXEL_FILL(0));
     if (gSaveBlock2Ptr->optionStyle == 0)
@@ -3040,6 +3043,7 @@ static void PlayerHandleChooseAction(void)
 
     TryRestoreLastUsedBall();
     TryHideCatchModeWindow();
+	TryHideRestoreTypeIcons(TRUE);
     ActionSelectionCreateCursorAt(gActionSelectionCursor[gActiveBattler], 0);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);

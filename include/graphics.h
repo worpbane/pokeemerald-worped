@@ -4732,13 +4732,15 @@ extern const u32 gSummaryPage_Skills_Tilemap[];
 extern const u32 gSummaryPage_BattleMoves_Tilemap[];
 extern const u32 gSummaryPage_ContestMoves_Tilemap[];
 extern const u16 gPPTextPalette[];
-extern const u32 gMoveTypes_Pal[];
-
 extern const u16 gSummaryScreen_MoveEffect_Battle_Tilemap[];
 extern const u16 gSummaryScreen_MoveEffect_Contest_Tilemap[];
 extern const u16 gSummaryScreen_MoveEffect_Cancel_Tilemap[];
 
-extern const u32 gMoveTypes_Gfx[];
+extern const u32 gInterfaceTypeIconsSlim_Gfx[];
+extern const u32 gInterfaceTypeIconsBattle_Gfx[];
+extern const u32 gInterfaceTypeIconsBattleMini_Gfx[];
+extern const u32 gInterfaceTypeIcons_Pal[];
+
 extern const u32 gSummaryMoveSelect_Gfx[];
 extern const u32 gSummaryMoveSelect_Pal[];
 extern const u32 gStatusGfx_Icons[];

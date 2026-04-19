@@ -33,6 +33,7 @@
 #include "constants/songs.h"
 #include "constants/items.h"
 #include "tx_randomizer_and_challenges.h"
+#include "battle_type_icons.h"
 
 struct TestingBar
 {
@@ -970,6 +971,13 @@ u8 CreateBattlerHealthboxSprites(u8 battlerId)
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
 	
 	gBattleStruct->catchModeHintSpriteId = MAX_SPRITES;
+	
+	u32 i;
+	for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+	{
+		gBattleStruct->typeIconSpriteIds[i][0] = MAX_SPRITES;
+		gBattleStruct->typeIconSpriteIds[i][1] = MAX_SPRITES;
+	}
     
     return healthboxLeftSpriteId;
 }
@@ -2714,6 +2722,8 @@ static const u8 ALIGNED(4) sLastUsedBallWindowGfx[] = INCBIN_U8("graphics/battle
 static const u8 ALIGNED(4) sCatchModeWindowOffGfx[] = INCBIN_U8("graphics/battle_interface/catch_mode_off_r.4bpp");
 static const u8 ALIGNED(4) sCatchModeWindowOnGfx[] = INCBIN_U8("graphics/battle_interface/catch_mode_on_r.4bpp");
 
+static const u8 ALIGNED(4) sMoveInfoWindowGfx[] = INCBIN_U8("graphics/battle_interface/move_info.4bpp");
+
 static const struct SpriteSheet sSpriteSheet_LastUsedBallWindow =
 {
     sLastUsedBallWindowGfx, sizeof(sLastUsedBallWindowGfx), LAST_BALL_WINDOW_TAG
@@ -2942,7 +2952,7 @@ static void SpriteCB_LastUsedBall(struct Sprite *sprite)
     }
 }
 
-void TryUpdateCatchModeWindow(void) //WORPNOTE : Might be able to remove
+void TryUpdateCatchModeWindow(void)
 {
     if (gBattleStruct->catchModeHintSpriteId == MAX_SPRITES)
         return;
@@ -3011,7 +3021,6 @@ void TryRestoreLastUsedBall(void)
     else
         TryAddLastUsedBallItemSprites();
 }
-
 void TryHideCatchModeWindow(void)
 {
     if (!gSaveBlock2Ptr->optionsCatchMode)
@@ -3047,7 +3056,63 @@ static void SpriteCB_LastUsedBallBounce(struct Sprite *sprite)
             sprite->sMoving = FALSE;
     }
 }
+//Type Icon Hooks
+void TryAddRefreshTypeIcons(void)
+{
+    u8 battler, i;
 
+    if (GetSpriteTileStartByTag(TYPE_ICON_TAG) == 0xFFFF) //This fixes the palettes after the game engine flushes them when an opponent pokemon faints... I think?
+    {
+        LoadTypeSpritesAndPalettes();
+    }
+
+    for (battler = 0; battler < gBattlersCount; battler++) //this checks every battler individually and gives them icons
+    {
+        if (IsBattlerSpriteVisible(battler))
+        {
+            if (gBattleStruct->typeIconSpriteIds[battler][0] == MAX_SPRITES)
+            {
+                LoadTypeIcons(battler);
+            }
+            
+            for (i = 0; i < 2; i++)
+            {
+                u8 spriteId = gBattleStruct->typeIconSpriteIds[battler][i];
+                if (spriteId != MAX_SPRITES)
+                {
+                    gSprites[spriteId].invisible = FALSE;
+                    gSprites[spriteId].oam.paletteNum = IndexOfSpritePaletteTag(TYPE_ICON_TAG);
+                }
+            }
+        }
+	}
+}
+void TryHideRestoreTypeIcons(bool8 hide)
+{
+    u8 battler, slot;
+    
+    for (battler = 0; battler < MAX_BATTLERS_COUNT; battler++)
+    {
+        for (slot = 0; slot < 2; slot++)
+        {
+            u8 spriteId = gBattleStruct->typeIconSpriteIds[battler][slot];
+            if (spriteId != MAX_SPRITES)
+            {
+                if (hide)
+                {
+                    if (gSprites[spriteId].tHideIconTimer == 0)
+                        gSprites[spriteId].tHideIconTimer = 1;
+                }
+                else
+                {
+                    gSprites[spriteId].invisible = FALSE;
+                    gSprites[spriteId].tHideIconTimer = 0;
+                }
+            }
+        }
+    }
+}
+// End Type Icon Hooks
 static void Task_BounceBall(u8 taskId)
 {
     struct Sprite *sprite = &gSprites[gBattleStruct->ballSpriteIds[0]];

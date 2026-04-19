@@ -446,6 +446,8 @@ struct BattleStruct
     bool8 throwingPokeBall;
     u8 ballSpriteIds[2];
     u8 catchModeHintSpriteId; // catch mode hint window gfx
+    u8 moveInfospriteId; // move info window gfx
+    u8 typeIconSpriteIds[MAX_BATTLERS_COUNT][2]; // Type icon sprites
 	bool8 catchModeEnabled;
 };
 

@@ -88,6 +88,8 @@ void TryAddLastUsedBallItemSprites(void);
 void TryHideCatchModeWindow(void);
 void TryRestoreCatchModeWindow(void);
 void TryUpdateCatchModeWindow(void);
+void TryAddRefreshTypeIcons(void);
+void TryHideRestoreTypeIcons(bool8 hide);
 void SwapBallToDisplay(bool32 sameBall);
 void ArrowsChangeColorLastBallCycle(bool32 showArrows);
 

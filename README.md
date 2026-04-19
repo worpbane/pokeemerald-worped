@@ -80,8 +80,8 @@ I'm not going to lie, the implementation is horrid, I made it by studying the lo
 * **Move Info Pane Layout**: Displays Move Type Icon, PSS Category, Remaining PP, Effectiveness, and STAB status.  
 * **Effectiveness Icons**: Dynamic indicators for *Super Effective* (Up Arrow), *Not Very Effective* (Down Arrow), and *No Effect* (X).  
 * **STAB Icon**: A contextual blue **S** appears if the selected move provides a Same-Type Attack Bonus.  
-* **Unified Type Icons (WIP)**: 
-    * Completely redrew all 18 Type Icons specifically for this interface (Summary Screen update pending for uniformity).  
+* **Unified Type Icons**: 
+    * Completely redrew all 18 Type Icons specifically for this interface, and updated Type Icons accross the hack to the new style.  
     * **Hybrid Design**: Merges classic high-visibility color blocks with modern stylized iconography.  
     * **Optimization**: All 18 icons use a single palette!
 
@@ -126,11 +126,13 @@ I'm not going to lie, the implementation is horrid, I made it by studying the lo
 - Goomy > Sliggo > Goodra
 - Tinkatink > Tinkastuff > Tinkaton
 - Morpeko
+- Pachirisu
 
 ### Other Improvements
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.  
 - **Type Icons in Battle:** I'm going to try and backport this feature from `pokeemerald-expansion`...  
 - **Ability Popups in Battle:** I'm going to try and backport this feature from `pokeemerald-expansion`...  
+- **Update PokéDex Visuals:** I'd like to look over the PokéDex and see if I can't spice it up.
 
 ---
 
