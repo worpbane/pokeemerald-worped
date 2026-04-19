@@ -73,8 +73,11 @@
 	- The move details pane now provides comprehensive data at a glance, inspired by FireRed hacks like Unbound, including a **Move Type Icon**, **PSS Icon**, **Remaining PP**, an **Effectiveness Icon**, and a **STAB Icon**.  
 	- **Effectiveness Icons**: Dynamic indicators for Super Effective (Up Arrow), Not Very Effective (Down Arrow), and No Effect (X).  
 	- **STAB Icon**: A contextual blue "S" appears if the selected move provides a Same-Type Attack Bonus.  
-- **Unified Type Syetem** (WIP):  
-	- Redrew all 18 Type Icons specifically for the new Battle Interface (Summary Screen update pending). 
+- **Improved Battle Interface Health Boxes**:
+	- Added a nice Lavender theme to the boxes because I like purple.  
+	- Type Icons now dynamically appear on health bars during action selection.
+- **Unified Type Syetem**:  
+	- Redrew all 18 Type Icons specifically for the new Battle Interface, added 'slim' versions for the Summary Screen/PokéDex/DexNav, and 'mini' versions to display next to Pokémon in battle. 
 	- I'm calling them a Hybrid design, classic high-vis colors with the modern stylzed icons where I could fit them.  
 	- Optimized for a single palette! I'm quite proud of this.  
 - New **Main Menu UI**

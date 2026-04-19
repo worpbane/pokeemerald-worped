@@ -3087,7 +3087,7 @@ void TryAddRefreshTypeIcons(void)
         }
 	}
 }
-void TryHideRestoreTypeIcons(bool8 hide)
+void TryHideRestoreTypeIcons(bool8 hide) //This hides the icons, triggered in controller player when you back out of the moves menu, select an attack, or if doubles select a target for an attack.
 {
     u8 battler, slot;
     

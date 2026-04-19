@@ -72,18 +72,24 @@ I mostly added these because I wanted the **Hatenna line** to actually have some
 
 ## 🎮 UI & Visuals 
 
-#### ⚔️ Improved Battle Interface Move Info Pane
-The move details pane now provides **comprehensive data at a glance**, inspired by modern standards seen in FireRed hacks like *Radical Red* and *Unbound*. 
+#### ⚔️ Improved Battle Interface
+The Battle Interface now provides **comprehensive data at a glance**, inspired by modern standards seen in `pokeemerald-expansion` and FireRed hacks like *Radical Red* and *Unbound*. 
 
-I'm not going to lie, the implementation is horrid, I made it by studying the logic within `battle_controller_player.c` and just went from there. Somehow I cobbled together functional, dynamic system that modernizes the Emerald battle flow. This project started with me just wanting to add some Pokémon and other features I could just merge into Modern Emerald, and now I’ve made a little custom interface from scratch! 
-
-* **Move Info Pane Layout**: Displays Move Type Icon, PSS Category, Remaining PP, Effectiveness, and STAB status.  
-* **Effectiveness Icons**: Dynamic indicators for *Super Effective* (Up Arrow), *Not Very Effective* (Down Arrow), and *No Effect* (X).  
-* **STAB Icon**: A contextual blue **S** appears if the selected move provides a Same-Type Attack Bonus.  
+* **Purple Health Boxes:**  
+	* Features a custom Lavender and Silver theme. Because I like purple.
+* **Move Info Pane Update**: Displays Move Type Icon, PSS Category, Remaining PP, Effectiveness, and STAB status.  
+	* **Effectiveness Icons**: Dynamic indicators for *Super Effective* (Up Arrow), *Not Very Effective* (Down Arrow), and *No Effect* (X).  
+	* **STAB Icon**: A contextual blue **S** appears if the selected move provides a Same-Type Attack Bonus.  
+* **Dynamic Pokémon Type Indicators:**  
+	* Small type icons now appear on health boxes during action selection. (Backported from `pokeemerald-expansion` and 'optimized' to work with `pokeemerald`).
 * **Unified Type Icons**: 
-    * Completely redrew all 18 Type Icons specifically for this interface, and updated Type Icons accross the hack to the new style.  
+    * Completely redrew all 18 Type Icons specifically for this interface.  
+	* **3 Sizes:** Slim, used in Summary Screen, PokéDex, and DexNav. Battle, used in the Move Info Pane. Battle Mini, used for the Pokémon Type Indicators. Probably could have done this better.  
     * **Hybrid Design**: Merges classic high-visibility color blocks with modern stylized iconography.  
-    * **Optimization**: All 18 icons use a single palette!
+    * **Optimization**: All 18 icons use a single palette!  
+	
+* **Notes:**
+I'm not going to lie, the implementation for these is probably really bad, I made the move info pane by studying the logic within `battle_controller_player.c` and just went from there. The Pokémon Type Indicator next to the health boxes was made by copying the code from `pokeemerald-expansion` over, updating(downgrading?) the helpers it adds to stuff I found within `pokeemerald`, and then fixing any compile issues that came up. They look pretty and I love them.  
 
 ### ✨ Menu Changes
 
@@ -99,7 +105,7 @@ I'm not going to lie, the implementation is horrid, I made it by studying the lo
 - **New Main Menu UI**  
 	Archie and Mudskip did a really nice job with this, I love that it shows your party and where you are. 10/10.  
 	Based on [Mudskip's guide](https://github.com/pret/pokeemerald/wiki/New-Main-Menu-UI-With-Mugshot-by-Archie-and-Mudskip)  
-	*(Changed color to purple, and I had to disable the function that hides the Mystery Gift boxes, as it was messing with the options menu. I DO NOT have the technical know how to fix. I know it has to do with rendering.)*  
+	*(Changed color to purple.)*  
     
 ### 🛠️ Small Tweaks & Fixes  
 
@@ -130,9 +136,8 @@ I'm not going to lie, the implementation is horrid, I made it by studying the lo
 
 ### Other Improvements
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.  
-- **Type Icons in Battle:** I'm going to try and backport this feature from `pokeemerald-expansion`...  
 - **Ability Popups in Battle:** I'm going to try and backport this feature from `pokeemerald-expansion`...  
-- **Update PokéDex Visuals:** I'd like to look over the PokéDex and see if I can't spice it up.
+- **Update PokéDex Visuals:** I'd like to look over the PokéDex and see if I can't spice it up(make it purple).
 
 ---
 

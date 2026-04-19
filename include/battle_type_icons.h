@@ -12,7 +12,6 @@ void LoadTypeIcons(u8 battlerId);
 #define tBattlerId        data[1]
 #define tHideIconTimer    data[2]
 #define tVerticalPosition data[3]
-#define tState         	  data[4]
 
 #define STATE_SLIDE_IN  0
 #define STATE_ACTIVE    1

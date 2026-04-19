@@ -10,7 +10,7 @@
 #include "battle_type_icons.h"
 
 // Asset Loading
-static void LoadTypeIconsPerBattler(u8 battlerId, u8 slot, bool8 showMystery);
+static void LoadTypeIconsPerBattler(u8 battlerId, u8 slot);
 
 // Logic Helpers
 static bool32 ShouldHideTypeIcon(u16 species);
@@ -300,26 +300,16 @@ void LoadTypeIcons(u8 battlerId)
 {
     u32 position;
     u16 species = gBattleMons[battlerId].species;
-    bool8 showMystery = FALSE;
-	
-	if (GetBattlerSide(battlerId) == B_SIDE_PLAYER)
-    {
-        showMystery = FALSE;
-    }
-    else if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
-    {
-        showMystery = TRUE;
-    }
 	
 	gBattleStruct->typeIconSpriteIds[battlerId][0] = MAX_SPRITES;
     gBattleStruct->typeIconSpriteIds[battlerId][1] = MAX_SPRITES;
 	
     LoadTypeSpritesAndPalettes();
-    LoadTypeIconsPerBattler(battlerId, 0, showMystery);
+    LoadTypeIconsPerBattler(battlerId, 0);
 
     if (gBattleMons[battlerId].type1 != gBattleMons[battlerId].type2)
     {
-        LoadTypeIconsPerBattler(battlerId, 1, showMystery);
+        LoadTypeIconsPerBattler(battlerId, 1);
     }
 }
 
@@ -348,7 +338,7 @@ static bool32 ShouldFlipTypeIcon(u8 battlerId)
     }
 }
 
-void LoadTypeIconsPerBattler(u8 battlerId, u8 slot, bool8 showMystery)
+void LoadTypeIconsPerBattler(u8 battlerId, u8 slot)
 {
     u8 type;
     u8 spriteId;
@@ -361,12 +351,6 @@ void LoadTypeIconsPerBattler(u8 battlerId, u8 slot, bool8 showMystery)
 	
 	if (slot == 1 && gBattleMons[battlerId].type1 == gBattleMons[battlerId].type2)
         return;
-
-    // Determine the type to show
-    if (showMystery)
-        type = TYPE_MYSTERY;
-    else
-        type = (slot == 0) ? gBattleMons[battlerId].type1 : gBattleMons[battlerId].type2;
 	
 	x = sTypeIconPositions[position][isDouble].x;
 	y = sTypeIconPositions[position][isDouble].y + (slot * 12);
