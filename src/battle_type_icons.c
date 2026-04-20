@@ -355,16 +355,18 @@ void LoadTypeIconsPerBattler(u8 battlerId, u8 slot)
 	x = sTypeIconPositions[position][isDouble].x;
 	y = sTypeIconPositions[position][isDouble].y + (slot * 12);
 	
+	if (slot == 0)
+        type = gBattleMons[battlerId].type1;
+    else
+        type = gBattleMons[battlerId].type2;
+	
     spriteId = CreateSprite(&sSpriteTemplate_PkmnTypes, x, y, 0);
 	gSprites[spriteId].invisible = TRUE;
-    
-    gSprites[spriteId].tBattlerId = battlerId;
-    gSprites[spriteId].tMonPosition = slot;
 	
 	gBattleStruct->typeIconSpriteIds[battlerId][slot] = spriteId;
     gSprites[spriteId].tBattlerId = battlerId;
     gSprites[spriteId].tMonPosition = slot;
-    gSprites[spriteId].subpriority = 0; // Ensures it's in front of healthbox
+    gSprites[spriteId].subpriority = 0;
 
     StartSpriteAnim(&gSprites[spriteId], type);
 	
