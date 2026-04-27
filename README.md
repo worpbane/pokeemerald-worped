@@ -93,10 +93,10 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 
 ### ✨ Menu Changes
 
-- **Black/White-style Summary Screen**  
-	Though I've never played GenV, I saw this and thought it looked awesome. The Gen III Summary Screen is just a lil dated.  
-	Based on [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
-	*(Some features were backported from the expansion version.)*  
+- **Modernized FRLG-style Summary Screen**  
+	Built on the BW Summary Screen by RavePossum, this is my custom Summary Screen inspired by FRLG and Pokémon Ocean Blue. It's purple, as are most UI elements in the hack.  
+	It has **Characteristics** from later gens too!  
+	Based on [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & some bits of code taken from the [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
 
 - **Gen 5–style Party Menu**  
 	I thought this matched the BW Summary Screen and wanted to throw it in.  

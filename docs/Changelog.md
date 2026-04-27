@@ -80,6 +80,10 @@
 	- Redrew all 18 Type Icons specifically for the new Battle Interface, added 'slim' versions for the Summary Screen/PokéDex/DexNav, and 'mini' versions to display next to Pokémon in battle. 
 	- I'm calling them a Hybrid design, classic high-vis colors with the modern stylzed icons where I could fit them.  
 	- Optimized for a single palette! I'm quite proud of this.  
+- **Summary Screen Update**:
+	- Updated the **BW Summary Screen**, with new graphics!  
+	- Changed to look more FRLG inspired.
+	- Also includes **Characteristics** from later gens.
 - New **Main Menu UI**
 - Start Menu reordered for improved usability.
 - DexNav removed from Start Menu; now accessible by pressing **L** when the cursor is over the PokéNav.
