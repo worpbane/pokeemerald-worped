@@ -1120,7 +1120,7 @@ const u32 gPartyMenuPokeball_Pal[] = INCBIN_U32("graphics/party_menu/pokeball.gb
 const u32 gStatusGfx_Icons[] = INCBIN_U32("graphics/interface/status_icons.4bpp.lz");
 const u32 gStatusPal_Icons[] = INCBIN_U32("graphics/interface/status_icons.gbapal.lz");
 
-const u32 gInterfaceTypeIconsSlim_Gfx[] = INCBIN_U32("graphics/interface/typeIconsSlim.4bpp.lz");
+const u32 gInterfaceTypeIconsMenu_Gfx[] = INCBIN_U32("graphics/interface/typeIconsMenu.4bpp.lz");
 const u32 gInterfaceTypeIconsBattle_Gfx[] = INCBIN_U32("graphics/battle_interface/typeIconsBattleMoves.4bpp");
 const u32 gInterfaceTypeIconsBattleMini_Gfx[] = INCBIN_U32("graphics/battle_interface/typeIconsBattleMini.4bpp.lz");
 const u32 gInterfaceTypeIcons_Pal[] = INCBIN_U32("graphics/interface/typeIconsPal.gbapal.lz");

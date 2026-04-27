@@ -3819,20 +3819,9 @@ static void Task_ChangeScreen(u8 taskId)
         mode = sStorage->summaryScreenMode;
         FreePokeStorageData();
         if (mode == SUMMARY_MODE_NORMAL && boxMons == &sSavedMovingMon.box)
-        {
-            if (BW_SUMMARY_SCREEN)
-                ShowPokemonSummaryScreenHandleDeoxys_BW(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
-            else
-                ShowPokemonSummaryScreenHandleDeoxys(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
-        }
+			ShowPokemonSummaryScreenHandleDeoxys_BW(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
         else
-            ShowPokemonSummaryScreen(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
-        {            
-            if (BW_SUMMARY_SCREEN)
-                ShowPokemonSummaryScreen_BW(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
-            else
-                ShowPokemonSummaryScreen(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
-        }
+			ShowPokemonSummaryScreen_BW(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
         break;
     case SCREEN_CHANGE_NAME_BOX:
         FreePokeStorageData();
@@ -6938,7 +6927,7 @@ static void InitSummaryScreenData(void)
         }
         sStorage->summaryStartPos = 0;
         sStorage->summaryMaxPos = 0;
-        sStorage->summaryScreenMode = SUMMARY_MODE_NORMAL;
+        sStorage->summaryScreenMode = BW_SUMMARY_MODE_NORMAL;
     }
     else if (sCursorArea == CURSOR_AREA_IN_PARTY)
     { 
@@ -6956,7 +6945,7 @@ static void InitSummaryScreenData(void)
         sStorage->summaryMon.mon = gPlayerParty;
         sStorage->summaryStartPos = sCursorPosition;
         sStorage->summaryMaxPos = CountPartyMons() - 1;
-        sStorage->summaryScreenMode = SUMMARY_MODE_NORMAL;
+        sStorage->summaryScreenMode = BW_SUMMARY_MODE_NORMAL;
     }
     else
     {
@@ -6974,7 +6963,7 @@ static void InitSummaryScreenData(void)
         sStorage->summaryMon.box = GetBoxedMonPtr(StorageGetCurrentBox(), 0);
         sStorage->summaryStartPos = sCursorPosition;
         sStorage->summaryMaxPos = IN_BOX_COUNT - 1;
-        sStorage->summaryScreenMode = SUMMARY_MODE_BOX;
+        sStorage->summaryScreenMode = BW_SUMMARY_MODE_BOX;
     }
 }
 
