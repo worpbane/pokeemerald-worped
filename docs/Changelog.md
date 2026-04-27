@@ -106,10 +106,9 @@
 - Shiny Pokémon now display properly in the Summary Screen.
 - Catch Mode should work more reliably. Moved it into the Adjust Damage step instead of Damage Calc. 
 - DexNav no longer crashes in caves.
+- Opening the Summary Screen from the Storage System no longer causes any graphical weirdness. It was caused by an incorrect call from when I marged the BW Summary Screen into Modern Emerald.
 
-### ⚠️ Known Issues
-- Seasonal palette changes currently do not affect tall grass.   
-- Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
+### ⚠️ Known Issues 
 - Pokémon whose overworld sprites use the TRACKS_SLITHER value crash the game when making paths. This seems to be a Modern Emerald issue I inherited. TRACKS_BIKE_TIRE works fine though, and I'm going to compare the two and see where things aren't matching.
 
 ---

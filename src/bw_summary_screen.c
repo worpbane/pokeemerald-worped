@@ -343,8 +343,6 @@ static void HideInactivePageDots(void);
 static void RestoreSummaryPageDisplay(void);
 static void ShowCategoryIcon(u16);
 static void DestroyCategoryIcon(void);
-static void ShowGradeIcons(u8);
-static void DestroyGradeIcons(void);
 static void SetFriendshipSprite(void);
 static void TrySetInfoPageIcons(void);
 static void RunMonAnimTimer(void);
@@ -407,8 +405,6 @@ static const u32 sShinyIcon_Gfx_BW[]                        = INCBIN_U32("graphi
 static const u32 sPokerusCuredIcon_Gfx_BW[]                 = INCBIN_U32("graphics/summary_screen/w/pokerus_cured_icon.4bpp.lz");
 static const u16 sCategoryIcons_Pal[]                       = INCBIN_U16("graphics/interface/catIconsMenu.gbapal");
 static const u32 sCategoryIcons_Gfx[]                       = INCBIN_U32("graphics/interface/catIconsMenu.4bpp.lz");
-static const u16 sStatGrades_Pal[]                          = INCBIN_U16("graphics/summary_screen/bw/stat_grades.gbapal"); //WorpTODO remove
-static const u32 sStatGrades_Gfx[]                          = INCBIN_U32("graphics/summary_screen/bw/stat_grades.4bpp.lz");
 static const u16 sFriendshipIcon_Pal[]                      = INCBIN_U16("graphics/summary_screen/w/heart.gbapal");
 static const u32 sFriendshipIcon_Gfx[]                      = INCBIN_U32("graphics/summary_screen/w/heart.4bpp.lz");
 
@@ -683,7 +679,6 @@ static void (*const sTextPrinterTasks[])(u8 taskId) =
 #define TAG_MON_SHINY_ICON 30004
 #define TAG_MON_POKERUS_CURED_ICON 30005
 #define TAG_CATEGORY_ICONS 30006
-#define TAG_STAT_GRADES 30007
 #define TAG_FRIENDSHIP_ICON 30008
 #define TAG_MON_SHADOW 30010
 
@@ -745,142 +740,6 @@ static const struct SpriteTemplate sSpriteTemplate_CategoryIcons =
     .paletteTag = TAG_CATEGORY_ICONS,
     .oam = &sOamData_CategoryIcons,
     .anims = sSpriteAnimTable_CategoryIcons,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
-};
-
-enum BWStatGrades  //WorpTODO: Delete this stuff
-{
-    STAT_GRADE_EMINUS,
-    STAT_GRADE_E,
-    STAT_GRADE_EPLUS,
-    STAT_GRADE_DMINUS,
-    STAT_GRADE_D,
-    STAT_GRADE_DPLUS,
-    STAT_GRADE_CMINUS,
-    STAT_GRADE_C,
-    STAT_GRADE_CPLUS,
-    STAT_GRADE_BMINUS,
-    STAT_GRADE_B,
-    STAT_GRADE_BPLUS,
-    STAT_GRADE_AMINUS,
-    STAT_GRADE_A,
-    STAT_GRADE_APLUS,
-    STAT_GRADE_S,
-    STAT_GRADE_COUNT,
-};
-
-static const struct OamData sOamData_StatGrades =
-{
-    .size = SPRITE_SIZE(16x8),
-    .shape = SPRITE_SHAPE(16x8),
-    .priority = 0,
-};
-
-static const struct CompressedSpriteSheet sSpriteSheet_StatGrades =
-{
-    .data = sStatGrades_Gfx,
-    .size = STAT_GRADE_COUNT * (16 * 8),
-    .tag = TAG_STAT_GRADES,
-};
-
-static const struct SpritePalette sSpritePal_StatGrades =
-{
-    .data = sStatGrades_Pal,
-    .tag = TAG_STAT_GRADES
-};
-
-static const union AnimCmd sSpriteAnim_StatGradeEMinus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_EMINUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeE[] = {
-    ANIMCMD_FRAME(STAT_GRADE_E * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeEPlus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_EPLUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeDMinus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_DMINUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeD[] = {
-    ANIMCMD_FRAME(STAT_GRADE_D * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeDPlus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_DPLUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeCMinus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_CMINUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeC[] = {
-    ANIMCMD_FRAME(STAT_GRADE_C * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeCPlus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_CPLUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeBMinus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_BMINUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeB[] = {
-    ANIMCMD_FRAME(STAT_GRADE_B * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeBPlus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_BPLUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeAMinus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_AMINUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeA[] = {
-    ANIMCMD_FRAME(STAT_GRADE_A * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeAPlus[] = {
-    ANIMCMD_FRAME(STAT_GRADE_APLUS * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-static const union AnimCmd sSpriteAnim_StatGradeS[] = {
-    ANIMCMD_FRAME(STAT_GRADE_S * 2, 0, FALSE, FALSE),
-    ANIMCMD_END
-};
-
-static const union AnimCmd *const sSpriteAnimTable_StatGrades[STAT_GRADE_COUNT] = {
-    [STAT_GRADE_EMINUS] = sSpriteAnim_StatGradeEMinus,
-    [STAT_GRADE_E]      = sSpriteAnim_StatGradeE,
-    [STAT_GRADE_EPLUS]  = sSpriteAnim_StatGradeEPlus,
-    [STAT_GRADE_DMINUS] = sSpriteAnim_StatGradeDMinus,
-    [STAT_GRADE_D]      = sSpriteAnim_StatGradeD,
-    [STAT_GRADE_DPLUS]  = sSpriteAnim_StatGradeDPlus,
-    [STAT_GRADE_CMINUS] = sSpriteAnim_StatGradeCMinus,
-    [STAT_GRADE_C]      = sSpriteAnim_StatGradeC,
-    [STAT_GRADE_CPLUS]  = sSpriteAnim_StatGradeCPlus,
-    [STAT_GRADE_BMINUS] = sSpriteAnim_StatGradeBMinus,
-    [STAT_GRADE_B]      = sSpriteAnim_StatGradeB,
-    [STAT_GRADE_BPLUS]  = sSpriteAnim_StatGradeBPlus,
-    [STAT_GRADE_AMINUS] = sSpriteAnim_StatGradeAMinus,
-    [STAT_GRADE_A]      = sSpriteAnim_StatGradeA,
-    [STAT_GRADE_APLUS]  = sSpriteAnim_StatGradeAPlus,
-    [STAT_GRADE_S]      = sSpriteAnim_StatGradeS,
-};
-
-static const struct SpriteTemplate sSpriteTemplate_StatGrades =
-{
-    .tileTag = TAG_STAT_GRADES,
-    .paletteTag = TAG_STAT_GRADES,
-    .oam = &sOamData_StatGrades,
-    .anims = sSpriteAnimTable_StatGrades,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCallbackDummy
@@ -1769,26 +1628,16 @@ static bool8 DecompressGraphics(void)
         sMonSummaryScreen->switchCounter++;
         break;
     case 18:
-        if (BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
-            LoadCompressedSpriteSheet(&sSpriteSheet_StatGrades);
-        sMonSummaryScreen->switchCounter++;
-        break;
-    case 19:
-        if (BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
-            LoadSpritePalette(&sSpritePal_StatGrades);
-        sMonSummaryScreen->switchCounter++;
-        break;
-	case 20:
         if (BW_SUMMARY_SHOW_FRIENDSHIP)
             LoadCompressedSpriteSheet(&sSpriteSheet_FriendshipIcon);
         sMonSummaryScreen->switchCounter++;
         break;
-    case 21:
+    case 19:
         if (BW_SUMMARY_SHOW_FRIENDSHIP)
             LoadSpritePalette(&sSpritePal_FriendshipIcon);
         sMonSummaryScreen->switchCounter++;
         break;
-    case 22:
+    case 20:
         LoadCompressedPalette(gInterfaceTypeIcons_Pal, OBJ_PLTT_ID(13), PLTT_SIZE_4BPP);
         sMonSummaryScreen->switchCounter = 0;
         return TRUE;
@@ -2193,10 +2042,6 @@ static void Task_ChangeSummaryMon(u8 taskId)
         }
         break;
     case 12:
-        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS && BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
-            ShowGradeIcons(SKILL_STATE_IVS);
-        break;
-    case 13:
         gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_MON]].data[2] = 0;
 		if (BW_SUMMARY_MON_SHADOWS)
             gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_SHADOW]].sDelayAnim = 0;
@@ -2358,9 +2203,6 @@ static void PssScrollEnd(u8 taskId)
     TrySetInfoPageIcons();
     TryDrawHPBar();
     TryDrawExperienceProgressBar();
-
-    if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS && BW_SUMMARY_IV_EV_DISPLAY == BW_IV_EV_GRADED)
-        ShowGradeIcons(SKILL_STATE_IVS);
 
     if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO)
     {
@@ -4230,69 +4072,6 @@ static void DestroyCategoryIcon(void)
     if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY] != SPRITE_NONE)
         DestroySprite(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY]]);
     sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_CATEGORY] = SPRITE_NONE;
-}
-
-static void ShowGradeIcons(u8 mode) //WorpTODO: delete
-{
-    u32 i, y, divisor;
-    u8 hp, atk, def, spatk, spdef, speed;
-
-    for (i = SPRITE_ARR_ID_HP_GRADE; i <= SPRITE_ARR_ID_SPE_GRADE; i++)
-    {
-        if (sMonSummaryScreen->spriteIds[i] == SPRITE_NONE)
-        {
-            if (i == SPRITE_ARR_ID_HP_GRADE)
-                y = 22;
-            else
-                y = 42 + (i - (SPRITE_ARR_ID_HP_GRADE + 1)) * 12;
-
-            sMonSummaryScreen->spriteIds[i] = CreateSprite(&sSpriteTemplate_StatGrades, 74, y, 0);
-
-        }
-        gSprites[sMonSummaryScreen->spriteIds[i]].invisible = FALSE;
-    }
-
-    if (mode == SKILL_STATE_IVS)
-    {
-        divisor = 2;
-        hp = sMonSummaryScreen->summary.ivHp;
-        atk = sMonSummaryScreen->summary.ivAtk;
-        def = sMonSummaryScreen->summary.ivDef;
-        spatk = sMonSummaryScreen->summary.ivSpatk;
-        spdef = sMonSummaryScreen->summary.ivSpdef;
-        speed = sMonSummaryScreen->summary.ivSpeed;
-    }
-    else
-    {
-        divisor = 16;
-        hp = sMonSummaryScreen->summary.evHp;
-        atk = sMonSummaryScreen->summary.evAtk;
-        def = sMonSummaryScreen->summary.evDef;
-        spatk = sMonSummaryScreen->summary.evSpatk;
-        spdef = sMonSummaryScreen->summary.evSpdef;
-        speed = sMonSummaryScreen->summary.evSpeed;
-    }
-    
-    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_HP_GRADE]], hp / divisor);
-    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_ATK_GRADE]], atk / divisor);
-    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_DEF_GRADE]], def / divisor);
-    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_SPA_GRADE]], spatk / divisor);
-    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_SPD_GRADE]], spdef / divisor);
-    StartSpriteAnim(&gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_SPE_GRADE]], speed / divisor);
-}
-
-// idk, might need this, who knows :)
-static void UNUSED DestroyGradeIcons(void)
-{
-    u32 i;
-    for (i = SPRITE_ARR_ID_HP_GRADE; i <= SPRITE_ARR_ID_SPE_GRADE; i++)
-    {
-        if (sMonSummaryScreen->spriteIds[i] != SPRITE_NONE)
-        {
-            DestroySprite(&gSprites[sMonSummaryScreen->spriteIds[i]]);
-            sMonSummaryScreen->spriteIds[i] = SPRITE_NONE;
-        }
-    }
 }
 
 static void ResetSpriteIds(void)

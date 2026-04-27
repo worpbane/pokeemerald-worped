@@ -93,19 +93,22 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 
 ### ✨ Menu Changes
 
-- **Modernized FRLG-style Summary Screen**  
-	Built on the BW Summary Screen by RavePossum, this is my custom Summary Screen inspired by FRLG and Pokémon Ocean Blue. It's purple, as are most UI elements in the hack.  
-	It has **Characteristics** from later gens too!  
-	Based on [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & some bits of code taken from the [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
+* **Modernized FRLG-style Summary Screen**  
+	* Custom layout inspired by Pokémon FRLG, Gen V, and Pokémon Ocean Blue.  
+	* **Animated Background.**  
+	* **Expanded Skills:** Pokémon Skills screen shows IVs, EVs, and Base Stats. Nature Indicators also appear.  
+	* **Characteristics:** Integrated Gen IV+ personality traits into the Trainer Memo!  
+	* Built on the foundation of [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & some bits of code backported from his [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion).  
 
-- **Gen 5–style Party Menu**  
+* **Gen 5–style Party Menu**  
 	I thought this matched the BW Summary Screen and wanted to throw it in.  
 	Based on [Team Aqua's Repo](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)  
 	
-- **New Main Menu UI**  
-	Archie and Mudskip did a really nice job with this, I love that it shows your party and where you are. 10/10.  
-	Based on [Mudskip's guide](https://github.com/pret/pokeemerald/wiki/New-Main-Menu-UI-With-Mugshot-by-Archie-and-Mudskip)  
-	*(Changed color to purple.)*  
+* **New Main Menu UI**  
+	* Archie and Mudskip's New Main Menu UI was so nice looking I really wanted to implement it!
+	* Changed the mugshot pictures to the trainer sprites.  
+	* Changed color to purple.  
+	* Based on [Mudskip's guide](https://github.com/pret/pokeemerald/wiki/New-Main-Menu-UI-With-Mugshot-by-Archie-and-Mudskip)  
     
 ### 🛠️ Small Tweaks & Fixes  
 
