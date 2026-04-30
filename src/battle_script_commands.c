@@ -2113,6 +2113,8 @@ static void TryApplyCatchModeDamageClamp(s32 *damage)
         return;
 	if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FRONTIER))
 		return;
+	if (!CheckBagHasItem(gBallToDisplay, 1))
+		return;
 
     clampedDamage = *damage;
     if (gBattleMons[gBattlerTarget].hp <= 1)
@@ -10884,7 +10886,11 @@ static void Cmd_handleballthrow(void)
                     ballMultiplier = 40;
                 break;
             case ITEM_LUXURY_BALL:
-            case ITEM_PREMIER_BALL:
+            case ITEM_PREMIER_BALL: //WORPUPDATE ME PLS
+            case ITEM_DREAM_BALL:
+            case ITEM_LOVE_BALL:
+            case ITEM_LURE_BALL:
+            case ITEM_QUICK_BALL:
                 ballMultiplier = 10;
                 break;
             }

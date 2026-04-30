@@ -372,11 +372,6 @@ static const u8 sText_PkmnSkills[]                          = _("Pokémon Skills
 static const u8 sText_BattleMoves[]                         = _("Battle Moves");
 static const u8 sText_ContestMoves[]                        = _("Contest Moves");
 static const u8 sText_Info[]                                = _("Info");
-static const u8 sText_ViewIVs[]                             = _("View IV");
-static const u8 sText_ViewEVs[]                             = _("View EV");
-static const u8 sText_ViewStats[]                           = _("View Stats");
-static const u8 sText_ViewIVs_Graded[]                      = _("Innate");
-static const u8 sText_ViewEVs_Graded[]                      = _("Effort");
 static const u8 sText_RentalPkmn[]                          = _("Rental Pokémon");
 static const u8 sText_None[]                                = _("None");
 

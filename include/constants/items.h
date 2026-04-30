@@ -65,10 +65,10 @@
 #define ITEM_GREEN_SHARD 51
 #define ITEM_FERTILIZER 52
 #define ITEM_HEALING_HEART 53
-#define ITEM_036 54
-#define ITEM_037 55
-#define ITEM_038 56
-#define ITEM_039 57
+#define ITEM_DREAM_BALL 54
+#define ITEM_LOVE_BALL 55
+#define ITEM_LURE_BALL 56
+#define ITEM_QUICK_BALL 57
 #define ITEM_03A 58
 #define ITEM_03B 59
 #define ITEM_03C 60

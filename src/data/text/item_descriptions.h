@@ -61,6 +61,26 @@ static const u8 sPremierBallDesc[] = _(
     "A rare Ball made\n"
     "in commemoration\n"
     "of some event.");
+	
+static const u8 sDreamBallDesc[] = _(
+    "A Ball that works\n"
+    "better on Pokémon\n"
+    "that are sleeping.");
+	
+static const u8 sLoveBallDesc[] = _(
+    "A Ball that works\n"
+    "better on Pokémon\n"
+    "of opposite gender.");
+	
+static const u8 sLureBallDesc[] = _(
+    "A Poké Ball for\n"
+    "catching Pokémon\n"
+    "hooked by a Rod.");
+	
+static const u8 sQuickBallDesc[] = _(
+    "A Ball that works\n"
+    "better if used on\n"
+    "the first turn.");
 
 // Medicine
 static const u8 sPotionDesc[] = _(
