@@ -38,7 +38,21 @@ I didn't want to add 500 new mon, just Pokémon I actually like. Most of these a
 I mostly added these because I wanted the **Hatenna line** to actually have some STAB moves, and because **Minccino** deserves Tail Whip.
 
 * **Sprinkled through Pokémon who can learn it in later games** Dazzling Gleam, Draining Kiss, and Disarming Voice. I was having issues adding the TMs so they're disabled for now.
-* **Exclusive:** Tail Whip for Minccino.
+* **Exclusive:** Tail Slap for Minccino.
+
+### 🌸 PokéBall Additions
+
+I wanted to add some more pastel options for PokéBalls, kinda matches the idea of adding cute Pokémon.
+
+* **Dream Ball:**  
+	*4x Catch Rate when the wild Pokémon is sleeping.  
+	* **Acquisition:** Obtained once a day from an old lady in Lilycove City after showing her a sleeping Pokémon.  
+* **Heal Ball:**  
+	*Heals captured PokéMon when they're added to the player's party. 
+	* **Acquisition:** Sold at the Lavaridge Town PokéMart (near the healing hot springs).
+* **Love Ball**:
+	*8x Catch Rate when wild PokéMon is the same species but different gender as the player's attacking PokéMon.
+	* **Acquisition:** Sold at the Verdanturf Town PokéMart (near the "Tunnel of Love").
 
 ---
 

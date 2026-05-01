@@ -10982,29 +10982,6 @@ static void Cmd_handleballthrow(void)
 
 static void Cmd_givecaughtmon(void)
 {
-	struct Pokemon *mon = &gEnemyParty[gBattlerPartyIndexes[BATTLE_OPPOSITE(gBattlerAttacker)]];
-
-    // Should add the Heal Ball effects...
-    if (GetMonData(mon, MON_DATA_POKEBALL) == BALL_HEAL)
-    {
-        u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
-        u32 status = STATUS1_NONE;
-        u8 i;
-
-        SetMonData(mon, MON_DATA_HP, &maxHP);
-        SetMonData(mon, MON_DATA_STATUS, &status);
-
-        for (i = 0; i < MAX_MON_MOVES; i++)
-        {
-            u16 move = GetMonData(mon, MON_DATA_MOVE1 + i);
-            if (move != MOVE_NONE)
-            {
-                u8 pp = gBattleMoves[move].pp;
-                SetMonData(mon, MON_DATA_PP1 + i, &pp);
-            }
-        }
-    }
-	
     if (GiveMonToPlayer(&gEnemyParty[gBattlerPartyIndexes[BATTLE_OPPOSITE(gBattlerAttacker)]]) != MON_GIVEN_TO_PARTY)
     {
         if (!ShouldShowBoxWasFullMessage())

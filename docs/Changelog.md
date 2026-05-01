@@ -62,14 +62,17 @@
   - **Dazzling Gleam**  
   - **Draining Kiss**  
   - **Disarming Voice**  
-  - **Tail Whip**  
+  - **Tail Slap**  
 	- Prepared contest/battle backend for these moves.  
 	- Moves added to some Pokémon in the level_up_learnsets.
 	
 - Added new PokéBalls to the game:  
 	- **Dream Ball**  
+	Works best on Sleeping Pokémon.  
 	- **Heal Ball**  
+	Heals Pokémon when captured and added to your party.  
 	- **Love Ball**  
+	8x catch rate on Pokémon of the same species but opposite gender.  
 	Note: If updating from a previous version, please use the script in the Debug Menu to update your item IDs properly and prevent item corruption.
 
 ---

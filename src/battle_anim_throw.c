@@ -179,7 +179,7 @@ static const struct CompressedSpritePalette sBallParticlePalettes[POKEBALL_COUNT
     [BALL_LUXURY]  = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_LUXURYBALL},
     [BALL_PREMIER] = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_PREMIERBALL},
     [BALL_DREAM]   = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_DREAMBALL},
-    [BALL_DREAM]   = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_LOVEBALL},
+    [BALL_LOVE]    = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_LOVEBALL},
     [BALL_HEAL]    = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_HEALBALL},
 };
 
@@ -249,8 +249,8 @@ static const u8 sBallParticleAnimNums[POKEBALL_COUNT] =
     [BALL_TIMER]   = 5,
     [BALL_LUXURY]  = 4,
     [BALL_PREMIER] = 4,
-	[BALL_LOVE]    = 1,
-    [BALL_DREAM]   = 4,
+	[BALL_DREAM]   = 1,
+    [BALL_LOVE]    = 4,
     [BALL_HEAL]    = 5,
 };
 
@@ -270,7 +270,7 @@ static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
     [BALL_PREMIER] = PremierBallOpenParticleAnimation,
     [BALL_DREAM]   = GreatBallOpenParticleAnimation,
     [BALL_LOVE]    = MasterBallOpenParticleAnimation,
-    [BALL_HEAL]   = UltraBallOpenParticleAnimation,
+    [BALL_HEAL]    = UltraBallOpenParticleAnimation,
 };
 
 static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] =
@@ -426,9 +426,9 @@ const u16 gBallOpenFadeColors[] =
     [BALL_TIMER] = RGB(29, 30, 30),
     [BALL_LUXURY] = RGB(31, 17, 10),
     [BALL_PREMIER] = RGB(31, 9, 10),
-    [BALL_DREAM] = RGB(28, 15, 28),
-    [BALL_LOVE] = RGB(31, 18, 25),
-    [BALL_HEAL] = RGB(23, 20, 28),
+    [BALL_DREAM] = RGB(24, 10, 26),
+    [BALL_LOVE] = RGB(31, 15, 20),
+    [BALL_HEAL] = RGB(31, 23, 27),
 
     // Garbage data
     RGB_BLACK,

@@ -8299,6 +8299,27 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
 {
     s32 i;
     u8 typeChallenge = gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge;
+	u8 ballType = GetMonData(mon, MON_DATA_POKEBALL, NULL);
+	
+	if (ballType == 15) //Ensures that new party members get healed by the heal ball
+    {
+        u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
+        u32 status = STATUS1_NONE;
+        u8 moveSlot;
+
+        SetMonData(mon, MON_DATA_HP, &maxHP);
+        SetMonData(mon, MON_DATA_STATUS, &status);
+
+        for (moveSlot = 0; moveSlot < MAX_MON_MOVES; moveSlot++)
+        {
+            u16 move = GetMonData(mon, MON_DATA_MOVE1 + moveSlot);
+            if (move != MOVE_NONE)
+            {
+                u8 pp = gBattleMoves[move].pp;
+                SetMonData(mon, MON_DATA_PP1 + moveSlot, &pp);
+            }
+        }
+    }
 
     SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);

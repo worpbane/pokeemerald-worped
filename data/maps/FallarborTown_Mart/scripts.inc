@@ -23,7 +23,6 @@ FallarborTown_Mart_EventScript_Clerk2::
 
 	.align 2
 FallarborTown_Mart_Pokemart:
-	.2byte ITEM_LOVE_BALL
 	.2byte ITEM_X_SPECIAL
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
