@@ -65,6 +65,12 @@
   - **Tail Whip**  
 	- Prepared contest/battle backend for these moves.  
 	- Moves added to some Pokémon in the level_up_learnsets.
+	
+- Added new PokéBalls to the game:  
+	- **Dream Ball**  
+	- **Heal Ball**  
+	- **Love Ball**  
+	Note: If updating from a previous version, please use the script in the Debug Menu to update your item IDs properly and prevent item corruption.
 
 ---
 
@@ -110,6 +116,7 @@
 
 ### ⚠️ Known Issues 
 - Pokémon whose overworld sprites use the TRACKS_SLITHER value crash the game when making paths. This seems to be a Modern Emerald issue I inherited. TRACKS_BIKE_TIRE works fine though, and I'm going to compare the two and see where things aren't matching.
+- Abandoned Ship Level 2 is bugged? This might be another Modern Emerald thing, not sure.
 
 ---
 

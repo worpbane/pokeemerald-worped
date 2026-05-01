@@ -143,8 +143,7 @@ static const struct CaptureStar sCaptureStars[] =
 #define TAG_PARTICLES_PREMIERBALL 55031
 #define TAG_PARTICLES_DREAMBALL   55032
 #define TAG_PARTICLES_LOVEBALL    55033
-#define TAG_PARTICLES_LUREBALL    55034
-#define TAG_PARTICLES_QUICKBALL   55035
+#define TAG_PARTICLES_HEALBALL    55034
 
 static const struct CompressedSpriteSheet sBallParticleSpriteSheets[POKEBALL_COUNT] =
 {
@@ -162,8 +161,7 @@ static const struct CompressedSpriteSheet sBallParticleSpriteSheets[POKEBALL_COU
     [BALL_PREMIER] = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_PREMIERBALL},
     [BALL_DREAM]   = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_DREAMBALL},
     [BALL_LOVE]    = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_LOVEBALL},
-    [BALL_LURE]    = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_LUREBALL},
-    [BALL_QUICK]   = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_QUICKBALL},
+    [BALL_HEAL]    = {gBattleAnimSpriteGfx_Particles, 0x100, TAG_PARTICLES_HEALBALL},
 };
 
 static const struct CompressedSpritePalette sBallParticlePalettes[POKEBALL_COUNT] =
@@ -182,8 +180,7 @@ static const struct CompressedSpritePalette sBallParticlePalettes[POKEBALL_COUNT
     [BALL_PREMIER] = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_PREMIERBALL},
     [BALL_DREAM]   = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_DREAMBALL},
     [BALL_DREAM]   = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_LOVEBALL},
-    [BALL_LURE]    = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_LUREBALL},
-    [BALL_QUICK]   = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_QUICKBALL},
+    [BALL_HEAL]    = {gBattleAnimSpritePal_CircleImpact, TAG_PARTICLES_HEALBALL},
 };
 
 static const union AnimCmd sAnim_RegularBall[] =
@@ -252,10 +249,9 @@ static const u8 sBallParticleAnimNums[POKEBALL_COUNT] =
     [BALL_TIMER]   = 5,
     [BALL_LUXURY]  = 4,
     [BALL_PREMIER] = 4,
-	[BALL_LOVE]    = 0,
-    [BALL_QUICK]   = 5,
+	[BALL_LOVE]    = 1,
     [BALL_DREAM]   = 4,
-    [BALL_LURE]    = 2,
+    [BALL_HEAL]    = 5,
 };
 
 static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
@@ -274,8 +270,7 @@ static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
     [BALL_PREMIER] = PremierBallOpenParticleAnimation,
     [BALL_DREAM]   = GreatBallOpenParticleAnimation,
     [BALL_LOVE]    = MasterBallOpenParticleAnimation,
-    [BALL_LURE]    = DiveBallOpenParticleAnimation,
-    [BALL_QUICK]   = UltraBallOpenParticleAnimation,
+    [BALL_HEAL]   = UltraBallOpenParticleAnimation,
 };
 
 static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] =
@@ -406,18 +401,9 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
-	[BALL_LURE] = {
-        .tileTag = TAG_PARTICLES_LUREBALL,
-        .paletteTag = TAG_PARTICLES_LUREBALL,
-        .oam = &gOamData_AffineOff_ObjNormal_8x8,
-        .anims = sAnims_BallParticles,
-        .images = NULL,
-        .affineAnims = gDummySpriteAffineAnimTable,
-        .callback = SpriteCallbackDummy,
-    },
-	[BALL_QUICK] = {
-        .tileTag = TAG_PARTICLES_QUICKBALL,
-        .paletteTag = TAG_PARTICLES_QUICKBALL,
+	[BALL_HEAL] = {
+        .tileTag = TAG_PARTICLES_HEALBALL,
+        .paletteTag = TAG_PARTICLES_HEALBALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
         .anims = sAnims_BallParticles,
         .images = NULL,
@@ -442,8 +428,7 @@ const u16 gBallOpenFadeColors[] =
     [BALL_PREMIER] = RGB(31, 9, 10),
     [BALL_DREAM] = RGB(28, 15, 28),
     [BALL_LOVE] = RGB(31, 18, 25),
-    [BALL_LURE] = RGB(10, 15, 31),
-    [BALL_QUICK] = RGB(31, 31, 10),
+    [BALL_HEAL] = RGB(23, 20, 28),
 
     // Garbage data
     RGB_BLACK,
@@ -817,10 +802,8 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_DREAM;
 	case ITEM_LOVE_BALL:
         return BALL_LOVE;
-	case ITEM_LURE_BALL:
-        return BALL_LURE;
-	case ITEM_QUICK_BALL:
-        return BALL_QUICK;
+	case ITEM_HEAL_BALL:
+        return BALL_HEAL;
     case ITEM_POKE_BALL:
     default:
         return BALL_POKE;

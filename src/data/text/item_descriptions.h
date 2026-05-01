@@ -72,15 +72,10 @@ static const u8 sLoveBallDesc[] = _(
     "better on Pokémon\n"
     "of opposite gender.");
 	
-static const u8 sLureBallDesc[] = _(
-    "A Poké Ball for\n"
-    "catching Pokémon\n"
-    "hooked by a Rod.");
-	
-static const u8 sQuickBallDesc[] = _(
-    "A Ball that works\n"
-    "better if used on\n"
-    "the first turn.");
+static const u8 sHealBallDesc[] = _(
+    "A Ball that restores\n"
+    "caught Pokémon's\n"
+    "HP and Status.");
 
 // Medicine
 static const u8 sPotionDesc[] = _(

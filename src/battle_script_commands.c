@@ -10885,12 +10885,26 @@ static void Cmd_handleballthrow(void)
                 if (ballMultiplier > 40)
                     ballMultiplier = 40;
                 break;
+			case ITEM_DREAM_BALL:
+				//Do enemy pokemon be sleeping tho?
+                if (gBattleMons[gBattlerTarget].status1 & STATUS1_SLEEP)
+                    ballMultiplier = 40;
+                else
+                    ballMultiplier = 10;
+                break;
+			case ITEM_LOVE_BALL:
+                // Long ass IF to see if species matches but opposite genders
+                if (gBattleMons[gBattlerAttacker].species == gBattleMons[gBattlerTarget].species
+                    && GetGenderFromSpeciesAndPersonality(gBattleMons[gBattlerAttacker].species, gBattleMons[gBattlerAttacker].personality) != GetGenderFromSpeciesAndPersonality(gBattleMons[gBattlerTarget].species, gBattleMons[gBattlerTarget].personality)
+                    && GetGenderFromSpeciesAndPersonality(gBattleMons[gBattlerAttacker].species, gBattleMons[gBattlerAttacker].personality) != MON_GENDERLESS
+                    && GetGenderFromSpeciesAndPersonality(gBattleMons[gBattlerTarget].species, gBattleMons[gBattlerTarget].personality) != MON_GENDERLESS)
+                    ballMultiplier = 80;
+                else
+                    ballMultiplier = 10;
+                break;
             case ITEM_LUXURY_BALL:
-            case ITEM_PREMIER_BALL: //WORPUPDATE ME PLS
-            case ITEM_DREAM_BALL:
-            case ITEM_LOVE_BALL:
-            case ITEM_LURE_BALL:
-            case ITEM_QUICK_BALL:
+            case ITEM_PREMIER_BALL:
+            case ITEM_HEAL_BALL: //WorpTODO: Set up Healing effect if mon goes into party
                 ballMultiplier = 10;
                 break;
             }
@@ -10968,6 +10982,29 @@ static void Cmd_handleballthrow(void)
 
 static void Cmd_givecaughtmon(void)
 {
+	struct Pokemon *mon = &gEnemyParty[gBattlerPartyIndexes[BATTLE_OPPOSITE(gBattlerAttacker)]];
+
+    // Should add the Heal Ball effects...
+    if (GetMonData(mon, MON_DATA_POKEBALL) == BALL_HEAL)
+    {
+        u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
+        u32 status = STATUS1_NONE;
+        u8 i;
+
+        SetMonData(mon, MON_DATA_HP, &maxHP);
+        SetMonData(mon, MON_DATA_STATUS, &status);
+
+        for (i = 0; i < MAX_MON_MOVES; i++)
+        {
+            u16 move = GetMonData(mon, MON_DATA_MOVE1 + i);
+            if (move != MOVE_NONE)
+            {
+                u8 pp = gBattleMoves[move].pp;
+                SetMonData(mon, MON_DATA_PP1 + i, &pp);
+            }
+        }
+    }
+	
     if (GiveMonToPlayer(&gEnemyParty[gBattlerPartyIndexes[BATTLE_OPPOSITE(gBattlerAttacker)]]) != MON_GIVEN_TO_PARTY)
     {
         if (!ShouldShowBoxWasFullMessage())

@@ -2049,11 +2049,8 @@ static const struct SpriteFrameImage sPicTable_Ball_DREAM[] = {
 static const struct SpriteFrameImage sPicTable_Ball_LOVE[] = {
     POKEBALL_PIC_FRAMES(Love),
 };
-static const struct SpriteFrameImage sPicTable_Ball_LURE[] = {
-    POKEBALL_PIC_FRAMES(Lure),
-};
-static const struct SpriteFrameImage sPicTable_Ball_QUICK[] = {
-    POKEBALL_PIC_FRAMES(Quick),
+static const struct SpriteFrameImage sPicTable_Ball_HEAL[] = {
+    POKEBALL_PIC_FRAMES(Heal),
 };
 
 // Gen IV/Sinnoh

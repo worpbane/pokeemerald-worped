@@ -59,8 +59,7 @@ static u16 GetBattlerPokeballItemId(u8 battlerId);
 #define GFX_TAG_PREMIER_BALL 55011
 #define GFX_TAG_DREAM_BALL   55012
 #define GFX_TAG_LOVE_BALL    55013
-#define GFX_TAG_LURE_BALL    55014
-#define GFX_TAG_QUICK_BALL   55015
+#define GFX_TAG_HEAL_BALL    55014
 
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
@@ -78,8 +77,7 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_PREMIER] = {gBallGfx_Premier, 384, GFX_TAG_PREMIER_BALL},
     [BALL_DREAM]   = {gBallGfx_Dream,   384, GFX_TAG_DREAM_BALL},
     [BALL_LOVE]    = {gBallGfx_Love,    384, GFX_TAG_LOVE_BALL},
-    [BALL_LURE]    = {gBallGfx_Lure,    384, GFX_TAG_LURE_BALL},
-    [BALL_QUICK]   = {gBallGfx_Quick,   384, GFX_TAG_QUICK_BALL},
+    [BALL_HEAL]    = {gBallGfx_Heal,    384, GFX_TAG_HEAL_BALL},
 };
 
 const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
@@ -98,8 +96,7 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_PREMIER] = {gBallPal_Premier, GFX_TAG_PREMIER_BALL},
     [BALL_DREAM]   = {gBallPal_Dream,   GFX_TAG_DREAM_BALL},
     [BALL_LOVE]    = {gBallPal_Love,    GFX_TAG_LOVE_BALL},
-    [BALL_LURE]    = {gBallPal_Lure,    GFX_TAG_LURE_BALL},
-    [BALL_QUICK]   = {gBallPal_Quick,   GFX_TAG_QUICK_BALL},
+    [BALL_HEAL]    = {gBallPal_Heal,    GFX_TAG_HEAL_BALL},
 };
 
 static const struct OamData sBallOamData =
@@ -357,20 +354,10 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
-	[BALL_LURE] =
+	[BALL_HEAL] =
     {
-        .tileTag = GFX_TAG_LURE_BALL,
-        .paletteTag = GFX_TAG_LURE_BALL,
-        .oam = &sBallOamData,
-        .anims = sBallAnimSequences,
-        .images = NULL,
-        .affineAnims = sAffineAnim_BallRotate,
-        .callback = SpriteCB_BallThrow,
-    },
-	[BALL_QUICK] =
-    {
-        .tileTag = GFX_TAG_QUICK_BALL,
-        .paletteTag = GFX_TAG_QUICK_BALL,
+        .tileTag = GFX_TAG_HEAL_BALL,
+        .paletteTag = GFX_TAG_HEAL_BALL,
         .oam = &sBallOamData,
         .anims = sBallAnimSequences,
         .images = NULL,

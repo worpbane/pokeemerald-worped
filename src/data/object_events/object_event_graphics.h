@@ -911,34 +911,7 @@ const u32 gObjectEventPic_PremierBall[] = INCBIN_U32("graphics/object_events/pic
 //Worpadditions
 const u32 gObjectEventPic_DreamBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_dream.4bpp");
 const u32 gObjectEventPic_LoveBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_love.4bpp");
-const u32 gObjectEventPic_LureBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_lure.4bpp");
-const u32 gObjectEventPic_QuickBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_quick.4bpp");
-// Gen IV/Sinnoh
-#ifdef ITEM_DUSK_BALL
-const u32 gObjectEventPic_DuskBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_dusk.4bpp");
 const u32 gObjectEventPic_HealBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_heal.4bpp");
-const u32 gObjectEventPic_CherishBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_cherish.4bpp");
-#endif
-#ifdef ITEM_PARK_BALL
-const u32 gObjectEventPic_ParkBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_park.4bpp");
-#endif
-// Gen II/Johto Apricorns
-#ifdef ITEM_FAST_BALL
-const u32 gObjectEventPic_FastBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_fast.4bpp");
-const u32 gObjectEventPic_LevelBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_level.4bpp");
-const u32 gObjectEventPic_HeavyBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_heavy.4bpp");
-const u32 gObjectEventPic_FriendBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_friend.4bpp");
-const u32 gObjectEventPic_MoonBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_moon.4bpp");
-const u32 gObjectEventPic_SportBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_sport.4bpp");
-#endif
-// Gen VII
-#ifdef ITEM_BEAST_BALL
-const u32 gObjectEventPic_BeastBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_beast.4bpp");
-#endif
-// Gen VIII
-#ifdef ITEM_STRANGE_BALL
-const u32 gObjectEventPic_StrangeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_strange.4bpp");
-#endif
 #endif
 
 #if OW_MON_POKEBALLS
@@ -958,26 +931,8 @@ const u16 gObjectEventPal_PremierBall[] = INCBIN_U16("graphics/object_events/pic
 //Worpadditions
 const u16 gObjectEventPal_DreamBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_dream.gbapal");
 const u16 gObjectEventPal_LoveBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_love.gbapal");
-const u16 gObjectEventPal_LureBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_lure.gbapal");
-const u16 gObjectEventPal_QuickBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_quick.gbapal");
-// Gen IV/Sinnoh
-const u16 gObjectEventPal_DuskBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_dusk.gbapal");
 const u16 gObjectEventPal_HealBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_heal.gbapal");
-const u16 gObjectEventPal_CherishBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_cherish.gbapal");
-const u16 gObjectEventPal_ParkBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_park.gbapal");
-// Gen II/Johto Apricorns
-const u16 gObjectEventPal_FastBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_fast.gbapal");
-const u16 gObjectEventPal_LevelBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_level.gbapal");
-const u16 gObjectEventPal_HeavyBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_heavy.gbapal");
-const u16 gObjectEventPal_FriendBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_friend.gbapal");
-const u16 gObjectEventPal_MoonBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_moon.gbapal");
-const u16 gObjectEventPal_SportBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_sport.gbapal");
-// Gen VII
-const u16 gObjectEventPal_BeastBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_beast.gbapal");
-// Gen VIII
-const u16 gObjectEventPal_StrangeBall[] = INCBIN_U16("graphics/object_events/pics/misc/ball_strange.gbapal");
 #endif
 
 const u32 gFieldEffectObjectPic_CaveDust[] = INCBIN_U32("graphics/field_effects/pics/cave_dust.4bpp");
 const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effects/palettes/cave_dust.gbapal");
-
