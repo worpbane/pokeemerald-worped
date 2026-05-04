@@ -3963,9 +3963,7 @@ extern const u32 gPokedexPlusHGSS_MenuList_Gfx[];
 extern const u32 gPokedexPlusHGSS_MenuList_DECA_Gfx[];
 extern const u32 gPokedexPlusHGSS_Interface_Gfx[];
 extern const u32 gPokedexPlusHGSS_Interface_DECA_Gfx[];
-extern const u32 gPokedexPlusHGSS_Menu_1_Gfx[];
-extern const u32 gPokedexPlusHGSS_Menu_2_Gfx[];
-extern const u32 gPokedexPlusHGSS_Menu_3_Gfx[];
+extern const u32 gPokedexPlusHGSS_Menu_Gfx[];
 extern const u32 gPokedexPlusHGSS_MenuSearch_Gfx[];
 extern const u32 gPokedexPlusHGSS_MenuSearch_DECA_Gfx[];
 extern const u32 gPokedexPlusHGSS_StartMenuMain_Tilemap[];
@@ -3983,6 +3981,8 @@ extern const u32 gPokedexPlusHGSS_ScreenCry_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenSize_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenSearchHoenn_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenSearchNational_Tilemap[];
+
+extern const u32 gPokedexPlusWorped_Text_Pal[];
 
 
 // berry tag screen
