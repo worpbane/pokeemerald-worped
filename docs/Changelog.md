@@ -90,9 +90,13 @@
 	- I'm calling them a Hybrid design, classic high-vis colors with the modern stylzed icons where I could fit them.  
 	- Optimized for a single palette! I'm quite proud of this.  
 - **Summary Screen Update**:
-	- Updated the **BW Summary Screen**, with new graphics!  
+	- Updated the **BW Summary Screen** with new graphics!  
 	- Changed to look more FRLG inspired.
 	- Also includes **Characteristics** from later gens.
+- **PokéDex Update**:
+	- Updated the **HGSS PokéDex Plus Screen** with new graphics!  
+	- Changed to look more FRLG Summary Screen inspired.  
+	- Scaled back some information so it wasn't so cluttered.
 - New **Main Menu UI**
 - Start Menu reordered for improved usability.
 - DexNav removed from Start Menu; now accessible by pressing **L** when the cursor is over the PokéNav.

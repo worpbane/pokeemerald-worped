@@ -1909,7 +1909,6 @@ const u8 gText_Rename[] = _("Rename");
 
 //HGSS_Ui PokedexPlus
 const u8 gText_Stats_Buttons[]  = _("{A_BUTTON}Toggle   {DPAD_UPDOWN}Moves");
-const u8 gText_Stats_Buttons_Decapped[]  = _("{A_BUTTON}Toggle   {DPAD_UPDOWN}Moves");
 const u8 gText_Stats_HP[]       = _("HP");
 const u8 gText_Stats_Attack[]   = _("Atk");
 const u8 gText_Stats_Defense[]  = _("Def");
@@ -1949,13 +1948,9 @@ const u8 gText_Stats_Minus[] = _("-");
 const u8 gText_Dex_SEEN[]   = _("Seen");
 const u8 gText_Dex_OWN[]    = _("Own");
 
-const u8 gText_EVO_Buttons[]                        = _("{DPAD_UPDOWN}EVOs  {A_BUTTON}CHECK");
-const u8 gText_EVO_Buttons_Decapped[]               = _("{DPAD_UPDOWN}Evos  {A_BUTTON}Check");
-const u8 gText_EVO_Buttons_PE[]                     = _("{DPAD_UPDOWN}EVOs  {A_BUTTON}CHECK  {START_BUTTON}FORMs");
-const u8 gText_EVO_Buttons_Decapped_PE[]            = _("{DPAD_UPDOWN}Evos  {A_BUTTON}Check  {START_BUTTON}Forms");
+const u8 gText_EVO_Buttons[]           			    = _("{A_BUTTON}Check  {DPAD_UPDOWN}Evos");
 const u8 gText_EVO_Name[]                           = _("{STR_VAR_3}:");
 const u8 gText_EVO_PreEvo[]                         = _("{STR_VAR_1} evolves from {STR_VAR_2}");
-const u8 gText_EVO_PreEvo_PE_Mega[]                 = _("{STR_VAR_1} mega evolves with {STR_VAR_2}");
 const u8 gText_EVO_FRIENDSHIP[]                     = _("LvlUp, high friendship");
 const u8 gText_EVO_FRIENDSHIP_DAY[]                 = _("LvlUp, high friendship, day");
 const u8 gText_EVO_FRIENDSHIP_NIGHT[]               = _("LvlUp, high friendship, night");

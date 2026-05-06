@@ -113,6 +113,13 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 	* **Expanded Skills:** Pokémon Skills screen shows IVs, EVs, and Base Stats. Nature Indicators also appear.  
 	* **Characteristics:** Integrated Gen IV+ personality traits into the Trainer Memo!  
 	* Built on the foundation of [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & some bits of code backported from his [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion).  
+	
+* **Custom PokéDex Screen**  
+	* Features a ground-up redesign inspired by the Summary Screen I worked on, creating a seamless aesthetic transition between menus!  
+	* **Information:** I tuned down the amount of information given on the Stats screen, keeping what I thought was important.  
+	* **Dex Modes:** Full support for Hoenn, National, and Search modes. The UI intelligently adapts its color palette and list headers based on the active mode.  
+	* **PokéMon Numbering:** Caught Hoenn species show their regional number, while foreign species default to their National Dex entry.  
+	* Built on the foundation of [TheXaman's Pokeemerald Vanilla Repo](https://github.com/TheXaman/pokeemerald/tree/tx_pokedexPlus_hgss).    
 
 * **Gen 5–style Party Menu**  
 	I thought this matched the BW Summary Screen and wanted to throw it in.  

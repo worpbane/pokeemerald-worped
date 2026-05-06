@@ -561,7 +561,6 @@ extern const u8 gText_NoMatchingPkmnWereFound[];
 extern const u8 gText_SelectorArrow[];
 //PokedexPlus HGSS_Ui
 extern const u8 gText_Stats_Buttons[];
-extern const u8 gText_Stats_Buttons_Decapped[];
 extern const u8 gText_Stats_HP[];
 extern const u8 gText_Stats_Attack[];
 extern const u8 gText_Stats_Defense[];
@@ -603,12 +602,8 @@ extern const u8 gText_Dex_SEEN[];
 extern const u8 gText_Dex_OWN[];
 
 extern const u8 gText_EVO_Buttons[];
-extern const u8 gText_EVO_Buttons_Decapped[];
-extern const u8 gText_EVO_Buttons_PE[];
-extern const u8 gText_EVO_Buttons_Decapped_PE[];
 extern const u8 gText_EVO_Name[];
 extern const u8 gText_EVO_PreEvo[];
-extern const u8 gText_EVO_PreEvo_PE_Mega[];
 extern const u8 gText_EVO_FRIENDSHIP[];
 extern const u8 gText_EVO_FRIENDSHIP_DAY[];
 extern const u8 gText_EVO_FRIENDSHIP_NIGHT[];
