@@ -159,7 +159,8 @@ static void DrawHiddenSearchWindow(u8 width);
 // gui image data
 static const u32 sDexNavGuiTiles[] = INCBIN_U32("graphics/dexnav/gui_tiles.4bpp.lz");
 static const u32 sDexNavGuiTilemap[] = INCBIN_U32("graphics/dexnav/gui_tilemap.bin.lz");
-static const u32 sDexNavGuiPal[] = INCBIN_U32("graphics/dexnav/gui.gbapal");
+static const u32 sDexNavGuiPal[] = INCBIN_U32("graphics/dexnav/gui_tiles.gbapal.lz");
+static const u16 sDexnav_Text_Pal[]  = INCBIN_U16("graphics/dexnav/wDexText.gbapal");
 
 static const u32 sSelectionCursorGfx[] = INCBIN_U32("graphics/dexnav/cursor.4bpp.lz");
 static const u16 sSelectionCursorPal[] = INCBIN_U16("graphics/dexnav/cursor.gbapal");
@@ -202,22 +203,22 @@ static const struct WindowTemplate sDexNavGuiWindowTemplates[] =
     [WINDOW_INFO] =
     {
         .bg = 0,
-        .tilemapLeft = 21,
-        .tilemapTop = 5,
-        .width = 9,
-        .height = 15,
-        .paletteNum = 15,
+        .tilemapLeft = 20,
+        .tilemapTop = 2,
+        .width = 10,
+        .height = 11,
+        .paletteNum = 6,
         .baseBlock = 1,
     },
     [WINDOW_REGISTERED] =
     {
         .bg = 0,
-        .tilemapLeft = 4,
+        .tilemapLeft = 17,
         .tilemapTop = 0,
         .width = 26,
         .height = 2,
-        .paletteNum = 15,
-        .baseBlock = 200,
+        .paletteNum = 6,
+        .baseBlock = 225,
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -1678,7 +1679,8 @@ static bool8 DexNav_LoadGraphics(void)
         }
         break;
     case 2:
-        LoadPalette(sDexNavGuiPal, 0, 32);
+		LoadCompressedPalette(sDexNavGuiPal, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+		LoadPalette(sDexnav_Text_Pal, BG_PLTT_ID(6), 32);
         sDexNavUiDataPtr->state++;
         break;
     default:
@@ -2055,6 +2057,28 @@ static void SetTypeIconPosAndPal(u8 typeId, u8 x, u8 y, u8 spriteArrayId)
     SetSpriteInvisibility(spriteArrayId, FALSE);
 }
 
+static const u8 sTextColors[][3] =
+{
+    {0, 1, 2},
+    {0, 3, 4},
+    {0, 5, 6},
+    {0, 7, 8},
+    {0, 9, 10},
+    {0, 11, 12},
+    {0, 13, 14},
+    {0, 7, 8},
+    {13, 15, 14},
+    {0, 1, 2},
+    {0, 3, 4},
+    {0, 5, 6},
+    {0, 7, 8},
+};
+
+static void PrintTextOnWindow_BW_Font(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId)
+{
+    AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, x, y, 0, lineSpacing, sTextColors[colorId], 0, string);
+}
+
 static void PrintCurrentSpeciesInfo(void)
 {
     u8 searchLevelBonus = 0;
@@ -2062,18 +2086,22 @@ static void PrintCurrentSpeciesInfo(void)
     u32 i;
     u16 dexNum = SpeciesToNationalPokedexNum(species);
     u8 type1, type2;
-    
+	
     if (!GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
         species = SPECIES_NONE;
 
     // clear windows
     FillWindowPixelBuffer(WINDOW_INFO, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+	
+	GetMapName(gStringVar3, GetCurrentRegionMapSectionId(), 0);
+    //AddTextPrinterParameterized3(WINDOW_INFO, 1, 1 + GetStringRightAlignXOffset(1, gStringVar3, MAP_NAME_LENGTH * GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH)), 0, sFontColor_White, 0, gStringVar3);
+	PrintTextOnWindow_BW_Font(WINDOW_INFO, gStringVar3, GetStringRightAlignXOffset(1, gStringVar3, MAP_NAME_LENGTH * GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH)) - 31, 2, 0, 1);
     
     //species name
     if (species == SPECIES_NONE)
-        AddTextPrinterParameterized3(WINDOW_INFO, 0, 6, 16, sFontColor_White, 0, sText_DexNav_NoInfo);
+		PrintTextOnWindow_BW_Font(WINDOW_INFO, sText_DexNav_NoInfo, 3, 16, 0, 1);
     else
-        AddTextPrinterParameterized3(WINDOW_INFO, 0, 6, 16, sFontColor_White, 0, gSpeciesNames[species]);
+		PrintTextOnWindow_BW_Font(WINDOW_INFO, gSpeciesNames[species], 3, 16, 0, 1);
     
     //type icon(s)
     type1 = gSpeciesInfo[species].types[0];
@@ -2083,54 +2111,44 @@ static void PrintCurrentSpeciesInfo(void)
     
     if (type1 == type2)
     {
-        SetTypeIconPosAndPal(type1, 165, 71, 0);
+        SetTypeIconPosAndPal(type1, 168, 47, 0);
         SetSpriteInvisibility(1, TRUE);
     }
     else
     {
-        SetTypeIconPosAndPal(type1, 165, 71, 0);
-        SetTypeIconPosAndPal(type2, 164 + 39, 71, 1);
+        SetTypeIconPosAndPal(type1, 168, 47, 0);
+        SetTypeIconPosAndPal(type2, 168 + 32, 47, 1);
     }
     
-    //current chain
-	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y - 10, sFontColor_White, 0, sText_DexNavShinyHeader);
-	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y, sFontColor_White, 0, sText_DexNavChainText);
+    //Header + Text
+	PrintTextOnWindow_BW_Font(WINDOW_INFO, sText_DexNavShinyHeader, 5, CHAIN_BONUS_Y - 12, 0, 1);
+	PrintTextOnWindow_BW_Font(WINDOW_INFO, sText_DexNavChainText, 5, CHAIN_BONUS_Y + 1, 0, 0);
+	PrintTextOnWindow_BW_Font(WINDOW_INFO, sText_DexNavChainChance, 5, CHAIN_BONUS_Y + 13, 0, 0);
+	
+	//Current Chain
     ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
-    AddTextPrinterParameterized3(WINDOW_INFO, 0, 47, CHAIN_BONUS_Y, sFontColor_White, 0, gStringVar1);
-	
+	PrintTextOnWindow_BW_Font(WINDOW_INFO, gStringVar1, 53, CHAIN_BONUS_Y + 1, 0, 0); //WORPTODO: Make these hug the right
 	//Shiny chance with chain
-	AddTextPrinterParameterized3(WINDOW_INFO, 0, 4, CHAIN_BONUS_Y + 10, sFontColor_White, 0, sText_DexNavChainChance);
-	if (!species == SPECIES_NONE)
-		AddTextPrinterParameterized3(WINDOW_INFO, 0, 47, CHAIN_BONUS_Y + 10, sFontColor_White, 0, DexNavGetShinyChanceString());
+	if (!species == SPECIES_NONE) PrintTextOnWindow_BW_Font(WINDOW_INFO, DexNavGetShinyChanceString(), 53, CHAIN_BONUS_Y + 13, 0, 0);
 	
-    CopyWindowToVram(WINDOW_INFO, 3);
+    CopyWindowToVram(WINDOW_INFO, COPYWIN_FULL);
     PutWindowTilemap(WINDOW_INFO);
-}
-
-static void PrintMapName(void)
-{
-    GetMapName(gStringVar3, GetCurrentRegionMapSectionId(), 0);
-    AddTextPrinterParameterized3(WINDOW_REGISTERED, 1, 108 +
-      GetStringRightAlignXOffset(1, gStringVar3, MAP_NAME_LENGTH * GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH)), 0, sFontColor_White, 0, gStringVar3);
-    CopyWindowToVram(WINDOW_REGISTERED, 3);
 }
 
 static void PrintSearchableSpecies(u16 species)
 {
     FillWindowPixelBuffer(WINDOW_REGISTERED, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
     PutWindowTilemap(WINDOW_REGISTERED);
-    if (species == SPECIES_NONE)
-    {
-        AddTextPrinterParameterized3(WINDOW_REGISTERED, 1, 0, 0, sFontColor_White, TEXT_SKIP_DRAW, sText_DexNav_PressRToRegister);
-    }
+    if (species == SPECIES_NONE) PrintTextOnWindow_BW_Font(WINDOW_REGISTERED, sText_DexNav_PressRToRegister, 0, 0, 0, 1);
     else
     {
         StringCopy(gStringVar1, gSpeciesNames[species]);
         StringExpandPlaceholders(gStringVar4, sText_DexNav_SearchForRegisteredSpecies);
-        AddTextPrinterParameterized3(WINDOW_REGISTERED, 1, 0, 0, sFontColor_White, TEXT_SKIP_DRAW, gStringVar4);
+		PrintTextOnWindow_BW_Font(WINDOW_REGISTERED, gStringVar4, 0, 0, 0, 1);
     }
-    
-    PrintMapName();
+	
+	CopyWindowToVram(WINDOW_REGISTERED, COPYWIN_FULL);
+    PutWindowTilemap(WINDOW_REGISTERED);
 }
 
 static void CreateTypeIconSprites(void)

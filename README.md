@@ -119,7 +119,11 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 	* **Information:** I tuned down the amount of information given on the Stats screen, keeping what I thought was important.  
 	* **Dex Modes:** Full support for Hoenn, National, and Search modes. The UI intelligently adapts its color palette and list headers based on the active mode.  
 	* **PokéMon Numbering:** Caught Hoenn species show their regional number, while foreign species default to their National Dex entry.  
-	* Built on the foundation of [TheXaman's Pokeemerald Vanilla Repo](https://github.com/TheXaman/pokeemerald/tree/tx_pokedexPlus_hgss).    
+	* Built on the foundation of [TheXaman's Pokeemerald Vanilla Repo](https://github.com/TheXaman/pokeemerald/tree/tx_pokedexPlus_hgss).  
+	
+* **Custom PokéDex Screen**
+	* Yet another redesign to match the style of the other two.  
+	* See above for the actual features.
 
 * **Gen 5–style Party Menu**  
 	I thought this matched the BW Summary Screen and wanted to throw it in.  

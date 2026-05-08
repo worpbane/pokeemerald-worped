@@ -1275,8 +1275,6 @@ const u32 gPokedexPlusHGSS_ScreenSearchNational_Tilemap[] 				= INCBIN_U32("grap
 
 const u16 gPokedexPlusWorped_Text_Pal[]             = INCBIN_U16("graphics/pokedex/w/wText.gbapal");
 
-
-
 const u16 gSummaryScreen_MoveEffect_Battle_Tilemap[] = INCBIN_U16("graphics/summary_screen/effect_battle.bin");
 const u16 gSummaryScreen_MoveEffect_Contest_Tilemap[] = INCBIN_U16("graphics/summary_screen/effect_contest.bin");
 const u16 gSummaryScreen_MoveEffect_Cancel_Tilemap[] = INCBIN_U16("graphics/summary_screen/effect_cancel.bin");

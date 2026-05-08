@@ -258,17 +258,6 @@ struct EvoScreenData
     u8 arrowSpriteId;
 };
 
-#ifdef POKEMON_EXPANSION
-struct FromScreenData
-{
-    u8 numForms;
-    u16 formIds[30];
-    bool8 inSubmenu;
-    u8 menuPos;
-    u8 arrowSpriteId;
-};
-#endif
-
 struct PokedexView
 {
     struct PokedexListItem pokedexList[NATIONAL_DEX_COUNT + 1];
@@ -294,9 +283,6 @@ struct PokedexView
     u8 numPreEvolutions; //HGSS_Ui
     struct PokemonStats sPokemonStats; //HGSS_Ui
     struct EvoScreenData sEvoScreenData; //HGSS_Ui
-    #ifdef POKEMON_EXPANSION
-    struct FromScreenData sFormScreenData; //HGSS_Ui
-    #endif
     u16 formSpecies;
     u16 selectedMonSpriteId;
     u16 pokeBallRotationStep;
@@ -939,8 +925,8 @@ static const struct WindowTemplate sInfoScreen_WindowTemplates[] =
         .bg = 2,
         .tilemapLeft = 1,
         .tilemapTop = 12,
-        .width = 28,
-        .height = 7,
+        .width = 29,
+        .height = 8,
         .paletteNum = 6,
         .baseBlock = 110,
     },
@@ -952,7 +938,7 @@ static const struct WindowTemplate sInfoScreen_WindowTemplates[] =
         .width = 30,
         .height = 15,
         .paletteNum = 6,
-        .baseBlock = 306,
+        .baseBlock = 350,
     },
     [WIN_NAV_BUTTONS] =
     {
@@ -962,7 +948,7 @@ static const struct WindowTemplate sInfoScreen_WindowTemplates[] =
         .width = 12,
         .height = 2,
         .paletteNum = 6,
-        .baseBlock = 756,
+        .baseBlock = 800,
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -1136,8 +1122,8 @@ static const struct WindowTemplate sNewEntryInfoScreen_WindowTemplates[] =
         .bg = 2,
         .tilemapLeft = 1,
         .tilemapTop = 12,
-        .width = 28,
-        .height = 7,
+        .width = 29,
+        .height = 8,
         .paletteNum = 6,
         .baseBlock = 110,
     },
@@ -3192,12 +3178,19 @@ static void Task_HandleInfoScreenInput(u8 taskId)
     if (JOY_NEW(B_BUTTON))
     {
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+		sPokedexView->sEvoScreenData.fromEvoPage = FALSE;
         // Use special exit handler if called from party menu
         if (sExternalReturnCallback != NULL)
             gTasks[taskId].func = Task_ExitInfoScreenToExternal;
         else
             gTasks[taskId].func = Task_ExitInfoScreen;
         PlaySE(SE_PC_OFF);
+        return;
+    }
+	
+	if (JOY_NEW(A_BUTTON))
+    {
+        PlayCry_NormalNoDucking(NationalPokedexNumToSpecies(sPokedexListItem->dexNum), 0, CRY_VOLUME_RS, CRY_PRIORITY_NORMAL);
         return;
     }
 
@@ -3854,6 +3847,7 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     const u8 *name;
     const u8 *category;
     const u8 *description;
+	const u8 sInfoPageNavigationTextColor[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
 
     if (value == 0)
         value = NationalToHoennOrder(num);
@@ -3894,6 +3888,16 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
     else
         description = sExpandedPlaceholder_PokedexDescription;
     PrintInfoScreenText(WIN_INFO_DESCRIPTION, description, GetStringCenterAlignXOffset(FONT_NORMAL, description, 0) + 2, 6, 0);
+	
+	if (newEntry == 1)
+	{
+		AddTextPrinterParameterized4(WIN_INFO_DESCRIPTION, 0, 203, 48, 0, 0, sTextColors[1], 0, gText_InfoCaught_Button);
+	}
+	else
+	{
+		AddTextPrinterParameterized4(WIN_INFO_DESCRIPTION, 0, 203, 48, 0, 0, sTextColors[1], 0, gText_Info_Button);
+	}
+	
 
     //Type Icon(s) //HGSS_Ui
     if (owned)

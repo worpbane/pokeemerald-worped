@@ -96,7 +96,7 @@
 - **PokéDex Update**:
 	- Updated the **HGSS PokéDex Plus Screen** with new graphics!  
 	- Changed to look more FRLG Summary Screen inspired.  
-	- Scaled back some information so it wasn't so cluttered.
+	- Scaled back some information so it wasn't so cluttered.  
 - New **Main Menu UI**
 - Start Menu reordered for improved usability.
 - DexNav removed from Start Menu; now accessible by pressing **L** when the cursor is over the PokéNav.
@@ -106,7 +106,7 @@
 ---
 
 ### 🎨 Visual Updates
-- DexNav screen completely redone to reflect chain-based shiny mechanics.  
+- DexNav screen completely redone to reflect chain-based shiny mechanics and new UI style of the Summary Screen and PokéDex.  
 - Added **HexManiac** sprite (Team Aqua Hideout Repo).  
 - Overworld follower sprites added for new Pokémon
 
