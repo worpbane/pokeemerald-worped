@@ -2751,8 +2751,8 @@ static void CreateInterfaceSprites(u8 page)
 static void PrintPokedexListNavText(u8 windowId, u8 windowId2, u8 page)
 {
 	u8 sText_Nav[] = _("{START_BUTTON} Top {SELECT_BUTTON} Search");
-	u8 sText_Bottom_Exit[] = _("{B_BUTTON} Exit");
-	u8 sText_Bottom_Back[] = _("{B_BUTTON} Back");
+	u8 sText_Bottom_Exit[] = _("{B_BUTTON}Exit");
+	u8 sText_Bottom_Back[] = _("{B_BUTTON}Back");
 	
     FillWindowPixelBuffer(windowId, PIXEL_FILL(0)); 
     FillWindowPixelBuffer(windowId2, PIXEL_FILL(0)); 

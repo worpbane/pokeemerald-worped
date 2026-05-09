@@ -122,8 +122,7 @@
 - Opening the Summary Screen from the Storage System no longer causes any graphical weirdness. It was caused by an incorrect call from when I marged the BW Summary Screen into Modern Emerald.
 
 ### ⚠️ Known Issues 
-- Pokémon whose overworld sprites use the TRACKS_SLITHER value crash the game when making paths. This seems to be a Modern Emerald issue I inherited. TRACKS_BIKE_TIRE works fine though, and I'm going to compare the two and see where things aren't matching.
-- Abandoned Ship Level 2 is bugged? This might be another Modern Emerald thing, not sure.
+- Pokémon whose overworld sprites use the TRACKS_SLITHER value crash the game when making paths. This might be a Modern Emerald issue I inherited? TRACKS_BIKE_TIRE works fine though, and I'm going to compare the two and see where things aren't matching.
 
 ---
 
