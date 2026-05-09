@@ -1633,7 +1633,7 @@ static const struct WindowTemplate sSearchMenu_WindowTemplate[] =
         .tilemapTop = 0,
         .width = 32,
         .height = 20,
-        .paletteNum = 0,
+        .paletteNum = 6,
         .baseBlock = 0x0001,
     },
     DUMMY_WIN_TEMPLATE
@@ -1789,11 +1789,8 @@ static void Task_HandlePokedexInput(u8 taskId)
 	{
 		sPokedexView->selectedPokemon = 0;
 		sPokedexView->pokeBallRotation = POKEBALL_ROTATION_TOP;
-		if (sPokedexView->selectedPokemon != 0) 
-		{
-			ClearMonSprites();
-			CreateMonSpritesAtPos(sPokedexView->selectedPokemon, 0xE);
-		}
+		ClearMonSprites();
+		CreateMonSpritesAtPos(sPokedexView->selectedPokemon, 0xE);
 		PlaySE(SE_SELECT);
 	}
 	else if (JOY_NEW(SELECT_BUTTON))
@@ -2786,7 +2783,7 @@ static void PrintPokedexCounts(u8 windowId)
 	
 	FillWindowPixelBuffer(windowId, PIXEL_FILL(0)); 
 	
-    u8 xNumbers = 47; 
+    u8 xNumbers = 41; 
     u8 xText = 2; 
     u8 yHoenn = 37 - 16;
     u8 yNational = 111 - 16;
@@ -2796,9 +2793,9 @@ static void PrintPokedexCounts(u8 windowId)
 	AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, xText, yHoenn, 0, 0, sTextColors[0], 0, sText_Seen);
 	AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, xText, yHoenn + 12, 0, 0, sTextColors[0], 0, sText_Caught);
 	
-    ConvertIntToDecimalStringN(str, hoennSeen, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(str, hoennSeen, STR_CONV_MODE_RIGHT_ALIGN, 3);
 	AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, xNumbers, yHoenn, 0, 0, sTextColors[0], 0, str);
-    ConvertIntToDecimalStringN(str, hoennCaught, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(str, hoennCaught, STR_CONV_MODE_RIGHT_ALIGN, 3);
 	AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, xNumbers, yHoenn + 12, 0, 0, sTextColors[0], 0, str);
 
     if (!sPokedexView->dexMode == DEX_MODE_HOENN || sPokedexView->isSearchResults)
@@ -2808,9 +2805,9 @@ static void PrintPokedexCounts(u8 windowId)
 		AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, xText, yNational, 0, 0, sTextColors[0], 0, sText_Seen);
 		AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, xText, yNational + 12, 0, 0, sTextColors[0], 0, sText_Caught);
 		
-        ConvertIntToDecimalStringN(str, nationalSeen, STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToDecimalStringN(str, nationalSeen, STR_CONV_MODE_RIGHT_ALIGN, 3);
 		AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, xNumbers, yNational, 0, 0, sTextColors[0], 0, str);
-        ConvertIntToDecimalStringN(str, nationalCaught, STR_CONV_MODE_LEFT_ALIGN, 3);
+        ConvertIntToDecimalStringN(str, nationalCaught, STR_CONV_MODE_RIGHT_ALIGN, 3);
 		AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, xNumbers, yNational + 12, 0, 0, sTextColors[0], 0, str);
     }
 	
@@ -6478,12 +6475,7 @@ static u8 LoadSearchMenu(void)
 
 static void PrintSearchText(const u8 *str, u32 x, u32 y)
 {
-    u8 color[3];
-
-    color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_DYNAMIC_COLOR_6;
-    color[2] = TEXT_COLOR_DARK_GRAY;
-    AddTextPrinterParameterized4(0, FONT_NORMAL, x, y, 0, 0, color, TEXT_SKIP_DRAW, str);
+	AddTextPrinterParameterized4(0, FONT_BW_SUMMARY_SCREEN, x, y, 0, 0, sTextColors[0], -1, str);
 }
 
 static void ClearSearchMenuRect(u32 x, u32 y, u32 width, u32 height)
