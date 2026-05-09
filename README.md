@@ -161,6 +161,8 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 - Tinkatink > Tinkastuff > Tinkaton
 - Morpeko
 - Pachirisu
+- Aloan Sandshrew
+- Espurr
 
 ### Other Improvements
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.  
