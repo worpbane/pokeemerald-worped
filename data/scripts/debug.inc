@@ -230,7 +230,18 @@ Debug_Script_4_NameRival2::
 	.string "{RIVAL}.$"
 
 Debug_Script_5::
+	msgbox Debug_Script_5_Text, MSGBOX_DEFAULT
+	closemessage
+	callnative Debug_MigrateSaveForNewBalls
+	msgbox Debug_Script_5_Text2, MSGBOX_DEFAULT
+	closemessage
 	end
+	
+Debug_Script_5_Text::
+	.string "Fixing Item IDs!$"
+	
+	Debug_Script_5_Text2::
+	.string "Items Fixed!$"
 
 Debug_Script_6::
 	end

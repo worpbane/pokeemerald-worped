@@ -2113,6 +2113,8 @@ static void TryApplyCatchModeDamageClamp(s32 *damage)
         return;
 	if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_FRONTIER))
 		return;
+	if (!CheckBagHasItem(gBallToDisplay, 1))
+		return;
 
     clampedDamage = *damage;
     if (gBattleMons[gBattlerTarget].hp <= 1)
@@ -10883,8 +10885,26 @@ static void Cmd_handleballthrow(void)
                 if (ballMultiplier > 40)
                     ballMultiplier = 40;
                 break;
+			case ITEM_DREAM_BALL:
+				//Do enemy pokemon be sleeping tho?
+                if (gBattleMons[gBattlerTarget].status1 & STATUS1_SLEEP)
+                    ballMultiplier = 40;
+                else
+                    ballMultiplier = 10;
+                break;
+			case ITEM_LOVE_BALL:
+                // Long ass IF to see if species matches but opposite genders
+                if (gBattleMons[gBattlerAttacker].species == gBattleMons[gBattlerTarget].species
+                    && GetGenderFromSpeciesAndPersonality(gBattleMons[gBattlerAttacker].species, gBattleMons[gBattlerAttacker].personality) != GetGenderFromSpeciesAndPersonality(gBattleMons[gBattlerTarget].species, gBattleMons[gBattlerTarget].personality)
+                    && GetGenderFromSpeciesAndPersonality(gBattleMons[gBattlerAttacker].species, gBattleMons[gBattlerAttacker].personality) != MON_GENDERLESS
+                    && GetGenderFromSpeciesAndPersonality(gBattleMons[gBattlerTarget].species, gBattleMons[gBattlerTarget].personality) != MON_GENDERLESS)
+                    ballMultiplier = 80;
+                else
+                    ballMultiplier = 10;
+                break;
             case ITEM_LUXURY_BALL:
             case ITEM_PREMIER_BALL:
+            case ITEM_HEAL_BALL: //WorpTODO: Set up Healing effect if mon goes into party
                 ballMultiplier = 10;
                 break;
             }

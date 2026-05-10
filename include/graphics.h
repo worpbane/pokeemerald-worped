@@ -30,6 +30,12 @@ extern const u32 gBallGfx_Luxury[];
 extern const u32 gBallPal_Luxury[];
 extern const u32 gBallGfx_Premier[];
 extern const u32 gBallPal_Premier[];
+extern const u32 gBallGfx_Dream[];
+extern const u32 gBallPal_Dream[];
+extern const u32 gBallGfx_Love[];
+extern const u32 gBallPal_Love[];
+extern const u32 gBallGfx_Heal[];
+extern const u32 gBallPal_Heal[];
 extern const u32 gOpenPokeballGfx[];
 
 // Pokémon gfx
@@ -3949,19 +3955,10 @@ extern const u16 gPokedexPlusHGSS_Default_Pal[];
 extern const u16 gPokedexPlusHGSS_National_Pal[];
 extern const u16 gPokedexPlusHGSS_MenuSearch_Pal[];
 extern const u16 gPokedexPlusHGSS_SearchResults_Pal[];
-extern const u16 gPokedexPlusHGSS_Default_dark_Pal[];
-extern const u16 gPokedexPlusHGSS_National_dark_Pal[];
-extern const u16 gPokedexPlusHGSS_MenuSearch_dark_Pal[];
-extern const u16 gPokedexPlusHGSS_SearchResults_dark_Pal[];
 extern const u32 gPokedexPlusHGSS_MenuList_Gfx[];
-extern const u32 gPokedexPlusHGSS_MenuList_DECA_Gfx[];
 extern const u32 gPokedexPlusHGSS_Interface_Gfx[];
-extern const u32 gPokedexPlusHGSS_Interface_DECA_Gfx[];
-extern const u32 gPokedexPlusHGSS_Menu_1_Gfx[];
-extern const u32 gPokedexPlusHGSS_Menu_2_Gfx[];
-extern const u32 gPokedexPlusHGSS_Menu_3_Gfx[];
+extern const u32 gPokedexPlusHGSS_Menu_Gfx[];
 extern const u32 gPokedexPlusHGSS_MenuSearch_Gfx[];
-extern const u32 gPokedexPlusHGSS_MenuSearch_DECA_Gfx[];
 extern const u32 gPokedexPlusHGSS_StartMenuMain_Tilemap[];
 extern const u32 gPokedexPlusHGSS_StartMenuSearchResults_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenSelectBarSubmenu_Tilemap[];
@@ -3971,12 +3968,13 @@ extern const u32 gPokedexPlusHGSS_ScreenListUnderlay_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenInfo_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenStats_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenEvolution_Tilemap[];
-extern const u32 gPokedexPlusHGSS_ScreenEvolution_Tilemap_PE[];
 extern const u32 gPokedexPlusHGSS_ScreenForms_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenCry_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenSize_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenSearchHoenn_Tilemap[];
 extern const u32 gPokedexPlusHGSS_ScreenSearchNational_Tilemap[];
+
+extern const u32 gPokedexPlusWorped_Text_Pal[];
 
 
 // berry tag screen
@@ -4061,6 +4059,12 @@ extern const u32 gItemIcon_TimerBall[];
 extern const u32 gItemIcon_LuxuryBall[];
 extern const u32 gItemIconPalette_LuxuryBall[];
 extern const u32 gItemIcon_PremierBall[];
+extern const u32 gItemIcon_DreamBall[];
+extern const u32 gItemIconPalette_DreamBall[];
+extern const u32 gItemIcon_LoveBall[];
+extern const u32 gItemIconPalette_LoveBall[];
+extern const u32 gItemIcon_HealBall[];
+extern const u32 gItemIconPalette_HealBall[];
 // Medicine
 extern const u32 gItemIcon_Potion[];
 extern const u32 gItemIconPalette_Potion[];
@@ -4736,7 +4740,7 @@ extern const u16 gSummaryScreen_MoveEffect_Battle_Tilemap[];
 extern const u16 gSummaryScreen_MoveEffect_Contest_Tilemap[];
 extern const u16 gSummaryScreen_MoveEffect_Cancel_Tilemap[];
 
-extern const u32 gInterfaceTypeIconsSlim_Gfx[];
+extern const u32 gInterfaceTypeIconsMenu_Gfx[];
 extern const u32 gInterfaceTypeIconsBattle_Gfx[];
 extern const u32 gInterfaceTypeIconsBattleMini_Gfx[];
 extern const u32 gInterfaceTypeIcons_Pal[];

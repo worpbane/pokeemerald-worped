@@ -2042,6 +2042,16 @@ static const struct SpriteFrameImage sPicTable_Ball_LUXURY[] = {
 static const struct SpriteFrameImage sPicTable_Ball_PREMIER[] = {
     POKEBALL_PIC_FRAMES(Premier),
 };
+//worpadditions
+static const struct SpriteFrameImage sPicTable_Ball_DREAM[] = {
+    POKEBALL_PIC_FRAMES(Dream),
+};
+static const struct SpriteFrameImage sPicTable_Ball_LOVE[] = {
+    POKEBALL_PIC_FRAMES(Love),
+};
+static const struct SpriteFrameImage sPicTable_Ball_HEAL[] = {
+    POKEBALL_PIC_FRAMES(Heal),
+};
 
 // Gen IV/Sinnoh
 #ifdef ITEM_DUSK_BALL
@@ -2050,9 +2060,6 @@ static const struct SpriteFrameImage sPicTable_Ball_DUSK[] = {
 };
 static const struct SpriteFrameImage sPicTable_Ball_HEAL[] = {
     POKEBALL_PIC_FRAMES(Heal),
-};
-static const struct SpriteFrameImage sPicTable_Ball_QUICK[] = {
-    POKEBALL_PIC_FRAMES(Quick),
 };
 static const struct SpriteFrameImage sPicTable_Ball_CHERISH[] = {
     POKEBALL_PIC_FRAMES(Cherish),
@@ -2072,14 +2079,8 @@ static const struct SpriteFrameImage sPicTable_Ball_FAST[] = {
 static const struct SpriteFrameImage sPicTable_Ball_LEVEL[] = {
     POKEBALL_PIC_FRAMES(Level),
 };
-static const struct SpriteFrameImage sPicTable_Ball_LURE[] = {
-    POKEBALL_PIC_FRAMES(Lure),
-};
 static const struct SpriteFrameImage sPicTable_Ball_HEAVY[] = {
     POKEBALL_PIC_FRAMES(Heavy),
-};
-static const struct SpriteFrameImage sPicTable_Ball_LOVE[] = {
-    POKEBALL_PIC_FRAMES(Love),
 };
 static const struct SpriteFrameImage sPicTable_Ball_FRIEND[] = {
     POKEBALL_PIC_FRAMES(Friend),
@@ -2089,13 +2090,6 @@ static const struct SpriteFrameImage sPicTable_Ball_MOON[] = {
 };
 static const struct SpriteFrameImage sPicTable_Ball_SPORT[] = {
     POKEBALL_PIC_FRAMES(Sport),
-};
-#endif
-
-// Gen V
-#ifdef ITEM_DREAM_BALL
-static const struct SpriteFrameImage sPicTable_Ball_DREAM[] = {
-    POKEBALL_PIC_FRAMES(Dream),
 };
 #endif
 

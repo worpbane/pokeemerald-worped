@@ -20,14 +20,13 @@
 #define BW_SUMMARY_NATURE_ARROWS                    TRUE               // arrows to show stats increased or reduced by nature
 #define BW_SUMMARY_CATEGORY_ICONS                   TRUE                // determines whether category (split) icons are shown or not
 #define BW_SUMMARY_IV_EV_DISPLAY                    BW_IV_EV_PRECISE     // determines how to show IVs and EVs
-#define BW_SUMMARY_DECAP                            TRUE               // indicates if summary screen-specific strings should be decapitalized
 
 //WORP ADDITIONS: Added this from the pokeemerald-expansion fork of the BW Summary Screen
 #define BW_SUMMARY_SHOW_FRIENDSHIP                  TRUE               // show a heart that fills up to indicate friendship value
 #define BW_SUMMARY_MON_IDLE_ANIMS                   TRUE                // loops the mon animations regularly as an "idle" anim
 #define BW_SUMMARY_MON_SHADOWS                      TRUE                // displays a shadow for the mon sprite
 #define BW_SUMMARY_SCROLLING_BG                     TRUE                // enables scrolling animated background
-#define BW_SUMMARY_BG_BLEND                         TRUE                // enables alpha blending for the main UI (semi-transparency)
+#define BW_SUMMARY_BG_BLEND                         FALSE                // enables alpha blending for the main UI (semi-transparency)
 #define BW_SUMMARY_SHOW_RENAME                      TRUE                // enables renaming pokemon on the summary screen
 
 

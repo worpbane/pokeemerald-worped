@@ -642,3 +642,31 @@ void EnableStaticRandomizer(void)
         FlagClear(FLAG_TEMPORALY_DISABLE_STATIC_RANDOMIZER);
     }
 }
+
+//Test Debug for adding new Pokeballs
+void Debug_MigrateSaveForNewBalls(void)
+{
+    u16 i;
+    struct ItemSlot *slots;
+	//Fixes bag
+    for (i = 0; i < BAG_ITEMS_COUNT; i++)
+    {
+        if (gSaveBlock1Ptr->bagPocket_Items[i].itemId >= 13 && gSaveBlock1Ptr->bagPocket_Items[i].itemId <= 53)
+        {
+            gSaveBlock1Ptr->bagPocket_Items[i].itemId += 3;
+        }
+    }
+	//fixes PC
+    for (i = 0; i < PC_ITEMS_COUNT; i++)
+    {
+        if (gSaveBlock1Ptr->pcItems[i].itemId >= 13 && gSaveBlock1Ptr->pcItems[i].itemId <= 53)
+        {
+            gSaveBlock1Ptr->pcItems[i].itemId += 3;
+        }
+    }
+	//Fixes registered item
+    if (gSaveBlock1Ptr->registeredItem >= 13 && gSaveBlock1Ptr->registeredItem <= 53)
+    {
+        gSaveBlock1Ptr->registeredItem += 3;
+    }
+}

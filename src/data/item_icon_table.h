@@ -14,6 +14,9 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_TIMER_BALL] = {gItemIcon_TimerBall, gItemIconPalette_RepeatBall},
     [ITEM_LUXURY_BALL] = {gItemIcon_LuxuryBall, gItemIconPalette_LuxuryBall},
     [ITEM_PREMIER_BALL] = {gItemIcon_PremierBall, gItemIconPalette_LuxuryBall},
+    [ITEM_DREAM_BALL] = {gItemIcon_DreamBall, gItemIconPalette_DreamBall},
+    [ITEM_LOVE_BALL] = {gItemIcon_LoveBall, gItemIconPalette_LoveBall},
+    [ITEM_HEAL_BALL] = {gItemIcon_HealBall, gItemIconPalette_HealBall},
     // Medicine
     [ITEM_POTION] = {gItemIcon_Potion, gItemIconPalette_Potion},
     [ITEM_ANTIDOTE] = {gItemIcon_Antidote, gItemIconPalette_Antidote},
@@ -58,9 +61,6 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_FERTILIZER] = {gItemIcon_BerryPouch, gItemIconPalette_BerryPouch},
     // ????????
     [ITEM_HEALING_HEART] = {gItemIcon_HealingHeart, gItemIconPalette_HealingHeart},
-    [ITEM_036] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
-    [ITEM_037] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
-    [ITEM_038] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_039] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_03A] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
     [ITEM_03B] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},

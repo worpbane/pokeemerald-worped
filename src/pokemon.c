@@ -568,6 +568,8 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_HOENN(WYRDEER),
     SPECIES_TO_HOENN(URSALUNA),
     SPECIES_TO_HOENN(KLEAVOR),
+    SPECIES_TO_HOENN(URSALUNA_BLOODMOON),
+	//WorpAdditions
     SPECIES_TO_HOENN(LECHONK),
 	SPECIES_TO_HOENN(STUFFUL),
 	SPECIES_TO_HOENN(OINKOLOGNEM),
@@ -586,7 +588,6 @@ static const u16 sSpeciesToHoennPokedexNum[NUM_SPECIES - 1] =
 	SPECIES_TO_HOENN(CLODSIRE),
 	SPECIES_TO_HOENN(SNOM),
 	SPECIES_TO_HOENN(FROSMOTH),
-    SPECIES_TO_HOENN(URSALUNA_BLOODMOON),
     //SPECIES_TO_HOENN(UNUSED_SPACE5),
     //SPECIES_TO_HOENN(UNUSED_SPACE6),
     SPECIES_TO_HOENN(TEST),
@@ -1052,6 +1053,8 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
     SPECIES_TO_NATIONAL(WYRDEER),
     SPECIES_TO_NATIONAL(URSALUNA),
     SPECIES_TO_NATIONAL(KLEAVOR),
+    SPECIES_TO_NATIONAL(URSALUNA_BLOODMOON),
+	//WorpAdditions
     SPECIES_TO_NATIONAL(LECHONK),
 	SPECIES_TO_NATIONAL(STUFFUL),
 	SPECIES_TO_NATIONAL(OINKOLOGNEM),
@@ -1070,7 +1073,6 @@ static const u16 sSpeciesToNationalPokedexNum[NUM_SPECIES - 1] =
 	SPECIES_TO_NATIONAL(CLODSIRE),
 	SPECIES_TO_NATIONAL(SNOM),
 	SPECIES_TO_NATIONAL(FROSMOTH),
-    SPECIES_TO_NATIONAL(URSALUNA_BLOODMOON),
     //SPECIES_TO_NATIONAL(UNUSED_SPACE5),
     //SPECIES_TO_NATIONAL(UNUSED_SPACE6),
     SPECIES_TO_NATIONAL(TEST),
@@ -1537,6 +1539,8 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
     HOENN_TO_NATIONAL(WYRDEER),
     HOENN_TO_NATIONAL(URSALUNA),
     HOENN_TO_NATIONAL(KLEAVOR),
+    HOENN_TO_NATIONAL(URSALUNA_BLOODMOON),
+	//WorpAdditions
     HOENN_TO_NATIONAL(LECHONK),
 	HOENN_TO_NATIONAL(STUFFUL),
 	HOENN_TO_NATIONAL(OINKOLOGNEM),
@@ -1555,7 +1559,6 @@ static const u16 sHoennToNationalOrder[NUM_SPECIES - 1] =
 	HOENN_TO_NATIONAL(CLODSIRE),
 	HOENN_TO_NATIONAL(SNOM),
 	HOENN_TO_NATIONAL(FROSMOTH),
-    HOENN_TO_NATIONAL(URSALUNA_BLOODMOON),
     //HOENN_TO_NATIONAL(UNUSED_SPACE5),
     //HOENN_TO_NATIONAL(UNUSED_SPACE6),
     HOENN_TO_NATIONAL(TEST),
@@ -8299,6 +8302,27 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
 {
     s32 i;
     u8 typeChallenge = gSaveBlock1Ptr->tx_Challenges_OneTypeChallenge;
+	u8 ballType = GetMonData(mon, MON_DATA_POKEBALL, NULL);
+	
+	if (ballType == 15) //Ensures that new party members get healed by the heal ball
+    {
+        u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
+        u32 status = STATUS1_NONE;
+        u8 moveSlot;
+
+        SetMonData(mon, MON_DATA_HP, &maxHP);
+        SetMonData(mon, MON_DATA_STATUS, &status);
+
+        for (moveSlot = 0; moveSlot < MAX_MON_MOVES; moveSlot++)
+        {
+            u16 move = GetMonData(mon, MON_DATA_MOVE1 + moveSlot);
+            if (move != MOVE_NONE)
+            {
+                u8 pp = gBattleMoves[move].pp;
+                SetMonData(mon, MON_DATA_PP1 + moveSlot, &pp);
+            }
+        }
+    }
 
     SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);

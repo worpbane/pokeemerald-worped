@@ -38,7 +38,21 @@ I didn't want to add 500 new mon, just Pokémon I actually like. Most of these a
 I mostly added these because I wanted the **Hatenna line** to actually have some STAB moves, and because **Minccino** deserves Tail Whip.
 
 * **Sprinkled through Pokémon who can learn it in later games** Dazzling Gleam, Draining Kiss, and Disarming Voice. I was having issues adding the TMs so they're disabled for now.
-* **Exclusive:** Tail Whip for Minccino.
+* **Exclusive:** Tail Slap for Minccino.
+
+### 🌸 PokéBall Additions
+
+I wanted to add some more pastel options for PokéBalls, kinda matches the idea of adding cute Pokémon.
+
+* **Dream Ball:**  
+	*4x Catch Rate when the wild Pokémon is sleeping.  
+	* **Acquisition:** Obtained once a day from an old lady in Lilycove City after showing her a sleeping Pokémon.  
+* **Heal Ball:**  
+	*Heals captured PokéMon when they're added to the player's party. 
+	* **Acquisition:** Sold at the Lavaridge Town PokéMart (near the healing hot springs).
+* **Love Ball**:
+	*8x Catch Rate when wild PokéMon is the same species but different gender as the player's attacking PokéMon.
+	* **Acquisition:** Sold at the Verdanturf Town PokéMart (near the "Tunnel of Love").
 
 ---
 
@@ -93,19 +107,33 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 
 ### ✨ Menu Changes
 
-- **Black/White-style Summary Screen**  
-	Though I've never played GenV, I saw this and thought it looked awesome. The Gen III Summary Screen is just a lil dated.  
-	Based on [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion)  
-	*(Some features were backported from the expansion version.)*  
+* **Modernized FRLG-style Summary Screen**  
+	* Custom layout inspired by Pokémon FRLG, Gen V, and Pokémon Ocean Blue.  
+	* **Animated Background.**  
+	* **Expanded Skills:** Pokémon Skills screen shows IVs, EVs, and Base Stats. Nature Indicators also appear.  
+	* **Characteristics:** Integrated Gen IV+ personality traits into the Trainer Memo!  
+	* Built on the foundation of [RavePossum's Pokeemerald Vanilla Repo](https://github.com/ravepossum/pokeemerald/tree/bw_summary_screen) & some bits of code backported from his [Expansion Repo](https://github.com/ravepossum/pokeemerald-expansion/tree/bw_summary_screen_expansion).  
+	
+* **Custom PokéDex Screen**  
+	* Features a ground-up redesign inspired by the Summary Screen I worked on, creating a seamless aesthetic transition between menus!  
+	* **Information:** I tuned down the amount of information given on the Stats screen, keeping what I thought was important.  
+	* **Dex Modes:** Full support for Hoenn, National, and Search modes. The UI intelligently adapts its color palette and list headers based on the active mode.  
+	* **PokéMon Numbering:** Caught Hoenn species show their regional number, while foreign species default to their National Dex entry.  
+	* Built on the foundation of [TheXaman's Pokeemerald Vanilla Repo](https://github.com/TheXaman/pokeemerald/tree/tx_pokedexPlus_hgss).  
+	
+* **Custom PokéDex Screen**
+	* Yet another redesign to match the style of the other two.  
+	* See above for the actual features.
 
-- **Gen 5–style Party Menu**  
+* **Gen 5–style Party Menu**  
 	I thought this matched the BW Summary Screen and wanted to throw it in.  
 	Based on [Team Aqua's Repo](https://github.com/TeamAquasHideout/pokeemerald/tree/gen5ish_party_menu)  
 	
-- **New Main Menu UI**  
-	Archie and Mudskip did a really nice job with this, I love that it shows your party and where you are. 10/10.  
-	Based on [Mudskip's guide](https://github.com/pret/pokeemerald/wiki/New-Main-Menu-UI-With-Mugshot-by-Archie-and-Mudskip)  
-	*(Changed color to purple.)*  
+* **New Main Menu UI**  
+	* Archie and Mudskip's New Main Menu UI was so nice looking I really wanted to implement it!
+	* Changed the mugshot pictures to the trainer sprites.  
+	* Changed color to purple.  
+	* Based on [Mudskip's guide](https://github.com/pret/pokeemerald/wiki/New-Main-Menu-UI-With-Mugshot-by-Archie-and-Mudskip)  
     
 ### 🛠️ Small Tweaks & Fixes  
 
@@ -133,6 +161,8 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 - Tinkatink > Tinkastuff > Tinkaton
 - Morpeko
 - Pachirisu
+- Aloan Sandshrew
+- Espurr
 
 ### Other Improvements
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.  

@@ -524,34 +524,34 @@ const u8 gText_EggAboutToHatch[] = _("It's making sounds.\nIt's about to hatch!"
 const u8 gText_EggReadyToHatch_Nuzlocke[] = _("Ready to hatch, but blocked\nby Nuzlocke encounter!");
 const u8 gText_HMMovesCantBeForgotten2[] = _("HM moves can't be\nforgotten now.");
 const u8 gText_XNatureMetAtYZ[] = _(
-    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
-    "met at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01},\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature.\n"
+    "Met at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}, {DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
 
 const u8 gText_XNatureHatchedAtYZ[] = _(
-    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
-    "hatched at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01},\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature.\n"
+    "Hatched at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}, {DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
 
 const u8 gText_XNatureObtainedInTrade[] = _(
-    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
-    "obtained in a trade.");
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature.\n"
+    "Obtained in a trade.");
 
 const u8 gText_XNatureFatefulEncounter[] = _(
-    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
-    "obtained in a fateful\nencounter at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature.\n"
+    "Obtained in a fateful encounter at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
 
 const u8 gText_XNatureProbablyMetAt[] = _(
-    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
-    "probably met at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01},\n{DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature.\n"
+    "Probably met at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}, {DYNAMIC 0x00}{DYNAMIC 0x04}{DYNAMIC 0x01}.");
 
-const u8 gText_XNature[] = _("{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature");
+const u8 gText_XNature[] = _("{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature.");
 
 const u8 gText_XNatureMetSomewhereAt[] = _(
-    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
-    "met somewhere at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature.\n"
+    "Met somewhere at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
 
 const u8 gText_XNatureHatchedSomewhereAt[] = _(
-    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature,\n"
-    "hatched somewhere at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
+    "{DYNAMIC 0x00}{DYNAMIC 0x02}{DYNAMIC 0x01}{DYNAMIC 0x05}{DYNAMIC 0x06}{DYNAMIC 0x07} nature.\n"
+    "Hatched somewhere at {LV_2}{DYNAMIC 0x00}{DYNAMIC 0x03}{DYNAMIC 0x01}.");
 
 const u8 gText_OddEggFoundByCouple[] = _("An odd Pokémon Egg found\nby the Day Care couple.");
 const u8 gText_PeculiarEggNicePlace[] = _("A peculiar Pokémon Egg\nobtained at the nice place.");
@@ -1908,42 +1908,36 @@ const u8 gText_Rename[] = _("Rename");
 
 
 //HGSS_Ui PokedexPlus
-const u8 gText_Stats_Buttons[]  = _("{A_BUTTON}Toggle   {DPAD_UPDOWN}Moves");
-const u8 gText_Stats_Buttons_Decapped[]  = _("{A_BUTTON}Toggle   {DPAD_UPDOWN}Moves");
+const u8 gText_Info_Button[]  = _("{A_BUTTON} Cry");
+const u8 gText_InfoCaught_Button[]  = _("{A_BUTTON} Exit");
+
+
+const u8 gText_Stats_Buttons[]  = _("{A_BUTTON} Toggle   {DPAD_UPDOWN} Moves");
 const u8 gText_Stats_HP[]       = _("HP");
 const u8 gText_Stats_Attack[]   = _("Atk");
 const u8 gText_Stats_Defense[]  = _("Def");
 const u8 gText_Stats_Speed[]    = _("Spe");
 const u8 gText_Stats_SpAttack[]    = _("Sp.A");
 const u8 gText_Stats_SpDefense[]    = _("Sp.D");
-const u8 gText_Stats_EV_Plus1[]     = _("{UP_ARROW_2}");
-const u8 gText_Stats_EV_Plus2[]     = _("{UP_ARROW_2}{UP_ARROW_2}");
-const u8 gText_Stats_EV_Plus3[]     = _("{UP_ARROW_2}{UP_ARROW_2}{UP_ARROW_2}");
-const u8 gText_Stats_EvStr1Str2[]   = _("{STR_VAR_1}{STR_VAR_2}");
 const u8 gText_Stats_MoveSelectedMax[]      = _("{STR_VAR_1} / {STR_VAR_2}");
 const u8 gText_Stats_MoveLevel[]     = _("Lvl");
 const u8 gText_Stats_Gender_0[]      = _("♂");
-const u8 gText_Stats_Gender_12_5[]   = _("♀ 1/7 ♂"); //_("♀ 12.5 / 87.5 ♂");
-const u8 gText_Stats_Gender_25[]     = _("♀ 1/3 ♂");     //_("♀ 25 / 75 ♂");
-const u8 gText_Stats_Gender_50[]     = _("♀ 1/1 ♂");     //_("♀ 50 / 50 ♂");
-const u8 gText_Stats_Gender_75[]     = _("♀ 3/1 ♂");     //_("♀ 75 / 25 ♂");
-const u8 gText_Stats_Gender_87_5[]   = _("♀ 7/1 ♂");
+const u8 gText_Stats_Gender_12_5[]   = _("♀ 1:7 ♂"); //_("♀ 12.5 / 87.5 ♂");
+const u8 gText_Stats_Gender_25[]     = _("♀ 1:3 ♂");     //_("♀ 25 / 75 ♂");
+const u8 gText_Stats_Gender_50[]     = _("♀ 1:1 ♂");     //_("♀ 50 / 50 ♂");
+const u8 gText_Stats_Gender_75[]     = _("♀ 3:1 ♂");     //_("♀ 75 / 25 ♂");
+const u8 gText_Stats_Gender_87_5[]   = _("♀ 7:1 ♂");
 const u8 gText_Stats_Gender_100[]    = _("♀");
-const u8 gText_Stats_CatchRate[]     = _("Catch{0x5B}: ");
+const u8 gText_Stats_CatchRate[]     = _("Catch: ");
 const u8 gText_Stats_CatchRate_Legend[]         = _("Legendary");
 const u8 gText_Stats_CatchRate_VeryHard[]       = _("Very Hard");
 const u8 gText_Stats_CatchRate_Difficult[]      = _("Difficult");
 const u8 gText_Stats_CatchRate_Medium[]         = _("Medium");
 const u8 gText_Stats_CatchRate_Relaxed[]        = _("Relaxed");
 const u8 gText_Stats_CatchRate_Easy[]           = _("Easy");
-const u8 gText_Stats_ExpYield[]      = _("Exp. Yield: ");
-const u8 gText_Stats_EggCycles[]     = _("Hatch Steps:");
-const u8 gText_Stats_EggCycles_VeryFast[]   = _("{EMOJI_BOLT}{EMOJI_DIZZYEGG}");
-const u8 gText_Stats_EggCycles_Fast[]       = _("{EMOJI_DIZZYEGG}");
-const u8 gText_Stats_EggCycles_Normal[]     = _("{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}");
-const u8 gText_Stats_EggCycles_Slow[]       = _("{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}{EMOJI_DIZZYEGG}");
-const u8 gText_Stats_Growthrate[]    = _("Grow: ");
-const u8 gText_Stats_Friendship[]    = _("Friendship:");
+const u8 gText_Stats_ExpYield[]      = _("Exp:");
+const u8 gText_Stats_Growthrate[]    = _("Grow:");
+const u8 gText_Stats_Friendship[]    = _("Hap:");
 const u8 gText_Stats_Friendship_BigAnger[]      = _("{EMOJI_BIGANGER}");
 const u8 gText_Stats_Friendship_Neutral[]       = _("{EMOJI_NEUTRAL}");
 const u8 gText_Stats_Friendship_Happy[]         = _("{EMOJI_HAPPY}");
@@ -1954,35 +1948,13 @@ const u8 gText_Stats_FLUCTUATING[]   = _("Fluctuating");
 const u8 gText_Stats_MEDIUM_SLOW[]   = _("Med. Slow");
 const u8 gText_Stats_FAST[]          = _("Fast");
 const u8 gText_Stats_SLOW[]          = _("Slow");
-const u8 gText_Stats_ContestHeart[]  = _("H");
 const u8 gText_Stats_Minus[] = _("-");
-const u8 gText_Stats_eggGroup[]             = _("Egg G1:");
-const u8 gText_Stats_eggGroup_Groups[]      = _("{STR_VAR_1}/{STR_VAR_2}");
-const u8 gText_Stats_eggGroup_MONSTER[]     = _("Monster");
-const u8 gText_Stats_eggGroup_WATER_1[]     = _("Water {CIRCLE_1}");
-const u8 gText_Stats_eggGroup_BUG[]         = _("Bug");
-const u8 gText_Stats_eggGroup_FLYING[]      = _("Flying");
-const u8 gText_Stats_eggGroup_FIELD[]       = _("Field");
-const u8 gText_Stats_eggGroup_FAIRY[]       = _("Fairy");
-const u8 gText_Stats_eggGroup_GRASS[]       = _("Grass");
-const u8 gText_Stats_eggGroup_HUMAN_LIKE[]  = _("Humane");
-const u8 gText_Stats_eggGroup_WATER_3[]     = _("Water {CIRCLE_3}");
-const u8 gText_Stats_eggGroup_MINERAL[]     = _("Mineral");
-const u8 gText_Stats_eggGroup_AMORPHOUS[]   = _("Amorphous");
-const u8 gText_Stats_eggGroup_WATER_2[]     = _("Water {CIRCLE_2}");
-const u8 gText_Stats_eggGroup_DITTO[]       = _("Ditto");
-const u8 gText_Stats_eggGroup_DRAGON[]      = _("Dragon");
-const u8 gText_Stats_eggGroup_UNDISCOVERED[]= _("---");
 const u8 gText_Dex_SEEN[]   = _("Seen");
 const u8 gText_Dex_OWN[]    = _("Own");
 
-const u8 gText_EVO_Buttons[]                        = _("{DPAD_UPDOWN}EVOs  {A_BUTTON}CHECK");
-const u8 gText_EVO_Buttons_Decapped[]               = _("{DPAD_UPDOWN}Evos  {A_BUTTON}Check");
-const u8 gText_EVO_Buttons_PE[]                     = _("{DPAD_UPDOWN}EVOs  {A_BUTTON}CHECK  {START_BUTTON}FORMs");
-const u8 gText_EVO_Buttons_Decapped_PE[]            = _("{DPAD_UPDOWN}Evos  {A_BUTTON}Check  {START_BUTTON}Forms");
+const u8 gText_EVO_Buttons[]           			    = _("{A_BUTTON} Check  {DPAD_UPDOWN} Evos");
 const u8 gText_EVO_Name[]                           = _("{STR_VAR_3}:");
 const u8 gText_EVO_PreEvo[]                         = _("{STR_VAR_1} evolves from {STR_VAR_2}");
-const u8 gText_EVO_PreEvo_PE_Mega[]                 = _("{STR_VAR_1} mega evolves with {STR_VAR_2}");
 const u8 gText_EVO_FRIENDSHIP[]                     = _("LvlUp, high friendship");
 const u8 gText_EVO_FRIENDSHIP_DAY[]                 = _("LvlUp, high friendship, day");
 const u8 gText_EVO_FRIENDSHIP_NIGHT[]               = _("LvlUp, high friendship, night");
@@ -2018,12 +1990,7 @@ const u8 gText_EVO_LEVEL_DARK_TYPE_MON_IN_PARTY[]   = _("LvlUp with dark type in
 const u8 gText_EVO_TRADE_SPECIFIC_MON[]             = _("Traded for {STR_VAR_2}");
 const u8 gText_EVO_SPECIFIC_MAP[]                   = _("LvlUp on {STR_VAR_2}");
 const u8 gText_EVO_UNKNOWN[]                        = _("Method unknown");
-const u8 gText_EVO_NONE[]                           = _("{STR_VAR_1} has no evolution.");
+const u8 gText_EVO_NONE[]                           = _("{STR_VAR_1} has no evolution");
 
-const u8 gText_FORMS_Buttons_PE[]                   = _("{A_BUTTON}FORM MODE  {START_BUTTON}EVOs");
-const u8 gText_FORMS_Buttons_Decapped_PE[]          = _("{START_BUTTON}Evos");
-const u8 gText_FORMS_Buttons_Submenu_PE[]           = _("{DPAD_NONE}FORMs {A_BUTTON}CHECK {START_BUTTON}EVOs");
-const u8 gText_FORMS_Buttons_Submenu_Decapped_PE[]  = _("{START_BUTTON}Evos");
-const u8 gText_FORMS_NONE[]                         = _("{STR_VAR_1} has no alternate forms.");
 const u8 gText_Var1DotVar2_Metric[]                 = _("{STR_VAR_1}.{STR_VAR_2}cm");
 const u8 gText_StatEditor[] = _("Edit IVs/EVs");

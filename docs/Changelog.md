@@ -62,9 +62,18 @@
   - **Dazzling Gleam**  
   - **Draining Kiss**  
   - **Disarming Voice**  
-  - **Tail Whip**  
+  - **Tail Slap**  
 	- Prepared contest/battle backend for these moves.  
 	- Moves added to some Pokémon in the level_up_learnsets.
+	
+- Added new PokéBalls to the game:  
+	- **Dream Ball**  
+	Works best on Sleeping Pokémon.  
+	- **Heal Ball**  
+	Heals Pokémon when captured and added to your party.  
+	- **Love Ball**  
+	8x catch rate on Pokémon of the same species but opposite gender.  
+	Note: If updating from a previous version, please use the script in the Debug Menu to update your item IDs properly and prevent item corruption.
 
 ---
 
@@ -80,6 +89,14 @@
 	- Redrew all 18 Type Icons specifically for the new Battle Interface, added 'slim' versions for the Summary Screen/PokéDex/DexNav, and 'mini' versions to display next to Pokémon in battle. 
 	- I'm calling them a Hybrid design, classic high-vis colors with the modern stylzed icons where I could fit them.  
 	- Optimized for a single palette! I'm quite proud of this.  
+- **Summary Screen Update**:
+	- Updated the **BW Summary Screen** with new graphics!  
+	- Changed to look more FRLG inspired.
+	- Also includes **Characteristics** from later gens.
+- **PokéDex Update**:
+	- Updated the **HGSS PokéDex Plus Screen** with new graphics!  
+	- Changed to look more FRLG Summary Screen inspired.  
+	- Scaled back some information so it wasn't so cluttered.  
 - New **Main Menu UI**
 - Start Menu reordered for improved usability.
 - DexNav removed from Start Menu; now accessible by pressing **L** when the cursor is over the PokéNav.
@@ -89,7 +106,7 @@
 ---
 
 ### 🎨 Visual Updates
-- DexNav screen completely redone to reflect chain-based shiny mechanics.  
+- DexNav screen completely redone to reflect chain-based shiny mechanics and new UI style of the Summary Screen and PokéDex.  
 - Added **HexManiac** sprite (Team Aqua Hideout Repo).  
 - Overworld follower sprites added for new Pokémon
 
@@ -102,11 +119,10 @@
 - Shiny Pokémon now display properly in the Summary Screen.
 - Catch Mode should work more reliably. Moved it into the Adjust Damage step instead of Damage Calc. 
 - DexNav no longer crashes in caves.
+- Opening the Summary Screen from the Storage System no longer causes any graphical weirdness. It was caused by an incorrect call from when I marged the BW Summary Screen into Modern Emerald.
 
-### ⚠️ Known Issues
-- Seasonal palette changes currently do not affect tall grass.   
-- Opening the Summary Screen from the PC, and then closing it, glitches the PC background.  
-- Pokémon whose overworld sprites use the TRACKS_SLITHER value crash the game when making paths. This seems to be a Modern Emerald issue I inherited. TRACKS_BIKE_TIRE works fine though, and I'm going to compare the two and see where things aren't matching.
+### ⚠️ Known Issues 
+- Pokémon whose overworld sprites use the TRACKS_SLITHER value crash the game when making paths. This might be a Modern Emerald issue I inherited? TRACKS_BIKE_TIRE works fine though, and I'm going to compare the two and see where things aren't matching.
 
 ---
 

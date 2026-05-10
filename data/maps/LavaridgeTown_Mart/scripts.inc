@@ -23,6 +23,7 @@ LavaridgeTown_Mart_EventScript_Clerk2::
 
 	.align 2
 LavaridgeTown_Mart_Pokemart:
+	.2byte ITEM_HEAL_BALL
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_NONE
 	release

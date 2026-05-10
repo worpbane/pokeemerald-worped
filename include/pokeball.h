@@ -15,6 +15,9 @@ enum
     BALL_TIMER,
     BALL_LUXURY,
     BALL_PREMIER,
+    BALL_DREAM,
+    BALL_LOVE,
+    BALL_HEAL,
     POKEBALL_COUNT
 };
 

@@ -57,6 +57,9 @@ static u16 GetBattlerPokeballItemId(u8 battlerId);
 #define GFX_TAG_TIMER_BALL   55009
 #define GFX_TAG_LUXURY_BALL  55010
 #define GFX_TAG_PREMIER_BALL 55011
+#define GFX_TAG_DREAM_BALL   55012
+#define GFX_TAG_LOVE_BALL    55013
+#define GFX_TAG_HEAL_BALL    55014
 
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
@@ -72,6 +75,9 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_TIMER]   = {gBallGfx_Timer,   384, GFX_TAG_TIMER_BALL},
     [BALL_LUXURY]  = {gBallGfx_Luxury,  384, GFX_TAG_LUXURY_BALL},
     [BALL_PREMIER] = {gBallGfx_Premier, 384, GFX_TAG_PREMIER_BALL},
+    [BALL_DREAM]   = {gBallGfx_Dream,   384, GFX_TAG_DREAM_BALL},
+    [BALL_LOVE]    = {gBallGfx_Love,    384, GFX_TAG_LOVE_BALL},
+    [BALL_HEAL]    = {gBallGfx_Heal,    384, GFX_TAG_HEAL_BALL},
 };
 
 const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
@@ -88,6 +94,9 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_TIMER]   = {gBallPal_Timer,   GFX_TAG_TIMER_BALL},
     [BALL_LUXURY]  = {gBallPal_Luxury,  GFX_TAG_LUXURY_BALL},
     [BALL_PREMIER] = {gBallPal_Premier, GFX_TAG_PREMIER_BALL},
+    [BALL_DREAM]   = {gBallPal_Dream,   GFX_TAG_DREAM_BALL},
+    [BALL_LOVE]    = {gBallPal_Love,    GFX_TAG_LOVE_BALL},
+    [BALL_HEAL]    = {gBallPal_Heal,    GFX_TAG_HEAL_BALL},
 };
 
 static const struct OamData sBallOamData =
@@ -319,6 +328,36 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
     {
         .tileTag = GFX_TAG_PREMIER_BALL,
         .paletteTag = GFX_TAG_PREMIER_BALL,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_DREAM] =
+    {
+        .tileTag = GFX_TAG_DREAM_BALL,
+        .paletteTag = GFX_TAG_DREAM_BALL,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_LOVE] =
+    {
+        .tileTag = GFX_TAG_LOVE_BALL,
+        .paletteTag = GFX_TAG_LOVE_BALL,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_HEAL] =
+    {
+        .tileTag = GFX_TAG_HEAL_BALL,
+        .paletteTag = GFX_TAG_HEAL_BALL,
         .oam = &sBallOamData,
         .anims = sBallAnimSequences,
         .images = NULL,

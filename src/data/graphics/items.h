@@ -40,6 +40,15 @@ const u32 gItemIconPalette_LuxuryBall[] = INCBIN_U32("graphics/items/icon_palett
 
 const u32 gItemIcon_PremierBall[] = INCBIN_U32("graphics/items/icons/premier_ball.4bpp.lz");
 
+const u32 gItemIcon_DreamBall[] = INCBIN_U32("graphics/items/icons/dream_ball.4bpp.lz");
+const u32 gItemIconPalette_DreamBall[] = INCBIN_U32("graphics/items/icon_palettes/dream_ball.gbapal.lz");
+
+const u32 gItemIcon_LoveBall[] = INCBIN_U32("graphics/items/icons/love_ball.4bpp.lz");
+const u32 gItemIconPalette_LoveBall[] = INCBIN_U32("graphics/items/icon_palettes/love_ball.gbapal.lz");
+
+const u32 gItemIcon_HealBall[] = INCBIN_U32("graphics/items/icons/heal_ball.4bpp.lz");
+const u32 gItemIconPalette_HealBall[] = INCBIN_U32("graphics/items/icon_palettes/heal_ball.gbapal.lz");
+
 // Medicine
 
 const u32 gItemIcon_Potion[] = INCBIN_U32("graphics/items/icons/potion.4bpp.lz");
