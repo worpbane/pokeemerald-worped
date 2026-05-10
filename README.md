@@ -167,7 +167,6 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 ### Other Improvements
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.  
 - **Ability Popups in Battle:** I'm going to try and backport this feature from `pokeemerald-expansion`...  
-- **Update PokéDex Visuals:** I'd like to look over the PokéDex and see if I can't spice it up(make it purple).
 
 ---
 

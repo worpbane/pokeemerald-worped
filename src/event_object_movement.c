@@ -614,10 +614,13 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_TimerBall,             OBJ_EVENT_PAL_TAG_BALL_TIMER},
     {gObjectEventPal_LuxuryBall,            OBJ_EVENT_PAL_TAG_BALL_LUXURY},
     {gObjectEventPal_PremierBall,           OBJ_EVENT_PAL_TAG_BALL_PREMIER},
+	//WorpAdditions
+	{gObjectEventPal_DreamBall,             OBJ_EVENT_PAL_TAG_BALL_DREAM},
+	{gObjectEventPal_HealBall,              OBJ_EVENT_PAL_TAG_BALL_HEAL},
+	{gObjectEventPal_LoveBall,              OBJ_EVENT_PAL_TAG_BALL_LOVE},
     // Gen IV/Sinnoh pokeballs
     #ifdef ITEM_DUSK_BALL
     {gObjectEventPal_DuskBall,              OBJ_EVENT_PAL_TAG_BALL_DUSK},
-    {gObjectEventPal_HealBall,              OBJ_EVENT_PAL_TAG_BALL_HEAL},
     {gObjectEventPal_QuickBall,             OBJ_EVENT_PAL_TAG_BALL_QUICK},
     {gObjectEventPal_CherishBall,           OBJ_EVENT_PAL_TAG_BALL_CHERISH},
     #endif
@@ -630,14 +633,9 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_LevelBall,             OBJ_EVENT_PAL_TAG_BALL_LEVEL},
     {gObjectEventPal_LureBall,              OBJ_EVENT_PAL_TAG_BALL_LURE},
     {gObjectEventPal_HeavyBall,             OBJ_EVENT_PAL_TAG_BALL_HEAVY},
-    {gObjectEventPal_LoveBall,              OBJ_EVENT_PAL_TAG_BALL_LOVE},
     {gObjectEventPal_FriendBall,            OBJ_EVENT_PAL_TAG_BALL_FRIEND},
     {gObjectEventPal_MoonBall,              OBJ_EVENT_PAL_TAG_BALL_MOON},
     {gObjectEventPal_SportBall,             OBJ_EVENT_PAL_TAG_BALL_SPORT},
-    #endif
-    // Gen V
-    #ifdef ITEM_DREAM_BALL
-    {gObjectEventPal_DreamBall,             OBJ_EVENT_PAL_TAG_BALL_DREAM},
     #endif
     // Gen VII
     #ifdef ITEM_BEAST_BALL

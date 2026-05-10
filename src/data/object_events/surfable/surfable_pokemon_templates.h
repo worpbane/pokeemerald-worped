@@ -57,7 +57,7 @@ enum
     PAL_TAG_AZUMARILL_SURF,
     PAL_TAG_POLITOED_SURF,
     PAL_TAG_WOOPER_SURF,
-    PAL_TAG_QUAGSIRE_SURF,
+    PAL_TAG_CLODSIRE_SURF,
     PAL_TAG_SLOWKING_SURF,
     PAL_TAG_QWILFISH_SURF,
     PAL_TAG_SNEASEL_SURF,
@@ -119,6 +119,8 @@ enum
     PAL_TAG_RHYPERIOR_SURF,
     PAL_TAG_ARCEUS_SURF,
     PAL_TAG_TEST_SURF,
+	PAL_TAG_WOOPER_PALDEAN_SURF,
+    PAL_TAG_QUAGSIRE_SURF,
 };
 
 const struct SpritePalette sSurfablePokemonPalettes[] = {
@@ -179,7 +181,7 @@ const struct SpritePalette sSurfablePokemonPalettes[] = {
     {gSurfablePokemonPalette_Azumarill,  PAL_TAG_AZUMARILL_SURF},
     {gSurfablePokemonPalette_Politoed,   PAL_TAG_POLITOED_SURF},
     {gSurfablePokemonPalette_Wooper,     PAL_TAG_WOOPER_SURF},
-    {gSurfablePokemonPalette_Quagsire,   PAL_TAG_QUAGSIRE_SURF},
+	{gSurfablePokemonPalette_Quagsire,   PAL_TAG_QUAGSIRE_SURF},
     {gSurfablePokemonPalette_Slowking,   PAL_TAG_SLOWKING_SURF},
     {gSurfablePokemonPalette_Qwilfish,   PAL_TAG_QWILFISH_SURF},
     {gSurfablePokemonPalette_Sneasel,    PAL_TAG_SNEASEL_SURF},
@@ -241,6 +243,9 @@ const struct SpritePalette sSurfablePokemonPalettes[] = {
     {gSurfablePokemonPalette_Rhyperior,   PAL_TAG_RHYPERIOR_SURF},
     {gSurfablePokemonPalette_Arceus,    PAL_TAG_ARCEUS_SURF},
     {gSurfablePokemonPalette_Test,    PAL_TAG_TEST_SURF},
+	{gSurfablePokemonPalette_Wooper_Paldean, PAL_TAG_WOOPER_PALDEAN_SURF},
+	{gSurfablePokemonPalette_Clodsire,   PAL_TAG_CLODSIRE_SURF},
+    
 };
 
 const struct SpritePalette sSurfablePokemonShinyPalettes[] = {
@@ -363,6 +368,8 @@ const struct SpritePalette sSurfablePokemonShinyPalettes[] = {
     {gSurfablePokemonShinyPalette_Rhyperior,   PAL_TAG_RHYPERIOR_SURF},
     {gSurfablePokemonShinyPalette_Arceus,    PAL_TAG_ARCEUS_SURF},
     {gSurfablePokemonShinyPalette_Test,    PAL_TAG_TEST_SURF},
+	{gSurfablePokemonShinyPalette_Wooper_Paldean,     PAL_TAG_WOOPER_PALDEAN_SURF},
+	{gSurfablePokemonShinyPalette_Clodsire,   PAL_TAG_CLODSIRE_SURF},
 };
 
 const struct SpritePalette sSurfablePokemonShinyPalettes_Modern[] = {
@@ -423,7 +430,7 @@ const struct SpritePalette sSurfablePokemonShinyPalettes_Modern[] = {
     {gSurfablePokemonShinyPalette_Azumarill,  PAL_TAG_AZUMARILL_SURF},
     {gSurfablePokemonShinyPalette_Politoed,   PAL_TAG_POLITOED_SURF},
     {gSurfablePokemonShinyPalette_Wooper,     PAL_TAG_WOOPER_SURF},
-    {gSurfablePokemonShinyPalette_Quagsire,   PAL_TAG_QUAGSIRE_SURF},
+    {gSurfablePokemonShinyPalette_Clodsire,   PAL_TAG_CLODSIRE_SURF},
     {gSurfablePokemonShinyPalette_Slowking,   PAL_TAG_SLOWKING_SURF},
     {gSurfablePokemonShinyPalette_Qwilfish,   PAL_TAG_QWILFISH_SURF},
     {gSurfablePokemonShinyPalette_Sneasel,    PAL_TAG_SNEASEL_SURF},
@@ -485,6 +492,8 @@ const struct SpritePalette sSurfablePokemonShinyPalettes_Modern[] = {
     {gSurfablePokemonShinyPalette_Rhyperior,   PAL_TAG_RHYPERIOR_SURF},
     {gSurfablePokemonShinyPalette_Arceus,    PAL_TAG_ARCEUS_SURF},
     {gSurfablePokemonShinyPalette_Test,    PAL_TAG_TEST_SURF},
+	{gSurfablePokemonShinyPalette_Wooper_Paldean, PAL_TAG_WOOPER_PALDEAN_SURF},
+    {gSurfablePokemonShinyPalette_Quagsire, PAL_TAG_QUAGSIRE_SURF},
 };
 
 const union AnimCmd gSurfablePokemonAnim_FaceSouth[] =
@@ -658,6 +667,9 @@ const struct SpriteTemplate gSurfablePokemonOverworldSprites[] =
     {0xFFFF, PAL_TAG_RHYPERIOR_SURF,   &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverworldPicTable_Rhyperior,   gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
     {0xFFFF, PAL_TAG_ARCEUS_SURF,    &gObjectEventBaseOam_64x64, gSurfablePokemonAnimTable, gSurfingOverworldPicTable_Arceus,     gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
     {0xFFFF, PAL_TAG_TEST_SURF,      &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverworldPicTable_Test,       gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
+	{0xFFFF, PAL_TAG_WOOPER_PALDEAN_SURF, &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverworldPicTable_Wooper_Paldean, gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
+	{0xFFFF, PAL_TAG_CLODSIRE_SURF,   &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverworldPicTable_Clodsire, gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
+    
 
 };
 
@@ -782,6 +794,9 @@ const struct SpriteTemplate gSurfablePokemonOverlaySprites[] =
     {0xFFFF, PAL_TAG_RHYPERIOR_SURF,   &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverlayPicTable_Rhyperior,   gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
     {0xFFFF, PAL_TAG_ARCEUS_SURF,    &gObjectEventBaseOam_64x64, gSurfablePokemonAnimTable, gSurfingOverlayPicTable_Arceus,    gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
     {0xFFFF, PAL_TAG_TEST_SURF,      &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverlayPicTable_Test,       gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
+	{0xFFFF, PAL_TAG_WOOPER_PALDEAN_SURF,     &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverlayPicTable_Wooper_Paldean,     gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
+	{0xFFFF, PAL_TAG_CLODSIRE_SURF,   &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverlayPicTable_Clodsire,   gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
+    
 };
 
 const struct SpriteTemplate gSurfablePokemonOverworldShinySprites[] =
@@ -904,6 +919,8 @@ const struct SpriteTemplate gSurfablePokemonOverworldShinySprites[] =
     {0xFFFF, PAL_TAG_RHYPERIOR_SURF, &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverworldShinyPicTable_Rhyperior,   gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
     {0xFFFF, PAL_TAG_ARCEUS_SURF,    &gObjectEventBaseOam_64x64, gSurfablePokemonAnimTable, gSurfingOverworldShinyPicTable_Arceus,     gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
     {0xFFFF, PAL_TAG_TEST_SURF,      &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverworldShinyPicTable_Test,       gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
+	{0xFFFF, PAL_TAG_WOOPER_PALDEAN_SURF,     &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverworldShinyPicTable_Wooper_Paldean,     gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
+	{0xFFFF, PAL_TAG_CLODSIRE_SURF,   &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverworldShinyPicTable_Clodsire,   gDummySpriteAffineAnimTable, UpdateSurfBlobFieldEffect},
 };
 
 #define NO_OVERLAY {0, 0, NULL, NULL, NULL, NULL, NULL}
@@ -1027,4 +1044,6 @@ const struct SpriteTemplate gSurfablePokemonOverlayShinySprites[] =
     {0xFFFF, PAL_TAG_RHYPERIOR_SURF,   &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverlayShinyPicTable_Rhyperior,   gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
     {0xFFFF, PAL_TAG_ARCEUS_SURF,    &gObjectEventBaseOam_64x64, gSurfablePokemonAnimTable, gSurfingOverlayShinyPicTable_Arceus,    gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
     {0xFFFF, PAL_TAG_TEST_SURF,      &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverlayShinyPicTable_Test,       gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
+	{0xFFFF, PAL_TAG_WOOPER_PALDEAN_SURF,     &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverlayShinyPicTable_Wooper_Paldean, gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
+	{0xFFFF, PAL_TAG_CLODSIRE_SURF,   &gObjectEventBaseOam_32x32, gSurfablePokemonAnimTable, gSurfingOverlayShinyPicTable_Clodsire, gDummySpriteAffineAnimTable, UpdateSurfMonOverlay},
 };
