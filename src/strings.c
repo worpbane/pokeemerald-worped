@@ -1578,7 +1578,7 @@ const u8 gText_MenuExit[] = _("Exit");
 const u8 gText_MenuRetire[] = _("Retire");
 const u8 gText_MenuRest[] = _("Rest");
 const u8 gText_MenuDexNav[] = _("DexNav");
-const u8 gText_SafariBallStock[] = _("Safari Balls\nStock: {STR_VAR_1}");
+const u8 gText_SafariBallStock[] = _("Balls:         {STR_VAR_1}\n        {STR_VAR_2} / 500");
 const u8 gText_BattlePyramidFloor[] = _("Battle Pyramid\n{STR_VAR_1}");
 const u8 gText_Floor1[] = _("Floor 1");
 const u8 gText_Floor2[] = _("Floor 2");
@@ -1908,11 +1908,11 @@ const u8 gText_Rename[] = _("Rename");
 
 
 //HGSS_Ui PokedexPlus
-const u8 gText_Info_Button[]  = _("{A_BUTTON} Cry");
-const u8 gText_InfoCaught_Button[]  = _("{A_BUTTON} Exit");
+const u8 gText_Info_Button[]  = _("{A_BUTTON}Cry");
+const u8 gText_InfoCaught_Button[]  = _("{A_BUTTON}Exit");
 
 
-const u8 gText_Stats_Buttons[]  = _("{A_BUTTON} Toggle   {DPAD_UPDOWN} Moves");
+const u8 gText_Stats_Buttons[]  = _("{A_BUTTON}Toggle   {DPAD_UPDOWN}Moves");
 const u8 gText_Stats_HP[]       = _("HP");
 const u8 gText_Stats_Attack[]   = _("Atk");
 const u8 gText_Stats_Defense[]  = _("Def");
@@ -1952,7 +1952,7 @@ const u8 gText_Stats_Minus[] = _("-");
 const u8 gText_Dex_SEEN[]   = _("Seen");
 const u8 gText_Dex_OWN[]    = _("Own");
 
-const u8 gText_EVO_Buttons[]           			    = _("{A_BUTTON} Check  {DPAD_UPDOWN} Evos");
+const u8 gText_EVO_Buttons[]           			    = _("{A_BUTTON}Check  {DPAD_UPDOWN}Evos");
 const u8 gText_EVO_Name[]                           = _("{STR_VAR_3}:");
 const u8 gText_EVO_PreEvo[]                         = _("{STR_VAR_1} evolves from {STR_VAR_2}");
 const u8 gText_EVO_FRIENDSHIP[]                     = _("LvlUp, high friendship");
