@@ -2076,7 +2076,7 @@ static const u8 sTextColors[][3] =
 
 static void PrintTextOnWindow_BW_Font(u8 windowId, const u8 *string, u8 x, u8 y, u8 lineSpacing, u8 colorId)
 {
-    AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, x, y, 0, lineSpacing, sTextColors[colorId], 0, string);
+    AddTextPrinterParameterized4(windowId, FONT_BW_SUMMARY_SCREEN, x, y, 0, lineSpacing, sTextColors[colorId], -1, string);
 }
 
 static void PrintCurrentSpeciesInfo(void)
@@ -2087,14 +2087,9 @@ static void PrintCurrentSpeciesInfo(void)
     u16 dexNum = SpeciesToNationalPokedexNum(species);
     u8 type1, type2;
 	
-    if (!GetSetPokedexFlag(dexNum, FLAG_GET_SEEN))
-        species = SPECIES_NONE;
-
-    // clear windows
-    FillWindowPixelBuffer(WINDOW_INFO, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    if (!GetSetPokedexFlag(dexNum, FLAG_GET_SEEN)) species = SPECIES_NONE;
 	
 	GetMapName(gStringVar3, GetCurrentRegionMapSectionId(), 0);
-    //AddTextPrinterParameterized3(WINDOW_INFO, 1, 1 + GetStringRightAlignXOffset(1, gStringVar3, MAP_NAME_LENGTH * GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH)), 0, sFontColor_White, 0, gStringVar3);
 	PrintTextOnWindow_BW_Font(WINDOW_INFO, gStringVar3, GetStringRightAlignXOffset(1, gStringVar3, MAP_NAME_LENGTH * GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH)) - 31, 2, 0, 1);
     
     //species name
@@ -2126,13 +2121,12 @@ static void PrintCurrentSpeciesInfo(void)
 	PrintTextOnWindow_BW_Font(WINDOW_INFO, sText_DexNavChainChance, 5, CHAIN_BONUS_Y + 13, 0, 0);
 	
 	//Current Chain
-    ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
-	PrintTextOnWindow_BW_Font(WINDOW_INFO, gStringVar1, 53, CHAIN_BONUS_Y + 1, 0, 0); //WORPTODO: Make these hug the right
+    ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->dexNavChain, STR_CONV_MODE_RIGHT_ALIGN, 3);
+	PrintTextOnWindow_BW_Font(WINDOW_INFO, gStringVar1, 49, CHAIN_BONUS_Y + 1, 0, 0);
 	//Shiny chance with chain
-	if (!species == SPECIES_NONE) PrintTextOnWindow_BW_Font(WINDOW_INFO, DexNavGetShinyChanceString(), 53, CHAIN_BONUS_Y + 13, 0, 0);
+	if (!species == SPECIES_NONE) PrintTextOnWindow_BW_Font(WINDOW_INFO, DexNavGetShinyChanceString(), 55, CHAIN_BONUS_Y + 13, 0, 0);
 	
     CopyWindowToVram(WINDOW_INFO, COPYWIN_FULL);
-    PutWindowTilemap(WINDOW_INFO);
 }
 
 static void PrintSearchableSpecies(u16 species)
@@ -2236,6 +2230,10 @@ static bool8 DexNav_DoGfxSetup(void)
         DrawSpeciesIcons();
         CreateSelectionCursor();
         DexNavLoadCapturedAllSymbols();
+		FillWindowPixelBuffer(WINDOW_INFO, PIXEL_FILL(0));
+		PutWindowTilemap(WINDOW_INFO);
+		UpdateCursorPosition();
+        CopyWindowToVram(WINDOW_INFO, COPYWIN_FULL);
         gMain.state++;
         break;
     case 11:
@@ -2318,7 +2316,9 @@ static void Task_DexNavMain(u8 taskId)
         }
         
         PlaySE(SE_RG_BAG_CURSOR);
+		FillWindowPixelBuffer(WINDOW_INFO, PIXEL_FILL(0));
         UpdateCursorPosition();
+        CopyWindowToVram(WINDOW_INFO, COPYWIN_FULL); 
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
@@ -2335,7 +2335,9 @@ static void Task_DexNavMain(u8 taskId)
         }
         
         PlaySE(SE_RG_BAG_CURSOR);
+        FillWindowPixelBuffer(WINDOW_INFO, PIXEL_FILL(0));
         UpdateCursorPosition();
+        CopyWindowToVram(WINDOW_INFO, COPYWIN_FULL); 
     }
     else if (JOY_NEW(DPAD_LEFT))
     {
@@ -2357,7 +2359,9 @@ static void Task_DexNavMain(u8 taskId)
         }
         
         PlaySE(SE_RG_BAG_CURSOR);
+        FillWindowPixelBuffer(WINDOW_INFO, PIXEL_FILL(0));
         UpdateCursorPosition();
+        CopyWindowToVram(WINDOW_INFO, COPYWIN_FULL); 
     }
     else if (JOY_NEW(DPAD_RIGHT))
     {
@@ -2378,7 +2382,9 @@ static void Task_DexNavMain(u8 taskId)
         }
         
         PlaySE(SE_RG_BAG_CURSOR);
+        FillWindowPixelBuffer(WINDOW_INFO, PIXEL_FILL(0));
         UpdateCursorPosition();
+        CopyWindowToVram(WINDOW_INFO, COPYWIN_FULL); 
     }
     else if (JOY_NEW(R_BUTTON))
     {
