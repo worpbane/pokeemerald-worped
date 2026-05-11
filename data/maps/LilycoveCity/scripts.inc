@@ -54,6 +54,52 @@ LilycoveCity_EventScript_ReceivedBerry::
 	msgbox LilycoveCity_Text_PokeblocksSuitPokemon, MSGBOX_DEFAULT
 	release
 	end
+	
+LilycoveCity_EventScript_DreamBallNurse::
+    lock
+    faceplayer
+    dotimebasedevents
+    goto_if_set FLAG_DAILY_DREAM_BALL_RECEIVED, LilycoveCity_EventScript_NurseDailyGreeting
+    
+    goto_if_set FLAG_MET_DREAM_NURSE, LilycoveCity_EventScript_CheckForSleep
+    
+    msgbox LilycoveCity_Text_NurseIntro, MSGBOX_DEFAULT
+    setflag FLAG_MET_DREAM_NURSE
+    release
+    end
+
+LilycoveCity_EventScript_CheckForSleep::
+    msgbox LilycoveCity_Text_ShowMeSleepy, MSGBOX_DEFAULT
+    specialvar VAR_RESULT, CheckPartyForSleep 
+    goto_if_eq VAR_RESULT, FALSE, LilycoveCity_EventScript_NoSleepers
+    
+    goto_if_set FLAG_RECEIVED_FIRST_DREAM_BALL, LilycoveCity_EventScript_GiveRepeatBall
+
+    msgbox LilycoveCity_Text_TakeDreamBallFirstTime, MSGBOX_DEFAULT
+    giveitem ITEM_DREAM_BALL
+    goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+    setflag FLAG_RECEIVED_FIRST_DREAM_BALL
+    setflag FLAG_DAILY_DREAM_BALL_RECEIVED
+    release
+    end
+
+LilycoveCity_EventScript_GiveRepeatBall::
+    msgbox LilycoveCity_Text_TakeDreamBallRepeat, MSGBOX_DEFAULT
+    giveitem ITEM_DREAM_BALL
+    goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+    setflag FLAG_DAILY_DREAM_BALL_RECEIVED
+    release
+    end
+
+LilycoveCity_EventScript_NoSleepers::
+    msgbox LilycoveCity_Text_NoneSleeping, MSGBOX_DEFAULT
+    release
+    end
+
+LilycoveCity_EventScript_NurseDailyGreeting::
+    msgbox LilycoveCity_Text_DailyGreeting, MSGBOX_DEFAULT
+    release
+    end
 
 LilycoveCity_EventScript_Man3::
 	msgbox LilycoveCity_Text_ContestHallInTown, MSGBOX_NPC
@@ -769,3 +815,45 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
 	.string "So we were delighted to see a rare\n"
 	.string "Pokémon as soon as we arrived.\p"
 	.string "I mean, we are totally happy!$"
+
+LilycoveCity_Text_NurseIntro:
+    .string "The sound of the waves... the gentle\n"
+    .string "ocean breeze... It's so therapeutic.\p"
+    .string "As a Nurse, I believe a peaceful sleep\n"
+    .string "is the best medicine of all.\p"
+    .string "If you have a Pokémon that knows how\n"
+    .string "to drift off sweetly, please show me!\p"
+    .string "I’d love to share something special\n"
+    .string "with a fellow fan of rest.$"
+
+LilycoveCity_Text_ShowMeSleepy:
+    .string "Oh? Do you have a Pokémon that knows\n"
+    .string "how to nap peacefully? I'd love to see.$"
+
+LilycoveCity_Text_NoneSleeping:
+    .string "They all seem so full of energy!\n"
+    .string "A little rest is good for the soul,\l"
+    .string "don't you think?$"
+
+LilycoveCity_Text_TakeDreamBallFirstTime:
+    .string "Ah... what a soothing technique.\n"
+	.string "Seeing a Pokémon drift off so sweetly\l"
+    .string "really warms my heart.\p"
+    .string "Please, take this special Poké Ball.\n"
+    .string "It's called a Dream Ball.\p"
+    .string "It's much more effective on Pokémon\n"
+    .string "that are already dreaming.\p"
+    .string "Consider it a gift from one\n"
+    .string "relaxation-lover to another!$"
+
+LilycoveCity_Text_TakeDreamBallRepeat:
+    .string "You're quite the expert at finding nappers!\n"
+    .string "It's wonderful to see your Pokémon\n"
+    .string "looking so cozy.\p"
+    .string "Here is another Dream Ball for you.\n"
+    .string "Use it to catch the next one!$"
+
+LilycoveCity_Text_DailyGreeting:
+    .string "The sea is just as peaceful today.\n"
+    .string "Make sure you and your Pokémon\l"
+    .string "remember to take plenty of naps!$"

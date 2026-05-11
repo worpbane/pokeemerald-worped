@@ -4575,3 +4575,23 @@ void SwitchMonAbility(void)
         gSpecialVar_Result = FALSE;
     }
 }
+
+bool8 CheckPartyForSleep(void)
+{
+    u8 i, j;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == SPECIES_NONE)
+            continue;
+
+        for (j = 0; j < MAX_MON_MOVES; j++)
+        {
+            u16 move = GetMonData(&gPlayerParty[i], MON_DATA_MOVE1 + j);
+            if (move == MOVE_YAWN || move == MOVE_REST || move == MOVE_SLEEP_POWDER)
+            {
+                return TRUE;
+            }
+        }
+    }
+    return FALSE;
+}

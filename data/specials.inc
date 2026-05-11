@@ -572,4 +572,5 @@ gSpecials::
     def_special NameRival
     def_special AdvanceSeason
     def_special UpdateSeason
+    def_special CheckPartyForSleep
 

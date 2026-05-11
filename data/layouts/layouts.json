@@ -4641,7 +4641,7 @@
       "border_filepath": "data/layouts/NavelRock_Unown_Room_2/border.bin",
       "blockdata_filepath": "data/layouts/NavelRock_Unown_Room_2/map.bin"
     },
-	{
+    {
       "id": "LAYOUT_DUMMY_SPRING_LAYOUT",
       "name": "DummySpringLayout",
       "width": 10,

@@ -1,6 +1,6 @@
 # Pokémon Modern Emerald – Worped
 
-## [0.2] - In Development (WIP)
+## [0.2]
 **🧪 Testing On:** New Nintendo 3DS w/ open_agb_firm
 
 ---

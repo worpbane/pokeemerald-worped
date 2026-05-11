@@ -1,4 +1,4 @@
-# Pokémon Modern Emerald – Worped v0.2 (wip)
+# Pokémon Modern Emerald – Worped v0.2
 
 This is a personal fork of [Resetes12's Modern Emerald ROM hack](https://github.com/resetes12/pokeemerald).
 
@@ -16,7 +16,7 @@ I still have my original GBA carts of Sapphire and Emerald, and Hoenn has always
 
 ## 🧬 Pokémon & Encounters
 
-I didn't want to add 500 new mon, just Pokémon I actually like. Most of these are here because I think they're cute and wanted to see them in Hoenn.
+I didn't want to add 500 new mon, just Pokémon I actually like. Most of these are here because I think they're cute and wanted to see them in Hoenn.  
 
 | Pokémon | Origin | Where to find (Base Form) |
 | :--- | :--- | :--- |
@@ -46,12 +46,12 @@ I wanted to add some more pastel options for PokéBalls, kinda matches the idea 
 
 * **Dream Ball:**  
 	*4x Catch Rate when the wild Pokémon is sleeping.  
-	* **Acquisition:** Obtained once a day from an old lady in Lilycove City after showing her a sleeping Pokémon.  
+	* **Acquisition:** Obtained once a day from an Nurse on Lilycove City's Shoreline after showing her a Pokémon that knows a "sleepy" move.  
 * **Heal Ball:**  
-	*Heals captured PokéMon when they're added to the player's party. 
+	*Heals captured PokéMon when they're added to the player's party.  
 	* **Acquisition:** Sold at the Lavaridge Town PokéMart (near the healing hot springs).
-* **Love Ball**:
-	*8x Catch Rate when wild PokéMon is the same species but different gender as the player's attacking PokéMon.
+* **Love Ball**:  
+	*8x Catch Rate when wild PokéMon is the same species but opposite gender as the player's active Pokémon.  
 	* **Acquisition:** Sold at the Verdanturf Town PokéMart (near the "Tunnel of Love").
 
 ---
@@ -153,20 +153,19 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 
 ---
 
-## 🚀 Planned Features
+## 🚀 Features for the Future
 
-### 🧬 Pokémon Content
+### 🧬 Pokémon Content (v1.0)
 - Iron Valient
 - Goomy > Sliggo > Goodra
 - Tinkatink > Tinkastuff > Tinkaton
 - Morpeko
 - Pachirisu
-- Aloan Sandshrew
-- Espurr
+- Alolan Sandshrew > Alolan Sandslash
+- Espurr > Meowstic
 
-### Other Improvements
+### Other Improvements (v1.0)
 - **Night Encounters:** Specifically so Mimikyu only appears at night like it's supposed to.  
-- **Ability Popups in Battle:** I'm going to try and backport this feature from `pokeemerald-expansion`...  
 
 ---
 
