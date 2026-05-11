@@ -589,7 +589,7 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_BikeTireTracks = {
 
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_SlitherTracks = {
-	.tileTag = 0xFFFF,
+	.tileTag = TAG_NONE,
 	.paletteTag = FLDEFF_PAL_TAG_GENERAL_0,
 	.oam = &gObjectEventBaseOam_16x16,
 	.anims = sAnimTable_BikeTireTracks,
