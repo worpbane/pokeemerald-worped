@@ -73,12 +73,12 @@ I wanted to add some more pastel options for PokéBalls, kinda matches the idea 
 	Guide by [Archie and Mudskip](https://github.com/pret/pokeemerald/wiki/New-Birch's-Briefcase-With-Fully-Custom-Starters-by-Archie-and-Mudskip)  
 
 - **Shiny Charm**  
-	Added a Shiny Charm to aid with shiny hunting. If you choose the lower shiny levels in Modern Emerald's starting options, it gives you like a 75% chance for shinies. It's ridiculous and I love it and you cannot toggle it.  
+	Added a Shiny Charm to aid with shiny hunting. If you choose the lower shiny levels in Modern Emerald's starting options, it gives you like a 75% chance for shinies when using DexNav. It's ridiculous and I love it and you cannot toggle it once you have it.  
 	Sprite sourced from [pokeemerald-expansion repo](https://github.com/rh-hideout/pokeemerald-expansion)  
 	*(Received from the girl next to Mr. Briney's Cottage after earning your first Gym Badge in Rustboro.)*  
 
 - **Seasons**  
-	Pretty colors. I really liked the fall recolors of Hoenn, but didn't want it all the time. There aren't seasonal encounters of any sort, just the colors change every week.  
+	Pretty colors. I really liked the fall recolors of Hoenn, but didn't want it all the time. There aren't seasonal encounters of any sort, just the colors change every week. (NOTE: this is currently non-functional other than manually ofsetting with the GameCube).  
 	Based on [BelialClover's Commit](https://github.com/pret/pokeemerald/commit/1cdd1d0a877fc2e0929f84a33b6d9e4045102825) & [Emerald Enhanced](https://github.com/Enhanced-Projects/Emerald-Enhanced)  
 	*(Seasons change weekly, affect overworld visuals only, can be advanced via the GameCube, and are toggleable in the Start Menu.)*  
 
@@ -138,7 +138,10 @@ I'm not going to lie, the implementation for these is probably really bad, I mad
 ### 🛠️ Small Tweaks & Fixes  
 
 - **Move Info Shortcut:**  
-	Changed from **Start → L**. This was just a bit more comfortable to use during battle on a handheld.
+	Changed from **Start → L**. This was just a bit more comfortable to use during battle on a handheld.  
+	
+- **Dynamic Shiny Rate:**  
+	The shiny rate you choose at the start should now accuratly be reflected when encountering PokéMon instead of being locked at the vanilla rate.  
 	
 - **Second Select Item Removed:**  
 	The ability to map a Bag item to holding/tapping Select didn't work at all for me on the 3DS or Steam Deck(mGBA), so I removed it as it was more of an annoyance. So far this has not had any negative impact on gameplay for me.

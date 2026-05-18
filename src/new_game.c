@@ -299,10 +299,6 @@ void CheckIfRandomizerIsActive(void)
         || (gSaveBlock1Ptr->tx_Random_EvolutionMethods == 1)
         || (gSaveBlock1Ptr->tx_Random_Items == 1)))
             FlagSet(FLAG_WT_ENABLED_RANDOMIZER);
-#if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    memset(gSaveBlock1Ptr->dexNavSearchLevels, 0, sizeof(gSaveBlock1Ptr->dexNavSearchLevels));
-#endif
-    gSaveBlock1Ptr->dexNavChain = 0;
 }
 
 static void ResetMiniGamesRecords(void)

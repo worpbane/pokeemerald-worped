@@ -5220,6 +5220,16 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         u32 shinyRolls = 1;
         #endif
         u32 i;
+		u32 dynamicShinyOdds;
+		
+		switch (gSaveBlock1Ptr->tx_Features_ShinyChance)
+		{
+			case 1:  dynamicShinyOdds = 16;  break; // 1/4096
+			case 2:  dynamicShinyOdds = 32;  break; // 1/2048
+			case 3:  dynamicShinyOdds = 64;  break; // 1/1024
+			case 4:  dynamicShinyOdds = 128; break; // 1/512
+			default: dynamicShinyOdds = 8;   break; // 1/8192
+		}
         
         value = gSaveBlock2Ptr->playerTrainerId[0]
                   | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
@@ -5228,7 +5238,11 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
                   
         for (i = 0; i < shinyRolls; i++)
         {
-            if (Random() < SHINY_ODDS)
+			u16 rolledValue = Random();
+			
+			//DebugPrintfLevel(MGBA_LOG_DEBUG, "Roll %d: Generated %d (Target < %d)", i, rolledValue, dynamicShinyOdds);
+			
+            if (rolledValue < dynamicShinyOdds)
                 FlagSet(FLAG_SHINY_CREATION);   // use a flag bc of CreateDexNavWildMon
         }
 
@@ -5237,7 +5251,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
             u8 nature = personality % NUM_NATURES;  // keep current nature
             do {
                 personality = Random32();
-                personality = ((((Random() % SHINY_ODDS) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+                personality = ((((Random() % dynamicShinyOdds) ^ (HIHALF(value) ^ LOHALF(value))) ^ LOHALF(personality)) << 16) | LOHALF(personality);
             } while (nature != GetNatureFromPersonality(personality));
             
             // clear the flag after use

@@ -10933,7 +10933,9 @@ static void Cmd_handleballthrow(void)
                     gBattleResults.catchAttempts[gLastUsedItem - ITEM_ULTRA_BALL]++;
             }
         }
-
+		
+		//DebugPrintfLevel(MGBA_LOG_DEBUG, "[CATCH] Species: %u | Base CatchRate: %u | BallMult: %u.%u | Final Odds: %u/255", gBattleMons[gBattlerTarget].species, catchRate,  ballMultiplier / 10, ballMultiplier % 10, odds);
+		
         if (odds > 254) // mon caught
         {
             BtlController_EmitBallThrowAnim(BUFFER_A, BALL_3_SHAKES_SUCCESS);

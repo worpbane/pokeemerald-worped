@@ -36,10 +36,6 @@
 #### Wild Encounters
 - Pokémon added to enviroments I thought fit them.
 
-#### TODO
-- Add TMHM learnsets and Tutor learnsets for new Pokémon.
-- Add the three new moves to Tutor.
-
 ---
 
 ### 🧩 Features
